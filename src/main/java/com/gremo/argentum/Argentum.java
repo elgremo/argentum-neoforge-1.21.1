@@ -1,5 +1,9 @@
 package com.gremo.argentum;
 
+import com.gremo.argentum.blocks.ModBlocks;
+import com.gremo.argentum.item.ModCreativeModeTabs;
+import com.gremo.argentum.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -24,12 +28,16 @@ public class Argentum {
     public Argentum(IEventBus modEventBus, ModContainer modContainer) {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
         NeoForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::addCreative);
 
-        // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
@@ -37,6 +45,10 @@ public class Argentum {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
