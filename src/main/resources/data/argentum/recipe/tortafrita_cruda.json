@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:harina" },
+    { "item": "argentum:grasa" },
+    { "item": "minecraft:water_bucket" }
+  ],
+  "result": { "id": "argentum:tortafrita_cruda", "count": 2 }
+}

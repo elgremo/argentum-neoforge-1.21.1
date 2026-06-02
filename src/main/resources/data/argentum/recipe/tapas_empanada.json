@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:harina" },
+    { "item": "argentum:manteca" },
+    { "item": "minecraft:water_bucket" }
+  ],
+  "result": { "id": "argentum:tapas_empanada", "count": 4 }
+}

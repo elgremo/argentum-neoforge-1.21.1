@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:leche" },
+    { "item": "minecraft:sugar" }
+  ],
+  "result": { "id": "argentum:dulce_leche", "count": 1 }
+}

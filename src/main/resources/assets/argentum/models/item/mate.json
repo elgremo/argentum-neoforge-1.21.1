@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "argentum:item/mate"
+  },
+  "overrides": [
+    {
+      "predicate": { "argentum:in_hand": 1 },
+      "model": "argentum:item/mate_3d"
+    }
+  ]
+}

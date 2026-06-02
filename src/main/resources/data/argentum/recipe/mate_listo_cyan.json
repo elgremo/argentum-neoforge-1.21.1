@@ -1,0 +1,19 @@
+﻿{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "argentum:termo"
+    },
+    {
+      "item": "argentum:mate"
+    },
+    {
+      "item": "minecraft:cyan_dye"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:mate_listo_cyan"
+  }
+}

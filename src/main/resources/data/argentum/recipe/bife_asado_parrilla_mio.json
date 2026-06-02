@@ -1,0 +1,9 @@
+{
+  "type": "argentum:asar",
+  "category": "food",
+  "group": "parrilla",
+  "ingredient": { "item": "argentum:bife_crudo" },
+  "result": "argentum:bife_asado",
+  "experience": 0.35,
+  "cookingtime": 200
+}

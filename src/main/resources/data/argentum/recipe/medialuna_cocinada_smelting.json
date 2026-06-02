@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "argentum:medialuna_cruda"
+  },
+  "result": {
+    "id": "argentum:medialuna_cocinada"
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}

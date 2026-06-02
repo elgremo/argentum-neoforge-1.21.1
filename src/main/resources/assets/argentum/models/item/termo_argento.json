@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "argentum:item/termo_argento"
+  },
+  "overrides": [
+    {
+      "predicate": { "argentum:in_hand_termo_argento": 1 },
+      "model": "argentum:item/termo_argento_3d"
+    }
+  ]
+}

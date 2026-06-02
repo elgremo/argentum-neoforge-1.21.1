@@ -1,0 +1,9 @@
+{
+  "type": "argentum:asar",
+  "category": "food",
+  "group": "parrilla",
+  "ingredient": { "item": "argentum:entrana_cruda" },
+  "result": "argentum:entrana_asada",
+  "experience": 0.35,
+  "cookingtime": 180
+}

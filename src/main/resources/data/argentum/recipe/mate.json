@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "argentum:calabaza_mate"
+    },
+    {
+      "item": "argentum:yerba"
+    },
+    {
+      "item": "argentum:bombilla"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:mate"
+  }
+}

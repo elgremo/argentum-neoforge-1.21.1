@@ -1,0 +1,9 @@
+{
+  "type": "argentum:asar",
+  "category": "food",
+  "group": "parrilla",
+  "ingredient": { "item": "argentum:molleja_cruda" },
+  "result": "argentum:molleja_asada",
+  "experience": 0.5,
+  "cookingtime": 240
+}

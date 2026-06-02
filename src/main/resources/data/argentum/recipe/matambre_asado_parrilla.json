@@ -1,0 +1,9 @@
+{
+  "type": "argentum:asar",
+  "category": "food",
+  "group": "parrilla",
+  "ingredient": { "item": "argentum:matambre_crudo" },
+  "result": "argentum:matambre_asado",
+  "experience": 0.4,
+  "cookingtime": 300
+}

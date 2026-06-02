@@ -1,0 +1,9 @@
+{
+  "type": "argentum:asar",
+  "category": "food",
+  "group": "parrilla",
+  "ingredient": { "item": "argentum:chinchulin_crudo" },
+  "result": "argentum:chinchulin_asado",
+  "experience": 0.3,
+  "cookingtime": 180
+}

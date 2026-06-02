@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:bife_crudo" },
+    { "item": "argentum:cuchillo" }
+  ],
+  "result": { "id": "argentum:carne_cortada_cruda", "count": 1 }
+}

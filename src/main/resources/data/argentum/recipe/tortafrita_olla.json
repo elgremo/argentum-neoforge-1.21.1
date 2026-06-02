@@ -1,0 +1,9 @@
+{
+  "type": "argentum:fritar",
+  "category": "food",
+  "group": "olla",
+  "ingredient": { "item": "argentum:tortafrita_cruda" },
+  "result": "argentum:tortafrita",
+  "experience": 0.2,
+  "cookingtime": 140
+}

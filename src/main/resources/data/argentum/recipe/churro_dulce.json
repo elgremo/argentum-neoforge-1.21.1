@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:churro_frito" },
+    { "item": "argentum:dulce_leche" }
+  ],
+  "result": { "id": "argentum:churro_frito_dulce", "count": 1 }
+}

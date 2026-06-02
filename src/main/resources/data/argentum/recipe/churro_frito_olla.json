@@ -1,0 +1,9 @@
+{
+  "type": "argentum:fritar",
+  "category": "food",
+  "group": "olla",
+  "ingredient": { "item": "argentum:churro_crudo" },
+  "result": "argentum:churro_frito",
+  "experience": 0.2,
+  "cookingtime": 140
+}

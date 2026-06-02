@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "argentum:aceite" },
+    { "item": "argentum:aceite" }
+  ],
+  "result": { "id": "argentum:manteca", "count": 1 }
+}

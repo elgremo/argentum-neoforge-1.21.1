@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:painting" },
+    { "item": "minecraft:paper" }
+  ],
+  "result": { "id": "argentum:cuadro_argento", "count": 1 }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BMB",
+    "BBB"
+  ],
+  "key": {
+    "B": { "item": "minecraft:glass_bottle" },
+    "M": { "item": "minecraft:milk_bucket" }
+  },
+  "result": {
+    "id": "argentum:leche",
+    "count": 8
+  }
+}

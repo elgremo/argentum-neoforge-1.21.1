@@ -1,0 +1,9 @@
+{
+  "type": "argentum:fritar",
+  "category": "food",
+  "group": "olla",
+  "ingredient": { "item": "argentum:milanesa_cruda" },
+  "result": "argentum:milanesa_frita",
+  "experience": 0.3,
+  "cookingtime": 200
+}

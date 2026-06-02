@@ -1,0 +1,9 @@
+{
+  "type": "argentum:fritar",
+  "category": "food",
+  "group": "olla",
+  "ingredient": { "item": "argentum:empanada_cruda" },
+  "result": "argentum:empanada_frita",
+  "experience": 0.2,
+  "cookingtime": 160
+}

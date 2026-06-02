@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "minecraft:white_wool" },
+    { "item": "minecraft:string" },
+    { "item": "argentum:te" }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:saquito_te"
+  }
+}

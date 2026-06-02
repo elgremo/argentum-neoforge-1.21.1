@@ -1,0 +1,16 @@
+﻿{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "argentum:termo_argento"
+    },
+    {
+      "item": "argentum:mate"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:mate_listo_argento"
+  }
+}

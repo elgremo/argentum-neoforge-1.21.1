@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    { "item": "argentum:taza" },
+    { "item": "argentum:saquito_matecocido" },
+    { "item": "minecraft:potion" }
+  ],
+  "result": {
+    "id": "argentum:taza_de_matecocido",
+    "count": 1
+  }
+}

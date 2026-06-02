@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:tapas_hojaldre" },
+    { "item": "argentum:dulce_membrillo" },
+    { "item": "minecraft:sugar" }
+  ],
+  "result": { "id": "argentum:pastelito_membrillo_crudo", "count": 2 }
+}

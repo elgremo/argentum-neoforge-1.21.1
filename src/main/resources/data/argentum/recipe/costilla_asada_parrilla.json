@@ -1,0 +1,9 @@
+{
+  "type": "argentum:asar",
+  "category": "food",
+  "group": "parrilla",
+  "ingredient": { "item": "argentum:costilla_cruda" },
+  "result": "argentum:costilla_asada",
+  "experience": 0.4,
+  "cookingtime": 300
+}

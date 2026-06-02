@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:harina" },
+    { "item": "argentum:manteca" }
+  ],
+  "result": { "id": "argentum:tapas_hojaldre", "count": 4 }
+}

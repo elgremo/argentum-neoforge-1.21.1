@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:batata" },
+    { "item": "minecraft:sugar" }
+  ],
+  "result": { "id": "argentum:dulce_batata", "count": 1 }
+}

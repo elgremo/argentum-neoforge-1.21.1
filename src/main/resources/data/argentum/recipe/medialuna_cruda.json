@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:harina" },
+    { "item": "minecraft:sugar" },
+    { "item": "argentum:leche" },
+    { "item": "minecraft:egg" },
+    { "item": "argentum:manteca" }
+  ],
+  "result": {
+    "id": "argentum:medialuna_cruda",
+    "count": 2
+  }
+}

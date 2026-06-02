@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "T": {
+      "item": "argentum:taza_de_arcilla"
+    },
+    "B": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "pattern": [
+    "B B",
+    "BTB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:taza"
+  }
+}
