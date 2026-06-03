@@ -1,12 +1,19 @@
 package com.gremo.argentum.item;
 
 import com.gremo.argentum.Argentum;
+import com.gremo.argentum.blocks.ModBlocks;
 import com.gremo.argentum.item.custom.*;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Argentum.MOD_ID);
@@ -19,7 +26,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> BATATA = ITEMS.register("batata",
-            () -> new Item(new Item.Properties()));
+            () -> new ItemNameBlockItem(ModBlocks.BATATA_PLANTA.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> BIFE_ASADO = ITEMS.register("bife_asado",
             () -> new CocidoItem(new Item.Properties()
@@ -278,7 +285,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> CUCHILLO = ITEMS.register("cuchillo",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()){
+                @Override
+                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+                    tooltipComponents.add(Component.translatable("tooltip.cuchillo.tooltip"));
+                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+            });
 
     public static final DeferredItem<Item> DULCE_BATATA = ITEMS.register("dulce_batata",
             () -> new Item(new Item.Properties()));
@@ -652,7 +665,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> MEMBRILLO_SEMILLA = ITEMS.register("membrillo_semilla",
-            () -> new Item(new Item.Properties()));
+            () -> new ItemNameBlockItem(ModBlocks.MEMBRILLO_PLANTA.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> MILANESA_CRUDA = ITEMS.register("milanesa_cruda",
             () -> new CrudoItem(new Item.Properties()
@@ -788,7 +801,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> TE_SEMILLA = ITEMS.register("te_semilla",
-            () -> new Item(new Item.Properties()));
+            () -> new ItemNameBlockItem(ModBlocks.TE_PLANTA.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> TERMO = ITEMS.register("termo",
             () -> new Item(new Item.Properties()));
@@ -825,7 +838,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> YERBA_SEMILLA = ITEMS.register("yerba_semilla",
-            () -> new Item(new Item.Properties()));
+            () -> new ItemNameBlockItem(ModBlocks.YERBA_PLANTA.get(), new Item.Properties()));
 
 
 

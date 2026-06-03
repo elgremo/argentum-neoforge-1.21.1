@@ -8,6 +8,11 @@
   "block.argentum.cuatro": "Cuatro",
   "block.argentum.cinco": "Cinco",
   "block.argentum.seis": "Seis",
+  "block.argentum.parrilla": "Parrilla",
+  "block.argentum.olla": "Olla",
+
+  "tool.argentum.olla.tooltip": "Se puede usar para convertir un Aldeano o Fritar Comida",
+  "tool.argentum.parrilla.tooltip": "Se pueden Asar Carnes",
 
   "item.argentum.baraja_sellada": "Baraja Sellada",
   "item.argentum.batata": "Batata",
@@ -157,6 +162,22 @@
   "item.argentum.mate_listo_verde1": "Matelisto Verde Claro",
   "item.argentum.mate_listo_verde2": "Matelisto Verde Oscuro",
   "item.argentum.mate_listo_violeta": "Matelisto Violeta",
+
+  "block.argentum.yerba_planta":"Planta de Yerba",
+  "block.argentum.te_planta":"Planta de Te",
+  "block.argentum.membrillo_planta":"Planta de Membrillo",
+  "block.argentum.batata_planta":"Planta de Batata",
+
+  "painting.argentum.iguazu.title": "Iguazu",
+  "painting.argentum.iguazu.author": "Gremo",
+  "painting.argentum.islas_malvinas.title": "Las Islas Malvinas",
+  "painting.argentum.islas_malvinas.author": "Gremo",
+  "painting.argentum.obelisco.title": "Obelisco",
+  "painting.argentum.obelisco.author": "Gremo",
+  "painting.argentum.tres_estrellas.title": "Las Tres Estrellas",
+  "painting.argentum.tres_estrellas.author": "Gremo",
+
+  "tooltip.cuchillo.tooltip": "Usalo para conseguir carne especial de la vaca",
 
   "creativetab.argentum.bala": "Mates Argentos",
   "creativetab.argentum.casino": "Casino Argento"

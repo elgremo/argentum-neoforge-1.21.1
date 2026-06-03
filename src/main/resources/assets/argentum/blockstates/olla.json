@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "on=false": { "model": "argentum:block/olla_off" },
+    "on=true":  { "model": "argentum:block/olla_on" }
+  }
+}

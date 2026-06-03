@@ -1,10 +1,12 @@
 package com.gremo.argentum.blocks;
 
 import com.gremo.argentum.Argentum;
+import com.gremo.argentum.blocks.custom.*;
 import com.gremo.argentum.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -37,6 +39,25 @@ public class ModBlocks {
                     .strength(1f).sound(SoundType.AMETHYST)));
 
 
+    public static final DeferredBlock<Block> PARRILLA = registerBlock("parrilla",
+            () -> new ParrillaBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.NETHERITE_BLOCK)));
+public static final DeferredBlock<Block> OLLA = registerBlock("olla",
+            () -> new OllaBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.NETHERITE_BLOCK)));
+
+    public static final DeferredBlock<Block> YERBA_PLANTA = BLOCKS.register("yerba_planta",
+        () -> new YerbaPlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
+    public static final DeferredBlock<Block> TE_PLANTA = BLOCKS.register("te_planta",
+            () -> new TePlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
+    public static final DeferredBlock<Block> MEMBRILLO_PLANTA = BLOCKS.register("membrillo_planta",
+            () -> new MembrilloPlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
+    public static final DeferredBlock<Block> BATATA_PLANTA = BLOCKS.register("batata_planta",
+            () -> new BatataPlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
@@ -52,4 +73,5 @@ public class ModBlocks {
     public static void register (IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
+
 }

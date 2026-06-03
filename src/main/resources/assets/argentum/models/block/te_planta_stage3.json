@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "argentum:block/te_planta_stage3"
+  }
+}

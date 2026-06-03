@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "on=false": { "model": "argentum:block/parrilla_off" },
+    "on=true":  { "model": "argentum:block/parrilla_on" }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "age=0": { "model": "argentum:block/yerba_planta_stage0" },
+    "age=1": { "model": "argentum:block/yerba_planta_stage1" },
+    "age=2": { "model": "argentum:block/yerba_planta_stage2" },
+    "age=3": { "model": "argentum:block/yerba_planta_stage3" },
+    "age=4": { "model": "argentum:block/yerba_planta_stage4" },
+    "age=5": { "model": "argentum:block/yerba_planta_stage5" }
+  }
+}
