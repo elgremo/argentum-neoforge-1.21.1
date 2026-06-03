@@ -1,4 +1,3 @@
-// ModClientEvents.java
 package com.gremo.argentum.client;
 
 import com.gremo.argentum.Argentum;
@@ -16,11 +15,12 @@ public class ModClientEvents {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            // Registrar el tipo de renderizado para que las texturas transparentes funcionen
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.YERBA_PLANTA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.BATATA_PLANTA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.MEMBRILLO_PLANTA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.TE_PLANTA.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.OLLA.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.PARRILLA.get(), RenderType.cutout());
         });
     }
 }

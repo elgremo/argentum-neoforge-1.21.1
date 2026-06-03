@@ -179,6 +179,9 @@
 
   "tooltip.cuchillo.tooltip": "Usalo para conseguir carne especial de la vaca",
 
+  "entity.minecraft.villager.argentum.vendedor": "Kevin",
+  "entity.minecraft.villager.argentum.vendedorb": "Joni",
+
   "creativetab.argentum.bala": "Mates Argentos",
   "creativetab.argentum.casino": "Casino Argento"
 }

@@ -1,0 +1,32 @@
+{
+  "aldeano_use": {
+    "sounds":[
+      "argentum:aldeano_use"
+    ]
+  },
+  "aldeano_break": {
+    "sounds":[
+      "argentum:aldeano_break"
+    ]
+  },
+  "aldeano_fall": {
+    "sounds":[
+      "argentum:aldeano_fall"
+    ]
+  },
+  "aldeano_hit": {
+    "sounds":[
+      "argentum:aldeano_hit"
+    ]
+  },
+  "aldeano_place": {
+    "sounds":[
+      "argentum:aldeano_place"
+    ]
+  },
+  "aldeano_step": {
+    "sounds":[
+      "argentum:aldeano_step"
+    ]
+  }
+}

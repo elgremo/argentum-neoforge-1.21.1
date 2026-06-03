@@ -430,10 +430,8 @@ public class ModItems {
             ));
 
     public static final DeferredItem<Item> MATE = ITEMS.register("mate",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
-    public static final DeferredItem<Item> MATE_3D = ITEMS.register("mate_3d",
-            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> MATE_LISTO_AMARILLO = ITEMS.register("mate_listo_amarillo",
             () -> new MateListoItem(new Item.Properties()
@@ -804,16 +802,12 @@ public class ModItems {
             () -> new ItemNameBlockItem(ModBlocks.TE_PLANTA.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> TERMO = ITEMS.register("termo",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
-    public static final DeferredItem<Item> TERMO_3D = ITEMS.register("termo_3d",
-            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> TERMO_ARGENTO = ITEMS.register("termo_argento",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
-    public static final DeferredItem<Item> TERMO_ARGENTO_3D = ITEMS.register("termo_argento_3d",
-            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> TORTAFRITA = ITEMS.register("tortafrita",
             () -> new FritoItem(new Item.Properties()

@@ -24,11 +24,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.OLLA);
                         output.accept(ModBlocks.PARRILLA);
                         output.accept(ModItems.MATE);
-                        output.accept(ModItems.MATE_3D);
                         output.accept(ModItems.TERMO);
-                        output.accept(ModItems.TERMO_3D);
                         output.accept(ModItems.TERMO_ARGENTO);
-                        output.accept(ModItems.TERMO_ARGENTO_3D);
                         output.accept(ModItems.MATE_LISTO_AMARILLO);
                         output.accept(ModItems.MATE_LISTO_ARGENTO);
                         output.accept(ModItems.MATE_LISTO_AZUL);

@@ -1,12 +1,18 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "argentum:item/mate"
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "argentum:item/mate_3d"
   },
-  "overrides": [
-    {
-      "predicate": { "argentum:in_hand": 1 },
-      "model": "argentum:item/mate_3d"
+  "perspectives": {
+    "gui": {
+      "parent": "argentum:item/mate_2d"
+    },
+    "ground": {
+      "parent": "argentum:item/mate_2d"
+    },
+    "fixed": {
+      "parent": "argentum:item/mate_2d"
     }
-  ]
+  }
 }
