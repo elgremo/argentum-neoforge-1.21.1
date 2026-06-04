@@ -1,4 +1,4 @@
-package com.gremo.argentum.blocks.custom;
+package com.gremo.argentum.block.custom;
 
 import com.gremo.argentum.item.ModItems;
 import net.minecraft.core.BlockPos;

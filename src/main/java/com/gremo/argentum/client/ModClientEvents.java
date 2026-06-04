@@ -1,7 +1,11 @@
 package com.gremo.argentum.client;
 
 import com.gremo.argentum.Argentum;
-import com.gremo.argentum.blocks.ModBlocks;
+import com.gremo.argentum.block.ModBlocks;
+import com.gremo.argentum.block.entity.ModBlockEntities;
+import com.gremo.argentum.block.entity.renderer.OllaBlockEntityRenderer;
+import com.gremo.argentum.block.entity.renderer.ParrillaBlockEntityRenderer;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -21,6 +25,8 @@ public class ModClientEvents {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.TE_PLANTA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.OLLA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PARRILLA.get(), RenderType.cutout());
+            BlockEntityRenderers.register(ModBlockEntities.OLLA_BE.get(), OllaBlockEntityRenderer::new);
+            BlockEntityRenderers.register(ModBlockEntities.PARRILLA_BE.get(), ParrillaBlockEntityRenderer::new);
         });
     }
 }

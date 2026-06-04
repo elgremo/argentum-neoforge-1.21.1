@@ -1,7 +1,8 @@
-package com.gremo.argentum.blocks;
+package com.gremo.argentum.block;
 
 import com.gremo.argentum.Argentum;
-import com.gremo.argentum.blocks.custom.*;
+import com.gremo.argentum.block.custom.*;
+import com.gremo.argentum.block.custom.OllaBlock;
 import com.gremo.argentum.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;

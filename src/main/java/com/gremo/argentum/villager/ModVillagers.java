@@ -2,11 +2,10 @@ package com.gremo.argentum.villager;
 
 import com.google.common.collect.ImmutableSet;
 import com.gremo.argentum.Argentum;
-import com.gremo.argentum.blocks.ModBlocks;
+import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.sound.ModSounds;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.neoforged.bus.api.IEventBus;

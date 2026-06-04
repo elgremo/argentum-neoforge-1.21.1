@@ -1,7 +1,7 @@
 package com.gremo.argentum.item;
 
 import com.gremo.argentum.Argentum;
-import com.gremo.argentum.blocks.ModBlocks;
+import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.item.custom.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;

@@ -1,6 +1,6 @@
 package com.gremo.argentum;
 
-import com.gremo.argentum.blocks.ModBlocks;
+import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.item.ModCreativeModeTabs;
 import com.gremo.argentum.item.ModItems;
 import com.gremo.argentum.sound.ModSounds;
@@ -19,6 +19,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import com.gremo.argentum.block.entity.ModBlockEntities;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Argentum.MOD_ID)
@@ -43,6 +44,7 @@ public class Argentum {
 
         ModSounds.register(modEventBus);
         ModVillagers.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

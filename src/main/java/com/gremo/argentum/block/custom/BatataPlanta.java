@@ -1,4 +1,4 @@
-package com.gremo.argentum.blocks.custom;
+package com.gremo.argentum.block.custom;
 
 import com.gremo.argentum.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class TePlanta extends CropBlock {
+public class BatataPlanta extends CropBlock {
     public static final int MAX_AGE = 5;
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 5);
     private static final VoxelShape[] SHAPE_BY_AGE =
@@ -25,7 +25,7 @@ public class TePlanta extends CropBlock {
                     Block.box(0.0, 0.0, 0.0, 16.0, 12.0, 16.0) // age 5
             };
 
-    public TePlanta(Properties properties) {
+    public BatataPlanta(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
@@ -37,7 +37,7 @@ public class TePlanta extends CropBlock {
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return ModItems.TE_SEMILLA;
+        return ModItems.BATATA;
     }
 
     @Override

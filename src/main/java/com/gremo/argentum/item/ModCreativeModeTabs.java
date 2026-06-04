@@ -1,7 +1,7 @@
 package com.gremo.argentum.item;
 
 import com.gremo.argentum.Argentum;
-import com.gremo.argentum.blocks.ModBlocks;
+import com.gremo.argentum.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
