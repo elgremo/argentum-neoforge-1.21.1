@@ -7,7 +7,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -16,9 +15,10 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -31,10 +31,8 @@ import java.util.List;
 
 public class OllaBlock extends BaseEntityBlock {
     public static final BooleanProperty ON = BooleanProperty.create("on");
-    // 7 píxeles de alto
-    private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
+    private static final VoxelShape SHAPE = net.minecraft.world.level.block.Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D);
 
-    // Añadimos el MapCodec y el codec() requerido por BaseEntityBlock
     public static final MapCodec<OllaBlock> CODEC = simpleCodec(OllaBlock::new);
 
     public OllaBlock(Properties properties) {
@@ -48,52 +46,10 @@ public class OllaBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
-                                              Player player, InteractionHand hand, BlockHitResult hitResult) {
-        // 1) Si el jugador está agachado: toggle ON/OFF aquí mismo
-        if (player.isCrouching()) {
-            if (!level.isClientSide()) {
-                boolean nowOn = !state.getValue(ON);
-                level.setBlock(pos, state.setValue(ON, nowOn), 3);
-                if (nowOn) {
-                    level.playSound(null, pos, SoundEvents.BREWING_STAND_BREW, SoundSource.BLOCKS, 1.0F, 1.0F);
-                } else {
-                    level.playSound(null, pos, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.8F, 1.0F);
-                }
-            }
-            return ItemInteractionResult.sidedSuccess(level.isClientSide());
-        }
-
-        // 2) Si no está agachado: manejar colocar / extraer ítems
-        if (level.getBlockEntity(pos) instanceof com.gremo.argentum.block.entity.OllaBlockEntity ollaBlockEntity) {
-            // Colocar item si la olla está vacía y el jugador tiene un item
-            if (ollaBlockEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()) {
-                if (!level.isClientSide()) {
-                    ollaBlockEntity.inventory.insertItem(0, stack.copy(), false);
-                    stack.shrink(1);
-                    level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
-                }
-                return ItemInteractionResult.sidedSuccess(level.isClientSide());
-            }
-
-            // Extraer item si la olla tiene item y el jugador tiene la mano vacía
-            if (!ollaBlockEntity.inventory.getStackInSlot(0).isEmpty() && stack.isEmpty()) {
-                if (!level.isClientSide()) {
-                    ItemStack stackOnOlla = ollaBlockEntity.inventory.extractItem(0, 1, false);
-                    player.setItemInHand(hand, stackOnOlla);
-                    ollaBlockEntity.clearContents();
-                    level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
-                }
-                return ItemInteractionResult.sidedSuccess(level.isClientSide());
-            }
-        }
-
-        // Si no pasó nada relevante, devolvemos SUCCESS para que compile en tus mappings.
-        // (Si más adelante confirmás que `pass()` está disponible, podés cambiar esto a ItemInteractionResult.pass() para permitir otras rutas.)
-        return ItemInteractionResult.SUCCESS;
+    protected void createBlockStateDefinition(StateDefinition.Builder<net.minecraft.world.level.block.Block, BlockState> builder) {
+        builder.add(ON);
     }
 
-    // Forma (7 px)
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx) {
         return SHAPE;
@@ -104,13 +60,11 @@ public class OllaBlock extends BaseEntityBlock {
         return true;
     }
 
-    // Luz cuando está on
     @Override
     public int getLightEmission(BlockState state, BlockGetter world, BlockPos pos) {
-        return state.getValue(ON) ? 10 : 0; // ajustá el valor (0..15) según prefieras
+        return state.getValue(ON) ? 10 : 0;
     }
 
-    // Entidad de bloque
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
@@ -122,20 +76,70 @@ public class OllaBlock extends BaseEntityBlock {
         return RenderShape.MODEL;
     }
 
+    /**
+     * Interacción:
+     * - Shift + click (con cualquier mano) togglea ON/OFF
+     * - Click con item fryable lo inserta (1 unidad)
+     * - Click con mano vacía extrae el contenido si lo hay
+     */
     @Override
-    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if (state.getBlock() != newState.getBlock()) {
-            if (level.getBlockEntity(pos) instanceof OllaBlockEntity ollaBlockEntity) {
-                ollaBlockEntity.drops();
-                level.updateNeighbourForOutputSignal(pos, this);
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                              Player player, InteractionHand hand, BlockHitResult hitResult) {
+        // SHIFT: toggle
+        if (player.isCrouching()) {
+            if (!level.isClientSide()) {
+                boolean nowOn = !state.getValue(ON);
+                level.setBlock(pos, state.setValue(ON, nowOn), 3);
+                level.playSound(null, pos, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.8F, 1.0F);
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide());
+        }
+
+        ItemStack handStack = player.getItemInHand(hand);
+
+        BlockEntity beRaw = level.getBlockEntity(pos);
+        if (!(beRaw instanceof OllaBlockEntity olla)) {
+            return ItemInteractionResult.SUCCESS;
+        }
+
+        // Mano vacía: extraer
+        if (handStack.isEmpty()) {
+            if (!level.isClientSide()) {
+                ItemStack extracted = olla.extractOne();
+                if (!extracted.isEmpty()) {
+                    if (!player.addItem(extracted)) {
+                        // si no pudo añadirse, dropear en mundo
+                        net.minecraft.world.level.block.Block.popResource(level, pos, extracted);
+                    }
+                    level.playSound(null, pos, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.8F, 1.0F);
+                }
+            }
+            return ItemInteractionResult.sidedSuccess(level.isClientSide());
+        }
+
+        // Si no es fryable -> no hacemos nada
+        if (!OllaBlockEntity.isFryable(handStack.getItem())) {
+            return ItemInteractionResult.SUCCESS;
+        }
+
+        // intentar insertar 1 unidad
+        if (!level.isClientSide()) {
+            boolean inserted = olla.tryInsertOne(handStack);
+            if (inserted) {
+                player.setItemInHand(hand, handStack);
+                level.playSound(null, pos, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.8F, 1.0F);
+                level.sendBlockUpdated(pos, state, state, 3);
+                return ItemInteractionResult.sidedSuccess(false);
             }
         }
-        super.onRemove(state, level, pos, newState, movedByPiston);
+
+        return ItemInteractionResult.sidedSuccess(level.isClientSide());
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(ON);
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return createTickerHelper(type, com.gremo.argentum.block.entity.ModBlockEntities.OLLA_BE.get(),
+                (lvl, pos, st, be) -> com.gremo.argentum.block.entity.OllaBlockEntity.tick(lvl, pos, st, (OllaBlockEntity) be));
     }
 
     @Override

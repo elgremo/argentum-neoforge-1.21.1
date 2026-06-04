@@ -5,13 +5,16 @@ import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.block.entity.ModBlockEntities;
 import com.gremo.argentum.block.entity.renderer.OllaBlockEntityRenderer;
 import com.gremo.argentum.block.entity.renderer.ParrillaBlockEntityRenderer;
+import com.gremo.argentum.item.ModItems;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.resources.ResourceLocation;
 
 @EventBusSubscriber(modid = Argentum.MOD_ID, value = Dist.CLIENT)
 public class ModClientEvents {

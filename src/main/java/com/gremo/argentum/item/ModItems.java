@@ -345,10 +345,6 @@ public class ModItems {
             () -> new FernetItem(new Item.Properties()
                     .stacksTo(1)
                     .durability(3)
-                    .food(new net.minecraft.world.food.FoodProperties.Builder()
-                            .nutrition(8)
-                            .saturationModifier(0.8f) // Con 'f' al final y 'Modifier' completo
-                            .build())
             )
     );
 
@@ -430,7 +426,14 @@ public class ModItems {
             ));
 
     public static final DeferredItem<Item> MATE = ITEMS.register("mate",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new MateItem(new Item.Properties()
+                    .stacksTo(1)
+                    .food(new net.minecraft.world.food.FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            )
+    );
 
 
     public static final DeferredItem<Item> MATE_LISTO_AMARILLO = ITEMS.register("mate_listo_amarillo",
@@ -802,11 +805,19 @@ public class ModItems {
             () -> new ItemNameBlockItem(ModBlocks.TE_PLANTA.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> TERMO = ITEMS.register("termo",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties()
+                    .stacksTo(1)
+                    .durability(10) // también 10 usos (ajustá si querés otra durabilidad)
+            )
+    );
 
 
     public static final DeferredItem<Item> TERMO_ARGENTO = ITEMS.register("termo_argento",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties()
+                    .stacksTo(1)
+                    .durability(15) // también 10 usos (ajustá si querés otra durabilidad)
+            )
+    );
 
 
     public static final DeferredItem<Item> TORTAFRITA = ITEMS.register("tortafrita",

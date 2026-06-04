@@ -52,7 +52,7 @@ public class Argentum {
 
     private void commonSetup(final net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            // Ejemplos: reemplazá estos nombres por los tuyos reales
+            // --- Recetas para la PARRILLA (lo que ya tenías) ---
             com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(
                     ModItems.BIFE_CRUDO.get(),
                     ModItems.BIFE_ASADO.get(),
@@ -93,6 +93,43 @@ public class Argentum {
                     ModItems.MOLLEJA_CRUDA.get(),
                     ModItems.MOLLEJA_ASADA.get(),
                     200
+            );
+
+            // --- Recetas para la OLLA (solo tus items "fritos") ---
+            com.gremo.argentum.block.entity.OllaBlockEntity.addRecipe(
+                    ModItems.CHURRO_CRUDO.get(),
+                    ModItems.CHURRO_FRITO.get(),
+                    180
+            );
+
+            com.gremo.argentum.block.entity.OllaBlockEntity.addRecipe(
+                    ModItems.EMPANADA_CRUDA.get(),
+                    ModItems.EMPANADA_FRITA.get(),
+                    200
+            );
+
+            com.gremo.argentum.block.entity.OllaBlockEntity.addRecipe(
+                    ModItems.MILANESA_CRUDA.get(),
+                    ModItems.MILANESA_FRITA.get(),
+                    220
+            );
+
+            com.gremo.argentum.block.entity.OllaBlockEntity.addRecipe(
+                    ModItems.PASTELITO_BATATA_CRUDO.get(),
+                    ModItems.PASTELITO_BATATA_FRITO.get(),
+                    200
+            );
+
+            com.gremo.argentum.block.entity.OllaBlockEntity.addRecipe(
+                    ModItems.PASTELITO_MEMBRILLO_CRUDO.get(),
+                    ModItems.PASTELITO_MEMBRILLO_FRITO.get(),
+                    200
+            );
+
+            com.gremo.argentum.block.entity.OllaBlockEntity.addRecipe(
+                    ModItems.TORTAFRITA_CRUDA.get(),
+                    ModItems.TORTAFRITA.get(),
+                    160
             );
         });
     }
