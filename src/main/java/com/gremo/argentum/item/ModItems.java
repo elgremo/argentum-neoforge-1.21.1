@@ -22,8 +22,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> BALA = ITEMS.register("bala",
             () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> BARAJA_SELLADA = ITEMS.register("baraja_sellada",
-            () -> new Item(new Item.Properties()));
+            () -> new BarajaSelladaItem(new Item.Properties()));
 
     public static final DeferredItem<Item> BATATA = ITEMS.register("batata",
             () -> new ItemNameBlockItem(ModBlocks.BATATA_PLANTA.get(), new Item.Properties()));
@@ -755,7 +756,8 @@ public class ModItems {
             ));
 
     public static final DeferredItem<Item> PELOTA = ITEMS.register("pelota",
-            () -> new Item(new Item.Properties()));
+            () -> new PelotaItem(new Item.Properties().stacksTo(1))
+    );
 
     public static final DeferredItem<Item> PISTOLA = ITEMS.register("pistola",
             () -> new Item(new Item.Properties()));

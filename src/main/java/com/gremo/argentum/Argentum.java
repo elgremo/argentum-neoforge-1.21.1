@@ -1,6 +1,7 @@
 package com.gremo.argentum;
 
 import com.gremo.argentum.block.ModBlocks;
+import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.item.ModCreativeModeTabs;
 import com.gremo.argentum.item.ModItems;
 import com.gremo.argentum.sound.ModSounds;
@@ -21,36 +22,34 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import com.gremo.argentum.block.entity.ModBlockEntities;
 
-// The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Argentum.MOD_ID)
 public class Argentum {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "argentum";
-    // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    // -- BORRAR EL BLOQUE STATIC QUE ESTABA AQUÍ --
+
     public Argentum(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addCreative);
 
         NeoForge.EVENT_BUS.register(this);
 
         ModCreativeModeTabs.register(modEventBus);
-
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        // AGREGAR ESTA LÍNEA AQUÍ:
+        ModEntities.register(modEventBus);
 
         ModSounds.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
 
-
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(final net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             // --- Recetas para la PARRILLA (lo que ya tenías) ---
             com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(

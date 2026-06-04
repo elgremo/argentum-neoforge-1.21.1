@@ -127,8 +127,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FICHA_CASINO_ESPECIAL);
                         output.accept(ModItems.FICHA_CASINO_OTRA);
                         output.accept(ModItems.BARAJA_SELLADA);
-                        //output.accept(ModItems.MAZO);
-                        output.accept(ModItems.CARTA_COMODIN);
+                        output.accept(ModItems.BARAJA_SELLADA);
 
 // Cartas de Copa
                         output.accept(ModItems.CARTA_COPA_1);
