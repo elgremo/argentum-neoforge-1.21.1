@@ -3,8 +3,8 @@
   "values": [
     "minecraft:beef",
     "minecraft:porkchop",
-    "minecraft:raw_chicken",
-    "minecraft:raw_mutton",
-    "minecraft:raw_rabbit"
+    "minecraft:chicken",
+    "minecraft:mutton",
+    "minecraft:rabbit"
   ]
 }

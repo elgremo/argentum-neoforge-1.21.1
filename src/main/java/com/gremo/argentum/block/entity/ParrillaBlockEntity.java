@@ -1,11 +1,11 @@
 package com.gremo.argentum.block.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.Containers;
-import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -13,16 +13,27 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import net.minecraft.world.Containers;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * ParrillaBlockEntity: manejador de inventario, recetas y tick de cocción.
+ *
+ * Para agregar recetas en runtime (despues de registries listos), llamá:
+ * ParrillaBlockEntity.addRecipe(rawItem, cookedItem, ticks);
+ *
+ * Nota: no depende de tags - las recetas se registran explícitamente.
+ */
 public class ParrillaBlockEntity extends BlockEntity {
     public final ItemStackHandler inventory = new ItemStackHandler(9) {
         @Override
         protected int getStackLimit(int slot, ItemStack stack) {
-            return 64; // dejamos 64, aunque la inserción por click solo pone 1
+            return 64;
         }
 
         @Override
@@ -34,51 +45,14 @@ public class ParrillaBlockEntity extends BlockEntity {
         }
     };
 
-    // Progreso por slot y tiempo restante (en ticks)
     private final int[] cookProgress = new int[9];
 
-    /**
-     * Intenta insertar exactamente 1 unidad del stack en la primera ranura vacía.
-     * Devuelve true si se insertó y reduce el stack pasado en 1.
-     * Este método debe llamarse server-side.
-     */
-    public boolean tryInsertOne(ItemStack playerStack) {
-        if (playerStack.isEmpty()) return false;
-
-        for (int i = 0; i < inventory.getSlots(); i++) {
-            if (inventory.getStackInSlot(i).isEmpty()) {
-                // Creamos un ItemStack de 1 del mismo item y lo colocamos directamente
-                ItemStack toInsert = new ItemStack(playerStack.getItem(), 1);
-                inventory.setStackInSlot(i, toInsert);
-
-                // Removemos 1 del stack del jugador
-                playerStack.shrink(1);
-
-                // marcar y sincronizar
-                setChanged();
-                if (level != null && !level.isClientSide()) {
-                    level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
-                }
-                return true;
-            }
-        }
-        return false; // no hay ranuras vacías
-    }
-
-    // rotación usada por el renderer (no muta por llamada; usa gameTime)
-    public float getRenderingRotation() {
-        if (level == null) return 0f;
-        final float speed = 4.0f; // grados por tick (ajusta si querés)
-        long t = level.getGameTime();
-        return (t * speed) % 360f;
-    }
-
-    // Mapas configurables: qué item resulta y cuánto tarda (ticks)
+    // Mapas raw -> cooked y raw -> tiempo (ticks)
     private static final Map<Item, Item> COOK_RESULT = new HashMap<>();
     private static final Map<Item, Integer> COOK_TIME = new HashMap<>();
 
     static {
-        // Ejemplos con vanilla (ajustá o agregá tus items aquí).
+        // Recetas vanilla por defecto (puedes extender llamando addRecipe desde commonSetup)
         COOK_RESULT.put(Items.BEEF, Items.COOKED_BEEF);
         COOK_TIME.put(Items.BEEF, 200);
 
@@ -93,27 +67,92 @@ public class ParrillaBlockEntity extends BlockEntity {
 
         COOK_RESULT.put(Items.RABBIT, Items.COOKED_RABBIT);
         COOK_TIME.put(Items.RABBIT, 200);
+    }
 
-        // Si querés agregar tus items después, pon aquí:
-        // COOK_RESULT.put(ModItems.RAW_ARGENTUM_STEAK.get(), ModItems.COOKED_ARGENTUM_STEAK.get());
-        // COOK_TIME.put(ModItems.RAW_ARGENTUM_STEAK.get(), 300);
+    /**
+     * Añade una receta runtime: raw -> cooked en N ticks.
+     * Llamar desde commonSetup (o en tiempo de ejecución cuando las registries ya estén listas).
+     */
+    public static void addRecipe(Item raw, Item cooked, int ticks) {
+        if (raw == null || cooked == null) return;
+        COOK_RESULT.put(raw, cooked);
+        COOK_TIME.put(raw, ticks);
+    }
+
+    /**
+     * Comprueba si un Item es "grillable" (está en COOK_RESULT).
+     */
+    public static boolean isGrillable(Item item) {
+        return item != null && COOK_RESULT.containsKey(item);
+    }
+
+    /**
+     * intenta insertar 1 unidad del stack del player en la primera ranura vacía.
+     * Reduce la stack del jugador en 1 si succeed. Debe llamarse server-side.
+     */
+    public boolean tryInsertOne(ItemStack playerStack) {
+        if (playerStack.isEmpty()) return false;
+
+        for (int i = 0; i < inventory.getSlots(); i++) {
+            if (inventory.getStackInSlot(i).isEmpty()) {
+                ItemStack toInsert = new ItemStack(playerStack.getItem(), 1);
+                inventory.setStackInSlot(i, toInsert);
+                playerStack.shrink(1);
+
+                setChanged();
+                if (level != null && !level.isClientSide()) {
+                    level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
+                }
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // rotación para renderer
+    public float getRenderingRotation() {
+        if (level == null) return 0f;
+        final float speed = 4.0f; // grados por tick
+        long t = level.getGameTime();
+        return (t * speed) % 360f;
     }
 
     public ParrillaBlockEntity(BlockPos pos, BlockState blockState) {
         super(com.gremo.argentum.block.entity.ModBlockEntities.PARRILLA_BE.get(), pos, blockState);
     }
 
-    // Ticker que avanza la cocción cuando la parrilla está ON
+    /**
+     * Ticker del BE:
+     * - client: partículas y sonidos ambientales
+     * - server: avanza cocción y genera ItemEntity con impulso cuando termina
+     */
     public static void tick(Level level, BlockPos pos, BlockState state, ParrillaBlockEntity be) {
-        if (level.isClientSide()) return;
+        // CLIENT: partículas y sonido local
+        if (level.isClientSide()) {
+            if (state.getValue(com.gremo.argentum.block.custom.ParrillaBlock.ON)) {
+                if (level.random.nextInt(6) == 0) {
+                    double baseX = pos.getX() + 0.2 + level.random.nextDouble() * 0.6;
+                    double baseY = pos.getY() + 1.0;
+                    double baseZ = pos.getZ() + 0.2 + level.random.nextDouble() * 0.6;
 
-        boolean changed = false;
-        boolean on = state.getValue(com.gremo.argentum.block.custom.ParrillaBlock.ON);
+                    level.addParticle(ParticleTypes.SMOKE, baseX, baseY, baseZ, 0.0, 0.02 + level.random.nextDouble() * 0.02, 0.0);
 
-        if (!on) {
-            // si está apagada, no avanzamos
+                    if (level.random.nextInt(3) == 0) {
+                        level.addParticle(ParticleTypes.FLAME, baseX, baseY - 0.12, baseZ, 0.0, 0.01, 0.0);
+                    }
+                }
+                if (level.random.nextInt(200) == 0) {
+                    level.playLocalSound(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                            SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.6F, 1.0F, false);
+                }
+            }
             return;
         }
+
+        // SERVER: lógica de cocción
+        boolean changed = false;
+        boolean on = state.getValue(com.gremo.argentum.block.custom.ParrillaBlock.ON);
+        if (!on) return;
 
         for (int i = 0; i < be.inventory.getSlots(); i++) {
             ItemStack stack = be.inventory.getStackInSlot(i);
@@ -123,9 +162,7 @@ public class ParrillaBlockEntity extends BlockEntity {
             }
 
             Item item = stack.getItem();
-
             if (!COOK_RESULT.containsKey(item)) {
-                // item permitido por tag pero sin mapping de resultado: no cocinamos
                 be.cookProgress[i] = 0;
                 continue;
             }
@@ -134,31 +171,37 @@ public class ParrillaBlockEntity extends BlockEntity {
             be.cookProgress[i]++;
 
             if (be.cookProgress[i] >= needed) {
-                // cocción completada: reemplazamos UNA unidad por el resultado
                 Item resultItem = COOK_RESULT.get(item);
 
-                // reducimos una unidad del input
+                // reducimos input
                 stack.shrink(1);
 
-                // si slot quedó vacío, ponemos el resultado; si no quedó vacío intentamos añadir,
-                // si no es posible, soltamos el resultado en el mundo.
+                // creamos el output con impulso
+                ItemStack out = new ItemStack(resultItem, 1);
+                double dx = pos.getX() + 0.5;
+                double dy = pos.getY() + 1.0;
+                double dz = pos.getZ() + 0.5;
+
+                ItemEntity itemEntity = new ItemEntity(level, dx, dy, dz, out);
+                double vx = (level.random.nextDouble() - 0.5) * 0.08;
+                double vz = (level.random.nextDouble() - 0.5) * 0.08;
+                double vy = 0.12 + level.random.nextDouble() * 0.06;
+                itemEntity.setDeltaMovement(vx, vy, vz);
+                level.addFreshEntity(itemEntity);
+
+                // Sonido principal y sonido adicional para marcar el cambio crudo->cocido
+                level.playSound(null, pos, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.8F, 1.0F);
+
+                // actualizamos slot
                 if (stack.isEmpty()) {
-                    be.inventory.setStackInSlot(i, new ItemStack(resultItem, 1));
+                    be.inventory.setStackInSlot(i, ItemStack.EMPTY);
                 } else {
-                    ItemStack current = be.inventory.getStackInSlot(i);
-                    if (current.getItem() == resultItem && current.getCount() < current.getMaxStackSize()) {
-                        current.grow(1);
-                        be.inventory.setStackInSlot(i, current);
-                    } else {
-                        // En caso de conflicto, soltamos el resultado en el mundo
-                        Containers.dropItemStack(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, new ItemStack(resultItem, 1));
-                    }
+                    be.inventory.setStackInSlot(i, stack);
                 }
 
                 be.cookProgress[i] = 0;
                 changed = true;
 
-                // sincronizamos inmediatamente para evitar pérdida de datos en caso de break rápido
                 be.setChanged();
                 level.sendBlockUpdated(pos, state, state, 3);
             }

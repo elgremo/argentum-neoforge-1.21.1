@@ -50,7 +50,51 @@ public class Argentum {
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
-    private void commonSetup(FMLCommonSetupEvent event) {
+    private void commonSetup(final net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            // Ejemplos: reemplazá estos nombres por los tuyos reales
+            com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(
+                    ModItems.BIFE_CRUDO.get(),
+                    ModItems.BIFE_ASADO.get(),
+                    220
+            );
+
+            com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(
+                    ModItems.CHINCHULIN_CRUDO.get(),
+                    ModItems.CHINCHULIN_ASADO.get(),
+                    180
+            );
+
+            com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(
+                    ModItems.COSTILLA_CRUDA.get(),
+                    ModItems.COSTILLA_ASADA.get(),
+                    240
+            );
+
+            com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(
+                    ModItems.ENTRANA_CRUDA.get(),
+                    ModItems.ENTRANA_ASADA.get(),
+                    200
+            );
+
+            com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(
+                    ModItems.LOMO_CRUDO.get(),
+                    ModItems.LOMO_ASADO.get(),
+                    220
+            );
+
+            com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(
+                    ModItems.MATAMBRE_CRUDO.get(),
+                    ModItems.MATAMBRE_ASADO.get(),
+                    230
+            );
+
+            com.gremo.argentum.block.entity.ParrillaBlockEntity.addRecipe(
+                    ModItems.MOLLEJA_CRUDA.get(),
+                    ModItems.MOLLEJA_ASADA.get(),
+                    200
+            );
+        });
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {

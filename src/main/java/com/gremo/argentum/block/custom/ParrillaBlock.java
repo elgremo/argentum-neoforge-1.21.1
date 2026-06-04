@@ -3,10 +3,7 @@ package com.gremo.argentum.block.custom;
 import com.gremo.argentum.block.entity.ParrillaBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -38,10 +35,6 @@ public class ParrillaBlock extends BaseEntityBlock {
     private static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 7.0D, 16.0D);
 
     public static final MapCodec<ParrillaBlock> CODEC = simpleCodec(ParrillaBlock::new);
-
-    // Tag configurable (data pack): data/argentum/tags/items/grillable.json
-    private static final TagKey<net.minecraft.world.item.Item> GRILLABLE_TAG =
-            TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("argentum", "grillable"));
 
     public ParrillaBlock(Properties properties) {
         super(properties);
@@ -95,15 +88,11 @@ public class ParrillaBlock extends BaseEntityBlock {
         super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
-    /**
-     * Uso y comportamiento:
-     * - Shift + click: toggle ON/OFF
-     * - Click normal con item: solo acepta items que estén en el tag argentum:grillable.
-     *   Inserta exactamente 1 unidad en la celda correspondiente (3x3) si está vacía.
-     */
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
                                               Player player, InteractionHand hand, BlockHitResult hitResult) {
+
+        // 1) Toggle ON/OFF con Shift + Click
         if (player.isCrouching()) {
             if (!level.isClientSide()) {
                 boolean nowOn = !state.getValue(ON);
@@ -115,8 +104,12 @@ public class ParrillaBlock extends BaseEntityBlock {
         }
 
         ItemStack handStack = player.getItemInHand(hand);
-        player.sendSystemMessage(Component.literal("DEBUG item: " + handStack.getItem().toString()));
-        player.sendSystemMessage(Component.literal("DEBUG isInTag? " + handStack.is(GRILLABLE_TAG)));
+        if (handStack.isEmpty()) return ItemInteractionResult.SUCCESS;
+
+        // 2) AQUI ESTÁ EL CAMBIO: Usamos el método isGrillable del Entity en vez del TAG
+        if (!ParrillaBlockEntity.isGrillable(handStack.getItem())) {
+            return ItemInteractionResult.SUCCESS;
+        }
 
         if (!(level.getBlockEntity(pos) instanceof ParrillaBlockEntity parrilla)) {
             return ItemInteractionResult.SUCCESS;
@@ -124,24 +117,19 @@ public class ParrillaBlock extends BaseEntityBlock {
 
         if (!level.isClientSide()) {
             boolean inserted = parrilla.tryInsertOne(handStack);
-            // asegurarnos de que la mano se actualice si shrink no lo hizo por alguna razón
             player.setItemInHand(hand, handStack);
             if (inserted) {
                 level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
                 level.sendBlockUpdated(pos, state, state, 3);
-                return ItemInteractionResult.sidedSuccess(level.isClientSide());
-            } else {
-                return ItemInteractionResult.SUCCESS;
+                return ItemInteractionResult.sidedSuccess(false);
             }
         }
 
         return ItemInteractionResult.sidedSuccess(level.isClientSide());
     }
 
-
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        // Ajusta el path del ModBlockEntities si lo registraste en otro paquete
         return createTickerHelper(type, com.gremo.argentum.block.entity.ModBlockEntities.PARRILLA_BE.get(),
                 (lvl, pos, st, be) -> com.gremo.argentum.block.entity.ParrillaBlockEntity.tick(lvl, pos, st, (ParrillaBlockEntity) be));
     }
