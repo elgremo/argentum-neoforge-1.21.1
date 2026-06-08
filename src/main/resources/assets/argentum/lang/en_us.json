@@ -12,7 +12,7 @@
   "block.argentum.olla": "Olla",
 
   "tool.argentum.olla.tooltip": "Se puede usar para convertir un Aldeano o Fritar Comida",
-  "tool.argentum.parrilla.tooltip": "Se pueden Asar Carnes",
+  "tool.argentum.parrilla.tooltip": "Se puede usar para convertir un Aldeano o Asar Carnes",
 
   "item.argentum.baraja_sellada": "Baraja Sellada",
   "item.argentum.batata": "Batata",
@@ -21,6 +21,7 @@
   "item.argentum.bombilla": "Bombilla",
   "item.argentum.calabaza_mate": "Calabaza Mate",
   "item.argentum.carne_cortada_cruda": "Carne Cortada Cruda",
+  "item.argentum.carne_cortada_cocida": "Carne Cortada Cocida",
   "item.argentum.chinchulin_asado": "Chinchulin Asado",
   "item.argentum.chinchulin_crudo": "Chinchulin Crudo",
   "item.argentum.chorro_spawn_egg": "Chorro Spawn Egg",

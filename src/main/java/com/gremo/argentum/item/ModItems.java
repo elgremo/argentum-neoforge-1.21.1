@@ -5,14 +5,11 @@ import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.item.custom.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
+import net.minecraft.world.level.Level;
 import java.util.List;
 
 public class ModItems {
@@ -56,6 +53,16 @@ public class ModItems {
 
     public static final DeferredItem<Item> CARNE_CORTADA_CRUDA = ITEMS.register("carne_cortada_cruda",
             () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64) // o 64 según prefieras
+                    .food(new net.minecraft.world.food.FoodProperties.Builder()
+                            .nutrition(4)      // puntos de hambre que restaura
+                            .saturationModifier(0.3f)
+                            .build()
+                    )
+            ));
+
+    public static final DeferredItem<Item> CARNE_CORTADA_COCIDA = ITEMS.register("carne_cortada_cocida",
+            () -> new CocidoItem(new Item.Properties()
                     .stacksTo(64) // o 64 según prefieras
                     .food(new net.minecraft.world.food.FoodProperties.Builder()
                             .nutrition(4)      // puntos de hambre que restaura
@@ -285,12 +292,20 @@ public class ModItems {
     public static final DeferredItem<Item> CUADRO_ARGENTO = ITEMS.register("cuadro_argento",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> CUCHILLO = ITEMS.register("cuchillo",
-            () -> new Item(new Item.Properties()){
+    // Cuchillo como SwordItem (usa el Tier de piedra; tiene daño/velocidad de espada de piedra)
+    public static final DeferredItem<SwordItem> CUCHILLO = ITEMS.register("cuchillo",
+            () -> new SwordItem(Tiers.STONE, new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.cuchillo.tooltip"));
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+                }
+                // Mantener cuchillo tras crafting (remaining item)
+                public boolean hasCraftingRemainingItem(ItemStack stack) {
+                    return true;
+                }
+                public ItemStack getCraftingRemainingItem(ItemStack stack) {
+                    return stack.copy();
                 }
             });
 

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "argentum:carne_cortada_cruda"
+  },
+  "result": "argentum:carne_cortada_cocida",
+  "experience": 0.35,
+  "cookingtime": 200
+}

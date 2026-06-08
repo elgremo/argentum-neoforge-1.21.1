@@ -84,6 +84,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TORTAFRITA_CRUDA);
                         output.accept(ModItems.BATATA);
                         output.accept(ModItems.CARNE_CORTADA_CRUDA);
+                        output.accept(ModItems.CARNE_CORTADA_COCIDA);
                         output.accept(ModItems.DULCE_BATATA);
                         output.accept(ModItems.DULCE_MEMBRILLO);
                         output.accept(ModItems.FERNET);

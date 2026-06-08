@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "argentum:tapas_empanada" },
+    { "item": "argentum:carne_cortada_cocida" },
+    { "item": "minecraft:egg" }
+  ],
+  "result": {
+    "item": "argentum:empanada_cruda",
+    "count": 2
+  }
+}

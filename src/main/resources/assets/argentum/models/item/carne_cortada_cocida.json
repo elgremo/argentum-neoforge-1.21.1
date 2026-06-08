@@ -1,7 +1,7 @@
 {
 	"textures": {
-		"0": "argentum:item/carne_cortada_cruda",
-		"particle": "argentum:item/carne_cortada_cruda"
+		"0": "argentum:item/carne_cortada_cocida",
+		"particle": "argentum:item/carne_cortada_cocida"
 	},
 	"elements": [
 		{

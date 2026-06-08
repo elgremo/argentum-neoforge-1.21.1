@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:milk_bucket" },
+    { "item": "minecraft:milk_bucket" },
+    { "item": "minecraft:glass_bottle" },
+    { "item": "minecraft:glass_bottle" },
+    { "item": "minecraft:glass_bottle" },
+    { "item": "minecraft:glass_bottle" },
+    { "item": "minecraft:glass_bottle" },
+    { "item": "minecraft:glass_bottle" }
+  ],
+  "result": {
+    "item": "argentum:leche",
+    "count": 6
+  }
+}
