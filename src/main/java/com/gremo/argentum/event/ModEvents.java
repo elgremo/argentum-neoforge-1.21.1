@@ -38,6 +38,13 @@ public class ModEvents {
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 3),
                     new ItemStack(ModItems.BATATA.get(), 1), 4, 8, 0.05f));
+
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 6),
+                    new ItemStack(ModItems.MATE_LISTO_ARGENTO.get(), 1), 2, 8, 0.05f));
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 4),
+                    new ItemStack(ModItems.MATE_LISTO_AMARILLO.get(), 1), 2, 8, 0.05f));
         }
 
 
@@ -60,6 +67,16 @@ public class ModEvents {
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 5),
                     new ItemStack(ModItems.CUCHILLO.get(), 1), 2, 8, 0.05f));
+
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 32),
+                    new ItemStack(ModItems.LA_CUARTA_DISCO_MUSICA.get(), 1), 2, 8, 0.05f));
+            trades.get(3).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 32),
+                    new ItemStack(ModItems.MUCHACHOS_DISCO_MUSICA.get(), 1), 2, 8, 0.05f));
+            trades.get(4).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 2),
+                    new ItemStack(ModItems.FERNET.get(), 1), 2, 8, 0.05f));
         }
     }
 }
