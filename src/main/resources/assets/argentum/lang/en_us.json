@@ -180,6 +180,12 @@
 
   "tooltip.cuchillo.tooltip": "Usalo para conseguir carne especial de la vaca",
 
+  "item.argentum.muchachos_disco_musica": "Muchachos Disco de Musica",
+  "item.argentum.muchachos.disco_musica_desc": "Muchachos - La Mosca",
+  "item.argentum.la_cuarta_disco_musica": "La Cuarta Estrella Disco de Musica",
+  "item.argentum.la_cuarta.disco_musica_desc": "La Cuarta Estrella - Argentinos",
+
+
   "entity.minecraft.villager.argentum.vendedor": "Kevin",
   "entity.minecraft.villager.argentum.vendedorb": "Joni",
 

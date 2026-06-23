@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "argentum:item/la_cuarta_disco_musica"
+  }
+}

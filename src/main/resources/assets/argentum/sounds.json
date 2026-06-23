@@ -28,5 +28,21 @@
     "sounds":[
       "argentum:aldeano_step"
     ]
+  },
+  "muchachos": {
+    "sounds": [
+      {
+        "name": "argentum:muchachos",
+        "stream": true
+      }
+    ]
+  },
+  "la_cuarta": {
+    "sounds": [
+      {
+        "name": "argentum:la_cuarta",
+        "stream": true
+      }
+    ]
   }
 }

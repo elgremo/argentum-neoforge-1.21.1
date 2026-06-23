@@ -129,6 +129,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FICHA_CASINO_OTRA);
                         output.accept(ModItems.BARAJA_SELLADA);
                         output.accept(ModItems.BARAJA_SELLADA);
+                        output.accept(ModItems.MUCHACHOS_DISCO_MUSICA);
+                        output.accept(ModItems.LA_CUARTA_DISCO_MUSICA);
 
 // Cartas de Copa
                         output.accept(ModItems.CARTA_COPA_1);

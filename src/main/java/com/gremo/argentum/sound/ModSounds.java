@@ -1,9 +1,13 @@
 package com.gremo.argentum.sound;
 
 import com.gremo.argentum.Argentum;
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.item.JukeboxSong;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.util.DeferredSoundType;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -25,6 +29,17 @@ public class ModSounds {
     public static final DeferredSoundType ALDEANO_SONIDO = new DeferredSoundType(1f, 1f,
             ModSounds.ALDEANO_BREAK, ModSounds.ALDEANO_STEP, ModSounds.ALDEANO_PLACE,
             ModSounds.ALDEANO_HIT, ModSounds.ALDEANO_FALL);
+
+
+
+    public static final Supplier<SoundEvent> MUCHACHOS = registerSoundEvent("muchachos");
+    public static final ResourceKey<JukeboxSong> MUCHACHOS_KEY = createSong("muchachos");
+    public static final Supplier<SoundEvent> LA_CUARTA = registerSoundEvent("la_cuarta");
+    public static final ResourceKey<JukeboxSong> LA_CUARTA_KEY = createSong("la_cuarta");
+
+    private static ResourceKey<JukeboxSong> createSong(String name) {
+         return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, name));
+    }
 
 
     private static Supplier<SoundEvent> registerSoundEvent(String name) {

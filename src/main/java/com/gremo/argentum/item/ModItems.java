@@ -3,6 +3,7 @@ package com.gremo.argentum.item;
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.item.custom.*;
+import com.gremo.argentum.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -308,6 +309,13 @@ public class ModItems {
                     return stack.copy();
                 }
             });
+
+
+    public static final DeferredItem<Item> MUCHACHOS_DISCO_MUSICA = ITEMS.register("muchachos_disco_musica",
+            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.MUCHACHOS_KEY).stacksTo(1)));
+    public static final DeferredItem<Item> LA_CUARTA_DISCO_MUSICA = ITEMS.register("la_cuarta_disco_musica",
+            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.LA_CUARTA_KEY).stacksTo(1)));
+
 
     public static final DeferredItem<Item> DULCE_BATATA = ITEMS.register("dulce_batata",
             () -> new Item(new Item.Properties()));
