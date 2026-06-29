@@ -10,6 +10,7 @@
   "block.argentum.seis": "Seis",
   "block.argentum.parrilla": "Parrilla",
   "block.argentum.olla": "Olla",
+  "item.argentum.copa_mundo": "Copa del Mundo",
 
   "tool.argentum.olla.tooltip": "Se puede usar para convertir un Aldeano o Fritar Comida",
   "tool.argentum.parrilla.tooltip": "Se puede usar para convertir un Aldeano o Asar Carnes",
@@ -186,9 +187,14 @@
   "item.argentum.la_cuarta.disco_musica_desc": "La Cuarta Estrella - Argentinos",
 
 
+  "item.argentum.base_chestplate": "Camiseta",
+
+
+
   "entity.minecraft.villager.argentum.vendedor": "Kevin",
   "entity.minecraft.villager.argentum.vendedorb": "Joni",
 
   "creativetab.argentum.bala": "Mates Argentos",
-  "creativetab.argentum.casino": "Casino Argento"
+  "creativetab.argentum.casino": "Casino Argento",
+  "creativetab.argentum.equipo": "Equipos Argentos"
 }

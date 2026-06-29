@@ -10,7 +10,7 @@ import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.minecraft.world.level.Level;
+
 import java.util.List;
 
 public class ModItems {
@@ -315,6 +315,12 @@ public class ModItems {
             () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.MUCHACHOS_KEY).stacksTo(1)));
     public static final DeferredItem<Item> LA_CUARTA_DISCO_MUSICA = ITEMS.register("la_cuarta_disco_musica",
             () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.LA_CUARTA_KEY).stacksTo(1)));
+
+
+    public static final DeferredItem<Item> COPA_MUNDO = ITEMS.register("copa_mundo",
+            () -> new CopaMundoItem(
+                    new Item.Properties().rarity(Rarity.EPIC)
+            ));
 
 
     public static final DeferredItem<Item> DULCE_BATATA = ITEMS.register("dulce_batata",
@@ -869,6 +875,12 @@ public class ModItems {
 
     public static final DeferredItem<Item> YERBA_SEMILLA = ITEMS.register("yerba_semilla",
             () -> new ItemNameBlockItem(ModBlocks.YERBA_PLANTA.get(), new Item.Properties()));
+
+
+
+    public static final DeferredItem<ArmorItem> BASE_CHESTPLATE = ITEMS.register("base_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.BASE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(19))));
 
 
 

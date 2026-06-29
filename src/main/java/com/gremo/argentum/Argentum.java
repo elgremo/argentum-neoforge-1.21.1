@@ -6,7 +6,6 @@ import com.gremo.argentum.item.ModCreativeModeTabs;
 import com.gremo.argentum.item.ModItems;
 import com.gremo.argentum.sound.ModSounds;
 import com.gremo.argentum.villager.ModVillagers;
-import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -18,7 +17,6 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import com.gremo.argentum.block.entity.ModBlockEntities;
 
@@ -31,7 +29,6 @@ public class Argentum {
 
     public Argentum(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
-        modEventBus.addListener(this::addCreative);
 
         NeoForge.EVENT_BUS.register(this);
 
@@ -133,12 +130,6 @@ public class Argentum {
         });
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
-        }
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
-        }
-    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent

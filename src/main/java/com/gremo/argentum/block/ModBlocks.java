@@ -51,6 +51,7 @@ public static final DeferredBlock<Block> OLLA = registerBlock("olla",
                     .noOcclusion()
                     .sound(SoundType.NETHERITE_BLOCK)));
 
+
     public static final DeferredBlock<Block> YERBA_PLANTA = BLOCKS.register("yerba_planta",
         () -> new YerbaPlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
     public static final DeferredBlock<Block> TE_PLANTA = BLOCKS.register("te_planta",

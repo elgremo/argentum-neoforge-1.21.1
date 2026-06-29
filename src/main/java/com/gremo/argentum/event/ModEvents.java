@@ -76,7 +76,10 @@ public class ModEvents {
                     new ItemStack(ModItems.MUCHACHOS_DISCO_MUSICA.get(), 1), 2, 8, 0.05f));
             trades.get(4).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 2),
-                    new ItemStack(ModItems.FERNET.get(), 1), 2, 8, 0.05f));
+                    new ItemStack(ModItems.FERNET.get(), 1), 6, 20, 0.05f));
+            trades.get(4).add((entity, randomSource) -> new MerchantOffer(
+                    new ItemCost(Items.EMERALD, 2),
+                    new ItemStack(ModItems.COPA_MUNDO.get(), 1), 3, 20, 0.05f));
         }
     }
 }
