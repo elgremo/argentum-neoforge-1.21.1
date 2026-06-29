@@ -19,11 +19,35 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class ModArmorMaterials {
-    public static final Holder<ArmorMaterial> BASE_ARMOR_MATERIAL = register("base",
+    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA = register("camiseta_argentina",
             Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
                 attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);
-            }), 16, 2f, 0.1f, () -> ModItems.MATE.get());
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
+
+    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA_ALTERNATIVA = register("camiseta_argentina_alternativa",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,

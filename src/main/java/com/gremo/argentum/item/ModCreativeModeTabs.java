@@ -112,7 +112,6 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "mate_argento_tab"))
                     .title(Component.translatable("creativetab.argentum.casino"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.COPA_MUNDO);
                         output.accept(ModItems.CHORRO_SPAWN_EGG);
                         output.accept(ModBlocks.UNO);
                         output.accept(ModBlocks.DOS);
@@ -194,12 +193,14 @@ public class ModCreativeModeTabs {
 
 
     public static final Supplier<CreativeModeTab> EQUIPO_ARGENTO_TAB = CREATIVE_MODE_TAB.register("equipo_argento_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BASE_CHESTPLATE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.CAMISETA_ARGENTINA.get()))
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "casino_argento_tab"))
                     .title(Component.translatable("creativetab.argentum.equipo"))
                     .displayItems((itemDisplayParameters, output) -> {
 
-                        output.accept(ModItems.BASE_CHESTPLATE);
+                        output.accept(ModItems.COPA_MUNDO);
+                        output.accept(ModItems.CAMISETA_ARGENTINA);
+                        output.accept(ModItems.CAMISETA_ARGENTINA_ALTERNATIVA);
 
 
 

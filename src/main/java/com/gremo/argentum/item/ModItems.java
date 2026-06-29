@@ -878,9 +878,26 @@ public class ModItems {
 
 
 
-    public static final DeferredItem<ArmorItem> BASE_CHESTPLATE = ITEMS.register("base_chestplate",
-            () -> new ArmorItem(ModArmorMaterials.BASE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(19))));
+    public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA =
+            ITEMS.register("camiseta_argentina",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_ARGENTINA,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "argentina"
+                    ));
+    public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA_ALTERNATIVA =
+            ITEMS.register("camiseta_argentina_alternativa",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_ARGENTINA_ALTERNATIVA,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "argentina_alternativa"
+                    ));
 
 
 
