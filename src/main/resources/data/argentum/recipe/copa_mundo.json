@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " B ",
+    " L ",
+    " E "
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:gold_block"
+    },
+    "L": {
+      "item": "minecraft:gold_ingot"
+    },
+    "E": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "argentum:copa_mundo"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "argentum:camiseta_argentina_2022"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:camiseta_argentina"
+  }
+}

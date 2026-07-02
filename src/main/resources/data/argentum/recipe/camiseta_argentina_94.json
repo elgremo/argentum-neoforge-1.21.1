@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "argentum:camiseta_argentina_78"
+    },
+    {
+      "item": "argentum:copa_mundo"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:camiseta_argentina_94"
+  }
+}

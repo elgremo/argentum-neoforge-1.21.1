@@ -29,12 +29,40 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.CHESTPLATE, 9);
                 attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
+    public static final Holder<ArmorMaterial> CAMISETA_RIVER = register("camiseta_river",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
+    public static final Holder<ArmorMaterial> CAMISETA_BOCA = register("camiseta_boca",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
+    public static final Holder<ArmorMaterial> CAMISETA_INDEPENDIENTE = register("camiseta_independiente",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
+    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA_94 = register("camiseta_argentina_94",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
+    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA_78 = register("camiseta_argentina_78",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
+    public static final Holder<ArmorMaterial> CAMISETA_RACING = register("camiseta_racing",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
+    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA_2022 = register("camiseta_argentina_2022",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
 
 

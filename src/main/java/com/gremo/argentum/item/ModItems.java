@@ -899,7 +899,81 @@ public class ModItems {
                             "argentina_alternativa"
                     ));
 
+    public static final DeferredItem<RemeraItem> CAMISETA_RIVER =
+            ITEMS.register("camiseta_river",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_RIVER,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "river"
+                    ));
+    public static final DeferredItem<RemeraItem> CAMISETA_BOCA =
+            ITEMS.register("camiseta_boca",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_BOCA,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "boca"
+                    ));
 
+    public static final DeferredItem<RemeraItem> CAMISETA_INDEPENDIENTE =
+            ITEMS.register("camiseta_independiente",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_INDEPENDIENTE,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "independiente"
+                    ));
+    public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA_94 =
+            ITEMS.register("camiseta_argentina_94",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_ARGENTINA_94,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "argentina_94"
+                    ));
+    public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA_78 =
+            ITEMS.register("camiseta_argentina_78",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_ARGENTINA_78,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "argentina_78"
+                    ));
+    public static final DeferredItem<RemeraItem> CAMISETA_RACING =
+            ITEMS.register("camiseta_racing",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_RACING,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "racing"));
+
+
+    public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA_2022 =
+            ITEMS.register("camiseta_argentina_2022",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_ARGENTINA_2022,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "argentina_2022"
+                    ));
+
+    public static final DeferredItem<Item> CAMISETA = ITEMS.register("camiseta",
+            () -> new Item(new Item.Properties()));
 
 
 

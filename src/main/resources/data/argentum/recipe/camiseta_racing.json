@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "argentum:camiseta"
+    },
+    "C": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "B": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "pattern": [
+    "CSC",
+    "CBC",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:camiseta_racing"
+  }
+}

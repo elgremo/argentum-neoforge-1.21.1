@@ -187,8 +187,16 @@
   "item.argentum.la_cuarta.disco_musica_desc": "La Cuarta Estrella - Argentinos",
 
 
-  "item.argentum.camiseta_argentina": "Camiseta Argentina",
-  "item.argentum.camiseta_argentina_alternativa": "Camiseta Argentina Alternativa",
+  "item.argentum.camiseta_argentina": "Camiseta de Argentina",
+  "item.argentum.camiseta_argentina_alternativa": "Camiseta de Argentina Alternativa",
+  "item.argentum.camiseta_river": "Camiseta de River",
+  "item.argentum.camiseta_boca": "Camiseta de Boca",
+  "item.argentum.camiseta_independiente": "Camiseta de Independiente",
+  "item.argentum.camiseta_argentina_94": "Camiseta Argentina del 94",
+  "item.argentum.camiseta_argentina_78": "Camiseta Argentina del 78",
+  "item.argentum.camiseta_racing": "Camiseta de Racing",
+  "item.argentum.camiseta_argentina_2022": "Camiseta Argentina del 2022",
+  "item.argentum.camiseta": "Camiseta en Blanco",
 
 
 

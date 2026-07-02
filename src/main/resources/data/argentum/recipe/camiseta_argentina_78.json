@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "A": {
+      "item": "argentum:camiseta"
+    },
+    "M": {
+      "item": "argentum:copa_mundo"
+    },
+    "B": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "pattern": [
+    "CAC",
+    "CMC",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:camiseta_argentina_78"
+  }
+}

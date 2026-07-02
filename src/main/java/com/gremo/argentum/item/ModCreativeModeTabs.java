@@ -94,7 +94,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MEMBRILLO);
                         output.accept(ModItems.MEMBRILLO_SEMILLA);
                         output.accept(ModItems.PAN_RALLADO);
-                        output.accept(ModItems.PELOTA);
                         output.accept(ModItems.TAPAS_EMPANADA);
                         output.accept(ModItems.TAPAS_HOJALDRE);
                         output.accept(ModItems.TAZA);
@@ -199,8 +198,20 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ModItems.COPA_MUNDO);
+                        output.accept(ModItems.PELOTA);
+                        output.accept(ModItems.CAMISETA);
+                        output.accept(ModItems.CAMISETA_ARGENTINA_78);
+                        output.accept(ModItems.CAMISETA_ARGENTINA_94);
+                        output.accept(ModItems.CAMISETA_ARGENTINA_2022);
                         output.accept(ModItems.CAMISETA_ARGENTINA);
                         output.accept(ModItems.CAMISETA_ARGENTINA_ALTERNATIVA);
+                        output.accept(ModItems.CAMISETA_RIVER);
+                        output.accept(ModItems.CAMISETA_BOCA);
+                        output.accept(ModItems.CAMISETA_INDEPENDIENTE);
+                        output.accept(ModItems.CAMISETA_RACING);
+
+
+
 
 
 
