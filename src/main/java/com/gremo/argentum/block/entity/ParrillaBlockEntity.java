@@ -76,8 +76,6 @@ public class ParrillaBlockEntity extends BlockEntity {
         COOK_RESULT.put(Items.SALMON, Items.COOKED_SALMON);
         COOK_TIME.put(Items.SALMON, 200);
 
-        //COOK_RESULT.put(ModItems.MATAMBRE_CRUDO, ModItems.MATAMBRE_ASADO);
-        //COOK_TIME.put(ModItems.MATAMBRE_CRUDO, 200);
     }
 
     /**

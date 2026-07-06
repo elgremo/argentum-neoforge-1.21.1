@@ -6,13 +6,13 @@
   },
   "perspectives": {
     "gui": {
-      "parent": "argentum:item/termo_2d"
+      "parent": "argentum:item/termo_3d"
     },
     "ground": {
-      "parent": "argentum:item/termo_2d"
+      "parent": "argentum:item/termo_3d"
     },
     "fixed": {
-      "parent": "argentum:item/termo_2d"
+      "parent": "argentum:item/termo_3d"
     }
   }
 }
