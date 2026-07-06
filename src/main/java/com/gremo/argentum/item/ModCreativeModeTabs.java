@@ -52,6 +52,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TE);
                         output.accept(ModItems.TE_SEMILLA);
                         output.accept(ModItems.DULCE_LECHE);
+                        output.accept(ModItems.ALFAJOR);
                         output.accept(ModItems.LECHE);
                         output.accept(ModItems.BIFE_ASADO);
                         output.accept(ModItems.CHINCHULIN_ASADO);

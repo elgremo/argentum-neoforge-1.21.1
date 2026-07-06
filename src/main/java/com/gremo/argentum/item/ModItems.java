@@ -18,6 +18,17 @@ public class ModItems {
 
     public static final DeferredItem<Item> ACEITE = ITEMS.register("aceite",
             () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> ALFAJOR = ITEMS.register("alfajor",
+            () -> new CocidoItem(new Item.Properties()
+                    .stacksTo(64) // o 64 según prefieras
+                    .food(new net.minecraft.world.food.FoodProperties.Builder()
+                            .nutrition(4)      // puntos de hambre que restaura
+                            .saturationModifier(0.3f)
+                            .build()
+                    )
+            ));
+
     public static final DeferredItem<Item> BALA = ITEMS.register("bala",
             () -> new Item(new Item.Properties()));
 

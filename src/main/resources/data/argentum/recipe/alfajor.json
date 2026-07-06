@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "argentum:manteca"
+    },
+    {
+      "item": "argentum:harina"
+    },
+    {
+      "item": "argentum:dulce_leche"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:alfajor"
+  }
+}

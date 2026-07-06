@@ -1,5 +1,6 @@
 package com.gremo.argentum.block.entity;
 
+import com.gremo.argentum.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.minecraft.world.Containers;
 import net.minecraft.sounds.SoundEvents;
@@ -67,6 +69,15 @@ public class ParrillaBlockEntity extends BlockEntity {
 
         COOK_RESULT.put(Items.RABBIT, Items.COOKED_RABBIT);
         COOK_TIME.put(Items.RABBIT, 200);
+
+        COOK_RESULT.put(Items.COD, Items.COOKED_COD);
+        COOK_TIME.put(Items.COD, 200);
+
+        COOK_RESULT.put(Items.SALMON, Items.COOKED_SALMON);
+        COOK_TIME.put(Items.SALMON, 200);
+
+        //COOK_RESULT.put(ModItems.MATAMBRE_CRUDO, ModItems.MATAMBRE_ASADO);
+        //COOK_TIME.put(ModItems.MATAMBRE_CRUDO, 200);
     }
 
     /**
