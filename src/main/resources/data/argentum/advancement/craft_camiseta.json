@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:root",
+  "display": {
+    "icon": {
+      "id": "argentum:camiseta"
+    },
+    "x": 1,
+    "y": 4,
+    "title": "¡Preparando el Equipo!",
+    "description": "Crafteá tu primera Camiseta de Fulbo.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:camiseta"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

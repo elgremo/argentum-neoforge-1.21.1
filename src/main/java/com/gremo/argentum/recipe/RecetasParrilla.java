@@ -2,6 +2,12 @@ package com.gremo.argentum.recipe;
 
 import com.gremo.argentum.block.entity.ParrillaBlockEntity;
 import com.gremo.argentum.item.ModItems;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.neoforged.fml.common.Mod;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RecetasParrilla {
 
@@ -48,5 +54,19 @@ public class RecetasParrilla {
                 ModItems.MOLLEJA_ASADA.get(),
                 200
         );
+
+        ParrillaBlockEntity.addRecipe(
+                Items.WATER_BUCKET,
+                ModItems.SAL.get(),
+                Items.BUCKET,
+                60
+        );
+
+        ParrillaBlockEntity.addRecipe(
+                ModItems.CHORIZO_PARRILLERO_CRUDO.get(),
+                ModItems.CHORIZO_PARRILLERO_COCIDO.get(),
+                130
+        );
     }
+
 }

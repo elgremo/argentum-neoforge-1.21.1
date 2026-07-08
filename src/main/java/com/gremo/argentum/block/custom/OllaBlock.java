@@ -15,6 +15,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -31,7 +32,10 @@ import java.util.List;
 
 public class OllaBlock extends BaseEntityBlock {
     public static final BooleanProperty ON = BooleanProperty.create("on");
-    private static final VoxelShape SHAPE = net.minecraft.world.level.block.Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D);
+    private static final VoxelShape SHAPE = Block.box(
+            2, 0, 2,
+            14, 7, 14
+    );
 
     public static final MapCodec<OllaBlock> CODEC = simpleCodec(OllaBlock::new);
 

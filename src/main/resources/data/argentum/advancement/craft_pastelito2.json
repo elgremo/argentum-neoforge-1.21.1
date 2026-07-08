@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_olla",
+  "display": {
+    "icon": {
+      "id": "argentum:pastelito_batata_frito"
+    },
+    "x": 3,
+    "y": 1,
+    "title": "Esta LLoviendo",
+    "description": "Crafteá tu primer Pastelito de Batata.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:pastelito_batata_frito"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_copa",
+  "display": {
+    "icon": {
+      "id": "argentum:camiseta_argentina_94"
+    },
+    "x": 1,
+    "y": 4,
+    "title": "El Diego!",
+    "description": "Consigue tu Remera del Diego.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:camiseta_argentina_94"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_mate",
+  "display": {
+    "icon": {
+      "id": "argentum:mate_listo_blanco"
+    },
+    "x": 1,
+    "y": 2,
+    "title": "Mas Facil",
+    "description": "Crafteá tu primer Mate Listo.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:mate_listo_blanco"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

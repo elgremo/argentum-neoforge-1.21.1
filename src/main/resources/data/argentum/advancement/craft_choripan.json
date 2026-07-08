@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_chori_parrilla",
+  "display": {
+    "icon": {
+      "id": "argentum:choripan"
+    },
+    "x": 2,
+    "y": 3,
+    "title": "¡Asador Experto!",
+    "description": "Consigue tu primer Choripan.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:choripan"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

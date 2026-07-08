@@ -2,6 +2,11 @@
   "item.argentum.aceite": "Aceite",
   "item.argentum.alfajor": "Alfajor",
   "item.argentum.bala": "Bala",
+  "item.argentum.sal": "Sal",
+  "item.argentum.chorizo_parrillero_crudo": "Chori Parrillero Crudo",
+  "item.argentum.chorizo_parrillero_cocido": "Chori Parrillero Asado",
+  "item.argentum.choripan": "Choripan",
+  "item.argentum.tripin_cerdo": "Tripin de Cerdo",
 
   "block.argentum.uno": "Uno",
   "block.argentum.dos": "Dos",
@@ -180,7 +185,7 @@
   "painting.argentum.tres_estrellas.title": "Las Tres Estrellas",
   "painting.argentum.tres_estrellas.author": "Gremo",
 
-  "tooltip.cuchillo.tooltip": "Usalo para conseguir carne especial de la vaca",
+  "tooltip.cuchillo.tooltip": "Usalo para conseguir carne especial de la vaca o del Cerdo",
 
   "item.argentum.muchachos_disco_musica": "Muchachos Disco de Musica",
   "item.argentum.muchachos.disco_musica_desc": "Muchachos - La Mosca",

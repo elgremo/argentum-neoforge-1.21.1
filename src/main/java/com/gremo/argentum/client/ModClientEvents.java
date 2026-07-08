@@ -26,7 +26,7 @@ public class ModClientEvents {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.BATATA_PLANTA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.MEMBRILLO_PLANTA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.TE_PLANTA.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.OLLA.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.OLLA.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PARRILLA.get(), RenderType.cutout());
             BlockEntityRenderers.register(ModBlockEntities.OLLA_BE.get(), OllaBlockEntityRenderer::new);
             BlockEntityRenderers.register(ModBlockEntities.PARRILLA_BE.get(), ParrillaBlockEntityRenderer::new);

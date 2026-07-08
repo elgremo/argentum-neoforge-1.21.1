@@ -70,11 +70,16 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PASTELITO_MEMBRILLO_FRITO);
                         output.accept(ModItems.TORTAFRITA);
                         output.accept(ModItems.BIFE_CRUDO);
+                        output.accept(ModItems.CHORIZO_PARRILLERO_CRUDO);
+                        output.accept(ModItems.CHORIZO_PARRILLERO_COCIDO);
+                        output.accept(ModItems.CHORIPAN);
+                        output.accept(ModItems.SAL);
                         output.accept(ModItems.CHINCHULIN_CRUDO);
                         output.accept(ModItems.CHURRO_CRUDO);
                         output.accept(ModItems.COSTILLA_CRUDA);
                         output.accept(ModItems.EMPANADA_CRUDA);
                         output.accept(ModItems.ENTRANA_CRUDA);
+                        output.accept(ModItems.TRIPIN_CERDO);
                         output.accept(ModItems.LOMO_CRUDO);
                         output.accept(ModItems.MATAMBRE_CRUDO);
                         output.accept(ModItems.MEDIALUNA_CRUDA);

@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:root",
+  "display": {
+    "icon": {
+      "id": "argentum:mate"
+    },
+    "x": 1,
+    "y": 1,
+    "title": "¡Unos Mates!",
+    "description": "Crafteá tu primer Mate.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:mate"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

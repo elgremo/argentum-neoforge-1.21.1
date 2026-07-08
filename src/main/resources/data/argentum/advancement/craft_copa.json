@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_camiseta",
+  "display": {
+    "icon": {
+      "id": "argentum:copa_mundo"
+    },
+    "x": 1,
+    "y": 4,
+    "title": "Una de Muchas",
+    "description": "Consigue tu Primera Copa del Mundo.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:copa_mundo"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

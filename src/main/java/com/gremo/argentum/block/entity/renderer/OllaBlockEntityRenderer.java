@@ -28,7 +28,7 @@ public class OllaBlockEntityRenderer implements BlockEntityRenderer<OllaBlockEnt
 
         if (!stack.isEmpty()) {
             pPoseStack.pushPose();
-            pPoseStack.translate(0.5f, 0.85f, 0.5f); // Ajusta la altura según tu modelo
+            pPoseStack.translate(0.5f, 0.25f, 0.5f); // Ajusta la altura según tu modelo
             pPoseStack.scale(0.5f, 0.5f, 0.5f);
             pPoseStack.mulPose(Axis.YP.rotationDegrees(pBlockEntity.getRenderingRotation()));
 

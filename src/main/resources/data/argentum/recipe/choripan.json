@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "argentum:chorizo_parrillero_cocido"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:choripan"
+  }
+}

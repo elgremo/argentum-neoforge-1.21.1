@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:root",
+  "display": {
+    "icon": {
+      "id": "argentum:olla"
+    },
+    "x": 3,
+    "y": 1,
+    "title": "¡¿Esta LLoviendo?!",
+    "description": "Crafteá tu primera Olla.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:olla"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Cow;
+import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -21,7 +22,6 @@ public class CuchilloDrops {
 
     @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {
-        if (!(event.getEntity() instanceof Cow cow)) return;
 
         Entity attacker = event.getSource().getEntity();
         if (!(attacker instanceof Player player)) return;
@@ -29,97 +29,145 @@ public class CuchilloDrops {
         ItemStack weapon = player.getMainHandItem();
         if (!weapon.is(ModItems.CUCHILLO.get())) return;
 
-        // --- Obtener nivel de Saqueo (Looting) leyendo NBT de forma robusta ---
-        int lootingLevel = 0;
+        int lootingLevel = getLootingLevel(weapon);
 
-        CompoundTag tag = getTagSafe(weapon);
-        if (tag != null) {
-            // En items encantados suele usarse la lista "Enchantments"
-            if (tag.contains("Enchantments")) {
-                ListTag enchList = tag.getList("Enchantments", 10); // 10 = TAG_Compound
-                for (int i = 0; i < enchList.size(); i++) {
-                    CompoundTag ench = enchList.getCompound(i);
-                    String id = ench.getString("id"); // p.ej. "minecraft:looting"
-                    if ("minecraft:looting".equals(id)) {
-                        lootingLevel = ench.getInt("lvl");
-                        break;
-                    }
-                }
+        // ---------------- VACA ----------------
+
+        if (event.getEntity() instanceof Cow cow) {
+
+            int grasaAmount = 1;
+            if (lootingLevel > 0) {
+                grasaAmount += cow.getRandom().nextInt(lootingLevel + 1);
             }
 
-            // También puede estar en "StoredEnchantments" (libros)
-            if (lootingLevel == 0 && tag.contains("StoredEnchantments")) {
-                ListTag st = tag.getList("StoredEnchantments", 10);
-                for (int i = 0; i < st.size(); i++) {
-                    CompoundTag ench = st.getCompound(i);
-                    String id = ench.getString("id");
-                    if ("minecraft:looting".equals(id)) {
-                        lootingLevel = ench.getInt("lvl");
-                        break;
-                    }
-                }
+            addDrop(event, cow, new ItemStack(ModItems.GRASA.get(), grasaAmount));
+
+            float chance = Math.min(0.95f, 0.5f + lootingLevel * 0.1f);
+
+            checkAndAddDrop(event, cow, ModItems.MOLLEJA_CRUDA.get(), chance, lootingLevel);
+            checkAndAddDrop(event, cow, ModItems.MATAMBRE_CRUDO.get(), chance, lootingLevel);
+            checkAndAddDrop(event, cow, ModItems.LOMO_CRUDO.get(), chance, lootingLevel);
+            checkAndAddDrop(event, cow, ModItems.ENTRANA_CRUDA.get(), chance, lootingLevel);
+            checkAndAddDrop(event, cow, ModItems.COSTILLA_CRUDA.get(), chance, lootingLevel);
+            checkAndAddDrop(event, cow, ModItems.CHINCHULIN_CRUDO.get(), chance, lootingLevel);
+            checkAndAddDrop(event, cow, ModItems.BIFE_CRUDO.get(), chance, lootingLevel);
+
+            return;
+        }
+
+        // ---------------- CERDO ----------------
+
+        if (event.getEntity() instanceof Pig pig) {
+
+            int grasa = 1;
+            int tripin = 1;
+
+            if (lootingLevel > 0) {
+                grasa += pig.getRandom().nextInt(lootingLevel + 1);
+                tripin += pig.getRandom().nextInt(lootingLevel + 1);
             }
+
+            addDrop(event, pig, new ItemStack(ModItems.GRASA.get(), grasa));
+            addDrop(event, pig, new ItemStack(ModItems.TRIPIN_CERDO.get(), tripin));
         }
-
-        // --- Lógica de drops ---
-        // 1) GRASA siempre (con posible bonus por Saqueo)
-        int grasaAmount = 1;
-        if (lootingLevel > 0) {
-            grasaAmount += cow.getRandom().nextInt(lootingLevel + 1);
-        }
-        addDrop(event, cow, new ItemStack(ModItems.GRASA.get(), grasaAmount));
-
-        // 2) Resto de cortes: base 50% chance, +0.1 por nivel de saqueo (cap 95%)
-        float baseChance = 0.5f;
-        float chance = Math.min(0.95f, baseChance + lootingLevel * 0.1f);
-
-        checkAndAddDrop(event, cow, ModItems.MOLLEJA_CRUDA.get(), chance, lootingLevel);
-        checkAndAddDrop(event, cow, ModItems.MATAMBRE_CRUDO.get(), chance, lootingLevel);
-        checkAndAddDrop(event, cow, ModItems.LOMO_CRUDO.get(), chance, lootingLevel);
-        checkAndAddDrop(event, cow, ModItems.ENTRANA_CRUDA.get(), chance, lootingLevel);
-        checkAndAddDrop(event, cow, ModItems.COSTILLA_CRUDA.get(), chance, lootingLevel);
-        checkAndAddDrop(event, cow, ModItems.CHINCHULIN_CRUDO.get(), chance, lootingLevel);
-        checkAndAddDrop(event, cow, ModItems.BIFE_CRUDO.get(), chance, lootingLevel);
     }
 
-    private static void checkAndAddDrop(LivingDropsEvent event, Cow cow, Item item, float chance, int lootingLevel) {
-        if (cow.getRandom().nextFloat() > chance) return;
+    private static void checkAndAddDrop(LivingDropsEvent event, Entity entity, Item item, float chance, int lootingLevel) {
 
-        int extraBound = 2 + Math.max(0, lootingLevel); // >=2
-        int amount = 1 + cow.getRandom().nextInt(extraBound); // 1 .. extraBound
-        addDrop(event, cow, new ItemStack(item, amount));
+        if (entity.getRandom().nextFloat() > chance) return;
+
+        int amount = 1 + entity.getRandom().nextInt(2 + Math.max(0, lootingLevel));
+
+        addDrop(event, entity, new ItemStack(item, amount));
     }
 
-    private static void addDrop(LivingDropsEvent event, Cow cow, ItemStack stack) {
+    private static void addDrop(LivingDropsEvent event, Entity entity, ItemStack stack) {
+
         ItemEntity itemEntity = new ItemEntity(
-                cow.level(),
-                cow.getX(),
-                cow.getY(),
-                cow.getZ(),
+                entity.level(),
+                entity.getX(),
+                entity.getY(),
+                entity.getZ(),
                 stack
         );
+
         event.getDrops().add(itemEntity);
     }
 
-    // Helper robusto para obtener el CompoundTag del ItemStack intentando distintos nombres de método
-    private static CompoundTag getTagSafe(ItemStack stack) {
-        try {
-            String[] candidateNames = new String[] {
-                    "getTag", "tag", "getNbt", "getOrCreateTag", "getOrCreateNbt"
-            };
-            for (String name : candidateNames) {
-                try {
-                    Method m = ItemStack.class.getMethod(name);
-                    Object res = m.invoke(stack);
-                    if (res instanceof CompoundTag) return (CompoundTag) res;
-                } catch (NoSuchMethodException ignored) {
-                    // probar siguiente nombre
-                } catch (Throwable ignored) {
-                    // no queremos que un fallo aquí rompa todo; probamos siguientes opciones
+    private static int getLootingLevel(ItemStack stack) {
+
+        int lootingLevel = 0;
+
+        CompoundTag tag = getTagSafe(stack);
+
+        if (tag != null) {
+
+            if (tag.contains("Enchantments")) {
+
+                ListTag enchList = tag.getList("Enchantments", 10);
+
+                for (int i = 0; i < enchList.size(); i++) {
+
+                    CompoundTag ench = enchList.getCompound(i);
+
+                    if ("minecraft:looting".equals(ench.getString("id"))) {
+
+                        lootingLevel = ench.getInt("lvl");
+                        break;
+                    }
                 }
             }
+
+            if (lootingLevel == 0 && tag.contains("StoredEnchantments")) {
+
+                ListTag enchList = tag.getList("StoredEnchantments", 10);
+
+                for (int i = 0; i < enchList.size(); i++) {
+
+                    CompoundTag ench = enchList.getCompound(i);
+
+                    if ("minecraft:looting".equals(ench.getString("id"))) {
+
+                        lootingLevel = ench.getInt("lvl");
+                        break;
+                    }
+                }
+            }
+        }
+
+        return lootingLevel;
+    }
+
+    private static CompoundTag getTagSafe(ItemStack stack) {
+
+        try {
+
+            String[] methods = {
+                    "getTag",
+                    "tag",
+                    "getNbt",
+                    "getOrCreateTag",
+                    "getOrCreateNbt"
+            };
+
+            for (String method : methods) {
+
+                try {
+
+                    Method m = ItemStack.class.getMethod(method);
+
+                    Object obj = m.invoke(stack);
+
+                    if (obj instanceof CompoundTag compound)
+                        return compound;
+
+                } catch (Throwable ignored) {
+                }
+            }
+
         } catch (Throwable ignored) {
         }
+
         return null;
     }
 }

@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_olla",
+  "display": {
+    "icon": {
+      "id": "argentum:churro_frito"
+    },
+    "x": 3,
+    "y": 1,
+    "title": "Nunca viene mal un Churro",
+    "description": "Crafteá tu primer Churro.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:churro_frito"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

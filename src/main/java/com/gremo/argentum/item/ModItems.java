@@ -23,11 +23,42 @@ public class ModItems {
             () -> new CocidoItem(new Item.Properties()
                     .stacksTo(64) // o 64 según prefieras
                     .food(new net.minecraft.world.food.FoodProperties.Builder()
-                            .nutrition(4)      // puntos de hambre que restaura
+                            .nutrition(6)      // puntos de hambre que restaura
+                            .saturationModifier(0.5f)
+                            .build()
+                    )
+            ));
+
+    public static final DeferredItem<Item> CHORIZO_PARRILLERO_CRUDO = ITEMS.register("chorizo_parrillero_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64) // o 64 según prefieras
+                    .food(new net.minecraft.world.food.FoodProperties.Builder()
+                            .nutrition(1)      // puntos de hambre que restaura
                             .saturationModifier(0.3f)
                             .build()
                     )
             ));
+    public static final DeferredItem<Item> CHORIZO_PARRILLERO_COCIDO = ITEMS.register("chorizo_parrillero_cocido",
+            () -> new CocidoItem(new Item.Properties()
+                    .stacksTo(64) // o 64 según prefieras
+                    .food(new net.minecraft.world.food.FoodProperties.Builder()
+                            .nutrition(6)      // puntos de hambre que restaura
+                            .saturationModifier(0.5f)
+                            .build()
+                    )
+            ));
+    public static final DeferredItem<Item> CHORIPAN = ITEMS.register("choripan",
+            () -> new CocidoItem(new Item.Properties()
+                    .stacksTo(64) // o 64 según prefieras
+                    .food(new net.minecraft.world.food.FoodProperties.Builder()
+                            .nutrition(10)      // puntos de hambre que restaura
+                            .saturationModifier(0.7f)
+                            .build()
+                    )
+            ));
+
+    public static final DeferredItem<Item> SAL = ITEMS.register("sal",
+            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> BALA = ITEMS.register("bala",
             () -> new Item(new Item.Properties()));
@@ -306,7 +337,7 @@ public class ModItems {
 
     // Cuchillo como SwordItem (usa el Tier de piedra; tiene daño/velocidad de espada de piedra)
     public static final DeferredItem<SwordItem> CUCHILLO = ITEMS.register("cuchillo",
-            () -> new SwordItem(Tiers.STONE, new Item.Properties()) {
+            () -> new SwordItem(Tiers.IRON, new Item.Properties()) {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.cuchillo.tooltip"));
@@ -879,6 +910,15 @@ public class ModItems {
                             .saturationModifier(0.3f)
                             .build()
                     )
+            ));
+
+    public static final DeferredItem<Item> TRIPIN_CERDO = ITEMS.register("tripin_cerdo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(1)
+                            .saturationModifier(0.1f)
+                            .build())
             ));
 
     public static final DeferredItem<Item> YERBA = ITEMS.register("yerba",

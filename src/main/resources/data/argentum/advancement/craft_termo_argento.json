@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_mate",
+  "display": {
+    "icon": {
+      "id": "argentum:termo_argento"
+    },
+    "x": 1,
+    "y": 2,
+    "title": "¡Set Completo!",
+    "description": "Crafteá tu primer Termo Argento.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:termo_argento"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

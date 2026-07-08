@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "argentum:tripin_cerdo"
+    },
+    {
+      "item": "argentum:sal"
+    },
+    {
+      "item": "argentum:grasa"
+    },
+    {
+      "item": "argentum:carne_cortada_cruda"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:chorizo_parrillero_crudo"
+  }
+}

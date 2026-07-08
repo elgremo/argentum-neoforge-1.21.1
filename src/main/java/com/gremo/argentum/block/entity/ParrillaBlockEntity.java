@@ -52,6 +52,7 @@ public class ParrillaBlockEntity extends BlockEntity {
     // Mapas raw -> cooked y raw -> tiempo (ticks)
     private static final Map<Item, Item> COOK_RESULT = new HashMap<>();
     private static final Map<Item, Integer> COOK_TIME = new HashMap<>();
+    private static final Map<Item, Item> BYPRODUCT = new HashMap<>();
 
     static {
         // Recetas vanilla por defecto (puedes extender llamando addRecipe desde commonSetup)
@@ -86,6 +87,16 @@ public class ParrillaBlockEntity extends BlockEntity {
         if (raw == null || cooked == null) return;
         COOK_RESULT.put(raw, cooked);
         COOK_TIME.put(raw, ticks);
+    }
+    public static void addRecipe(Item raw, Item cooked, Item byproduct, int ticks) {
+        if (raw == null || cooked == null) return;
+
+        COOK_RESULT.put(raw, cooked);
+        COOK_TIME.put(raw, ticks);
+
+        if (byproduct != null) {
+            BYPRODUCT.put(raw, byproduct);
+        }
     }
 
     /**
@@ -185,18 +196,26 @@ public class ParrillaBlockEntity extends BlockEntity {
                 // reducimos input
                 stack.shrink(1);
 
-                // creamos el output con impulso
-                ItemStack out = new ItemStack(resultItem, 1);
                 double dx = pos.getX() + 0.5;
                 double dy = pos.getY() + 1.0;
                 double dz = pos.getZ() + 0.5;
 
-                ItemEntity itemEntity = new ItemEntity(level, dx, dy, dz, out);
                 double vx = (level.random.nextDouble() - 0.5) * 0.08;
                 double vz = (level.random.nextDouble() - 0.5) * 0.08;
                 double vy = 0.12 + level.random.nextDouble() * 0.06;
-                itemEntity.setDeltaMovement(vx, vy, vz);
-                level.addFreshEntity(itemEntity);
+
+                // Resultado principal
+                ItemEntity resultEntity = new ItemEntity(level, dx, dy, dz, new ItemStack(resultItem));
+                resultEntity.setDeltaMovement(vx, vy, vz);
+                level.addFreshEntity(resultEntity);
+
+                // Subproducto (si existe)
+                Item byproduct = BYPRODUCT.get(item);
+                if (byproduct != null) {
+                    ItemEntity byproductEntity = new ItemEntity(level, dx, dy, dz, new ItemStack(byproduct));
+                    byproductEntity.setDeltaMovement(-vx, vy, -vz);
+                    level.addFreshEntity(byproductEntity);
+                }
 
                 // Sonido principal y sonido adicional para marcar el cambio crudo->cocido
                 level.playSound(null, pos, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 0.8F, 1.0F);

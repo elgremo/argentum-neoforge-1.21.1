@@ -1,6 +1,7 @@
 package com.gremo.argentum.event;
 
 import com.gremo.argentum.Argentum;
+import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.item.ModItems;
 import com.gremo.argentum.villager.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;

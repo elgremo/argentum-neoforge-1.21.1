@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_diego",
+  "display": {
+    "icon": {
+      "id": "argentum:camiseta_argentina_alternativa"
+    },
+    "x": 1,
+    "y": 4,
+    "title": "La alternancia",
+    "description": "No estaba tan Fea",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:camiseta_argentina_alternativa"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

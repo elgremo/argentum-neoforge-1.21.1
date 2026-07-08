@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_bife",
+  "display": {
+    "icon": {
+      "id": "argentum:chorizo_parrillero_cocido"
+    },
+    "x": 2,
+    "y": 2,
+    "title": "Se viene el Chori de Cancha?",
+    "description": "Asa tu primer Chori.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:chorizo_parrillero_cocido"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

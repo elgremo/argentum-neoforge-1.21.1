@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:craft_parrilla",
+  "display": {
+    "icon": {
+      "id": "argentum:bife_asado"
+    },
+    "x": 2,
+    "y": 2,
+    "title": "¡Empezando el Asado!",
+    "description": "Asa tu primer Bife.",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:bife_asado"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

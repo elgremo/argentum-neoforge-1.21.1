@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:root",
+  "display": {
+    "icon": {
+      "id": "argentum:parrilla"
+    },
+    "x": 2,
+    "y": 1,
+    "title": "¡Pinto el Asado!",
+    "description": "Crafteá tu primera Parrilla.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_mate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "argentum:parrilla"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
