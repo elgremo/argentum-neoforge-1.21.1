@@ -176,6 +176,8 @@
   "block.argentum.membrillo_planta":"Planta de Membrillo",
   "block.argentum.batata_planta":"Planta de Batata",
 
+  "message.argentum.need_termo": "Necesitás un termo en la otra mano para tomar mate",
+
   "painting.argentum.iguazu.title": "Iguazu",
   "painting.argentum.iguazu.author": "Gremo",
   "painting.argentum.islas_malvinas.title": "Las Islas Malvinas",
@@ -203,7 +205,7 @@
   "item.argentum.camiseta_racing": "Camiseta de Racing",
   "item.argentum.camiseta_argentina_2022": "Camiseta Argentina del 2022",
   "item.argentum.camiseta": "Camiseta en Blanco",
-
+  "item.argentum.camiseta_diego": "Camiseta del Diego contra los Piratas",
 
 
   "entity.minecraft.villager.argentum.vendedor": "Kevin",

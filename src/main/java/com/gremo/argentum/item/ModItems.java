@@ -950,6 +950,17 @@ public class ModItems {
                             "argentina_alternativa"
                     ));
 
+    public static final DeferredItem<RemeraItem> CAMISETA_DIEGO =
+            ITEMS.register("camiseta_diego",
+                    () -> new RemeraItem(
+                            ModArmorMaterials.CAMISETA_DIEGO,
+                            ArmorItem.Type.CHESTPLATE,
+                            new Item.Properties().durability(
+                                    ArmorItem.Type.CHESTPLATE.getDurability(19)
+                            ),
+                            "diego"
+                    ));
+
     public static final DeferredItem<RemeraItem> CAMISETA_RIVER =
             ITEMS.register("camiseta_river",
                     () -> new RemeraItem(

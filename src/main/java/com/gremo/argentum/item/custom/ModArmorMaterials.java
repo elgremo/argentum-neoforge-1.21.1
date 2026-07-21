@@ -64,7 +64,10 @@ public class ModArmorMaterials {
                 attribute.put(ArmorItem.Type.CHESTPLATE, 9);
                 attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
-
+    public static final Holder<ArmorMaterial> CAMISETA_DIEGO = register("camiseta_diego",
+            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
+                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
+                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
 
 
 

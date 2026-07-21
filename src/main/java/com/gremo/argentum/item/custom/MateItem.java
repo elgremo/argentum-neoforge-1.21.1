@@ -1,6 +1,8 @@
 package com.gremo.argentum.item.custom;
 
 import com.gremo.argentum.item.ModItems;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -38,6 +40,14 @@ public class MateItem extends Item {
                 && (termoStack.getItem() == ModItems.TERMO.get() || termoStack.getItem() == ModItems.TERMO_ARGENTO.get());
 
         if (!hasValidTermo) {
+            if (!world.isClientSide) {
+                player.displayClientMessage(
+                        Component.translatable("message.argentum.need_termo")
+                                .withStyle(ChatFormatting.RED),
+                        true
+                );
+            }
+
             return InteractionResultHolder.fail(player.getItemInHand(hand));
         }
 

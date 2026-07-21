@@ -208,6 +208,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CAMISETA);
                         output.accept(ModItems.CAMISETA_ARGENTINA_78);
                         output.accept(ModItems.CAMISETA_ARGENTINA_94);
+                        output.accept(ModItems.CAMISETA_DIEGO);
                         output.accept(ModItems.CAMISETA_ARGENTINA_2022);
                         output.accept(ModItems.CAMISETA_ARGENTINA);
                         output.accept(ModItems.CAMISETA_ARGENTINA_ALTERNATIVA);
