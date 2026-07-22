@@ -97,8 +97,11 @@
   "item.argentum.termo_argento_3d": "Termo Argento 3d",
   "item.argentum.tortafrita": "Tortafrita",
   "item.argentum.tortafrita_cruda": "Tortafrita Cruda",
-  "item.argentum.yerba": "Yerba",
+
+  "item.argentum.hoja_yerba_mate_fresca": "Hojas de Yerba Mate Frescas",
+  "item.argentum.yerba_mate_seca": "Hojas de Yerba Mate Ahumadas",
   "item.argentum.yerba_semilla": "Yerba Semilla",
+  "item.argentum.paquete_yerba_mate": "Paquete de Yerba Mate",
 
   "item.argentum.carta_comodin": "Comodín",
   "item.argentum.carta_copa_1": "1 de Copa",

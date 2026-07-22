@@ -921,12 +921,18 @@ public class ModItems {
                             .build())
             ));
 
-    public static final DeferredItem<Item> YERBA = ITEMS.register("yerba",
-            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> YERBA_SEMILLA = ITEMS.register("yerba_semilla",
             () -> new ItemNameBlockItem(ModBlocks.YERBA_PLANTA.get(), new Item.Properties()));
 
+    public static final DeferredItem<Item> YERBA = ITEMS.register("hoja_yerba_mate_fresca",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> YERBA_AHUMADA = ITEMS.register("yerba_mate_seca",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> PAQUETE_YERBA = ITEMS.register("paquete_yerba_mate",
+            () -> new Item(new Item.Properties()));
 
 
     public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA =

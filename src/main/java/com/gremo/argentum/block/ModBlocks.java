@@ -53,11 +53,17 @@ public static final DeferredBlock<Block> OLLA = registerBlock("olla",
 
 
     public static final DeferredBlock<Block> YERBA_PLANTA = BLOCKS.register("yerba_planta",
-        () -> new YerbaPlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
+            () -> new YerbaCropBlock(BlockBehaviour.Properties.of()
+                    .strength(0.0f)
+                    .noOcclusion()
+                    .sound(SoundType.CROP)));
+
     public static final DeferredBlock<Block> TE_PLANTA = BLOCKS.register("te_planta",
             () -> new TePlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
+
     public static final DeferredBlock<Block> MEMBRILLO_PLANTA = BLOCKS.register("membrillo_planta",
             () -> new MembrilloPlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
+
     public static final DeferredBlock<Block> BATATA_PLANTA = BLOCKS.register("batata_planta",
             () -> new BatataPlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
 

@@ -45,6 +45,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MATE_LISTO_VIOLETA);
                         output.accept(ModItems.BOMBILLA);
                         output.accept(ModItems.YERBA);
+                        output.accept(ModItems.YERBA_AHUMADA);
+                        output.accept(ModItems.PAQUETE_YERBA);
                         output.accept(ModItems.YERBA_SEMILLA);
                         output.accept(ModItems.CALABAZA_MATE);
                         output.accept(ModItems.SAQUITO_MATECOCIDO);
