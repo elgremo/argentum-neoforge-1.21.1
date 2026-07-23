@@ -21,7 +21,10 @@ public class ModBlockEntities {
     // Nueva entidad para la olla
     public static final Supplier<BlockEntityType<OllaBlockEntity>> OLLA_BE =
             BLOCK_ENTITIES.register("olla_be", () -> BlockEntityType.Builder.of(
-                    OllaBlockEntity::new, ModBlocks.OLLA.get()).build(null));
+                    OllaBlockEntity::new,
+                    ModBlocks.OLLA.get(),
+                    ModBlocks.OLLA_FOGATA.get()
+            ).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

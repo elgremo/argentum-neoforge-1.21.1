@@ -45,10 +45,17 @@ public class ModBlocks {
                     .strength(1f)
                     .noOcclusion()
                     .sound(SoundType.NETHERITE_BLOCK)));
-public static final DeferredBlock<Block> OLLA = registerBlock("olla",
+    public static final DeferredBlock<Block> OLLA = registerBlock("olla",
             () -> new OllaBlock(BlockBehaviour.Properties.of()
                     .strength(1f)
                     .noOcclusion()
+                    .sound(SoundType.NETHERITE_BLOCK)));
+
+    public static final DeferredBlock<Block> OLLA_FOGATA = BLOCKS.register("olla_fogata",
+            () -> new OllaFogataBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .lightLevel(state -> 13)
                     .sound(SoundType.NETHERITE_BLOCK)));
 
 
