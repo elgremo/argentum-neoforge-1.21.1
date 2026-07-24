@@ -2,6 +2,7 @@ package com.gremo.argentum;
 
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.entity.ModEntities;
+import com.gremo.argentum.event.*;
 import com.gremo.argentum.item.ModCreativeModeTabs;
 import com.gremo.argentum.item.ModItems;
 import com.gremo.argentum.recipe.RecetasOlla;
@@ -32,7 +33,11 @@ public class Argentum {
     public Argentum(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
 
-        NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.addListener(CraftingEvents::onCraft);
+        NeoForge.EVENT_BUS.addListener(CuchilloDrops::onLivingDrops);
+        NeoForge.EVENT_BUS.addListener(SunflowerExtractEvent::onRightClickBlock);
+        NeoForge.EVENT_BUS.addListener(ModEvents::addCustomTrades);
+        NeoForge.EVENT_BUS.addListener(CampfireEvents::onRightClickBlock);
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);

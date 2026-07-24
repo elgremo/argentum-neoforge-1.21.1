@@ -58,6 +58,35 @@ public class ModBlocks {
                     .lightLevel(state -> 13)
                     .sound(SoundType.NETHERITE_BLOCK)));
 
+    public static final DeferredBlock<Block> PAVA_FOGATA_VACIA = BLOCKS.register("pava_fogata_vacia",
+            () -> new PavaFogataBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .randomTicks()
+                    .lightLevel(state -> 13)
+                    .sound(SoundType.NETHERITE_BLOCK)));
+    public static final DeferredBlock<Block> PAVA_FOGATA_LLENA = BLOCKS.register("pava_fogata_llena",
+            () -> new PavaFogataBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .randomTicks()
+                    .lightLevel(state -> 13)
+                    .sound(SoundType.NETHERITE_BLOCK)));
+    public static final DeferredBlock<Block> PAVA_FOGATA_CALENTANDO = BLOCKS.register("pava_fogata_calentando",
+            () -> new PavaFogataBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .randomTicks()
+                    .lightLevel(state -> 13)
+                    .sound(SoundType.NETHERITE_BLOCK)));
+    public static final DeferredBlock<Block> PAVA_FOGATA_CALIENTE = BLOCKS.register("pava_fogata_caliente",
+            () -> new PavaFogataBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .randomTicks()
+                    .lightLevel(state -> 13)
+                    .sound(SoundType.NETHERITE_BLOCK)));
+
 
     public static final DeferredBlock<Block> YERBA_PLANTA = BLOCKS.register("yerba_planta",
             () -> new YerbaCropBlock(BlockBehaviour.Properties.of()

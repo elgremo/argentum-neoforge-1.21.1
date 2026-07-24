@@ -7,7 +7,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -33,13 +32,23 @@ public class MateItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-        InteractionHand otherHand = hand == InteractionHand.MAIN_HAND ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND;
-        ItemStack termoStack = player.getItemInHand(otherHand);
 
-        boolean hasValidTermo = termoStack != null && !termoStack.isEmpty()
-                && (termoStack.getItem() == ModItems.TERMO.get() || termoStack.getItem() == ModItems.TERMO_ARGENTO.get());
+        InteractionHand otherHand = hand == InteractionHand.MAIN_HAND
+                ? InteractionHand.OFF_HAND
+                : InteractionHand.MAIN_HAND;
 
-        if (!hasValidTermo) {
+        ItemStack waterStack = player.getItemInHand(otherHand);
+
+        boolean hasValidWater =
+                !waterStack.isEmpty() &&
+                        (
+                                waterStack.is(ModItems.PAVA_CALIENTE.get()) ||
+                                        waterStack.is(ModItems.TERMO.get()) ||
+                                        waterStack.is(ModItems.TERMO_ARGENTO.get())
+                        );
+
+        if (!hasValidWater) {
+
             if (!world.isClientSide) {
                 player.displayClientMessage(
                         Component.translatable("message.argentum.need_termo")
@@ -57,37 +66,102 @@ public class MateItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity entity) {
-        // NO llamar a super.finishUsingItem(...) para evitar que el item se consuma.
-        if (entity instanceof Player player) {
-            if (!world.isClientSide) {
-                // Aplicamos alimentación manualmente: igual stats que el bife vanilla
-                // Nutrition 8, saturation 0.8f
-                player.getFoodData().eat(8, 0.8f);
 
-                // Desgastar el TERMO en la otra mano (si existe y es válido)
-                InteractionHand usedHand = player.getUsedItemHand();
-                InteractionHand otherHand = usedHand == InteractionHand.MAIN_HAND ? InteractionHand.OFF_HAND : InteractionHand.MAIN_HAND;
-                ItemStack termoStack = player.getItemInHand(otherHand);
-
-                if (termoStack != null && !termoStack.isEmpty()
-                        && (termoStack.getItem() == ModItems.TERMO.get() || termoStack.getItem() == ModItems.TERMO_ARGENTO.get())) {
-
-                    termoStack.hurtAndBreak(1, player,
-                            otherHand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-
-                    // Evitamos que quede un termo "roto" en la mano y que dropee
-                    if (termoStack.getMaxDamage() > 0 && termoStack.getDamageValue() >= termoStack.getMaxDamage()) {
-                        termoStack.setCount(0);
-                    }
-                }
-            }
-
-            // Sonido de beber en cliente y servidor
-            world.playSound(null, entity.getX(), entity.getY(), entity.getZ(),
-                    SoundEvents.GENERIC_DRINK, SoundSource.PLAYERS, 1.0f, 1.0f);
+        if (!(entity instanceof Player player)) {
+            return stack;
         }
 
-        // Retornamos el mismo stack sin modificar su cantidad ni durabilidad (el mate NO se rompe)
+        if (!world.isClientSide) {
+
+            // Alimentar jugador
+            player.getFoodData().eat(8, 0.8f);
+
+            InteractionHand usedHand = player.getUsedItemHand();
+            InteractionHand otherHand = usedHand == InteractionHand.MAIN_HAND
+                    ? InteractionHand.OFF_HAND
+                    : InteractionHand.MAIN_HAND;
+
+            ItemStack waterStack = player.getItemInHand(otherHand);
+
+            // Consumir un uso del agua
+            int waterDamage = waterStack.getDamageValue() + 1;
+            waterStack.setDamageValue(waterDamage);
+
+            if (waterDamage >= waterStack.getMaxDamage()) {
+
+                if (waterStack.is(ModItems.PAVA_CALIENTE.get())) {
+
+                    player.setItemInHand(otherHand,
+                            new ItemStack(ModItems.PAVA.get()));
+
+                    player.displayClientMessage(
+                            Component.translatable("message.argentum.pava_empty"),
+                            true
+                    );
+
+                } else if (waterStack.is(ModItems.TERMO.get())) {
+
+                    player.setItemInHand(otherHand,
+                            new ItemStack(ModItems.TERMO_VACIO.get()));
+
+                    player.displayClientMessage(
+                            Component.translatable("message.argentum.termo_empty"),
+                            true
+                    );
+
+                } else if (waterStack.is(ModItems.TERMO_ARGENTO.get())) {
+
+                    player.setItemInHand(otherHand,
+                            new ItemStack(ModItems.TERMO_ARGENTO_VACIO.get()));
+
+                    player.displayClientMessage(
+                            Component.translatable("message.argentum.termo_argento_empty"),
+                            true
+                    );
+                }
+            }
+        }
+
+        // Consumir una cebada del mate
+        int mateDamage = stack.getDamageValue() + 1;
+
+        if (mateDamage >= stack.getMaxDamage()) {
+
+            stack = new ItemStack(ModItems.MATE_VACIO.get());
+
+            player.displayClientMessage(
+                    Component.translatable("message.argentum.mate_washed"),
+                    true
+            );
+
+        } else {
+            stack.setDamageValue(mateDamage);
+        }
+
+        world.playSound(
+                null,
+                entity.getX(),
+                entity.getY(),
+                entity.getZ(),
+                SoundEvents.GENERIC_DRINK,
+                SoundSource.PLAYERS,
+                1.0F,
+                1.0F
+        );
+
         return stack;
+    }
+
+    @Override
+    public boolean isBarVisible(ItemStack stack) {
+        return stack.getDamageValue() > 0;
+    }
+    @Override
+    public int getBarWidth(ItemStack stack) {
+        return Math.round(13.0F - (float) stack.getDamageValue() * 13.0F / (float) stack.getMaxDamage());
+    }
+    @Override
+    public int getBarColor(ItemStack stack) {
+        return 0x3BA7FF;
     }
 }

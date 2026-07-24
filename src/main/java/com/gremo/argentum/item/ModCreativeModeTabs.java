@@ -24,8 +24,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.OLLA);
                         output.accept(ModBlocks.PARRILLA);
                         output.accept(ModItems.MATE);
+                        output.accept(ModItems.MATE_VACIO);
+                        output.accept(ModItems.PAVA);
+                        output.accept(ModItems.PAVA_CALIENTE);
                         output.accept(ModItems.TERMO);
+                        output.accept(ModItems.TERMO_VACIO);
                         output.accept(ModItems.TERMO_ARGENTO);
+                        output.accept(ModItems.TERMO_ARGENTO_VACIO);
                         output.accept(ModItems.MATE_LISTO_AMARILLO);
                         output.accept(ModItems.MATE_LISTO_ARGENTO);
                         output.accept(ModItems.MATE_LISTO_AZUL);
@@ -46,7 +51,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BOMBILLA);
                         output.accept(ModItems.YERBA);
                         output.accept(ModItems.YERBA_AHUMADA);
-                        output.accept(ModItems.PAQUETE_YERBA);
+                        output.accept(ModItems.PAQUETE_YERBA_MATE);
                         output.accept(ModItems.YERBA_SEMILLA);
                         output.accept(ModItems.CALABAZA_MATE);
                         output.accept(ModItems.SAQUITO_MATECOCIDO);

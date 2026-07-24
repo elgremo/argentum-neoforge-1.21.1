@@ -500,12 +500,16 @@ public class ModItems {
     public static final DeferredItem<Item> MATE = ITEMS.register("mate",
             () -> new MateItem(new Item.Properties()
                     .stacksTo(1)
-                    .food(new net.minecraft.world.food.FoodProperties.Builder()
+                    .durability(5)
+                    .food(new FoodProperties.Builder()
                             .nutrition(8)
                             .saturationModifier(0.8f)
                             .build())
             )
     );
+
+    public static final DeferredItem<Item> MATE_VACIO = ITEMS.register("mate_vacio",
+            () -> new Item(new Item.Properties()));
 
 
     public static final DeferredItem<Item> MATE_LISTO_AMARILLO = ITEMS.register("mate_listo_amarillo",
@@ -877,18 +881,29 @@ public class ModItems {
     public static final DeferredItem<Item> TE_SEMILLA = ITEMS.register("te_semilla",
             () -> new ItemNameBlockItem(ModBlocks.TE_PLANTA.get(), new Item.Properties()));
 
+
+
     public static final DeferredItem<Item> TERMO = ITEMS.register("termo",
-            () -> new Item(new Item.Properties()
+            () -> new TermoItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(10) // también 10 usos (ajustá si querés otra durabilidad)
+                    .durability(14)
+            )
+    );
+    public static final DeferredItem<Item> TERMO_VACIO = ITEMS.register("termo_vacio",
+            () -> new TermoVacioItem(new Item.Properties()
+                    .stacksTo(1)
             )
     );
 
-
     public static final DeferredItem<Item> TERMO_ARGENTO = ITEMS.register("termo_argento",
-            () -> new Item(new Item.Properties()
+            () -> new TermoArgentoItem(new Item.Properties()
                     .stacksTo(1)
-                    .durability(15) // también 10 usos (ajustá si querés otra durabilidad)
+                    .durability(20)
+            )
+    );
+    public static final DeferredItem<Item> TERMO_ARGENTO_VACIO = ITEMS.register("termo_argento_vacio",
+            () -> new TermoArgentoVacioItem(new Item.Properties()
+                    .stacksTo(1)
             )
     );
 
@@ -931,8 +946,23 @@ public class ModItems {
     public static final DeferredItem<Item> YERBA_AHUMADA = ITEMS.register("yerba_mate_seca",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> PAQUETE_YERBA = ITEMS.register("paquete_yerba_mate",
-            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> PAQUETE_YERBA_MATE = ITEMS.register("paquete_yerba_mate",
+
+            () -> new PaqueteYerbaMateItem(
+                    new Item.Properties()
+                            // Minecraft consume 2 puntos de durabilidad por uso en el crafting remaining item.
+                            // Se usa 12 para obtener 6 usos reales.
+                            .durability(12)
+                            .stacksTo(1)
+            ));
+
+    public static final DeferredItem<Item> PAVA = ITEMS.register("pava",
+            () -> new PavaItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> PAVA_CALIENTE = ITEMS.register("pava_caliente",
+            () -> new PavaCalienteItem(new Item.Properties()
+                    .durability(3)));
+
 
 
     public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA =

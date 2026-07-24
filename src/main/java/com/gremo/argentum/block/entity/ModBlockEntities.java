@@ -26,6 +26,15 @@ public class ModBlockEntities {
                     ModBlocks.OLLA_FOGATA.get()
             ).build(null));
 
+    public static final Supplier<BlockEntityType<PavaFogataBlockEntity>> PAVA_FOGATA =
+            BLOCK_ENTITIES.register("pava_fogata", () -> BlockEntityType.Builder.of(
+                    PavaFogataBlockEntity::new,
+                    ModBlocks.PAVA_FOGATA_VACIA.get(),
+                    ModBlocks.PAVA_FOGATA_LLENA.get(),
+                    ModBlocks.PAVA_FOGATA_CALENTANDO.get(),
+                    ModBlocks.PAVA_FOGATA_CALIENTE.get()
+            ).build(null));
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

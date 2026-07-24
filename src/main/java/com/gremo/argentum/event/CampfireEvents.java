@@ -29,11 +29,6 @@ public class CampfireEvents {
         InteractionHand hand = event.getHand();
         ItemStack stack = event.getEntity().getItemInHand(hand);
 
-        // ¿Tiene una olla?
-        if (!stack.is(ModBlocks.OLLA.get().asItem())) {
-            return;
-        }
-
         BlockPos campfirePos = event.getPos();
         BlockState state = level.getBlockState(campfirePos);
 
@@ -47,19 +42,45 @@ public class CampfireEvents {
             return;
         }
 
-        // Reemplazar la fogata
-        level.setBlock(
-                campfirePos,
-                ModBlocks.OLLA_FOGATA.get().defaultBlockState(),
-                3
-        );
+        // =========================
+        // OLLA
+        // =========================
+        if (stack.is(ModBlocks.OLLA.get().asItem())) {
 
-        if (!event.getEntity().getAbilities().instabuild) {
-            stack.shrink(1);
+            level.setBlock(
+                    campfirePos,
+                    ModBlocks.OLLA_FOGATA.get().defaultBlockState(),
+                    3
+            );
+
+            if (!event.getEntity().getAbilities().instabuild) {
+                stack.shrink(1);
+            }
+
+            event.setCancellationResult(InteractionResult.SUCCESS);
+            event.setCanceled(true);
+            return;
         }
 
-        event.setCancellationResult(InteractionResult.SUCCESS);
-        event.setCanceled(true);
+        // =========================
+        // PAVA
+        // =========================
+        if (stack.is(ModItems.PAVA.get())) {
+
+            level.setBlock(
+                    campfirePos,
+                    ModBlocks.PAVA_FOGATA_VACIA.get().defaultBlockState(),
+                    3
+            );
+
+            if (!event.getEntity().getAbilities().instabuild) {
+                stack.shrink(1);
+            }
+
+            event.setCancellationResult(InteractionResult.SUCCESS);
+            event.setCanceled(true);
+            return;
+        }
     }
 
 

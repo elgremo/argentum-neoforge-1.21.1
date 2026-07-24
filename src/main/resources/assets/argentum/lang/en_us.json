@@ -16,6 +16,10 @@
   "block.argentum.seis": "Seis",
   "block.argentum.parrilla": "Parrilla",
   "block.argentum.olla": "Olla",
+
+  "item.argentum.pava": "Pava",
+  "item.argentum.pava_caliente": "Pava Caliente",
+
   "item.argentum.copa_mundo": "Copa del Mundo",
 
   "tool.argentum.olla.tooltip": "Se puede usar para convertir un Aldeano o Fritar Comida",
@@ -62,7 +66,7 @@
   "item.argentum.matambre_asado": "Matambre Asado",
   "item.argentum.matambre_crudo": "Matambre Crudo",
   "item.argentum.mate": "Mate",
-  "item.argentum.mate_3d": "Mate 3d",
+  "item.argentum.mate_vacio": "Mate sin Yerba",
   "item.argentum.mazo": "Mazo",
   "item.argentum.medialuna_cocinada": "Medialuna Cocinada",
   "item.argentum.medialuna_cruda": "Medialuna Cruda",
@@ -91,17 +95,28 @@
   "item.argentum.taza_de_te": "Taza De Te",
   "item.argentum.te": "Te",
   "item.argentum.te_semilla": "Te Semilla",
+
+
   "item.argentum.termo": "Termo",
-  "item.argentum.termo_3d": "Termo 3d",
+  "item.argentum.termo_vacio": "Termo Vacio",
   "item.argentum.termo_argento": "Termo Argento",
-  "item.argentum.termo_argento_3d": "Termo Argento 3d",
+  "item.argentum.termo_argento_vacio": "Termo Argento Vacio",
+
   "item.argentum.tortafrita": "Tortafrita",
   "item.argentum.tortafrita_cruda": "Tortafrita Cruda",
+
 
   "item.argentum.hoja_yerba_mate_fresca": "Hojas de Yerba Mate Frescas",
   "item.argentum.yerba_mate_seca": "Hojas de Yerba Mate Ahumadas",
   "item.argentum.yerba_semilla": "Yerba Semilla",
   "item.argentum.paquete_yerba_mate": "Paquete de Yerba Mate",
+
+
+  "message.argentum.mate_washed": "La yerba se lavó.",
+  "message.argentum.pava_empty": "La pava se quedó sin agua.",
+  "message.argentum.termo_empty": "El termo se quedó sin agua.",
+  "message.argentum.termo_argento_empty": "El Termo Argento se quedó sin agua.",
+
 
   "item.argentum.carta_comodin": "Comodín",
   "item.argentum.carta_copa_1": "1 de Copa",
