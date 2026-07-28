@@ -4,7 +4,7 @@
   "ingredients": [
     { "item": "minecraft:white_wool" },
     { "item": "minecraft:string" },
-    { "item": "argentum:yerba" }
+    { "item": "argentum:yerba_mate_seca" }
   ],
   "result": {
     "id": "argentum:saquito_matecocido",

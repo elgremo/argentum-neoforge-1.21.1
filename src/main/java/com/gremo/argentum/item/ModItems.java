@@ -19,6 +19,9 @@ public class ModItems {
     public static final DeferredItem<Item> ACEITE = ITEMS.register("aceite",
             () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> BALDE_MOSTO = ITEMS.register("balde_mosto",
+            () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> ALFAJOR = ITEMS.register("alfajor",
             () -> new CocidoItem(new Item.Properties()
                     .stacksTo(64) // o 64 según prefieras
@@ -874,6 +877,14 @@ public class ModItems {
                             .build())
             )
     );
+
+    public static final DeferredItem<Item> UVA_SEMILLA = ITEMS.register("uva_semilla",
+            () -> new ItemNameBlockItem(ModBlocks.VID.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> UVA = ITEMS.register("uva",
+            () -> new Item(new Item.Properties()));
+
+
 
     public static final DeferredItem<Item> TE = ITEMS.register("te",
             () -> new Item(new Item.Properties()));

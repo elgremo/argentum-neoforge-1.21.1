@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "crop": "argentum:block/te_planta_stage5"
+    "cross": "argentum:block/te_planta_stage5"
   }
 }

@@ -5,6 +5,7 @@ import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.block.entity.ModBlockEntities;
 import com.gremo.argentum.block.entity.renderer.OllaBlockEntityRenderer;
 import com.gremo.argentum.block.entity.renderer.ParrillaBlockEntityRenderer;
+import com.gremo.argentum.block.entity.renderer.PrensaMostoBlockEntityRenderer;
 import com.gremo.argentum.client.renderer.PelotaRenderer;
 import com.gremo.argentum.entity.ModEntities;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -31,6 +32,8 @@ public class ModClientEvents {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PARRILLA.get(), RenderType.cutout());
             BlockEntityRenderers.register(ModBlockEntities.OLLA_BE.get(), OllaBlockEntityRenderer::new);
             BlockEntityRenderers.register(ModBlockEntities.PARRILLA_BE.get(), ParrillaBlockEntityRenderer::new);
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.PRENSA_MOSTO.get(), RenderType.cutout());
+            BlockEntityRenderers.register(ModBlockEntities.MOSTO_BE.get(), PrensaMostoBlockEntityRenderer::new);
             EntityRenderers.register(ModEntities.PELOTA.get(), PelotaRenderer::new);
         });
     }

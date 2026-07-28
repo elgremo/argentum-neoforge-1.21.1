@@ -18,6 +18,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("parrilla_be", () -> BlockEntityType.Builder.of(
                     ParrillaBlockEntity::new, ModBlocks.PARRILLA.get()).build(null));
 
+    public static final Supplier<BlockEntityType<PrensaMostoBlockEntity>> MOSTO_BE =
+            BLOCK_ENTITIES.register("mosto_be", () -> BlockEntityType.Builder.of(
+                    PrensaMostoBlockEntity::new, ModBlocks.PRENSA_MOSTO.get()).build(null));
+
     // Nueva entidad para la olla
     public static final Supplier<BlockEntityType<OllaBlockEntity>> OLLA_BE =
             BLOCK_ENTITIES.register("olla_be", () -> BlockEntityType.Builder.of(

@@ -30,8 +30,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.util.TriState;
 import net.minecraft.world.level.block.*;
 
-public class YerbaCropBlock extends DoublePlantBlock implements BonemealableBlock {
-    public static final MapCodec<PitcherCropBlock> CODEC = simpleCodec(PitcherCropBlock::new);
+public class VidPlanta extends DoublePlantBlock implements BonemealableBlock {
+    public static final MapCodec<VidPlanta> CODEC =
+            simpleCodec(VidPlanta::new);
     public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
     public static final int MAX_AGE = 7;
     private static final int DOUBLE_PLANT_AGE_INTERSECTION = 4;
@@ -43,11 +44,11 @@ public class YerbaCropBlock extends DoublePlantBlock implements BonemealableBloc
     private static final VoxelShape[] UPPER_SHAPE_BY_AGE;
     private static final VoxelShape[] LOWER_SHAPE_BY_AGE;
 
-    public MapCodec<PitcherCropBlock> codec() {
+    public MapCodec<VidPlanta> codec() {
         return CODEC;
     }
 
-    public YerbaCropBlock(BlockBehaviour.Properties properties) {
+    public VidPlanta(BlockBehaviour.Properties properties) {
         super(properties);
 
         this.registerDefaultState(
@@ -121,20 +122,29 @@ public class YerbaCropBlock extends DoublePlantBlock implements BonemealableBloc
     }
 
     private void grow(ServerLevel level, BlockState state, BlockPos pos, int ageIncrement) {
-        int i = Math.min((Integer)state.getValue(AGE) + ageIncrement, 7);
-        if (this.canGrow(level, pos, state, i)) {
-            BlockState blockstate = (BlockState)state.setValue(AGE, i);
-            level.setBlock(pos, blockstate, 2);
-            if (isDouble(i)) {
-                level.setBlock(pos.above(), (BlockState)blockstate.setValue(HALF, DoubleBlockHalf.UPPER), 3);
-            }
+        BlockPos lowerPos = state.getValue(HALF) == DoubleBlockHalf.LOWER ? pos : pos.below();
+        BlockPos upperPos = lowerPos.above();
+
+        int age = Math.min(level.getBlockState(lowerPos).getValue(AGE) + ageIncrement, MAX_AGE);
+
+        BlockState lower = level.getBlockState(lowerPos)
+                .setValue(AGE, age);
+
+        BlockState upper = level.getBlockState(upperPos);
+
+        if (!upper.is(this)) {
+            upper = this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER);
         }
 
+        upper = upper.setValue(AGE, age);
+
+        level.setBlock(lowerPos, lower, 2);
+        level.setBlock(upperPos, upper, 2);
     }
 
     private static boolean canGrowInto(LevelReader level, BlockPos pos) {
         BlockState blockstate = level.getBlockState(pos);
-        return blockstate.isAir() || blockstate.is(ModBlocks.YERBA_PLANTA);
+        return blockstate.isAir() || blockstate.is(ModBlocks.VID);
     }
 
     private static boolean sufficientLight(LevelReader level, BlockPos pos) {
@@ -142,11 +152,11 @@ public class YerbaCropBlock extends DoublePlantBlock implements BonemealableBloc
     }
 
     private static boolean isLower(BlockState state) {
-        return state.is(ModBlocks.YERBA_PLANTA) && state.getValue(HALF) == DoubleBlockHalf.LOWER;
+        return state.is(ModBlocks.VID) && state.getValue(HALF) == DoubleBlockHalf.LOWER;
     }
 
     private static boolean isDouble(int age) {
-        return age >= 4;
+        return true;
     }
 
     private boolean canGrow(LevelReader reader, BlockPos pos, BlockState state, int age) {
@@ -168,9 +178,16 @@ public class YerbaCropBlock extends DoublePlantBlock implements BonemealableBloc
         }
     }
 
+    @Override
     public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
-        PosAndState pitchercropblock$posandstate = this.getLowerHalf(level, pos, state);
-        return pitchercropblock$posandstate == null ? false : this.canGrow(level, pitchercropblock$posandstate.pos, pitchercropblock$posandstate.state, (Integer)pitchercropblock$posandstate.state.getValue(AGE) + 1);
+        PosAndState lower = this.getLowerHalf(level, pos, state);
+        if (lower == null) {
+            return false;
+        }
+
+        boolean can = this.canGrow(level, lower.pos, lower.state, lower.state.getValue(AGE) + 1);
+
+        return can;
     }
 
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
@@ -182,7 +199,6 @@ public class YerbaCropBlock extends DoublePlantBlock implements BonemealableBloc
         if (pitchercropblock$posandstate != null) {
             this.grow(level, pitchercropblock$posandstate.state, pitchercropblock$posandstate.pos, 1);
         }
-
     }
     static {
         FULL_UPPER_SHAPE = Block.box((double)3.0F, (double)0.0F, (double)3.0F, (double)13.0F, (double)15.0F, (double)13.0F);

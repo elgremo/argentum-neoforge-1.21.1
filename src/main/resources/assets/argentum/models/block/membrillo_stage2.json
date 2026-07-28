@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "crop": "argentum:block/membrillo_stage2"
+    "cross": "argentum:block/membrillo_stage2"
   }
 }

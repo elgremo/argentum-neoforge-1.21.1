@@ -39,6 +39,7 @@ public class Argentum {
         NeoForge.EVENT_BUS.addListener(ModEvents::addCustomTrades);
         NeoForge.EVENT_BUS.addListener(CampfireEvents::onRightClickBlock);
 
+
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -52,6 +53,7 @@ public class Argentum {
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
+
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {

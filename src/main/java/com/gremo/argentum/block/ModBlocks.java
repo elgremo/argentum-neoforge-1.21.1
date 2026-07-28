@@ -89,10 +89,21 @@ public class ModBlocks {
 
 
     public static final DeferredBlock<Block> YERBA_PLANTA = BLOCKS.register("yerba_planta",
-            () -> new YerbaCropBlock(BlockBehaviour.Properties.of()
+            () -> new YerbaPlanta(BlockBehaviour.Properties.of()
                     .strength(0.0f)
                     .noOcclusion()
                     .sound(SoundType.CROP)));
+
+    public static final DeferredBlock<Block> VID = BLOCKS.register("vid",
+            () -> new VidPlanta(BlockBehaviour.Properties.of()
+                    .noCollission()
+                    .instabreak()
+                    .noOcclusion()
+                    .sound(SoundType.CROP)
+                    .randomTicks()));
+
+
+
 
     public static final DeferredBlock<Block> TE_PLANTA = BLOCKS.register("te_planta",
             () -> new TePlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
@@ -103,6 +114,35 @@ public class ModBlocks {
     public static final DeferredBlock<Block> BATATA_PLANTA = BLOCKS.register("batata_planta",
             () -> new BatataPlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.BEETROOTS)));
 
+
+    public static final DeferredBlock<Block> YERBA_SILVESTRE = BLOCKS.register("yerba_silvestre",
+            () -> new YerbaSilvestrePlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)));
+
+    public static final DeferredBlock<Block> TE_SILVESTRE = BLOCKS.register("te_silvestre",
+            () -> new TeSilvestrePlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)));
+
+    public static final DeferredBlock<Block> MEMBRILLO_SILVESTRE = BLOCKS.register("membrillo_silvestre",
+            () -> new MembrilloSilvestrePlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)));
+
+    public static final DeferredBlock<Block> BATATA_SILVESTRE = BLOCKS.register("batata_silvestre",
+            () -> new BatataSilvestrePlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)));
+
+    public static final DeferredBlock<Block> VID_SILVESTRE = BLOCKS.register("vid_silvestre",
+            () -> new VidSilvestrePlanta(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS)));
+
+
+
+
+    public static final DeferredBlock<Block> PRENSA_MOSTO = registerBlock("prensa_mosto",
+            () -> new PrensaMostoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> PRENSA_MOSTO_LISTA = registerBlock("prensa_mosto_lista",
+            () -> new PrensaMostoListaBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

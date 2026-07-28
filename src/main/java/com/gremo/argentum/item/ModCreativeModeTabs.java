@@ -56,6 +56,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CALABAZA_MATE);
                         output.accept(ModItems.SAQUITO_MATECOCIDO);
                         output.accept(ModItems.SAQUITO_TE);
+                        output.accept(ModItems.BALDE_MOSTO);
+                        output.accept(ModBlocks.PRENSA_MOSTO);
+
+                        output.accept(ModItems.UVA);
+                        output.accept(ModItems.UVA_SEMILLA);
                         output.accept(ModItems.TE);
                         output.accept(ModItems.TE_SEMILLA);
                         output.accept(ModItems.DULCE_LECHE);

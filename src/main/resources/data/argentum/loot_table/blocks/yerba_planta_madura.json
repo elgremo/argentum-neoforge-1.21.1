@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "functions": [{ "function": "minecraft:explosion_decay" }],
   "pools": [
-    { "rolls": 1.0, "entries": [{ "type": "minecraft:item", "name": "argentum:yerba" }] },
+    { "rolls": 1.0, "entries": [{ "type": "minecraft:item", "name": "argentum:yerba_mate_seca" }] },
     {
       "rolls": 1.0,
       "entries": [

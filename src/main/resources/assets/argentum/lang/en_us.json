@@ -20,6 +20,15 @@
   "item.argentum.pava": "Pava",
   "item.argentum.pava_caliente": "Pava Caliente",
 
+  "item.argentum.uva": "Racimo de Uvas",
+  "item.argentum.uva_semilla": "Semillas de Uvas",
+  "block.argentum.prensa_mosto": "Prensa para Mosto",
+  "item.argentum.balde_mosto": "Balde de Mosto",
+  "block.argentum.prensa_mosto_listo": "Prensa de Mosto Listo",
+  "tool.argentum.prensa_mosto.tooltip": "Usa Uvas para conseguir Baldes de Mosto",
+  "tool.argentum.prensa_mosto_listo.tooltip": "Usa una Cubeta para sacar el Mosto",
+
+
   "item.argentum.copa_mundo": "Copa del Mundo",
 
   "tool.argentum.olla.tooltip": "Se puede usar para convertir un Aldeano o Fritar Comida",
