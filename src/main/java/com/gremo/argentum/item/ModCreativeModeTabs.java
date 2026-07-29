@@ -57,8 +57,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SAQUITO_MATECOCIDO);
                         output.accept(ModItems.SAQUITO_TE);
                         output.accept(ModItems.BALDE_MOSTO);
+                        //output.accept(ModItems.BALDE_VINO);
                         output.accept(ModBlocks.PRENSA_MOSTO);
-
+                        output.accept(ModBlocks.BARRIL_FERMENTO);
+                        output.accept(ModItems.BOTELLA_VINO_VACIA);
+                        output.accept(ModItems.BOTELLA_VINO_LLENA);
                         output.accept(ModItems.UVA);
                         output.accept(ModItems.UVA_SEMILLA);
                         output.accept(ModItems.TE);
@@ -145,7 +148,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FICHA_CASINO_ESPECIAL);
                         output.accept(ModItems.FICHA_CASINO_OTRA);
                         output.accept(ModItems.BARAJA_SELLADA);
-                        output.accept(ModItems.BARAJA_SELLADA);
                         output.accept(ModItems.MUCHACHOS_DISCO_MUSICA);
                         output.accept(ModItems.LA_CUARTA_DISCO_MUSICA);
 
@@ -204,6 +206,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CARTA_PALO_10);
                         output.accept(ModItems.CARTA_PALO_11);
                         output.accept(ModItems.CARTA_PALO_12);
+                        output.accept(ModItems.CARTA_COMODIN);
 
                     }).build());
 

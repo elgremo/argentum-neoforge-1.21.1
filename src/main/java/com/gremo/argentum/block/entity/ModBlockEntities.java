@@ -39,6 +39,14 @@ public class ModBlockEntities {
                     ModBlocks.PAVA_FOGATA_CALIENTE.get()
             ).build(null));
 
+    public static final Supplier<BlockEntityType<BarrilFermentoBlockEntity>> BARRIL_FERMENTO_BE =
+            BLOCK_ENTITIES.register("barril_fermento_be", () -> BlockEntityType.Builder.of(
+                    BarrilFermentoBlockEntity::new,
+                    ModBlocks.BARRIL_FERMENTO.get()
+            ).build(null));
+
+
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

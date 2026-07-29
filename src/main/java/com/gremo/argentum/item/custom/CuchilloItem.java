@@ -1,4 +1,4 @@
-package com.gremo.argentum.item;
+package com.gremo.argentum.item.custom;
 
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;

@@ -20,7 +20,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> BALDE_MOSTO = ITEMS.register("balde_mosto",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()
+                    .stacksTo(1)));
 
     public static final DeferredItem<Item> ALFAJOR = ITEMS.register("alfajor",
             () -> new CocidoItem(new Item.Properties()
@@ -883,6 +884,21 @@ public class ModItems {
 
     public static final DeferredItem<Item> UVA = ITEMS.register("uva",
             () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> BALDE_VINO = ITEMS.register("balde_vino",
+            () -> new Item(new Item.Properties()
+                    .craftRemainder(Items.BUCKET)
+                    .stacksTo(1)));
+
+    public static final DeferredItem<Item> BOTELLA_VINO_VACIA = ITEMS.register("botella_vino_vacia",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(64)));
+    public static final DeferredItem<Item> BOTELLA_VINO_LLENA = ITEMS.register(
+            "botella_vino_llena",
+            () -> new BotellaVinoItem(new Item.Properties()
+                    .durability(3)
+                    .stacksTo(1)));
+
 
 
 

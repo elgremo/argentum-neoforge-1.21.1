@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "etapa=0": { "model": "argentum:block/barril_fermento_0" },
+    "etapa=1": { "model": "argentum:block/barril_fermento_1" },
+    "etapa=2": { "model": "argentum:block/barril_fermento_2" },
+    "etapa=3": { "model": "argentum:block/barril_fermento_3" },
+    "etapa=4": { "model": "argentum:block/barril_fermento_4" },
+    "etapa=5": { "model": "argentum:block/barril_fermento_5" },
+    "etapa=6": { "model": "argentum:block/barril_fermento_6" },
+    "etapa=7": { "model": "argentum:block/barril_fermento_7" },
+    "etapa=8": { "model": "argentum:block/barril_fermento_espera" },
+    "etapa=9": { "model": "argentum:block/barril_fermento_listo" }
+  }
+}

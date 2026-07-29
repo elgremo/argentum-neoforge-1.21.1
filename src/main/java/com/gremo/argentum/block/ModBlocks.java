@@ -144,6 +144,15 @@ public class ModBlocks {
                     .noOcclusion()
                     .sound(SoundType.WOOD)));
 
+
+
+    public static final DeferredBlock<Block> BARRIL_FERMENTO = registerBlock("barril_fermento",
+            () -> new BarrilFermentoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .randomTicks()
+                    .sound(SoundType.WOOD)));
+
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
