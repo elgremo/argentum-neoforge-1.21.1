@@ -982,6 +982,21 @@ public class ModItems {
                             .durability(12)
                             .stacksTo(1)
             ));
+    public static final DeferredItem<Item> COPA_VINO =
+            ITEMS.register(
+                    "copa_vino",
+                    () -> new CopaVinoItem(
+                            new Item.Properties()
+                                    .stacksTo(1)
+                                    .food(new FoodProperties.Builder()
+                                            .nutrition(8)
+                                            .saturationModifier(0.8f)
+                                            .build())
+                    )
+            );
+    public static final DeferredItem<Item> COPA_VINO_VACIA = ITEMS.register("copa_vino_vacia",
+            () -> new CopaVinoVaciaItem(new Item.Properties()));
+
 
     public static final DeferredItem<Item> PAVA = ITEMS.register("pava",
             () -> new PavaItem(new Item.Properties()));

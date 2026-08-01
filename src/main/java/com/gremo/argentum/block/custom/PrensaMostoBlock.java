@@ -30,11 +30,16 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
-
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import java.util.List;
 
 public class PrensaMostoBlock extends BaseEntityBlock {
     public static final BooleanProperty ON = BooleanProperty.create("on");
+    public static final DirectionProperty FACING =
+            HorizontalDirectionalBlock.FACING;
     private static final VoxelShape SHAPE = Block.box(
             2.0D, 0.0D, 2.0D,
             14.0D, 16.0D, 14.0D
@@ -45,7 +50,11 @@ public class PrensaMostoBlock extends BaseEntityBlock {
 
     public PrensaMostoBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(ON, false));
+        this.registerDefaultState(
+                this.stateDefinition.any()
+                        .setValue(ON, false)
+                        .setValue(FACING, Direction.NORTH)
+        );
     }
 
 
@@ -56,7 +65,7 @@ public class PrensaMostoBlock extends BaseEntityBlock {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(ON);
+        builder.add(ON, FACING);
     }
 
     @Override
@@ -174,5 +183,15 @@ public class PrensaMostoBlock extends BaseEntityBlock {
 
         tooltip.add(Component.translatable("tool.argentum.prensa_mosto.tooltip"));
         super.appendHoverText(stack, context, tooltip, flag);
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+
+        return defaultBlockState()
+                .setValue(
+                        FACING,
+                        context.getHorizontalDirection().getOpposite()
+                );
     }
 }

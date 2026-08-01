@@ -90,6 +90,23 @@
   "item.argentum.botella_vino_vacia": "Botella de Vino Vacía",
   "item.argentum.botella_vino_llena": "Botella de Vino",
 
+
+  "block.argentum.botellero_abedul": "Botellero de Abedul",
+  "block.argentum.botellero_abeto": "Botellero de Abeto",
+  "block.argentum.botellero_acacia": "Botellero de Acacia",
+  "block.argentum.botellero_carmesi": "Botellero Carmesí",
+  "block.argentum.botellero_cerezo": "Botellero de Cerezo",
+  "block.argentum.botellero_distorcionado": "Botellero Distorsionado",
+  "block.argentum.botellero_jungla": "Botellero de Jungla",
+  "block.argentum.botellero_manglar": "Botellero de Manglar",
+  "block.argentum.botellero_roble": "Botellero de Roble",
+  "block.argentum.botellero_roble_oscuro": "Botellero de Roble Oscuro",
+
+  "item.argentum.copa_vino_vacia": "Copa de Vino Vacía",
+  "item.argentum.copa_vino": "Copa de Vino",
+  "message.argentum.need_bottle": "Necesitás una botella de vino llena en la otra mano.",
+
+
   "item.argentum.medialuna_cruda": "Medialuna Cruda",
   "item.argentum.medialuna_cocinada": "Medialuna",
 

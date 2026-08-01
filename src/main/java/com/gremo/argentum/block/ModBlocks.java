@@ -132,7 +132,6 @@ public class ModBlocks {
 
 
 
-
     public static final DeferredBlock<Block> PRENSA_MOSTO = registerBlock("prensa_mosto",
             () -> new PrensaMostoBlock(BlockBehaviour.Properties.of()
                     .strength(1f)
@@ -152,6 +151,63 @@ public class ModBlocks {
                     .noOcclusion()
                     .randomTicks()
                     .sound(SoundType.WOOD)));
+
+
+
+    //-------BOTELLEROS--------------
+
+    public static final DeferredBlock<Block> BOTELLERO_ABEDUL = registerBlock("botellero_abedul",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_ABETO = registerBlock("botellero_abeto",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_ACACIA = registerBlock("botellero_acacia",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_CARMESI = registerBlock("botellero_carmesi",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_CEREZO = registerBlock("botellero_cerezo",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_DISTORCIONADO = registerBlock("botellero_distorcionado",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_JUNGLA = registerBlock("botellero_jungla",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_MANGLAR = registerBlock("botellero_manglar",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_ROBLE = registerBlock("botellero_roble",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_ROBLE_OSCURO = registerBlock("botellero_roble_oscuro",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
+
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -62,6 +62,19 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.BARRIL_FERMENTO);
                         output.accept(ModItems.BOTELLA_VINO_VACIA);
                         output.accept(ModItems.BOTELLA_VINO_LLENA);
+                        output.accept(ModItems.COPA_VINO);
+                        output.accept(ModItems.COPA_VINO_VACIA);
+                        output.accept(ModBlocks.BOTELLERO_ABEDUL);
+                        output.accept(ModBlocks.BOTELLERO_ABETO);
+                        output.accept(ModBlocks.BOTELLERO_ACACIA);
+                        output.accept(ModBlocks.BOTELLERO_CARMESI);
+                        output.accept(ModBlocks.BOTELLERO_CEREZO);
+                        output.accept(ModBlocks.BOTELLERO_DISTORCIONADO);
+                        output.accept(ModBlocks.BOTELLERO_JUNGLA);
+                        output.accept(ModBlocks.BOTELLERO_MANGLAR);
+                        output.accept(ModBlocks.BOTELLERO_ROBLE);
+                        output.accept(ModBlocks.BOTELLERO_ROBLE_OSCURO);
+
                         output.accept(ModItems.UVA);
                         output.accept(ModItems.UVA_SEMILLA);
                         output.accept(ModItems.TE);
@@ -132,14 +145,14 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "mate_argento_tab"))
                     .title(Component.translatable("creativetab.argentum.casino"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModItems.CHORRO_SPAWN_EGG);
+                        //output.accept(ModItems.CHORRO_SPAWN_EGG);
                         output.accept(ModBlocks.UNO);
                         output.accept(ModBlocks.DOS);
                         output.accept(ModBlocks.TRES);
                         output.accept(ModBlocks.CUATRO);
                         output.accept(ModBlocks.CINCO);
                         output.accept(ModBlocks.SEIS);
-                        output.accept(ModItems.CUADRO_ARGENTO);
+                        //output.accept(ModItems.CUADRO_ARGENTO);
                         output.accept(ModItems.PISTOLA);
                         output.accept(ModItems.FICHA_CASINO_1);
                         output.accept(ModItems.FICHA_CASINO_5);

@@ -141,7 +141,7 @@ public class ModConfiguredFeatures {
         );
 
         context.register(
-                BATATA_PATCH,
+                MEMBRILLO_PATCH,
 
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
@@ -154,7 +154,7 @@ public class ModConfiguredFeatures {
 
                                         new SimpleBlockConfiguration(
                                                 BlockStateProvider.simple(
-                                                        ModBlocks.BATATA_SILVESTRE.get()
+                                                        ModBlocks.MEMBRILLO_SILVESTRE.get()
                                                 )
                                         )
                                 )

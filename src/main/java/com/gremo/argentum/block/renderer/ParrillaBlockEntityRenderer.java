@@ -1,4 +1,4 @@
-package com.gremo.argentum.block.entity.renderer;
+package com.gremo.argentum.block.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;

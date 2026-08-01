@@ -45,7 +45,22 @@ public class ModBlockEntities {
                     ModBlocks.BARRIL_FERMENTO.get()
             ).build(null));
 
+    public static final Supplier<BlockEntityType<BotelleroBlockEntity>> BOTELLERO_BE =
+            BLOCK_ENTITIES.register("botellero_be", () -> BlockEntityType.Builder.of(
+                    BotelleroBlockEntity::new,
 
+                    ModBlocks.BOTELLERO_ABEDUL.get(),
+                    ModBlocks.BOTELLERO_ABETO.get(),
+                    ModBlocks.BOTELLERO_ACACIA.get(),
+                    ModBlocks.BOTELLERO_CARMESI.get(),
+                    ModBlocks.BOTELLERO_CEREZO.get(),
+                    ModBlocks.BOTELLERO_DISTORCIONADO.get(),
+                    ModBlocks.BOTELLERO_JUNGLA.get(),
+                    ModBlocks.BOTELLERO_MANGLAR.get(),
+                    ModBlocks.BOTELLERO_ROBLE.get(),
+                    ModBlocks.BOTELLERO_ROBLE_OSCURO.get()
+
+            ).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

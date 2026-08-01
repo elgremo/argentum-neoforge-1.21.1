@@ -35,6 +35,8 @@ public class BotellaVinoItem extends Item {
 
         if (!level.isClientSide) {
 
+
+
             // Fuerza I - 30 minutos
             entity.addEffect(new MobEffectInstance(
                     MobEffects.DAMAGE_BOOST,
@@ -80,19 +82,65 @@ public class BotellaVinoItem extends Item {
 
         // Consumir la botella
         if (entity instanceof Player player && !player.getAbilities().instabuild) {
-            stack.shrink(1);
 
-            player.getInventory().add(
-                    new ItemStack(ModItems.BOTELLA_VINO_VACIA.get())
-            );
+            int damage = stack.getDamageValue() + 1;
+
+            stack.setDamageValue(damage);
+
+            if (damage >= stack.getMaxDamage()) {
+                return new ItemStack(ModItems.BOTELLA_VINO_VACIA.get());
+            }
+
+            return stack;
         }
 
         return stack;
     }
 
+
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         player.startUsingItem(hand);
         return InteractionResultHolder.consume(player.getItemInHand(hand));
+    }
+
+    @Override
+    public boolean hasCraftingRemainingItem(ItemStack stack) {
+        return true;
+    }
+
+    @Override
+    public ItemStack getCraftingRemainingItem(ItemStack stack) {
+
+        ItemStack remaining = stack.copy();
+
+        remaining.setDamageValue(
+                remaining.getDamageValue() + 1
+        );
+
+        if (remaining.getDamageValue() >= remaining.getMaxDamage()) {
+            return new ItemStack(ModItems.BOTELLA_VINO_VACIA.get());
+        }
+
+        return remaining;
+    }
+
+
+    @Override
+    public boolean isBarVisible(ItemStack stack) {
+        return stack.getDamageValue() > 0;
+    }
+
+    @Override
+    public int getBarWidth(ItemStack stack) {
+        return Math.round(
+                13.0F - (float) stack.getDamageValue() * 13.0F
+                        / (float) stack.getMaxDamage()
+        );
+    }
+
+    @Override
+    public int getBarColor(ItemStack stack) {
+        return 0x8A2BE2;
     }
 }
