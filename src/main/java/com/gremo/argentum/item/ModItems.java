@@ -883,7 +883,15 @@ public class ModItems {
             () -> new ItemNameBlockItem(ModBlocks.VID.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> UVA = ITEMS.register("uva",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()
+                    .stacksTo(64) // Solo 64 item en la mano
+                    .food(new FoodProperties.Builder()
+                            .nutrition(2)
+                            .saturationModifier(2f)
+                            .build())
+            )
+    );
+
 
     public static final DeferredItem<Item> BALDE_VINO = ITEMS.register("balde_vino",
             () -> new Item(new Item.Properties()
@@ -991,6 +999,7 @@ public class ModItems {
                                     .food(new FoodProperties.Builder()
                                             .nutrition(8)
                                             .saturationModifier(0.8f)
+                                            .alwaysEdible()
                                             .build())
                     )
             );

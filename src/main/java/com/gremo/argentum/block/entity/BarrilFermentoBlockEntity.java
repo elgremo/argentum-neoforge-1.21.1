@@ -134,8 +134,8 @@ public class BarrilFermentoBlockEntity extends BlockEntity {
                 );
             }
 
-            // Para probar: 200 ticks
-            if (be.getProgreso() >= 100) {
+            // Para probar: 200 ticks 24000 son 3 dias
+            if (be.getProgreso() >= 72000) {
 
                 level.setBlock(
                         pos,
