@@ -40,6 +40,8 @@ public class ModClientEvents {
                     ModBlockEntities.BOTELLERO_BE.get(),
                     BotelleroBlockEntityRenderer::new
             );
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.JACARANDA_BROTE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.JACARANDA_HOJAS.get(), RenderType.cutout());
         });
     }
 }

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "argentum:block/jacaranda_completo"
+    },
+    "axis=z": {
+      "model": "argentum:block/jacaranda_completo",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "argentum:block/jacaranda_completo",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

@@ -21,6 +21,13 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.MATE.get()))
                     .title(Component.translatable("creativetab.argentum.bala"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.JACARANDA_TRONCO);
+                        output.accept(ModBlocks.JACARANDA_COMPLETO);
+                        output.accept(ModBlocks.PELADO_JACARANDA_TRONCO);
+                        output.accept(ModBlocks.PELADO_JACARANDA_COMPLETO);
+                        output.accept(ModBlocks.JACARANDA_MADERA);
+                        output.accept(ModBlocks.JACARANDA_HOJAS);
+                        output.accept(ModBlocks.JACARANDA_BROTE);
                         output.accept(ModBlocks.OLLA);
                         output.accept(ModBlocks.PARRILLA);
                         output.accept(ModItems.MATE);

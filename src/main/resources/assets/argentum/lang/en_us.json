@@ -14,6 +14,14 @@
   "block.argentum.uno": "Uno",
   "block.argentum.yerba_planta": "Planta de Yerba Mate",
 
+  "block.argentum.jacaranda_tronco": "Tronco de Jacarandá",
+  "block.argentum.jacaranda_completo": "Madera de Jacarandá",
+  "block.argentum.pelado_jacaranda_tronco": "Tronco de Jacarandá Pelado",
+  "block.argentum.pelado_jacaranda_completo": "Madera de Jacarandá Pelada",
+  "block.argentum.jacaranda_madera": "Madera de Jacarandá",
+  "block.argentum.jacaranda_hojas": "Hojas de Jacarandá",
+  "block.argentum.jacaranda_brote": "Brote de Jacarandá",
+
   "item.argentum.aceite": "Aceite",
   "item.argentum.alfajor": "Alfajor",
   "item.argentum.bala": "Bala",

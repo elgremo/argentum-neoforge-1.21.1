@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "argentum:block/pelado_jacaranda_tronco"
+    },
+    "axis=z": {
+      "model": "argentum:block/pelado_jacaranda_tronco",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "argentum:block/pelado_jacaranda_tronco",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
