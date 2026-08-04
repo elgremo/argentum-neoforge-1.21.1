@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "argentum:jacaranda_madera"
+    }
+  },
+  "result": {
+    "id": "argentum:jacaranda_escaleras",
+    "count": 4
+  }
+}

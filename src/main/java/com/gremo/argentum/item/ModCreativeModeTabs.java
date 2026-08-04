@@ -28,6 +28,21 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.JACARANDA_MADERA);
                         output.accept(ModBlocks.JACARANDA_HOJAS);
                         output.accept(ModBlocks.JACARANDA_BROTE);
+                        output.accept(ModBlocks.JACARANDA_TRONCO);
+                        output.accept(ModBlocks.JACARANDA_COMPLETO);
+                        output.accept(ModBlocks.PELADO_JACARANDA_TRONCO);
+                        output.accept(ModBlocks.PELADO_JACARANDA_COMPLETO);
+                        output.accept(ModBlocks.JACARANDA_MADERA);
+                        output.accept(ModBlocks.JACARANDA_HOJAS);
+
+                        output.accept(ModBlocks.JACARANDA_ESCALERAS);
+                        output.accept(ModBlocks.JACARANDA_LOSA);
+                        output.accept(ModBlocks.JACARANDA_VALLA);
+                        output.accept(ModBlocks.JACARANDA_PORTON);
+                        output.accept(ModBlocks.JACARANDA_BOTON);
+                        output.accept(ModBlocks.JACARANDA_PLACA_PRESION);
+                        output.accept(ModBlocks.JACARANDA_PUERTA);
+                        output.accept(ModBlocks.JACARANDA_TRAMPILLA);
                         output.accept(ModBlocks.OLLA);
                         output.accept(ModBlocks.PARRILLA);
                         output.accept(ModItems.MATE);

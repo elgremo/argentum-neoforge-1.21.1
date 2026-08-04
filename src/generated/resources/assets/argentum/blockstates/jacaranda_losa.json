@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "argentum:block/jacaranda_losa"
+    },
+    "type=double": {
+      "model": "argentum:block/jacaranda_madera"
+    },
+    "type=top": {
+      "model": "argentum:block/jacaranda_losa_top"
+    }
+  }
+}

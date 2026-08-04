@@ -13,6 +13,8 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -257,6 +259,39 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> JACARANDA_BROTE = registerBlock("jacaranda_brote",
             () -> new SaplingBlock(ModTreeGrowers.JACARANDA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+    public static final DeferredBlock<Block> JACARANDA_ESCALERAS = registerBlock("jacaranda_escaleras",
+            () -> new StairBlock(
+                    Blocks.OAK_PLANKS.defaultBlockState(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)
+            ));
+
+    public static final DeferredBlock<Block> JACARANDA_LOSA = registerBlock("jacaranda_losa",
+            () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)));
+
+    public static final DeferredBlock<FenceBlock> JACARANDA_VALLA =
+            registerBlock("jacaranda_valla",
+                    () -> new FenceBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE)));
+
+
+    public static final DeferredBlock<Block> JACARANDA_PORTON = registerBlock("jacaranda_porton",
+            () -> new FenceGateBlock(WoodType.OAK,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_FENCE_GATE)));
+
+    public static final DeferredBlock<Block> JACARANDA_BOTON = registerBlock("jacaranda_boton",
+            () -> new ButtonBlock(BlockSetType.OAK, 30,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_BUTTON)));
+
+    public static final DeferredBlock<Block> JACARANDA_PLACA_PRESION = registerBlock("jacaranda_placa_presion",
+            () -> new PressurePlateBlock(BlockSetType.OAK,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PRESSURE_PLATE)));
+
+    public static final DeferredBlock<Block> JACARANDA_PUERTA = registerBlock("jacaranda_puerta",
+            () -> new DoorBlock(BlockSetType.OAK,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_DOOR).noOcclusion()));
+
+    public static final DeferredBlock<Block> JACARANDA_TRAMPILLA = registerBlock("jacaranda_trampilla",
+            () -> new TrapDoorBlock(BlockSetType.OAK,
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR).noOcclusion()));
 
 
 

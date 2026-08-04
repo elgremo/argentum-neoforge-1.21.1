@@ -19,8 +19,17 @@
   "block.argentum.pelado_jacaranda_tronco": "Tronco de Jacarandá Pelado",
   "block.argentum.pelado_jacaranda_completo": "Madera de Jacarandá Pelada",
   "block.argentum.jacaranda_madera": "Madera de Jacarandá",
-  "block.argentum.jacaranda_hojas": "Hojas de Jacarandá",
   "block.argentum.jacaranda_brote": "Brote de Jacarandá",
+  "block.argentum.jacaranda_hojas": "Hojas de Jacarandá",
+  "block.argentum.jacaranda_escaleras": "Escaleras de Jacarandá",
+  "block.argentum.jacaranda_losa": "Losa de Jacarandá",
+  "block.argentum.jacaranda_valla": "Valla de Jacarandá",
+  "block.argentum.jacaranda_porton": "Portón de Jacarandá",
+  "block.argentum.jacaranda_boton": "Botón de Jacarandá",
+  "block.argentum.jacaranda_placa_presion": "Placa de Presión de Jacarandá",
+  "block.argentum.jacaranda_puerta": "Puerta de Jacarandá",
+  "block.argentum.jacaranda_trampilla": "Trampilla de Jacarandá",
+
 
   "item.argentum.aceite": "Aceite",
   "item.argentum.alfajor": "Alfajor",
