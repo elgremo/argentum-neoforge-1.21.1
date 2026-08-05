@@ -14,6 +14,13 @@
   "block.argentum.uno": "Uno",
   "block.argentum.yerba_planta": "Planta de Yerba Mate",
 
+  "block.argentum.yerba_silvestre": "Planta de Yerba Mate Silvestre",
+  "block.argentum.te_silvestre": "Planta de Té Silvestre",
+  "block.argentum.batata_silvestre": "Planta de Batata Silvestre",
+  "block.argentum.membrillo_silvestre": "Planta de Membrillo Silvestre",
+  "block.argentum.vid_silvestre": "Planta de Vid Silvestre",
+
+
   "block.argentum.jacaranda_tronco": "Tronco de Jacarandá",
   "block.argentum.jacaranda_completo": "Madera de Jacarandá",
   "block.argentum.pelado_jacaranda_tronco": "Tronco de Jacarandá Pelado",
@@ -118,6 +125,7 @@
   "block.argentum.botellero_manglar": "Botellero de Manglar",
   "block.argentum.botellero_roble": "Botellero de Roble",
   "block.argentum.botellero_roble_oscuro": "Botellero de Roble Oscuro",
+  "block.argentum.botellero_jacaranda": "Botellero de Jacarandá",
 
   "item.argentum.copa_vino_vacia": "Copa de Vino Vacía",
   "item.argentum.copa_vino": "Copa de Vino",

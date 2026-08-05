@@ -173,16 +173,16 @@ public class ModConfiguredFeatures {
         register(context, JACARANDA_KEY, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.JACARANDA_TRONCO.get()),
-                        new MegaJungleTrunkPlacer(3, 2, 1),
+                        new ForkingTrunkPlacer(4, 4, 3),
 
                         BlockStateProvider.simple(ModBlocks.JACARANDA_HOJAS.get()),
                         new BlobFoliagePlacer(
+                                ConstantInt.of(2),
                                 ConstantInt.of(3),
-                                ConstantInt.of(0),
-                                5),
+                                3),
 
                         new TwoLayersFeatureSize(1, 0, 2)
-                ).ignoreVines().build());
+                ).build());
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -49,6 +49,13 @@ public class ModPlacedFeatures {
                             Argentum.MOD_ID,
                             "vid_patch"));
 
+    public static final ResourceKey<PlacedFeature> JACARANDA =
+            ResourceKey.create(
+                    Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(
+                            Argentum.MOD_ID,
+                            "jacaranda"));
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 
         Holder<ConfiguredFeature<?, ?>> yerba =
@@ -130,6 +137,25 @@ public class ModPlacedFeatures {
 
                         List.of(
                                 RarityFilter.onAverageOnceEvery(1),
+                                InSquarePlacement.spread(),
+                                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                                BiomeFilter.biome()
+                        )
+                )
+        );
+
+        Holder<ConfiguredFeature<?, ?>> jacaranda =
+                context.lookup(Registries.CONFIGURED_FEATURE)
+                        .getOrThrow(ModConfiguredFeatures.JACARANDA_KEY);
+
+        context.register(
+                JACARANDA,
+
+                new PlacedFeature(
+                        jacaranda,
+
+                        List.of(
+                                RarityFilter.onAverageOnceEvery(8),
                                 InSquarePlacement.spread(),
                                 PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                                 BiomeFilter.biome()

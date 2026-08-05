@@ -58,7 +58,8 @@ public class ModBlockEntities {
                     ModBlocks.BOTELLERO_JUNGLA.get(),
                     ModBlocks.BOTELLERO_MANGLAR.get(),
                     ModBlocks.BOTELLERO_ROBLE.get(),
-                    ModBlocks.BOTELLERO_ROBLE_OSCURO.get()
+                    ModBlocks.BOTELLERO_ROBLE_OSCURO.get(),
+                    ModBlocks.BOTELLERO_JACARANDA.get()
 
             ).build(null));
 

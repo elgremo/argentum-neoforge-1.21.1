@@ -96,6 +96,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> YERBA_PLANTA = BLOCKS.register("yerba_planta",
             () -> new YerbaPlanta(BlockBehaviour.Properties.of()
                     .strength(0.0f)
+                    .instabreak()
                     .noOcclusion()
                     .sound(SoundType.CROP)));
 
@@ -211,6 +212,11 @@ public class ModBlocks {
                     .strength(1f)
                     .noOcclusion()
                     .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_JACARANDA = registerBlock("botellero_jacaranda",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
 
 
     public static final DeferredBlock<Block> JACARANDA_TRONCO = registerBlock("jacaranda_tronco",
@@ -292,6 +298,10 @@ public class ModBlocks {
     public static final DeferredBlock<Block> JACARANDA_TRAMPILLA = registerBlock("jacaranda_trampilla",
             () -> new TrapDoorBlock(BlockSetType.OAK,
                     BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR).noOcclusion()));
+
+
+
+
 
 
 

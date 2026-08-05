@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "equipment",
+  "pattern": [
+    " II",
+    "I I",
+    "III"
+  ],
   "key": {
     "I": {
       "item": "minecraft:iron_ingot"
     }
   },
-  "pattern": [
-    "I",
-    "I",
-    "I"
-  ],
   "result": {
-    "count": 1,
-    "id": "argentum:termo_vacio"
+    "id": "argentum:pava",
+    "count": 1
   }
 }

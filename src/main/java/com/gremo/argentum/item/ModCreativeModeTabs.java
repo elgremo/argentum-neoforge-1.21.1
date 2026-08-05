@@ -86,6 +86,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BOTELLA_VINO_LLENA);
                         output.accept(ModItems.COPA_VINO);
                         output.accept(ModItems.COPA_VINO_VACIA);
+                        output.accept(ModBlocks.BOTELLERO_JACARANDA);
                         output.accept(ModBlocks.BOTELLERO_ABEDUL);
                         output.accept(ModBlocks.BOTELLERO_ABETO);
                         output.accept(ModBlocks.BOTELLERO_ACACIA);

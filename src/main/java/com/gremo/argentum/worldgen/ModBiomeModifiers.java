@@ -1,10 +1,6 @@
 package com.gremo.argentum.worldgen;
 
-import com.gremo.argentum.Argentum;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.BiomeModifiers;
 

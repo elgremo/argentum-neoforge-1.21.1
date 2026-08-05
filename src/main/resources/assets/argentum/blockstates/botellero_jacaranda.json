@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=north,half=lower": { "model": "argentum:block/botellero_bot_jacaranda" },
+    "facing=east,half=lower": { "model": "argentum:block/botellero_bot_jacaranda", "y": 90 },
+    "facing=south,half=lower": { "model": "argentum:block/botellero_bot_jacaranda", "y": 180 },
+    "facing=west,half=lower": { "model": "argentum:block/botellero_bot_jacaranda", "y": 270 },
+
+    "facing=north,half=upper": { "model": "argentum:block/botellero_top_jacaranda" },
+    "facing=east,half=upper": { "model": "argentum:block/botellero_top_jacaranda", "y": 90 },
+    "facing=south,half=upper": { "model": "argentum:block/botellero_top_jacaranda", "y": 180 },
+    "facing=west,half=upper": { "model": "argentum:block/botellero_top_jacaranda", "y": 270 }
+  }
+}
