@@ -16,6 +16,7 @@ import java.util.List;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Argentum.MOD_ID);
 
+
     public static final DeferredItem<Item> ACEITE = ITEMS.register("aceite",
             () -> new Item(new Item.Properties()));
 
@@ -835,6 +836,18 @@ public class ModItems {
             ));
 
     public static final DeferredItem<Item> PELOTA = ITEMS.register("pelota",
+            () -> new PelotaItem(new Item.Properties().stacksTo(1))
+    );
+    public static final DeferredItem<Item> PELOTA_TELSTAR = ITEMS.register("pelota_telstar",
+            () -> new PelotaItem(new Item.Properties().stacksTo(1))
+    );
+    public static final DeferredItem<Item> PELOTA_AZTECA = ITEMS.register("pelota_azteca",
+            () -> new PelotaItem(new Item.Properties().stacksTo(1))
+    );
+    public static final DeferredItem<Item> PELOTA_JABULANI = ITEMS.register("pelota_jabulani",
+            () -> new PelotaItem(new Item.Properties().stacksTo(1))
+    );
+    public static final DeferredItem<Item> PELOTA_AL_RIHLA = ITEMS.register("pelota_al_rihla",
             () -> new PelotaItem(new Item.Properties().stacksTo(1))
     );
 

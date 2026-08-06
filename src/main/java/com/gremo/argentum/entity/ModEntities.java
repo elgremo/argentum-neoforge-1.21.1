@@ -19,7 +19,7 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<PelotaEntity>> PELOTA =
             ENTITIES.register("pelota",
                     () -> EntityType.Builder.<PelotaEntity>of(PelotaEntity::new, MobCategory.MISC)
-                            .sized(0.5f, 0.5f)
+                            .sized(2.0f, 2.0f)
                             .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "pelota").toString())
             );
 

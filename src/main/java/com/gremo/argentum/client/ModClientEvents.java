@@ -29,13 +29,32 @@ public class ModClientEvents {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.MEMBRILLO_PLANTA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.TE_PLANTA.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.OLLA.get(), RenderType.translucent());
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_UNO.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_DOS.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_TRES.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_CUATRO.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_CINCO.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_SEIS.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_SIETE.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_OCHO.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_NUEVE.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_DIEZ.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_ONCE.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_DOCE.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_FULBO.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_CATORCE.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ARCO_QUINCE.get(), RenderType.translucent());
+
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.OLLA_FOGATA.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PARRILLA.get(), RenderType.cutout());
             BlockEntityRenderers.register(ModBlockEntities.OLLA_BE.get(), OllaBlockEntityRenderer::new);
             BlockEntityRenderers.register(ModBlockEntities.PARRILLA_BE.get(), ParrillaBlockEntityRenderer::new);
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.PRENSA_MOSTO.get(), RenderType.cutout());
             BlockEntityRenderers.register(ModBlockEntities.MOSTO_BE.get(), PrensaMostoBlockEntityRenderer::new);
+
             EntityRenderers.register(ModEntities.PELOTA.get(), PelotaRenderer::new);
+
             BlockEntityRenderers.register(
                     ModBlockEntities.BOTELLERO_BE.get(),
                     BotelleroBlockEntityRenderer::new

@@ -301,7 +301,96 @@ public class ModBlocks {
 
 
 
+    public static final DeferredBlock<ArcoBlock> ARCO_UNO = registerBlockNoItem("arco_uno",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
 
+    public static final DeferredBlock<ArcoBlock> ARCO_DOS = registerBlockNoItem("arco_dos",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_TRES = registerBlockNoItem("arco_tres",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_CUATRO = registerBlockNoItem("arco_cuatro",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_CINCO = registerBlockNoItem("arco_cinco",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_SEIS = registerBlockNoItem("arco_seis",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_SIETE = registerBlockNoItem("arco_siete",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_OCHO = registerBlockNoItem("arco_ocho",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_NUEVE = registerBlockNoItem("arco_nueve",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_DIEZ = registerBlockNoItem("arco_diez",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_ONCE = registerBlockNoItem("arco_once",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_DOCE = registerBlockNoItem("arco_doce",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_FULBO = registerBlock(
+            "arco_fulbo",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_CATORCE = registerBlockNoItem("arco_catorce",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
+
+    public static final DeferredBlock<ArcoBlock> ARCO_QUINCE = registerBlockNoItem("arco_quince",
+            () -> new ArcoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
 
 
 
@@ -313,6 +402,9 @@ public class ModBlocks {
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+    private static <T extends Block> DeferredBlock<T> registerBlockNoItem(String name, Supplier<T> block) {
+        return BLOCKS.register(name, block);
     }
 
     public static void register (IEventBus eventBus) {

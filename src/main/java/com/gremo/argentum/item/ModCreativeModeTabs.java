@@ -255,7 +255,13 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ModItems.COPA_MUNDO);
+
                         output.accept(ModItems.PELOTA);
+                        output.accept(ModItems.PELOTA_TELSTAR);
+                        output.accept(ModItems.PELOTA_AZTECA);
+                        output.accept(ModItems.PELOTA_JABULANI);
+                        output.accept(ModItems.PELOTA_AL_RIHLA);
+
                         output.accept(ModItems.CAMISETA);
                         output.accept(ModItems.CAMISETA_ARGENTINA_78);
                         output.accept(ModItems.CAMISETA_ARGENTINA_94);

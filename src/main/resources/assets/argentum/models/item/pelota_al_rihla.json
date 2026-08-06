@@ -1,7 +1,7 @@
 {
 	"textures": {
-		"0": "argentum:item/pelota",
-		"particle": "argentum:item/pelota"
+		"0": "argentum:item/pelota_al_rihla",
+		"particle": "argentum:item/pelota_al_rihla"
 	},
 	"elements": [
 		{

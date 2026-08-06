@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    " T ",
+    "   "
+  ],
+  "key": {
+    "T": {
+      "item": "argentum:pelota_telstar"
+    },
+    "C": {
+      "item": "argentum:copa_mundo"
+    }
+  },
+  "result": {
+    "id": "argentum:pelota_azteca",
+    "count": 1
+  }
+}

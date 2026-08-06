@@ -6,6 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
@@ -19,9 +20,13 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 
 public class PelotaEntity extends Entity {
-    private ItemStack display = ItemStack.EMPTY;
+    private static final EntityDataAccessor<ItemStack> DISPLAY =
+            SynchedEntityData.defineId(PelotaEntity.class, EntityDataSerializers.ITEM_STACK);
 
     // Física / Ajustes - puedes cambiar estos valores para ajustar comportamiento
     private static final double GRAVITY = 0.06;      // gravedad aplicada cada tick
@@ -46,13 +51,36 @@ public class PelotaEntity extends Entity {
         this.setPos(x, y, z);
     }
 
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+
+        Entity attacker = source.getEntity();
+
+        if (attacker instanceof Player player) {
+
+            Vec3 dir = player.getLookAngle().normalize();
+
+            double force = player.isSprinting() ? 1.2 : 0.6;
+
+            this.setDeltaMovement(
+                    dir.x * force,
+                    0.02,
+                    dir.z * force
+            );
+
+            return true;
+        }
+
+        return super.hurt(source, amount);
+    }
+
     // Getter / Setter para el ItemStack mostrado (usado por el renderer)
     public void setDisplay(ItemStack stack) {
-        this.display = (stack == null) ? ItemStack.EMPTY : stack.copy();
+        this.entityData.set(DISPLAY, stack == null ? ItemStack.EMPTY : stack.copy());
     }
 
     public ItemStack getDisplay() {
-        return (this.display == null) ? ItemStack.EMPTY : this.display;
+        return this.entityData.get(DISPLAY);
     }
 
     @Override
@@ -137,7 +165,7 @@ public class PelotaEntity extends Entity {
     public InteractionResult interact(Player player, InteractionHand hand) {
         if (player.isCrouching()) {
             if (!this.getCommandSenderWorld().isClientSide) {
-                ItemStack give = new ItemStack(ModItems.PELOTA.get());
+                ItemStack give = getDisplay().copy();
                 boolean added = player.getInventory().add(give);
                 if (!added) player.drop(give, false);
                 this.remove(Entity.RemovalReason.DISCARDED);
@@ -158,7 +186,7 @@ public class PelotaEntity extends Entity {
     @Override
     public EntityDimensions getDimensions(Pose pose) {
         // Debe concordar con el .sized(...) del EntityType registrado
-        return EntityDimensions.scalable(0.7f, 0.7f);
+        return EntityDimensions.scalable(1.0f, 1.0f);
     }
 
     @Override
@@ -195,6 +223,6 @@ public class PelotaEntity extends Entity {
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        // no synched data por ahora
+        builder.define(DISPLAY, ItemStack.EMPTY);
     }
 }

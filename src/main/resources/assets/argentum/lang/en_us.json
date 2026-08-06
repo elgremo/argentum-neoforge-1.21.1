@@ -94,8 +94,9 @@
   "item.argentum.pastelito_batata_frito": "Pastelito de Batata Frito",
   "item.argentum.pastelito_membrillo_crudo": "Pastelito de Membrillo Crudo",
   "item.argentum.pastelito_membrillo_frito": "Pastelito de Membrillo Frito",
-  "item.argentum.pelota": "Pelota",
+
   "item.argentum.pistola": "Pistola",
+
   "item.argentum.sal": "Sal",
   "item.argentum.tapas_empanada": "Tapas para Empanadas",
   "item.argentum.tapas_hojaldre": "Tapas de Hojaldre",
@@ -281,6 +282,29 @@
   "tool.argentum.prensa_mosto_listo.tooltip": "Usá una Cubeta para recoger el Mosto.",
 
   "tooltip.cuchillo.tooltip": "Usalo para conseguir cortes especiales de Vaca y Cerdo.",
+
+
+  "item.argentum.pelota": "Pelota",
+  "item.argentum.pelota_telstar": "Pelota Telstar Durlast 1978",
+  "item.argentum.pelota_azteca": "Pelota Azteca 1986",
+  "item.argentum.pelota_jabulani": "Pelota Jabulani 2010",
+  "item.argentum.pelota_al_rihla": "Pelota Al Rihla 2022",
+
+  "block.argentum.arco_uno": "Arco de Fulbo",
+  "block.argentum.arco_dos": "Arco de Fulbo",
+  "block.argentum.arco_tres": "Arco de Fulbo",
+  "block.argentum.arco_cuatro": "Arco de Fulbo",
+  "block.argentum.arco_cinco": "Arco de Fulbo",
+  "block.argentum.arco_seis": "Arco de Fulbo",
+  "block.argentum.arco_siete": "Arco de Fulbo",
+  "block.argentum.arco_ocho": "Arco de Fulbo",
+  "block.argentum.arco_nueve": "Arco de Fulbo",
+  "block.argentum.arco_diez": "Arco de Fulbo",
+  "block.argentum.arco_once": "Arco de Fulbo",
+  "block.argentum.arco_doce": "Arco de Fulbo",
+  "block.argentum.arco_fulbo": "Arco de Fulbo",
+  "block.argentum.arco_catorce": "Arco de Fulbo",
+  "block.argentum.arco_quince": "Arco de Fulbo",
 
   "creativetab.argentum.bala": "Tradición",
   "creativetab.argentum.casino": "Casino",
