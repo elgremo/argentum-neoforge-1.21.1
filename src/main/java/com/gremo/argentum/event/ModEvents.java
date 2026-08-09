@@ -63,7 +63,7 @@ public class ModEvents {
 
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 32),
-                    new ItemStack(ModItems.PISTOLA.get(), 1), 2, 8, 0.05f));
+                    new ItemStack(ModItems.CHUNGO.get(), 1), 2, 8, 0.05f));
 
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 5),

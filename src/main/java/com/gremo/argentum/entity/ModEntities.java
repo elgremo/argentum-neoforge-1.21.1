@@ -1,6 +1,8 @@
 package com.gremo.argentum.entity;
 
 import com.gremo.argentum.Argentum;
+import com.gremo.argentum.entity.custom.BalaEntity;
+import com.gremo.argentum.entity.custom.ChorroEntity;
 import com.gremo.argentum.entity.custom.PelotaEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +23,22 @@ public class ModEntities {
                     () -> EntityType.Builder.<PelotaEntity>of(PelotaEntity::new, MobCategory.MISC)
                             .sized(2.0f, 2.0f)
                             .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "pelota").toString())
+            );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<ChorroEntity>> CHORRO =
+            ENTITIES.register("chorro",
+                    () -> EntityType.Builder.<ChorroEntity>of(ChorroEntity::new, MobCategory.MONSTER)
+                            .sized(0.6f, 1.95f)
+                            .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "chorro").toString())
+            );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<BalaEntity>> BALA =
+            ENTITIES.register("bala",
+                    () -> EntityType.Builder.<BalaEntity>of(BalaEntity::new, MobCategory.MISC)
+                            .sized(1.0F, 1.0F)
+                            .clientTrackingRange(4)
+                            .updateInterval(1)
+                            .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "bala").toString())
             );
 
     // Método para registrar en el bus del mod (lo llamamos desde Argentum.java)

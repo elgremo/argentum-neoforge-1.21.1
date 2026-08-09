@@ -2,6 +2,7 @@ package com.gremo.argentum;
 
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.entity.ModEntities;
+import com.gremo.argentum.entity.client.ChorroRenderer;
 import com.gremo.argentum.event.*;
 import com.gremo.argentum.item.ModCreativeModeTabs;
 import com.gremo.argentum.item.ModItems;
@@ -9,6 +10,10 @@ import com.gremo.argentum.recipe.RecetasOlla;
 import com.gremo.argentum.recipe.RecetasParrilla;
 import com.gremo.argentum.sound.ModSounds;
 import com.gremo.argentum.villager.ModVillagers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -66,5 +71,14 @@ public class Argentum {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+    }
+
+    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+
+            EntityRenderers.register(ModEntities.CHORRO.get(), ChorroRenderer::new);
+        }
     }
 }

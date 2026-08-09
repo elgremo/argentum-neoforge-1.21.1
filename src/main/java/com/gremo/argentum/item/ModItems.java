@@ -2,12 +2,14 @@ package com.gremo.argentum.item;
 
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.block.ModBlocks;
+import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.item.custom.*;
 import com.gremo.argentum.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -65,8 +67,6 @@ public class ModItems {
     public static final DeferredItem<Item> SAL = ITEMS.register("sal",
             () -> new Item(new Item.Properties()));
 
-    public static final DeferredItem<Item> BALA = ITEMS.register("bala",
-            () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> BARAJA_SELLADA = ITEMS.register("baraja_sellada",
             () -> new BarajaSelladaItem(new Item.Properties()));
@@ -287,7 +287,8 @@ public class ModItems {
             ));
 
     public static final DeferredItem<Item> CHORRO_SPAWN_EGG = ITEMS.register("chorro_spawn_egg",
-            () -> new Item(new Item.Properties()));
+            () -> new DeferredSpawnEggItem(ModEntities.CHORRO, 0xFFFFFF, 0x000000,
+                    new Item.Properties()));
 
     public static final DeferredItem<Item> CHURRO_CRUDO = ITEMS.register("churro_crudo",
             () -> new CrudoItem(new Item.Properties()
@@ -851,8 +852,36 @@ public class ModItems {
             () -> new PelotaItem(new Item.Properties().stacksTo(1))
     );
 
-    public static final DeferredItem<Item> PISTOLA = ITEMS.register("pistola",
+    public static final DeferredItem<Item> BALA = ITEMS.register("bala",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> CHUNGO = ITEMS.register("chungo",
+            () -> new ArmaFuegoItem(
+                    new Item.Properties()
+                            .stacksTo(1)
+                            .durability(250),
+                    5.0F,   // daño
+                    2.0F,   // velocidad bala
+                    10      // cooldown
+            ));
+    public static final DeferredItem<Item> FAL = ITEMS.register("fal",
+            () -> new ArmaFuegoItem(
+                    new Item.Properties()
+                            .stacksTo(1)
+                            .durability(750),
+                    10.0F,   // daño
+                    4.0F,   // velocidad bala
+                    3      // cooldown
+            ));
+    public static final DeferredItem<Item> RECORTADA = ITEMS.register("recortada",
+            () -> new ArmaFuegoItem(
+                    new Item.Properties()
+                            .stacksTo(1)
+                            .durability(750),
+                    10.0F,   // daño
+                    3.0F,   // velocidad bala
+                    7      // cooldown
+            ));
+
 
     public static final DeferredItem<Item> SAQUITO_MATECOCIDO = ITEMS.register("saquito_matecocido",
             () -> new Item(new Item.Properties()));

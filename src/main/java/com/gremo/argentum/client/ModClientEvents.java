@@ -9,6 +9,7 @@ import com.gremo.argentum.block.renderer.ParrillaBlockEntityRenderer;
 import com.gremo.argentum.block.renderer.PrensaMostoBlockEntityRenderer;
 import com.gremo.argentum.client.renderer.PelotaRenderer;
 import com.gremo.argentum.entity.ModEntities;
+import com.gremo.argentum.entity.client.BalaRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
@@ -54,6 +55,8 @@ public class ModClientEvents {
             BlockEntityRenderers.register(ModBlockEntities.MOSTO_BE.get(), PrensaMostoBlockEntityRenderer::new);
 
             EntityRenderers.register(ModEntities.PELOTA.get(), PelotaRenderer::new);
+
+            EntityRenderers.register(ModEntities.BALA.get(), BalaRenderer::new);
 
             BlockEntityRenderers.register(
                     ModBlockEntities.BOTELLERO_BE.get(),

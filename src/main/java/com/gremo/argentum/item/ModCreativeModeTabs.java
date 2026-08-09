@@ -158,7 +158,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.TAZA_DE_MATECOCIDO);
                         output.accept(ModItems.TAZA_DE_TE);
                         output.accept(ModItems.ACEITE);
-                        output.accept(ModItems.BALA);
                         output.accept(ModItems.CUCHILLO);
 
                     }).build());
@@ -176,7 +175,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CINCO);
                         output.accept(ModBlocks.SEIS);
                         //output.accept(ModItems.CUADRO_ARGENTO);
-                        output.accept(ModItems.PISTOLA);
                         output.accept(ModItems.FICHA_CASINO_1);
                         output.accept(ModItems.FICHA_CASINO_5);
                         output.accept(ModItems.FICHA_CASINO_32);
@@ -254,8 +252,14 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.argentum.equipo"))
                     .displayItems((itemDisplayParameters, output) -> {
 
-                        output.accept(ModItems.COPA_MUNDO);
+                        output.accept(ModItems.CHORRO_SPAWN_EGG);
+                        output.accept(ModItems.BALA);
+                        output.accept(ModItems.CHUNGO);
+                        output.accept(ModItems.FAL);
+                        output.accept(ModItems.RECORTADA);
 
+
+                        output.accept(ModItems.COPA_MUNDO);
                         output.accept(ModItems.PELOTA);
                         output.accept(ModItems.PELOTA_TELSTAR);
                         output.accept(ModItems.PELOTA_AZTECA);

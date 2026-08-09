@@ -44,5 +44,42 @@
         "stream": true
       }
     ]
+  },
+  "chorro_ambient": {
+    "sounds": [
+      "argentum:chorro/chorro_ambient_01",
+      "argentum:chorro/chorro_ambient_02"
+    ]
+  },
+
+  "chorro_hurt": {
+    "sounds": [
+      "argentum:chorro/chorro_hurt_01",
+      "argentum:chorro/chorro_hurt_02"
+    ]
+  },
+
+  "chorro_death": {
+    "sounds": [
+      "argentum:chorro/chorro_death_01",
+      "argentum:chorro/chorro_death_02"
+    ]
+  },
+
+  "chorro_detect": {
+    "sounds": [
+      "argentum:chorro/chorro_detect_01"
+    ]
+  },
+
+  "chorro_shoot": {
+    "sounds": [
+      "argentum:chorro/chorro_shoot_01"
+    ]
+  },
+  "chungo_shoot": {
+    "sounds": [
+      "argentum:armas/chungo_shoot"
+    ]
   }
 }

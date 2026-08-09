@@ -52,7 +52,6 @@
   "item.argentum.chorizo_parrillero_cocido": "Chorizo Parrillero Asado",
   "item.argentum.chorizo_parrillero_crudo": "Chorizo Parrillero Crudo",
   "item.argentum.choripan": "Choripán",
-  "item.argentum.chorro_spawn_egg": "Huevo de Aparición de Chorro",
   "item.argentum.churro_crudo": "Churro Crudo",
   "item.argentum.churro_frito": "Churro Frito",
   "item.argentum.churro_frito_dulce": "Churro con Dulce de Leche",
@@ -95,7 +94,6 @@
   "item.argentum.pastelito_membrillo_crudo": "Pastelito de Membrillo Crudo",
   "item.argentum.pastelito_membrillo_frito": "Pastelito de Membrillo Frito",
 
-  "item.argentum.pistola": "Pistola",
 
   "item.argentum.sal": "Sal",
   "item.argentum.tapas_empanada": "Tapas para Empanadas",
@@ -305,6 +303,13 @@
   "block.argentum.arco_fulbo": "Arco de Fulbo",
   "block.argentum.arco_catorce": "Arco de Fulbo",
   "block.argentum.arco_quince": "Arco de Fulbo",
+
+  "entity.argentum.chorro": "Chorro",
+  "item.argentum.chorro_spawn_egg": "Huevo de Aparición de Chorro",
+  "item.argentum.chungo": "Chungo",
+  "item.argentum.fal": "FAL",
+  "item.argentum.recortada": "Recortada",
+
 
   "creativetab.argentum.bala": "Tradición",
   "creativetab.argentum.casino": "Casino",
