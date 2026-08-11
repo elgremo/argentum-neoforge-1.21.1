@@ -6,12 +6,16 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 
-public class ChorroRenderer extends MobRenderer<ChorroEntity, ChorroModel<ChorroEntity>> {
+public class ChorroRenderer extends MobRenderer<ChorroEntity, ChorroModel> {
+
     public ChorroRenderer(EntityRendererProvider.Context context) {
-        super(context, new ChorroModel<>(context.bakeLayer(ChorroModel.LAYER_LOCATION)), 0.20f);
+        super(context, new ChorroModel(context.bakeLayer(ChorroModel.LAYER_LOCATION)), 0.20F);
     }
+
+
 
     @Override
     public ResourceLocation getTextureLocation(ChorroEntity entity) {
@@ -19,12 +23,23 @@ public class ChorroRenderer extends MobRenderer<ChorroEntity, ChorroModel<Chorro
     }
 
     @Override
-    public void render(ChorroEntity entity, float entityYaw, float partialTicks, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+    public void render(ChorroEntity entity,
+                       float entityYaw,
+                       float partialTicks,
+                       PoseStack poseStack,
+                       MultiBufferSource buffer,
+                       int packedLight) {
+
+        poseStack.pushPose();
+
         if (entity.isBaby()) {
-            poseStack.scale(1.5f,1.5f,1.5f);
-        }else {
-            poseStack.scale(3.8f,3.8f,3.8f);
+            poseStack.scale(1.5F, 1.5F, 1.5F);
+        } else {
+            poseStack.scale(1F, 1F, 1F);
         }
+
         super.render(entity, entityYaw, partialTicks, poseStack, buffer, packedLight);
+
+        poseStack.popPose();
     }
 }

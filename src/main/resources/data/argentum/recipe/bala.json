@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "C",
+    "P",
+    "H"
+  ],
+  "key": {
+    "C": {
+      "tag": "c:ingots/copper_nuggets"
+    },
+    "P": {
+      "item": "minecraft:gunpowder"
+    },
+    "H": {
+      "tag": "c:iron_nuggets"
+    }
+  },
+  "result": {
+    "id": "argentum:bala",
+    "count": 8
+  }
+}

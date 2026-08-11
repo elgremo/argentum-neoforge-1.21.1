@@ -41,6 +41,8 @@ public class ModEntities {
                             .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "bala").toString())
             );
 
+
+
     // Método para registrar en el bus del mod (lo llamamos desde Argentum.java)
     public static void register(IEventBus modEventBus) {
         ENTITIES.register(modEventBus);
