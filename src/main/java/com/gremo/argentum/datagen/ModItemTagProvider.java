@@ -1,6 +1,7 @@
 package com.gremo.argentum.datagen;
 
 import com.gremo.argentum.Argentum;
+import com.gremo.argentum.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -45,5 +46,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         copy(BlockTags.STAIRS, ItemTags.STAIRS);
 
         copy(BlockTags.SLABS, ItemTags.SLABS);
+
+        tag(ItemTags.SWORDS)
+                .add(ModItems.CUCHILLO.get());
     }
 }

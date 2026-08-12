@@ -45,16 +45,22 @@ public class ChorroEntity extends Monster implements RangedAttackMob {
 
     @Override
     public void performRangedAttack(LivingEntity target, float distanceFactor) {
-        this.shootAnimationState.start(this.tickCount);
+
         this.level().broadcastEntityEvent(this, (byte)10);
+
         BalaEntity bala = new BalaEntity(level(), this);
         bala.setDamage(2.0F);
+
         double dx = target.getX() - this.getX();
         double dy = target.getEyeY() - bala.getY();
         double dz = target.getZ() - this.getZ();
+
         bala.shoot(dx, dy, dz, 1.0F, 0.0F);
+
         level().addFreshEntity(bala);
-        playSound(ModSounds.CHORRO_SHOOT.get(), 1.0F, 1.0F);
+
+        playSound(ModSounds.CHORRO_SHOOT.get(), 4.0F, 1.0F);
+        playSound(ModSounds.CHUNGO_SHOOT.get(), 4.0F, 1.0F);
     }
 
     @Override
@@ -109,9 +115,9 @@ public class ChorroEntity extends Monster implements RangedAttackMob {
     public static AttributeSupplier.Builder createAttributes() {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 20.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.25D)
+                .add(Attributes.MOVEMENT_SPEED, 0.20D)
                 .add(Attributes.FOLLOW_RANGE, 42.0D)
-                .add(Attributes.ATTACK_DAMAGE, 4.0D);
+                .add(Attributes.ATTACK_DAMAGE, 3.0D);
     }
 
     public final AnimationState idleAnimationState = new AnimationState();

@@ -341,22 +341,19 @@ public class ModItems {
     public static final DeferredItem<Item> CUADRO_ARGENTO = ITEMS.register("cuadro_argento",
             () -> new Item(new Item.Properties()));
 
-    // Cuchillo como SwordItem (usa el Tier de piedra; tiene daño/velocidad de espada de piedra)
-    public static final DeferredItem<SwordItem> CUCHILLO = ITEMS.register("cuchillo",
-            () -> new SwordItem(Tiers.IRON, new Item.Properties()) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-                    tooltipComponents.add(Component.translatable("tooltip.cuchillo.tooltip"));
-                    super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-                }
-                // Mantener cuchillo tras crafting (remaining item)
-                public boolean hasCraftingRemainingItem(ItemStack stack) {
-                    return true;
-                }
-                public ItemStack getCraftingRemainingItem(ItemStack stack) {
-                    return stack.copy();
-                }
-            });
+
+    public static final DeferredItem<CuchilloItem> CUCHILLO =
+            ITEMS.register("cuchillo",
+                    () -> new CuchilloItem(
+                            Tiers.IRON,
+                            new Item.Properties()
+                                    .durability(256)
+                                    .attributes(SwordItem.createAttributes(
+                                            Tiers.IRON,
+                                            3,
+                                            -2.4F
+                                    ))
+                    ));
 
 
     public static final DeferredItem<Item> MUCHACHOS_DISCO_MUSICA = ITEMS.register("muchachos_disco_musica",
