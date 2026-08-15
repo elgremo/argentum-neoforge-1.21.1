@@ -42,6 +42,13 @@ public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
             if(state.is(ModBlocks.JACARANDA_COMPLETO)) {
                 return ModBlocks.PELADO_JACARANDA_COMPLETO.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
             }
+            if(state.is(ModBlocks.CEIBO_TRONCO)) {
+                return ModBlocks.PELADO_CEIBO_TRONCO.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
+
+            if(state.is(ModBlocks.CEIBO_COMPLETO)) {
+                return ModBlocks.PELADO_CEIBO_COMPLETO.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+            }
         }
 
         return super.getToolModifiedState(state, context, itemAbility, simulate);

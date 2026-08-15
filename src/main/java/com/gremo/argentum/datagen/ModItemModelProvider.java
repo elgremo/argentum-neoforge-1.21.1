@@ -20,6 +20,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("jacaranda_boton", mcLoc("block/button_inventory"))
                 .texture("texture", modLoc("block/jacaranda_madera"));
 
+        withExistingParent("ceibo_valla", mcLoc("block/fence_inventory"))
+                .texture("texture", modLoc("block/ceibo_madera"));
+
+        withExistingParent("ceibo_boton", mcLoc("block/button_inventory"))
+                .texture("texture", modLoc("block/ceibo_madera"));
+
         withExistingParent(ModItems.CHORRO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 }

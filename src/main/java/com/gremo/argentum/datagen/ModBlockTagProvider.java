@@ -58,5 +58,43 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.PLANKS)
                 .add(ModBlocks.JACARANDA_MADERA.get());
+
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.CEIBO_VALLA.get());
+
+        tag(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.CEIBO_VALLA.get());
+
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.CEIBO_PORTON.get());
+
+        tag(BlockTags.WOODEN_DOORS)
+                .add(ModBlocks.CEIBO_PUERTA.get());
+
+        tag(BlockTags.WOODEN_TRAPDOORS)
+                .add(ModBlocks.CEIBO_TRAMPILLA.get());
+
+        tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(ModBlocks.CEIBO_PLACA_PRESION.get());
+
+        tag(BlockTags.WOODEN_BUTTONS)
+                .add(ModBlocks.CEIBO_BOTON.get());
+
+        tag(BlockTags.STAIRS)
+                .add(ModBlocks.CEIBO_ESCALERAS.get());
+
+        tag(BlockTags.SLABS)
+                .add(ModBlocks.CEIBO_LOSA.get());
+
+        tag(BlockTags.LOGS)
+                .add(ModBlocks.CEIBO_TRONCO.get())
+                .add(ModBlocks.PELADO_CEIBO_TRONCO.get());
+
+        tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.CEIBO_TRONCO.get())
+                .add(ModBlocks.PELADO_CEIBO_TRONCO.get());
+
+        tag(BlockTags.PLANKS)
+                .add(ModBlocks.CEIBO_MADERA.get());
     }
 }

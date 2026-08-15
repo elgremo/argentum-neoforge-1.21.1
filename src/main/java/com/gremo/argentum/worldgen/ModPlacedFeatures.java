@@ -56,6 +56,13 @@ public class ModPlacedFeatures {
                             Argentum.MOD_ID,
                             "jacaranda"));
 
+    public static final ResourceKey<PlacedFeature> CEIBO =
+            ResourceKey.create(
+                    Registries.PLACED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(
+                            Argentum.MOD_ID,
+                            "ceibo"));
+
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
 
         Holder<ConfiguredFeature<?, ?>> yerba =
@@ -153,6 +160,25 @@ public class ModPlacedFeatures {
 
                 new PlacedFeature(
                         jacaranda,
+
+                        List.of(
+                                RarityFilter.onAverageOnceEvery(8),
+                                InSquarePlacement.spread(),
+                                PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                                BiomeFilter.biome()
+                        )
+                )
+        );
+
+        Holder<ConfiguredFeature<?, ?>> ceibo =
+                context.lookup(Registries.CONFIGURED_FEATURE)
+                        .getOrThrow(ModConfiguredFeatures.CEIBO_KEY);
+
+        context.register(
+                CEIBO,
+
+                new PlacedFeature(
+                        ceibo,
 
                         List.of(
                                 RarityFilter.onAverageOnceEvery(8),

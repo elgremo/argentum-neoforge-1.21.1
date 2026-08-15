@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "argentum:pelado_ceibo_completo"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "argentum:ceibo_madera"
+  }
+}

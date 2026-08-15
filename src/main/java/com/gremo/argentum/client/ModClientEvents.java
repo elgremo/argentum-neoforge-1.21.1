@@ -64,6 +64,8 @@ public class ModClientEvents {
             );
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.JACARANDA_BROTE.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.JACARANDA_HOJAS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CEIBO_BROTE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CEIBO_HOJAS.get(), RenderType.cutout());
         });
     }
 }

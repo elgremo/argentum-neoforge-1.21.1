@@ -22,8 +22,8 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.argentum.bala"))
                     .displayItems((itemDisplayParameters, output) -> {
                         // ======================================================
-// 🌳 JACARANDÁ
-// ======================================================
+                        // 🌳 JACARANDÁ
+                        // ======================================================
 
                         output.accept(ModBlocks.JACARANDA_BROTE);
                         output.accept(ModBlocks.JACARANDA_HOJAS);
@@ -44,6 +44,30 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.JACARANDA_TRAMPILLA);
                         output.accept(ModBlocks.JACARANDA_BOTON);
                         output.accept(ModBlocks.JACARANDA_PLACA_PRESION);
+
+                        // ======================================================
+// 🌺 CEIBO
+// ======================================================
+
+                        output.accept(ModBlocks.CEIBO_BROTE);
+                        output.accept(ModBlocks.CEIBO_HOJAS);
+
+                        output.accept(ModBlocks.CEIBO_TRONCO);
+                        output.accept(ModBlocks.PELADO_CEIBO_TRONCO);
+
+                        output.accept(ModBlocks.CEIBO_COMPLETO);
+                        output.accept(ModBlocks.PELADO_CEIBO_COMPLETO);
+
+                        output.accept(ModBlocks.CEIBO_MADERA);
+
+                        output.accept(ModBlocks.CEIBO_ESCALERAS);
+                        output.accept(ModBlocks.CEIBO_LOSA);
+                        output.accept(ModBlocks.CEIBO_VALLA);
+                        output.accept(ModBlocks.CEIBO_PORTON);
+                        output.accept(ModBlocks.CEIBO_PUERTA);
+                        output.accept(ModBlocks.CEIBO_TRAMPILLA);
+                        output.accept(ModBlocks.CEIBO_BOTON);
+                        output.accept(ModBlocks.CEIBO_PLACA_PRESION);
 
 
 // ======================================================

@@ -25,6 +25,7 @@ import static net.minecraft.data.worldgen.features.FeatureUtils.register;
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> JACARANDA_KEY = registerKey("jacaranda");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CEIBO_KEY = registerKey("ceibo");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> YERBA_PATCH =
             ResourceKey.create(
@@ -183,6 +184,21 @@ public class ModConfiguredFeatures {
 
                         new TwoLayersFeatureSize(1, 0, 2)
                 ).build());
+
+        register(context, CEIBO_KEY, Feature.TREE,
+                new TreeConfiguration.TreeConfigurationBuilder(
+                        BlockStateProvider.simple(ModBlocks.CEIBO_TRONCO.get()),
+                        new ForkingTrunkPlacer(5, 2, 2),
+
+                        BlockStateProvider.simple(ModBlocks.CEIBO_HOJAS.get()),
+                        new BlobFoliagePlacer(
+                                ConstantInt.of(3),
+                                ConstantInt.of(1),
+                                3
+                        ),
+
+                        new TwoLayersFeatureSize(1, 1, 2)
+                ).ignoreVines().build());
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

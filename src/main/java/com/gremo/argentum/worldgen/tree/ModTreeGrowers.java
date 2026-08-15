@@ -10,4 +10,7 @@ public class ModTreeGrowers {
     public static final TreeGrower JACARANDA = new TreeGrower(Argentum.MOD_ID + ":jacaranda",
             Optional.empty(), Optional.of(ModConfiguredFeatures.JACARANDA_KEY), Optional.empty());
 
+    public static final TreeGrower CEIBO = new TreeGrower(Argentum.MOD_ID + ":ceibo",
+            Optional.empty(), Optional.of(ModConfiguredFeatures.CEIBO_KEY), Optional.empty());
+
 }

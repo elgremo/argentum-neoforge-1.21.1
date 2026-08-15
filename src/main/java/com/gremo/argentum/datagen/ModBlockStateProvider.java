@@ -136,6 +136,112 @@ public class ModBlockStateProvider extends BlockStateProvider {
         );
 
         blockItem(ModBlocks.JACARANDA_TRAMPILLA, "_bottom");
+
+            axisBlock(
+                    (RotatedPillarBlock) ModBlocks.CEIBO_TRONCO.get(),
+                    modLoc("block/ceibo_tronco_side"),
+                    modLoc("block/ceibo_tronco_top")
+            );
+
+            axisBlock(
+                    (RotatedPillarBlock) ModBlocks.CEIBO_COMPLETO.get(),
+                    modLoc("block/ceibo_tronco_side"),
+                    modLoc("block/ceibo_tronco_side")
+            );
+
+            axisBlock(
+                    (RotatedPillarBlock) ModBlocks.PELADO_CEIBO_TRONCO.get(),
+                    modLoc("block/pelado_ceibo_tronco_side"),
+                    modLoc("block/pelado_ceibo_tronco_top")
+            );
+
+            axisBlock(
+                    (RotatedPillarBlock) ModBlocks.PELADO_CEIBO_COMPLETO.get(),
+                    modLoc("block/pelado_ceibo_tronco_side"),
+                    modLoc("block/pelado_ceibo_tronco_side")
+            );
+
+            blockItem(ModBlocks.CEIBO_TRONCO);
+            blockItem(ModBlocks.CEIBO_COMPLETO);
+            blockItem(ModBlocks.PELADO_CEIBO_TRONCO);
+            blockItem(ModBlocks.PELADO_CEIBO_COMPLETO);
+            blockWithItem(ModBlocks.CEIBO_MADERA);
+
+            // =========================
+            // CEIBO MADERA
+            // =========================
+
+            stairsBlock(
+                    (StairBlock) ModBlocks.CEIBO_ESCALERAS.get(),
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+            blockItem(ModBlocks.CEIBO_ESCALERAS);
+
+            slabBlock(
+                    (SlabBlock) ModBlocks.CEIBO_LOSA.get(),
+                    blockTexture(ModBlocks.CEIBO_MADERA.get()),
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+            blockItem(ModBlocks.CEIBO_LOSA);
+
+            models().fencePost(
+                    "ceibo_valla_post",
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+
+            models().fenceSide(
+                    "ceibo_valla_side",
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+
+            models().fenceInventory(
+                    "ceibo_valla_inventory",
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+
+            fenceBlock(
+                    (FenceBlock) ModBlocks.CEIBO_VALLA.get(),
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+
+            fenceGateBlock(
+                    (FenceGateBlock) ModBlocks.CEIBO_PORTON.get(),
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+            blockItem(ModBlocks.CEIBO_PORTON);
+
+            buttonBlock(
+                    (ButtonBlock) ModBlocks.CEIBO_BOTON.get(),
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+
+            simpleBlockItem(
+                    ModBlocks.CEIBO_BOTON.get(),
+                    new ModelFile.UncheckedModelFile(modLoc("block/ceibo_boton_inventory"))
+            );
+
+            pressurePlateBlock(
+                    (PressurePlateBlock) ModBlocks.CEIBO_PLACA_PRESION.get(),
+                    blockTexture(ModBlocks.CEIBO_MADERA.get())
+            );
+            blockItem(ModBlocks.CEIBO_PLACA_PRESION);
+
+            doorBlockWithRenderType(
+                    (DoorBlock) ModBlocks.CEIBO_PUERTA.get(),
+                    modLoc("block/ceibo_puerta_abajo"),
+                    modLoc("block/ceibo_puerta_arriba"),
+                    "cutout"
+            );
+
+            trapdoorBlockWithRenderType(
+                    (TrapDoorBlock) ModBlocks.CEIBO_TRAMPILLA.get(),
+                    modLoc("block/ceibo_trampilla"),
+                    true,
+                    "cutout"
+            );
+
+            blockItem(ModBlocks.CEIBO_TRAMPILLA, "_bottom");
+
     }
 
     private void blockWithItem(DeferredBlock<? extends Block> block) {
