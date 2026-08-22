@@ -28,6 +28,7 @@
   "block.argentum.jacaranda_madera": "Madera de Jacarandá",
   "block.argentum.jacaranda_brote": "Brote de Jacarandá",
   "block.argentum.jacaranda_hojas": "Hojas de Jacarandá",
+  "block.argentum.jacaranda_pila_hojas": "Hoja de Jacarandá",
   "block.argentum.jacaranda_escaleras": "Escaleras de Jacarandá",
   "block.argentum.jacaranda_losa": "Losa de Jacarandá",
   "block.argentum.jacaranda_valla": "Valla de Jacarandá",
@@ -44,6 +45,7 @@
   "block.argentum.ceibo_madera": "Madera de Ceibo",
   "block.argentum.ceibo_brote": "Brote de Ceibo",
   "block.argentum.ceibo_hojas": "Hojas de Ceibo",
+  "block.argentum.ceibo_pila_hojas": "Hoja de Ceibo",
   "block.argentum.ceibo_escaleras": "Escaleras de Ceibo",
   "block.argentum.ceibo_losa": "Losa de Ceibo",
   "block.argentum.ceibo_valla": "Valla de Ceibo",
@@ -141,6 +143,7 @@
   "block.argentum.botellero_roble": "Botellero de Roble",
   "block.argentum.botellero_roble_oscuro": "Botellero de Roble Oscuro",
   "block.argentum.botellero_jacaranda": "Botellero de Jacarandá",
+  "block.argentum.botellero_ceibo": "Botellero de Ceibo",
 
   "item.argentum.copa_vino_vacia": "Copa de Vino Vacía",
   "item.argentum.copa_vino": "Copa de Vino",
@@ -159,6 +162,7 @@
 
   "item.argentum.pava": "Pava",
   "item.argentum.pava_caliente": "Pava Caliente",
+  "block.argentum.pava_fogata_vacia": "Pava en Fogata Vacia",
 
   "item.argentum.termo": "Termo",
   "item.argentum.termo_argento": "Termo Argento",
@@ -322,14 +326,25 @@
   "block.argentum.arco_catorce": "Arco de Fulbo",
   "block.argentum.arco_quince": "Arco de Fulbo",
 
-  "entity.argentum.chorro": "Chorro",
   "item.argentum.chorro_spawn_egg": "Huevo de Aparición de Chorro",
+  "item.argentum.tero_spawn_egg": "Huevo de Aparición de Tero",
+  "item.argentum.hornero_spawn_egg": "Huevo de Aparición de Hornero",
   "item.argentum.chungo": "Chungo",
   "item.argentum.fal": "FAL",
   "item.argentum.recortada": "Recortada",
 
+  "block.argentum.nido": "Nido",
+  "item.argentum.huevo_tero": "Huevo de Tero",
+  "item.argentum.huevo_gallina": "Huevo de Gallina",
+  "item.argentum.huevo_hornero": "Huevo de Hornero",
+  "tooltip.argentum.nido": "Usalo para criar animales o marcar su Hogar",
+
 
   "creativetab.argentum.bala": "Tradición",
   "creativetab.argentum.casino": "Casino",
-  "creativetab.argentum.equipo": "Fúlbo"
+  "creativetab.argentum.equipo": "Fúlbo",
+
+  "entity.argentum.tero": "Tero",
+  "entity.argentum.hornero": "Hornero",
+  "entity.argentum.chorro": "Chorro"
 }

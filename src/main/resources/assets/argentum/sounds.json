@@ -81,5 +81,22 @@
     "sounds": [
       "argentum:armas/chungo_shoot"
     ]
+  },
+  "tero_ruido": {
+    "sounds": [
+      "argentum:tero/tero_ruido"
+    ]
+  },
+  "idle_hornero_01": {
+    "sounds": ["argentum:hornero/idle_hornero_01"]
+  },
+  "idle_hornero_02": {
+    "sounds": ["argentum:hornero/idle_hornero_02"]
+  },
+  "idle_hornero_03": {
+    "sounds": ["argentum:hornero/idle_hornero_03"]
+  },
+  "idle_hornero_04": {
+    "sounds": ["argentum:hornero/idle_hornero_04"]
   }
 }

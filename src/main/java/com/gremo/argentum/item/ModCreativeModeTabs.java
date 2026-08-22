@@ -27,6 +27,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.JACARANDA_BROTE);
                         output.accept(ModBlocks.JACARANDA_HOJAS);
+                        output.accept(ModBlocks.JACARANDA_PILA_HOJAS);
 
                         output.accept(ModBlocks.JACARANDA_TRONCO);
                         output.accept(ModBlocks.PELADO_JACARANDA_TRONCO);
@@ -45,12 +46,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.JACARANDA_BOTON);
                         output.accept(ModBlocks.JACARANDA_PLACA_PRESION);
 
-                        // ======================================================
+// ======================================================
 // 🌺 CEIBO
 // ======================================================
 
                         output.accept(ModBlocks.CEIBO_BROTE);
                         output.accept(ModBlocks.CEIBO_HOJAS);
+                        output.accept(ModBlocks.CEIBO_PILA_HOJAS);
 
                         output.accept(ModBlocks.CEIBO_TRONCO);
                         output.accept(ModBlocks.PELADO_CEIBO_TRONCO);
@@ -71,12 +73,16 @@ public class ModCreativeModeTabs {
 
 
 // ======================================================
+// TERO
+// ======================================================
+                        output.accept(ModBlocks.NIDO);
+
+// ======================================================
 // 🍳 COCINA
 // ======================================================
 
                         output.accept(ModBlocks.OLLA);
                         output.accept(ModBlocks.PARRILLA);
-
                         output.accept(ModItems.CUCHILLO);
 
 
@@ -155,6 +161,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.COPA_VINO);
 
                         output.accept(ModBlocks.BOTELLERO_JACARANDA);
+                        output.accept(ModBlocks.BOTELLERO_CEIBO);
                         output.accept(ModBlocks.BOTELLERO_ROBLE);
                         output.accept(ModBlocks.BOTELLERO_ROBLE_OSCURO);
                         output.accept(ModBlocks.BOTELLERO_ABEDUL);
@@ -250,6 +257,9 @@ public class ModCreativeModeTabs {
 // ======================================================
 
                         output.accept(ModItems.CHORIPAN);
+
+                        output.accept(ModItems.HUEVO_TERO);
+                        output.accept(ModItems.HUEVO_HORNERO);
 
                         output.accept(ModItems.MILANESA_CRUDA);
                         output.accept(ModItems.MILANESA_FRITA);
@@ -408,7 +418,8 @@ public class ModCreativeModeTabs {
 // ======================================================
 
                         output.accept(ModItems.CHORRO_SPAWN_EGG);
-
+                        output.accept(ModItems.TERO_SPAWN_EGG);
+                        output.accept(ModItems.HORNERO_SPAWN_EGG);
 
 // ======================================================
 // 🔫 ARMAS

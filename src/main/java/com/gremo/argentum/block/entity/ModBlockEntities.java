@@ -22,7 +22,6 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("mosto_be", () -> BlockEntityType.Builder.of(
                     PrensaMostoBlockEntity::new, ModBlocks.PRENSA_MOSTO.get()).build(null));
 
-    // Nueva entidad para la olla
     public static final Supplier<BlockEntityType<OllaBlockEntity>> OLLA_BE =
             BLOCK_ENTITIES.register("olla_be", () -> BlockEntityType.Builder.of(
                     OllaBlockEntity::new,
@@ -48,7 +47,6 @@ public class ModBlockEntities {
     public static final Supplier<BlockEntityType<BotelleroBlockEntity>> BOTELLERO_BE =
             BLOCK_ENTITIES.register("botellero_be", () -> BlockEntityType.Builder.of(
                     BotelleroBlockEntity::new,
-
                     ModBlocks.BOTELLERO_ABEDUL.get(),
                     ModBlocks.BOTELLERO_ABETO.get(),
                     ModBlocks.BOTELLERO_ACACIA.get(),
@@ -59,9 +57,13 @@ public class ModBlockEntities {
                     ModBlocks.BOTELLERO_MANGLAR.get(),
                     ModBlocks.BOTELLERO_ROBLE.get(),
                     ModBlocks.BOTELLERO_ROBLE_OSCURO.get(),
-                    ModBlocks.BOTELLERO_JACARANDA.get()
-
+                    ModBlocks.BOTELLERO_JACARANDA.get(),
+                    ModBlocks.BOTELLERO_CEIBO.get()
             ).build(null));
+
+    // ✅ CORREGIDO: Ahora es Supplier
+    public static final Supplier<BlockEntityType<NidoBlockEntity>> NIDO_BE =
+            BLOCK_ENTITIES.register("nido_be", () -> BlockEntityType.Builder.of(NidoBlockEntity::new, ModBlocks.NIDO.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

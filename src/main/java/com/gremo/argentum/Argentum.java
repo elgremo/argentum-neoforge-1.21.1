@@ -3,9 +3,14 @@ package com.gremo.argentum;
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.entity.client.ChorroRenderer;
+import com.gremo.argentum.entity.client.HorneroRenderer;
+import com.gremo.argentum.entity.client.TeroRenderer;
 import com.gremo.argentum.event.*;
 import com.gremo.argentum.item.ModCreativeModeTabs;
 import com.gremo.argentum.item.ModItems;
+import com.gremo.argentum.particle.CeiboParticles;
+import com.gremo.argentum.particle.JacarandaParticles;
+import com.gremo.argentum.particle.ModParticles;
 import com.gremo.argentum.recipe.RecetasOlla;
 import com.gremo.argentum.recipe.RecetasParrilla;
 import com.gremo.argentum.sound.ModSounds;
@@ -14,10 +19,9 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import org.slf4j.Logger;
-
 import com.mojang.logging.LogUtils;
-
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -55,7 +59,7 @@ public class Argentum {
         ModSounds.register(modEventBus);
         ModVillagers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
-
+        ModParticles.register(modEventBus);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
@@ -79,6 +83,14 @@ public class Argentum {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
             EntityRenderers.register(ModEntities.CHORRO.get(), ChorroRenderer::new);
+            EntityRenderers.register(ModEntities.HORNERO.get(), HorneroRenderer::new);
+            EntityRenderers.register(ModEntities.TERO.get(), TeroRenderer::new);
+        }
+
+        @SubscribeEvent
+        public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(ModParticles.CEIBO_PARTICLES.get(), CeiboParticles.Provider::new);
+            event.registerSpriteSet(ModParticles.JACARANDA_PARTICLES.get(), JacarandaParticles.Provider::new);
         }
     }
 }

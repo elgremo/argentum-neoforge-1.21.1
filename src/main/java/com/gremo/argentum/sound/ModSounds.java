@@ -33,6 +33,12 @@ public class ModSounds {
     public static final Supplier<SoundEvent> CHUNGO_SHOOT =
             registerSoundEvent("chungo_shoot");
 
+    public static final Supplier<SoundEvent> TERO_RUIDO = registerSoundEvent("tero_ruido");
+
+    public static final Supplier<SoundEvent> IDLE_HORNERO_01 = registerSoundEvent("idle_hornero_01");
+    public static final Supplier<SoundEvent> IDLE_HORNERO_02 = registerSoundEvent("idle_hornero_02");
+    public static final Supplier<SoundEvent> IDLE_HORNERO_03 = registerSoundEvent("idle_hornero_03");
+    public static final Supplier<SoundEvent> IDLE_HORNERO_04 = registerSoundEvent("idle_hornero_04");
 
     public static final Supplier<SoundEvent> MUCHACHOS = registerSoundEvent("muchachos");
     public static final ResourceKey<JukeboxSong> MUCHACHOS_KEY = createSong("muchachos");

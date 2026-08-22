@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#argentum:has_tero",
+  "spawners": {
+    "type": "argentum:tero",
+    "weight": 30,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

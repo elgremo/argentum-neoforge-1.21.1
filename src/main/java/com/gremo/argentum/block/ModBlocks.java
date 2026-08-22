@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -217,6 +218,11 @@ public class ModBlocks {
                     .strength(1f)
                     .noOcclusion()
                     .sound(SoundType.WOOD)));
+    public static final DeferredBlock<Block> BOTELLERO_CEIBO = registerBlock("botellero_ceibo",
+            () -> new BotelleroBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.WOOD)));
 
 
     public static final DeferredBlock<Block> JACARANDA_TRONCO = registerBlock("jacaranda_tronco",
@@ -245,24 +251,17 @@ public class ModBlocks {
                     return 5;
                 }
             });
+    public static final DeferredBlock<Block> JACARANDA_PILA_HOJAS = registerBlock("jacaranda_pila_hojas",
+            () -> new JacarandaLeavesPileBlock(BlockBehaviour.Properties.of()
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .pushReaction(PushReaction.DESTROY)
+            ));
+
     public static final DeferredBlock<Block> JACARANDA_HOJAS = registerBlock("jacaranda_hojas",
-            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 60;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 30;
-                }
-            });
-
+            () -> new JacarandaLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_LEAVES))
+    );
     public static final DeferredBlock<Block> JACARANDA_BROTE = registerBlock("jacaranda_brote",
             () -> new SaplingBlock(ModTreeGrowers.JACARANDA, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
     public static final DeferredBlock<Block> JACARANDA_ESCALERAS = registerBlock("jacaranda_escaleras",
@@ -330,23 +329,18 @@ public class ModBlocks {
                 }
             });
 
+    public static final DeferredBlock<Block> CEIBO_PILA_HOJAS = registerBlock("ceibo_pila_hojas",
+            () -> new CeiboLeavesPileBlock(BlockBehaviour.Properties.of()
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .pushReaction(PushReaction.DESTROY)
+            ));
+
     public static final DeferredBlock<Block> CEIBO_HOJAS = registerBlock("ceibo_hojas",
-            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
+            () -> new CeiboLeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHERRY_LEAVES))
+    );
 
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 60;
-                }
-
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 30;
-                }
-            });
     public static final DeferredBlock<Block> CEIBO_BROTE = registerBlock("ceibo_brote",
             () -> new SaplingBlock(ModTreeGrowers.CEIBO, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
@@ -476,6 +470,11 @@ public class ModBlocks {
                     .sound(SoundType.METAL)
                     .noOcclusion()));
 
+
+    public static final DeferredBlock<Block> NIDO = registerBlock("nido",
+            () -> new NidoBlock(BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .strength(0.5f)));
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

@@ -5,15 +5,12 @@ import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.item.custom.*;
 import com.gremo.argentum.sound.ModSounds;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Argentum.MOD_ID);
@@ -289,6 +286,15 @@ public class ModItems {
     public static final DeferredItem<Item> CHORRO_SPAWN_EGG = ITEMS.register("chorro_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.CHORRO, 0xFFFFFF, 0x000000,
                     new Item.Properties()));
+    public static final DeferredItem<Item> TERO_SPAWN_EGG = ITEMS.register("tero_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.TERO, 0x808080, 0x000000,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> HORNERO_SPAWN_EGG = ITEMS.register("hornero_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.HORNERO, 0x8B6B4A, 0xD4A574,
+                    new Item.Properties()));
+
+
 
     public static final DeferredItem<Item> CHURRO_CRUDO = ITEMS.register("churro_crudo",
             () -> new CrudoItem(new Item.Properties()
@@ -1164,6 +1170,14 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
 
+    public static final DeferredItem<Item> HUEVO_TERO = ITEMS.register("huevo_tero",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> HUEVO_GALLINA = ITEMS.register("huevo_gallina",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> HUEVO_HORNERO = ITEMS.register("huevo_hornero",
+            () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

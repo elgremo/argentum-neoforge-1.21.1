@@ -3,10 +3,7 @@ package com.gremo.argentum.client;
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.block.entity.ModBlockEntities;
-import com.gremo.argentum.block.renderer.BotelleroBlockEntityRenderer;
-import com.gremo.argentum.block.renderer.OllaBlockEntityRenderer;
-import com.gremo.argentum.block.renderer.ParrillaBlockEntityRenderer;
-import com.gremo.argentum.block.renderer.PrensaMostoBlockEntityRenderer;
+import com.gremo.argentum.block.renderer.*;
 import com.gremo.argentum.client.renderer.PelotaRenderer;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.entity.client.BalaRenderer;
@@ -66,6 +63,13 @@ public class ModClientEvents {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.JACARANDA_HOJAS.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CEIBO_BROTE.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CEIBO_HOJAS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CEIBO_PILA_HOJAS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.JACARANDA_PILA_HOJAS.get(), RenderType.cutout());
+
+            BlockEntityRenderers.register(
+                    ModBlockEntities.NIDO_BE.get(),
+                    NidoBlockEntityRenderer::new);
+
         });
     }
 }
