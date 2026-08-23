@@ -5,12 +5,15 @@ import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.item.custom.*;
 import com.gremo.argentum.sound.ModSounds;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.List;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Argentum.MOD_ID);
@@ -368,10 +371,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.LA_CUARTA_KEY).stacksTo(1)));
 
 
-    public static final DeferredItem<Item> COPA_MUNDO = ITEMS.register("copa_mundo",
+    /*public static final DeferredItem<Item> COPA_MUNDO = ITEMS.register("copa_mundo",
             () -> new CopaMundoItem(
                     new Item.Properties().rarity(Rarity.EPIC)
-            ));
+            ));*/
 
 
     public static final DeferredItem<Item> DULCE_BATATA = ITEMS.register("dulce_batata",

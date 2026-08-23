@@ -9,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,9 +23,17 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
+import static com.gremo.argentum.item.ModItems.ITEMS;
+
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(Argentum.MOD_ID);
+
+    public static DeferredBlock<Block> registerBlock(String name, Supplier<Block> blockSupplier, Rarity rarity) {
+        DeferredBlock<Block> block = BLOCKS.register(name, blockSupplier);
+        ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().rarity(rarity)));
+        return block;
+    }
 
     public static final DeferredBlock<Block> UNO = registerBlock("uno",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -44,6 +53,14 @@ public class ModBlocks {
     public static final DeferredBlock<Block> SEIS = registerBlock("seis",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(1f).sound(SoundType.AMETHYST)));
+
+    public static final DeferredBlock<Block> COPA_MUNDO = registerBlock("copa_mundo",
+            () -> new CopaMundoBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.AMETHYST)),
+            Rarity.EPIC
+    );
 
 
     public static final DeferredBlock<Block> PARRILLA = registerBlock("parrilla",
@@ -484,7 +501,7 @@ public class ModBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
     private static <T extends Block> DeferredBlock<T> registerBlockNoItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);

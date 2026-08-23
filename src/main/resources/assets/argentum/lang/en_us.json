@@ -73,7 +73,10 @@
   "item.argentum.churro_crudo": "Churro Crudo",
   "item.argentum.churro_frito": "Churro Frito",
   "item.argentum.churro_frito_dulce": "Churro con Dulce de Leche",
-  "item.argentum.copa_mundo": "Copa del Mundo",
+
+  "block.argentum.copa_mundo": "Copa del Mundo",
+  "tooltip.argentum.copa_mundo": "Obtenida por: Kempes, Maradona y Messi",
+
   "item.argentum.costilla_asada": "Costilla Asada",
   "item.argentum.costilla_cruda": "Costilla Cruda",
   "item.argentum.cuadro_argento": "Cuadro Argento",

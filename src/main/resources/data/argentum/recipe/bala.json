@@ -7,13 +7,13 @@
   ],
   "key": {
     "C": {
-      "tag": "c:ingots/copper_nuggets"
+      "item": "minecraft:copper_ingot"
     },
     "P": {
       "item": "minecraft:gunpowder"
     },
     "H": {
-      "tag": "c:iron_nuggets"
+      "item": "minecraft:iron_nugget"
     }
   },
   "result": {

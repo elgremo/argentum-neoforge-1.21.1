@@ -435,7 +435,7 @@ public class ModCreativeModeTabs {
 // 🏆 TROFEOS
 // ======================================================
 
-                        output.accept(ModItems.COPA_MUNDO);
+                        output.accept(ModBlocks.COPA_MUNDO);
 
 
 // ======================================================
@@ -447,6 +447,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PELOTA_AZTECA);
                         output.accept(ModItems.PELOTA_JABULANI);
                         output.accept(ModItems.PELOTA_AL_RIHLA);
+                        output.accept(ModBlocks.ARCO_FULBO);
 
 
 // ======================================================
