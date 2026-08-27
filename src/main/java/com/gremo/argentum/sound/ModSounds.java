@@ -35,10 +35,12 @@ public class ModSounds {
 
     public static final Supplier<SoundEvent> TERO_RUIDO = registerSoundEvent("tero_ruido");
 
-    public static final Supplier<SoundEvent> IDLE_HORNERO_01 = registerSoundEvent("idle_hornero_01");
-    public static final Supplier<SoundEvent> IDLE_HORNERO_02 = registerSoundEvent("idle_hornero_02");
-    public static final Supplier<SoundEvent> IDLE_HORNERO_03 = registerSoundEvent("idle_hornero_03");
-    public static final Supplier<SoundEvent> IDLE_HORNERO_04 = registerSoundEvent("idle_hornero_04");
+    public static final Supplier<SoundEvent> IDLE_HORNERO = registerSoundEvent("idle_hornero");
+
+    public static final Supplier<SoundEvent> ATAQUE_ZORRO = registerSoundEvent("ataque_zorro");
+    public static final Supplier<SoundEvent> DEATH_ZORRO = registerSoundEvent("death_zorro");
+    public static final Supplier<SoundEvent> HURT_ZORRO = registerSoundEvent("hurt_zorro");
+    public static final Supplier<SoundEvent> IDLE_ZORRO = registerSoundEvent("idle_zorro");
 
     public static final Supplier<SoundEvent> MUCHACHOS = registerSoundEvent("muchachos");
     public static final ResourceKey<JukeboxSong> MUCHACHOS_KEY = createSong("muchachos");

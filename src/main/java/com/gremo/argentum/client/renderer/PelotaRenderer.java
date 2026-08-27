@@ -50,6 +50,7 @@ public class PelotaRenderer extends EntityRenderer<PelotaEntity> {
     }
 
 
+
     @Override
     public ResourceLocation getTextureLocation(PelotaEntity entity) {
         return TextureAtlas.LOCATION_BLOCKS;

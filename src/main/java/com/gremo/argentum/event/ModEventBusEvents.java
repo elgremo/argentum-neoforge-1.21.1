@@ -2,11 +2,10 @@ package com.gremo.argentum.event;
 
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.entity.ModEntities;
-import com.gremo.argentum.entity.client.ChorroModel;
-import com.gremo.argentum.entity.client.HorneroModel;
-import com.gremo.argentum.entity.client.TeroModel;
+import com.gremo.argentum.entity.client.*;
 import com.gremo.argentum.entity.custom.ChorroEntity;
 import com.gremo.argentum.entity.custom.TeroEntity;
+import com.gremo.argentum.entity.custom.ZorroGrisEntity;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
@@ -33,6 +32,14 @@ public class ModEventBusEvents {
                 HorneroModel.LAYER_LOCATION,
                 HorneroModel::createBodyLayer
         );
+        event.registerLayerDefinition
+                (ZorroGrisModel.LAYER_LOCATION,
+                        ZorroGrisModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.ZORRO_GRIS.get(), ZorroGrisRenderer::new);
     }
 
     @SubscribeEvent
@@ -40,5 +47,6 @@ public class ModEventBusEvents {
         event.put(ModEntities.CHORRO.get(), ChorroEntity.createAttributes().build());
         event.put(ModEntities.TERO.get(), TeroEntity.createAttributes().build());
         event.put(ModEntities.HORNERO.get(), TeroEntity.createAttributes().build());
+        event.put(ModEntities.ZORRO_GRIS.get(), ZorroGrisEntity.createAttributes().build());
     }
 }

@@ -62,6 +62,14 @@ public class ModBlocks {
             Rarity.EPIC
     );
 
+    public static final DeferredBlock<Block> COPA_AMERICA = registerBlock("copa_america",
+            () -> new CopaAmericaBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.AMETHYST)),
+            Rarity.RARE
+    );
+
 
     public static final DeferredBlock<Block> PARRILLA = registerBlock("parrilla",
             () -> new ParrillaBlock(BlockBehaviour.Properties.of()
@@ -492,6 +500,8 @@ public class ModBlocks {
             () -> new NidoBlock(BlockBehaviour.Properties.of()
                     .noOcclusion()
                     .strength(0.5f)));
+
+
 
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

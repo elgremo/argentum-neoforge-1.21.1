@@ -1,31 +1,31 @@
 {
   "aldeano_use": {
-    "sounds":[
+    "sounds": [
       "argentum:aldeano_use"
     ]
   },
   "aldeano_break": {
-    "sounds":[
+    "sounds": [
       "argentum:aldeano_break"
     ]
   },
   "aldeano_fall": {
-    "sounds":[
+    "sounds": [
       "argentum:aldeano_fall"
     ]
   },
   "aldeano_hit": {
-    "sounds":[
+    "sounds": [
       "argentum:aldeano_hit"
     ]
   },
   "aldeano_place": {
-    "sounds":[
+    "sounds": [
       "argentum:aldeano_place"
     ]
   },
   "aldeano_step": {
-    "sounds":[
+    "sounds": [
       "argentum:aldeano_step"
     ]
   },
@@ -51,27 +51,23 @@
       "argentum:chorro/chorro_ambient_02"
     ]
   },
-
   "chorro_hurt": {
     "sounds": [
       "argentum:chorro/chorro_hurt_01",
       "argentum:chorro/chorro_hurt_02"
     ]
   },
-
   "chorro_death": {
     "sounds": [
       "argentum:chorro/chorro_death_01",
       "argentum:chorro/chorro_death_02"
     ]
   },
-
   "chorro_detect": {
     "sounds": [
       "argentum:chorro/chorro_detect_01"
     ]
   },
-
   "chorro_shoot": {
     "sounds": [
       "argentum:chorro/chorro_shoot_01"
@@ -87,16 +83,32 @@
       "argentum:tero/tero_ruido"
     ]
   },
-  "idle_hornero_01": {
-    "sounds": ["argentum:hornero/idle_hornero_01"]
+  "idle_hornero": {
+    "sounds": [
+      "argentum:hornero/idle_hornero_01",
+      "argentum:hornero/idle_hornero_02",
+      "argentum:hornero/idle_hornero_03",
+      "argentum:hornero/idle_hornero_04"
+    ]
   },
-  "idle_hornero_02": {
-    "sounds": ["argentum:hornero/idle_hornero_02"]
+  "ataque_zorro": {
+    "sounds": [
+      "argentum:zorro_gris/ataque_zorro"
+    ]
   },
-  "idle_hornero_03": {
-    "sounds": ["argentum:hornero/idle_hornero_03"]
+  "death_zorro": {
+    "sounds": [
+      "argentum:zorro_gris/death_zorro"
+    ]
   },
-  "idle_hornero_04": {
-    "sounds": ["argentum:hornero/idle_hornero_04"]
+  "hurt_zorro": {
+    "sounds": [
+      "argentum:zorro_gris/hurt_zorro"
+    ]
+  },
+  "idle_zorro": {
+    "sounds": [
+      "argentum:zorro_gris/idle_zorro"
+    ]
   }
 }

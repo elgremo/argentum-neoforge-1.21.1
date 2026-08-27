@@ -195,29 +195,20 @@ public class HorneroEntity extends Animal {
         if (this.level().isClientSide()) {
             this.setupAnimationStates();
         } else {
+            this.playRandomSound();
+            if (!this.isFlying() && !this.onGround() && this.getDeltaMovement().y < -0.15) {
+                this.setDeltaMovement(this.getDeltaMovement().x, -0.15, this.getDeltaMovement().z);
+            }
+            // Intentar poner huevo
             this.tryLayEgg();
         }
     }
 
     // --- SONIDOS ---
-    @Override
-    public void playAmbientSound() {
-        if (this.random.nextInt(120) == 0) {
-            SoundEvent sound = getRandomIdleSound();
-            if (sound != null) {
-                this.playSound(sound, 0.5F, 1.25F);
-            }
+    private void playRandomSound() {
+        if (this.random.nextInt(100) == 0) {
+            this.playSound(ModSounds.IDLE_HORNERO.get(), 0.6F, 1.3F);
         }
-    }
-
-    private SoundEvent getRandomIdleSound() {
-        int r = this.random.nextInt(4);
-        return switch (r) {
-            case 0 -> ModSounds.IDLE_HORNERO_01.get();
-            case 1 -> ModSounds.IDLE_HORNERO_02.get();
-            case 2 -> ModSounds.IDLE_HORNERO_03.get();
-            default -> ModSounds.IDLE_HORNERO_04.get();
-        };
     }
 
     @Override

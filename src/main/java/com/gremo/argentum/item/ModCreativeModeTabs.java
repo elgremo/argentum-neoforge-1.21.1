@@ -45,6 +45,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.JACARANDA_TRAMPILLA);
                         output.accept(ModBlocks.JACARANDA_BOTON);
                         output.accept(ModBlocks.JACARANDA_PLACA_PRESION);
+                        //output.accept(ModItems.JACARANDA_BOTE);
 
 // ======================================================
 // 🌺 CEIBO
@@ -420,6 +421,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHORRO_SPAWN_EGG);
                         output.accept(ModItems.TERO_SPAWN_EGG);
                         output.accept(ModItems.HORNERO_SPAWN_EGG);
+                        output.accept(ModItems.ZORRO_GRIS_SPAWN_EGG);
 
 // ======================================================
 // 🔫 ARMAS
@@ -436,6 +438,7 @@ public class ModCreativeModeTabs {
 // ======================================================
 
                         output.accept(ModBlocks.COPA_MUNDO);
+                        output.accept(ModBlocks.COPA_AMERICA);
 
 
 // ======================================================
@@ -468,6 +471,16 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CAMISETA_BOCA);
                         output.accept(ModItems.CAMISETA_INDEPENDIENTE);
                         output.accept(ModItems.CAMISETA_RACING);
+
+                        output.accept(ModItems.CAMISETA_ARGENTINOS_JR);
+                        output.accept(ModItems.CAMISETA_ESTUDIANTES_PLATA);
+                        output.accept(ModItems.CAMISETA_PLATENSE);
+                        output.accept(ModItems.CAMISETA_SPREEN);
+                        output.accept(ModItems.CAMISETA_TALLERES_CORDOBA);
+                        output.accept(ModItems.CAMISETA_TIGRE);
+                        output.accept(ModItems.CAMISETA_VELEZ);
+                        output.accept(ModItems.CAMISETA_CENTRAL);
+
 
                     }).build());
 

@@ -2,6 +2,8 @@ package com.gremo.argentum.entity;
 
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.entity.custom.*;
+import net.minecraft.client.renderer.entity.BoatRenderer;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -56,6 +58,13 @@ public class ModEntities {
                                     Argentum.MOD_ID,
                                     "hornero"
                             ).toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<ZorroGrisEntity>> ZORRO_GRIS =
+            ENTITIES.register("zorro_gris",
+                    () -> EntityType.Builder.of(ZorroGrisEntity::new, MobCategory.CREATURE)
+                            .sized(0.6F, 0.8F)
+                            .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "zorro_gris").toString()));
+
 
     // Método para registrar en el bus del mod (lo llamamos desde Argentum.java)
     public static void register(IEventBus modEventBus) {
