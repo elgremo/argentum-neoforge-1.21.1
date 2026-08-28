@@ -7,6 +7,8 @@ import com.gremo.argentum.block.renderer.*;
 import com.gremo.argentum.client.renderer.PelotaRenderer;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.entity.client.BalaRenderer;
+import com.gremo.argentum.entity.client.DadoModel;
+import com.gremo.argentum.entity.client.DadoRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
@@ -72,5 +74,16 @@ public class ModClientEvents {
                     NidoBlockEntityRenderer::new);
 
         });
+
+    }
+
+    @SubscribeEvent
+    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.DADO.get(), DadoRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(DadoModel.LAYER_LOCATION, DadoModel::createBodyLayer);
     }
 }

@@ -66,6 +66,13 @@ public class ModEntities {
                             .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "zorro_gris").toString()));
 
 
+    public static final DeferredHolder<EntityType<?>, EntityType<DadoEntity>> DADO =
+            ENTITIES.register("dado",
+                    () -> EntityType.Builder.<DadoEntity>of(DadoEntity::new, MobCategory.MISC)
+                            .sized(0.5f, 0.5f)
+                            .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "dado").toString())
+            );
+
     // Método para registrar en el bus del mod (lo llamamos desde Argentum.java)
     public static void register(IEventBus modEventBus) {
         ENTITIES.register(modEventBus);

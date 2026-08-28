@@ -299,6 +299,7 @@ public class ModCreativeModeTabs {
 // 🎲 DADOS
 // ======================================================
 
+                        output.accept(ModItems.DADO);
                         output.accept(ModBlocks.UNO);
                         output.accept(ModBlocks.DOS);
                         output.accept(ModBlocks.TRES);
@@ -311,12 +312,13 @@ public class ModCreativeModeTabs {
 // 🪙 FICHAS
 // ======================================================
 
-                        output.accept(ModItems.FICHA_CASINO_1);
-                        output.accept(ModItems.FICHA_CASINO_5);
+                        output.accept(ModItems.FICHA_CASINO_2);
+                        output.accept(ModItems.FICHA_CASINO_4);
+                        output.accept(ModItems.FICHA_CASINO_8);
+                        output.accept(ModItems.FICHA_CASINO_16);
                         output.accept(ModItems.FICHA_CASINO_32);
                         output.accept(ModItems.FICHA_CASINO_64);
                         output.accept(ModItems.FICHA_CASINO_ESPECIAL);
-                        output.accept(ModItems.FICHA_CASINO_OTRA);
 
 
 // ======================================================

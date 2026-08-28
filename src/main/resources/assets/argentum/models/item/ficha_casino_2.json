@@ -2,8 +2,8 @@
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "argentum:item/ficha_casino_otra",
-		"particle": "argentum:item/ficha_casino_otra"
+		"1": "argentum:item/ficha_casino_2",
+		"particle": "argentum:item/ficha_casino_2"
 	},
 	"elements": [
 		{

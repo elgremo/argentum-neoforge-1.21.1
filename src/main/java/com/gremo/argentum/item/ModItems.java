@@ -453,23 +453,22 @@ public class ModItems {
                 )
         );
 
-        public static final DeferredItem<Item> FICHA_CASINO_1 = ITEMS.register("ficha_casino_1",
-                () -> new Item(new Item.Properties()));
 
+    public static final DeferredItem<Item> FICHA_CASINO_2 = ITEMS.register("ficha_casino_2",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> FICHA_CASINO_4 = ITEMS.register("ficha_casino_4",
+            () -> new Item(new Item.Properties()));
+        public static final DeferredItem<Item> FICHA_CASINO_8 = ITEMS.register("ficha_casino_8",
+                () -> new Item(new Item.Properties()));
+        public static final DeferredItem<Item> FICHA_CASINO_16 = ITEMS.register("ficha_casino_16",
+                () -> new Item(new Item.Properties()));
         public static final DeferredItem<Item> FICHA_CASINO_32 = ITEMS.register("ficha_casino_32",
                 () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> FICHA_CASINO_5 = ITEMS.register("ficha_casino_5",
-                () -> new Item(new Item.Properties()));
-
         public static final DeferredItem<Item> FICHA_CASINO_64 = ITEMS.register("ficha_casino_64",
                 () -> new Item(new Item.Properties()));
-
         public static final DeferredItem<Item> FICHA_CASINO_ESPECIAL = ITEMS.register("ficha_casino_especial",
                 () -> new Item(new Item.Properties()));
 
-        public static final DeferredItem<Item> FICHA_CASINO_OTRA = ITEMS.register("ficha_casino_otra",
-                () -> new Item(new Item.Properties()));
 
         public static final DeferredItem<Item> GRASA = ITEMS.register("grasa",
                 () -> new CrudoItem(new Item.Properties()
@@ -1151,6 +1150,10 @@ public class ModItems {
         public static final DeferredItem<Item> HUEVO_HORNERO = ITEMS.register("huevo_hornero",
                 () -> new Item(new Item.Properties()));
 
+
+    public static final DeferredItem<Item> DADO = ITEMS.register("dado",
+            () -> new DadoItem(new Item.Properties().stacksTo(16))
+    );
 
         public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);
