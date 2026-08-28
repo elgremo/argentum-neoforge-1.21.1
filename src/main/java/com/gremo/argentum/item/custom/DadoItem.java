@@ -2,10 +2,12 @@ package com.gremo.argentum.item.custom;
 
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.entity.custom.DadoEntity;
+import com.gremo.argentum.sound.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -57,13 +59,17 @@ public class DadoItem extends Item {
                     (player.getRandom().nextDouble() - 0.5) * 0.2
             );
 
-            // ⭐ AGREGAR NAMETAG (mostrar el número sobre el dado)
+            // ⭐ Mostrar el número sobre el dado (name tag)
             dado.setCustomName(Component.literal("🎲 " + resultado).withStyle(ChatFormatting.GOLD));
             dado.setCustomNameVisible(true);
 
             level.addFreshEntity(dado);
 
-            // Consumir el ítem
+            // ⭐ REPRODUCIR EL SONIDO DEL DADO
+            level.playSound(null, player.blockPosition(), ModSounds.DADO.get(),
+                    SoundSource.PLAYERS, 1.0F, 1.0F);
+
+            // Consumir el ítem (si no es creativo)
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
             }

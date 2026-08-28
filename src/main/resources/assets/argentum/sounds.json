@@ -110,5 +110,15 @@
     "sounds": [
       "argentum:zorro_gris/idle_zorro"
     ]
+  },
+  "dado": {
+    "sounds": [
+      "argentum:dado/dado_1",
+      "argentum:dado/dado_2",
+      "argentum:dado/dado_3",
+      "argentum:dado/dado_4",
+      "argentum:dado/dado_5",
+      "argentum:dado/dado_6"
+    ]
   }
 }

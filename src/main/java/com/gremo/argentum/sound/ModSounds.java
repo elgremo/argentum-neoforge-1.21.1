@@ -53,6 +53,8 @@ public class ModSounds {
     public static final Supplier<SoundEvent> CHORRO_DETECT = registerSoundEvent("chorro_detect");
     public static final Supplier<SoundEvent> CHORRO_SHOOT = registerSoundEvent("chorro_shoot");
 
+    public static final Supplier<SoundEvent> DADO = registerSoundEvent("dado");
+
     private static ResourceKey<JukeboxSong> createSong(String name) {
          return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, name));
     }
