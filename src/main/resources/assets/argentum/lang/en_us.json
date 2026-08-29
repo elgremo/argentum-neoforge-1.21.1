@@ -6,8 +6,6 @@
   "block.argentum.membrillo_planta": "Planta de Membrillo",
   "block.argentum.olla": "Olla",
   "block.argentum.parrilla": "Parrilla",
-  "block.argentum.prensa_mosto": "Prensa para Mosto",
-  "block.argentum.prensa_mosto_lista": "Prensa de Mosto Lista",
   "block.argentum.seis": "Seis",
   "block.argentum.te_planta": "Planta de Té",
   "block.argentum.tres": "Tres",
@@ -21,6 +19,9 @@
   "block.argentum.batata_silvestre": "Planta de Batata Silvestre",
   "block.argentum.membrillo_silvestre": "Planta de Membrillo Silvestre",
   "block.argentum.vid_silvestre": "Planta de Vid Silvestre",
+  "block.argentum.vid_blanca_silvestre": "Planta de Vid Blanca Silvestre",
+  "block.argentum.vid_blanca": "Planta de Uvas Blancas",
+  "block.argentum.vid": "Planta de Uvas",
 
   "block.argentum.jacaranda_tronco": "Tronco de Jacarandá",
   "block.argentum.jacaranda_completo": "Madera de Jacarandá",
@@ -137,10 +138,14 @@
   "item.argentum.yerba_semilla": "Semilla de Yerba Mate",
 
 
-  "block.argentum.barril_fermento": "Barril de Fermentación",
+  "block.argentum.barril_fermento_tinto": "Barril de Fermentación Vinos Tintos",
+  "block.argentum.barril_fermento_blanco": "Barril de Fermentación Vinos Blancos",
+  "block.argentum.barril_fermento_rosado": "Barril de Fermentación Vinos Rosados",
 
   "item.argentum.botella_vino_vacia": "Botella de Vino Vacía",
-  "item.argentum.botella_vino_llena": "Botella de Vino",
+  "item.argentum.botella_vino_tinto_llena": "Botella de Vino Tinto",
+  "item.argentum.botella_vino_rosado_llena": "Botella de Vino Rosado",
+  "item.argentum.botella_vino_blanco_llena": "Botella de Vino Blanco",
 
 
   "block.argentum.botellero_abedul": "Botellero de Abedul",
@@ -192,8 +197,17 @@
   "item.argentum.te_semilla": "Semilla de Té",
 
   "item.argentum.balde_mosto": "Balde de Mosto",
+  "item.argentum.balde_mosto_blanco": "Balde de Mosto Blanco",
+  "item.argentum.balde_mosto_rosado": "Balde de Mosto Rosado",
+  "item.argentum.balde_mosto_turbio": "Balde de Mosto Turbio",
   "item.argentum.uva": "Racimo de Uvas",
   "item.argentum.uva_semilla": "Semillas de Uva",
+  "item.argentum.uva_blanca": "Racimo de Uvas Blancas",
+  "item.argentum.uva_blanca_semilla": "Semillas de Uva Blanca",
+
+  "block.argentum.prensa_mosto": "Prensa para Mosto",
+  "block.argentum.prensa_mosto_lista": "Prensa de Mosto Lista",
+  "tool.argentum.prensa_mosto.tooltip": "Usá Uvas para producir Baldes de Mosto.",
 
   "item.argentum.mate_listo_amarillo": "Mate Listo Amarillo",
   "item.argentum.mate_listo_argento": "Mate Listo Argento",
@@ -318,8 +332,6 @@
 
   "tool.argentum.olla.tooltip": "Usala para freír comida o convertir a un Aldeano.",
   "tool.argentum.parrilla.tooltip": "Usala para asar carnes o convertir a un Aldeano.",
-  "tool.argentum.prensa_mosto.tooltip": "Usá Uvas para producir Baldes de Mosto.",
-  "tool.argentum.prensa_mosto_listo.tooltip": "Usá una Cubeta para recoger el Mosto.",
 
   "tooltip.cuchillo.tooltip": "Usalo para conseguir cortes especiales de Vaca y Cerdo.",
 

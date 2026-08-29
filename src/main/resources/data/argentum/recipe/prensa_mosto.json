@@ -2,23 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "IUI",
-    " I ",
-    " B "
+    "LLL",
+    "TLT",
+    "TTT"
   ],
   "key": {
-    "I": {
+    "L": {
       "item": "minecraft:iron_ingot"
     },
-    "U": {
-      "item": "argentum:uva"
-    },
-    "B": {
-      "item": "minecraft:barrel"
+    "T": {
+      "item": "minecraft:oak_planks"
     }
   },
   "result": {
-    "id": "argentum:prensa_mosto",
-    "count": 1
+    "count": 1,
+    "id": "argentum:prensa_mosto"
   }
 }

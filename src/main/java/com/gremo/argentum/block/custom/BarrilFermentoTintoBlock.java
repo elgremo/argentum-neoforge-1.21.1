@@ -22,7 +22,6 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -34,10 +33,10 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BarrilFermentoBlock extends BaseEntityBlock {
+public class BarrilFermentoTintoBlock extends BaseEntityBlock {
 
-    public static final MapCodec<BarrilFermentoBlock> CODEC =
-            simpleCodec(BarrilFermentoBlock::new);
+    public static final MapCodec<BarrilFermentoTintoBlock> CODEC =
+            simpleCodec(BarrilFermentoTintoBlock::new);
 
     // 0-7 = llenándose
     // 8 = fermentando
@@ -71,7 +70,7 @@ public class BarrilFermentoBlock extends BaseEntityBlock {
         );
     }
 
-    public BarrilFermentoBlock(BlockBehaviour.Properties properties) {
+    public BarrilFermentoTintoBlock(Properties properties) {
         super(properties);
 
         this.registerDefaultState(this.stateDefinition.any()
@@ -184,7 +183,7 @@ public class BarrilFermentoBlock extends BaseEntityBlock {
                     if (!player.getAbilities().instabuild) {
                         stack.shrink(1);
 
-                        ItemStack botella = new ItemStack(ModItems.BOTELLA_VINO_LLENA.get());
+                        ItemStack botella = new ItemStack(ModItems.BOTELLA_VINO_TINTO_LLENA.get());
 
                         if (!player.getInventory().add(botella)) {
                             player.drop(botella, false);

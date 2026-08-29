@@ -1,13 +1,8 @@
 {
   "variants": {
-    "on=false,facing=north": { "model": "argentum:block/prensa_mosto" },
-    "on=false,facing=east":  { "model": "argentum:block/prensa_mosto", "y": 90 },
-    "on=false,facing=south": { "model": "argentum:block/prensa_mosto", "y": 180 },
-    "on=false,facing=west":  { "model": "argentum:block/prensa_mosto", "y": 270 },
-
-    "on=true,facing=north": { "model": "argentum:block/prensa_mosto" },
-    "on=true,facing=east":  { "model": "argentum:block/prensa_mosto", "y": 90 },
-    "on=true,facing=south": { "model": "argentum:block/prensa_mosto", "y": 180 },
-    "on=true,facing=west":  { "model": "argentum:block/prensa_mosto", "y": 270 }
+    "facing=north": { "model": "argentum:block/prensa_mosto" },
+    "facing=east":  { "model": "argentum:block/prensa_mosto", "y": 90 },
+    "facing=south": { "model": "argentum:block/prensa_mosto", "y": 180 },
+    "facing=west":  { "model": "argentum:block/prensa_mosto", "y": 270 }
   }
 }

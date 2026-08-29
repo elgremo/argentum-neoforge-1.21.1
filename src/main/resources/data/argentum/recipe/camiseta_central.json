@@ -4,12 +4,12 @@
   "key": {
     "S": { "item": "argentum:camiseta" },
     "A": { "item": "minecraft:blue_dye" },
-    "am": { "item": "minecraft:yellow_dye" }
+    "Y": { "item": "minecraft:yellow_dye" }
   },
   "pattern": [
     "ASA",
-    "AamA",
-    "AamA"
+    "AYA",
+    "AYA"
   ],
   "result": {
     "count": 1,

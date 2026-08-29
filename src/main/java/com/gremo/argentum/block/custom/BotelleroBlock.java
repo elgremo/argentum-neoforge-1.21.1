@@ -159,7 +159,9 @@ public class BotelleroBlock extends BaseEntityBlock {
         System.out.println("SLOT = " + slot);
 
         // ===== GUARDAR =====
-        if (!stack.isEmpty() && stack.is(ModItems.BOTELLA_VINO_LLENA.get())) {
+        if (!stack.isEmpty() && (stack.is(ModItems.BOTELLA_VINO_TINTO_LLENA.get()) ||
+                stack.is(ModItems.BOTELLA_VINO_BLANCO_LLENA.get()) ||
+                stack.is(ModItems.BOTELLA_VINO_ROSADO_LLENA.get()))) {
 
             if (botellero.getItem(slot).isEmpty()) {
 

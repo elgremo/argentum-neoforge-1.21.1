@@ -41,7 +41,7 @@ public class CopaVinoVaciaItem extends Item {
 
         boolean hasBottle =
                 !bottleStack.isEmpty() &&
-                        bottleStack.is(ModItems.BOTELLA_VINO_LLENA.get());
+                        bottleStack.is(ModItems.BOTELLA_VINO_TINTO_LLENA.get());
 
         if (!hasBottle) {
 
@@ -76,7 +76,7 @@ public class CopaVinoVaciaItem extends Item {
         if (!world.isClientSide) {
 
             // La copa vacía pasa a ser copa con vino
-            ItemStack copaLlena = new ItemStack(ModItems.COPA_VINO.get());
+            ItemStack copaLlena = new ItemStack(ModItems.COPA_VINO_TINTO.get());
 
             if (stack.getCount() == 1) {
 

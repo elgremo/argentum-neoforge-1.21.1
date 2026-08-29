@@ -40,9 +40,6 @@ public class ModItems {
         public static final DeferredItem<Item> ACEITE = ITEMS.register("aceite",
                 () -> new Item(new Item.Properties()));
 
-        public static final DeferredItem<Item> BALDE_MOSTO = ITEMS.register("balde_mosto",
-                () -> new Item(new Item.Properties()
-                        .stacksTo(1)));
 
         public static final DeferredItem<Item> ALFAJOR = ITEMS.register("alfajor",
                 () -> new CocidoItem(new Item.Properties()
@@ -949,6 +946,8 @@ public class ModItems {
 
         public static final DeferredItem<Item> UVA_SEMILLA = ITEMS.register("uva_semilla",
                 () -> new ItemNameBlockItem(ModBlocks.VID.get(), new Item.Properties()));
+    public static final DeferredItem<Item> UVA_BLANCA_SEMILLA = ITEMS.register("uva_blanca_semilla",
+            () -> new ItemNameBlockItem(ModBlocks.VID_BLANCA.get(), new Item.Properties()));
 
         public static final DeferredItem<Item> UVA = ITEMS.register("uva",
                 () -> new Item(new Item.Properties()
@@ -956,24 +955,44 @@ public class ModItems {
                         .food(new FoodProperties.Builder()
                                 .nutrition(2)
                                 .saturationModifier(2f)
-                                .build())
-                )
-        );
+                                .build())));
+    public static final DeferredItem<Item> UVA_BLANCA = ITEMS.register("uva_blanca",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(64) // Solo 64 item en la mano
+                    .food(new FoodProperties.Builder()
+                            .nutrition(2)
+                            .saturationModifier(2f)
+                            .build())));
 
+    public static final DeferredItem<Item> BALDE_MOSTO = ITEMS.register("balde_mosto",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> BALDE_MOSTO_BLANCO = ITEMS.register("balde_mosto_blanco",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> BALDE_MOSTO_ROSADO = ITEMS.register("balde_mosto_rosado",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> BALDE_MOSTO_TURBIO = ITEMS.register("balde_mosto_turbio",
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
-        public static final DeferredItem<Item> BALDE_VINO = ITEMS.register("balde_vino",
-                () -> new Item(new Item.Properties()
-                        .craftRemainder(Items.BUCKET)
-                        .stacksTo(1)));
 
         public static final DeferredItem<Item> BOTELLA_VINO_VACIA = ITEMS.register("botella_vino_vacia",
                 () -> new Item(new Item.Properties()
                         .stacksTo(64)));
-        public static final DeferredItem<Item> BOTELLA_VINO_LLENA = ITEMS.register(
-                "botella_vino_llena",
+        public static final DeferredItem<Item> BOTELLA_VINO_TINTO_LLENA = ITEMS.register(
+                "botella_vino_tinto_llena",
                 () -> new BotellaVinoItem(new Item.Properties()
                         .durability(3)
                         .stacksTo(1)));
+    public static final DeferredItem<Item> BOTELLA_VINO_BLANCO_LLENA = ITEMS.register(
+            "botella_vino_blanco_llena",
+            () -> new BotellaVinoItem(new Item.Properties()
+                    .durability(3)
+                    .stacksTo(1)));
+    public static final DeferredItem<Item> BOTELLA_VINO_ROSADO_LLENA = ITEMS.register(
+            "botella_vino_rosado_llena",
+            () -> new BotellaVinoItem(new Item.Properties()
+                    .durability(3)
+                    .stacksTo(1)));
+
 
 
         public static final DeferredItem<Item> TE = ITEMS.register("te",
@@ -1055,7 +1074,7 @@ public class ModItems {
                                 .durability(12)
                                 .stacksTo(1)
                 ));
-        public static final DeferredItem<Item> COPA_VINO =
+        /*- OJO ACA */public static final DeferredItem<Item> COPA_VINO_TINTO =
                 ITEMS.register(
                         "copa_vino",
                         () -> new CopaVinoItem(

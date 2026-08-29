@@ -1,6 +1,6 @@
 package com.gremo.argentum.block.entity;
 
-import com.gremo.argentum.block.custom.BarrilFermentoBlock;
+import com.gremo.argentum.block.custom.BarrilFermentoTintoBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.particles.ParticleTypes;
@@ -11,7 +11,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BarrilFermentoBlockEntity extends BlockEntity {
@@ -41,7 +40,7 @@ public class BarrilFermentoBlockEntity extends BlockEntity {
             return;
         }
 
-        int etapa = state.getValue(BarrilFermentoBlock.ETAPA);
+        int etapa = state.getValue(BarrilFermentoTintoBlock.ETAPA);
 
         // ---------------- ETAPA 7 ----------------
         if (etapa == 7) {
@@ -52,7 +51,7 @@ public class BarrilFermentoBlockEntity extends BlockEntity {
 
                 level.setBlock(
                         pos,
-                        state.setValue(BarrilFermentoBlock.ETAPA, 8),
+                        state.setValue(BarrilFermentoTintoBlock.ETAPA, 8),
                         Block.UPDATE_ALL
                 );
 
@@ -139,14 +138,14 @@ public class BarrilFermentoBlockEntity extends BlockEntity {
 
                 level.setBlock(
                         pos,
-                        state.setValue(BarrilFermentoBlock.ETAPA, 9),
+                        state.setValue(BarrilFermentoTintoBlock.ETAPA, 9),
                         Block.UPDATE_ALL
                 );
 
                 // Clinck de vino terminado
                 level.setBlock(
                         pos,
-                        state.setValue(BarrilFermentoBlock.ETAPA, 9),
+                        state.setValue(BarrilFermentoTintoBlock.ETAPA, 9),
                         Block.UPDATE_ALL
                 );
 

@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "argentum:item/botella_vino_llena",
-		"particle": "argentum:item/botella_vino_llena"
+		"0": "argentum:item/botella_vino_tinto_llena",
+		"particle": "argentum:item/botella_vino_tinto_llena"
 	},
 	"elements": [
 		{

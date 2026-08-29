@@ -17,9 +17,6 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.ForkingTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.MegaJungleTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
-
 import static net.minecraft.data.worldgen.features.FeatureUtils.register;
 
 public class ModConfiguredFeatures {
@@ -53,6 +50,12 @@ public class ModConfiguredFeatures {
                     ResourceLocation.fromNamespaceAndPath(
                             Argentum.MOD_ID,
                             "vid_patch"));
+    public static final ResourceKey<ConfiguredFeature<?, ?>> VID_BLANCA_PATCH =
+            ResourceKey.create(
+                    Registries.CONFIGURED_FEATURE,
+                    ResourceLocation.fromNamespaceAndPath(
+                            Argentum.MOD_ID,
+                            "vid_blanca_patch"));
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEMBRILLO_PATCH =
             ResourceKey.create(
@@ -65,125 +68,84 @@ public class ModConfiguredFeatures {
 
         context.register(
                 YERBA_PATCH,
-
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
-
                         FeatureUtils.simpleRandomPatchConfiguration(
                                 32,
-
                                 PlacementUtils.onlyWhenEmpty(
                                         Feature.SIMPLE_BLOCK,
-
                                         new SimpleBlockConfiguration(
                                                 BlockStateProvider.simple(
-                                                        ModBlocks.YERBA_SILVESTRE.get()
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+                                                        ModBlocks.YERBA_SILVESTRE.get()))))));
+
         context.register(
                 TE_PATCH,
-
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
-
                         FeatureUtils.simpleRandomPatchConfiguration(
                                 32,
-
                                 PlacementUtils.onlyWhenEmpty(
                                         Feature.SIMPLE_BLOCK,
-
                                         new SimpleBlockConfiguration(
                                                 BlockStateProvider.simple(
-                                                        ModBlocks.TE_SILVESTRE.get()
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+                                                        ModBlocks.TE_SILVESTRE.get()))))));
 
         context.register(
                 BATATA_PATCH,
-
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
-
                         FeatureUtils.simpleRandomPatchConfiguration(
                                 32,
-
                                 PlacementUtils.onlyWhenEmpty(
                                         Feature.SIMPLE_BLOCK,
-
                                         new SimpleBlockConfiguration(
                                                 BlockStateProvider.simple(
-                                                        ModBlocks.BATATA_SILVESTRE.get()
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
-
+                                                        ModBlocks.BATATA_SILVESTRE.get()))))));
 
         context.register(
                 VID_PATCH,
-
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
-
                         FeatureUtils.simpleRandomPatchConfiguration(
                                 32,
-
                                 PlacementUtils.onlyWhenEmpty(
                                         Feature.SIMPLE_BLOCK,
-
                                         new SimpleBlockConfiguration(
                                                 BlockStateProvider.simple(
-                                                        ModBlocks.VID_SILVESTRE.get()
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+                                                        ModBlocks.VID_SILVESTRE.get()))))));
+        context.register(
+                VID_BLANCA_PATCH,
+                new ConfiguredFeature<>(
+                        Feature.RANDOM_PATCH,
+                        FeatureUtils.simpleRandomPatchConfiguration(
+                                32,
+                                PlacementUtils.onlyWhenEmpty(
+                                        Feature.SIMPLE_BLOCK,
+                                        new SimpleBlockConfiguration(
+                                                BlockStateProvider.simple(
+                                                        ModBlocks.VID_BLANCA_SILVESTRE.get()))))));
+
         context.register(
                 MEMBRILLO_PATCH,
-
                 new ConfiguredFeature<>(
                         Feature.RANDOM_PATCH,
-
                         FeatureUtils.simpleRandomPatchConfiguration(
                                 32,
-
                                 PlacementUtils.onlyWhenEmpty(
                                         Feature.SIMPLE_BLOCK,
-
                                         new SimpleBlockConfiguration(
-                                                BlockStateProvider.simple(
-                                                        ModBlocks.MEMBRILLO_SILVESTRE.get()
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+                                                BlockStateProvider.simple(ModBlocks.MEMBRILLO_SILVESTRE.get()))))));
+
         register(context, JACARANDA_KEY, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
                         BlockStateProvider.simple(ModBlocks.JACARANDA_TRONCO.get()),
                         new ForkingTrunkPlacer(4, 4, 3),
-
                         BlockStateProvider.simple(ModBlocks.JACARANDA_HOJAS.get()),
                         new BlobFoliagePlacer(
                                 ConstantInt.of(2),
                                 ConstantInt.of(3),
                                 3),
-
-                        new TwoLayersFeatureSize(1, 0, 2)
-                ).build());
+                        new TwoLayersFeatureSize(1, 0, 2)).build());
 
         register(context, CEIBO_KEY, Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
@@ -194,11 +156,8 @@ public class ModConfiguredFeatures {
                         new BlobFoliagePlacer(
                                 ConstantInt.of(3),
                                 ConstantInt.of(1),
-                                3
-                        ),
-
-                        new TwoLayersFeatureSize(1, 1, 2)
-                ).ignoreVines().build());
+                                3),
+                        new TwoLayersFeatureSize(1, 1, 2)).ignoreVines().build());
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -139,6 +139,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.UVA_SEMILLA);
                         output.accept(ModItems.UVA);
+                        output.accept(ModItems.UVA_BLANCA_SEMILLA);
+                        output.accept(ModItems.UVA_BLANCA);
 
                         output.accept(ModItems.MEMBRILLO_SEMILLA);
                         output.accept(ModItems.MEMBRILLO);
@@ -151,15 +153,22 @@ public class ModCreativeModeTabs {
 // ======================================================
 
                         output.accept(ModBlocks.PRENSA_MOSTO);
-                        output.accept(ModBlocks.BARRIL_FERMENTO);
+                        output.accept(ModBlocks.BARRIL_FERMENTO_TINTO);
+                        output.accept(ModBlocks.BARRIL_FERMENTO_ROSADO);
+                        output.accept(ModBlocks.BARRIL_FERMENTO_BLANCO);
 
                         output.accept(ModItems.BALDE_MOSTO);
+                        output.accept(ModItems.BALDE_MOSTO_BLANCO);
+                        output.accept(ModItems.BALDE_MOSTO_ROSADO);
+                        output.accept(ModItems.BALDE_MOSTO_TURBIO);
 
                         output.accept(ModItems.BOTELLA_VINO_VACIA);
-                        output.accept(ModItems.BOTELLA_VINO_LLENA);
+                        output.accept(ModItems.BOTELLA_VINO_TINTO_LLENA);
+                        output.accept(ModItems.BOTELLA_VINO_BLANCO_LLENA);
+                        output.accept(ModItems.BOTELLA_VINO_ROSADO_LLENA);
 
                         output.accept(ModItems.COPA_VINO_VACIA);
-                        output.accept(ModItems.COPA_VINO);
+                        output.accept(ModItems.COPA_VINO_TINTO);
 
                         output.accept(ModBlocks.BOTELLERO_JACARANDA);
                         output.accept(ModBlocks.BOTELLERO_CEIBO);

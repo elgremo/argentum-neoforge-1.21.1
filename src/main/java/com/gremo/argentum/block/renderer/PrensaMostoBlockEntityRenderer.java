@@ -25,10 +25,16 @@ public class PrensaMostoBlockEntityRenderer implements BlockEntityRenderer<Prens
         Level level = be.getLevel();
         BlockPos pos = be.getBlockPos();
 
+        // ⭐ 8 posiciones, omitiendo el centro (índice 4 de una grilla 3x3)
         float[][] offsets = {
-                {-0.18f, -0.18f}, {0f, -0.18f}, {0.18f, -0.18f},
-                {-0.18f, 0f},     {0f, 0f},     {0.18f, 0f},
-                {-0.18f, 0.18f},  {0f, 0.18f},  {0.18f, 0.18f}
+                {-0.18f, -0.18f}, // slot 0: arriba-izquierda
+                {0f, -0.18f},     // slot 1: arriba-centro
+                {0.18f, -0.18f},  // slot 2: arriba-derecha
+                {-0.18f, 0f},     // slot 3: medio-izquierda
+                {0.18f, 0f},      // slot 4: medio-derecha (centro vacío)
+                {-0.18f, 0.18f},  // slot 5: abajo-izquierda
+                {0f, 0.18f},      // slot 6: abajo-centro
+                {0.18f, 0.18f}    // slot 7: abajo-derecha
         };
 
         for (int slot = 0; slot < be.inventory.getSlots(); slot++) {
