@@ -78,6 +78,7 @@
 
   "block.argentum.copa_mundo": "Copa del Mundo",
   "tooltip.argentum.copa_mundo": "Obtenida por: Kempes, Maradona y Messi",
+  "tooltip.argentum.copa_mundo_effect": "Al sostenerla, te otorga absorción (2 corazones extra)",
   "block.argentum.copa_america": "Copa América",
   "tooltip.argentum.copa_america": "",
 
@@ -162,7 +163,9 @@
   "block.argentum.botellero_ceibo": "Botellero de Ceibo",
 
   "item.argentum.copa_vino_vacia": "Copa de Vino Vacía",
-  "item.argentum.copa_vino": "Copa de Vino",
+  "item.argentum.copa_vino_tinto": "Copa de Vino Tinto",
+  "item.argentum.copa_vino_blanco": "Copa de Vino Blanco",
+  "item.argentum.copa_vino_rosado": "Copa de Vino Rosado",
   "message.argentum.need_bottle": "Necesitás una botella de vino llena en la otra mano.",
 
 

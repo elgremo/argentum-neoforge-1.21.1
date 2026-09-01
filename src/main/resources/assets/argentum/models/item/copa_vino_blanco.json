@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "argentum:item/copa_vino",
-		"particle": "argentum:item/copa_vino"
+		"0": "argentum:item/copa_vino_blanco",
+		"particle": "argentum:item/copa_vino_blanco"
 	},
 	"elements": [
 		{

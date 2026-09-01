@@ -167,8 +167,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BOTELLA_VINO_BLANCO_LLENA);
                         output.accept(ModItems.BOTELLA_VINO_ROSADO_LLENA);
 
-                        output.accept(ModItems.COPA_VINO_VACIA);
-                        output.accept(ModItems.COPA_VINO_TINTO);
+                        output.accept(ModItems.COPA_VINO_VACIA.get());
+                        output.accept(ModItems.COPA_VINO_TINTO.get());
+                        output.accept(ModItems.COPA_VINO_BLANCO.get());
+                        output.accept(ModItems.COPA_VINO_ROSADO.get());
 
                         output.accept(ModBlocks.BOTELLERO_JACARANDA);
                         output.accept(ModBlocks.BOTELLERO_CEIBO);
@@ -448,7 +450,7 @@ public class ModCreativeModeTabs {
 // 🏆 TROFEOS
 // ======================================================
 
-                        output.accept(ModBlocks.COPA_MUNDO);
+                        output.accept(ModItems.COPA_MUNDO_ITEM.get());
                         output.accept(ModBlocks.COPA_AMERICA);
 
 

@@ -41,6 +41,7 @@ public class JacarandaLeavesBlock extends LeavesBlock {
         BlockPos.MutableBlockPos checkPos = pos.mutable();
         BlockPos groundPos = null;
 
+        // Buscar el primer bloque sólido debajo
         while (checkPos.getY() > level.getMinBuildHeight()) {
             checkPos.move(Direction.DOWN);
             if (level.getBlockState(checkPos).isSolid()) {
@@ -56,21 +57,20 @@ public class JacarandaLeavesBlock extends LeavesBlock {
         BlockPos pilePos = groundPos.above();
         BlockState pileState = level.getBlockState(pilePos);
 
-        if (pileState.getBlock() instanceof JacarandaLeavesPileBlock) {
+        // ⭐ VERIFICAR QUE NO SEA LÍQUIDO
+        if (pileState.isAir() || (pileState.canBeReplaced() && pileState.getFluidState().isEmpty())) {
+            int rotation = level.getRandom().nextInt(4);
+            level.setBlock(pilePos, ModBlocks.JACARANDA_PILA_HOJAS.get().defaultBlockState()
+                    .setValue(JacarandaLeavesPileBlock.AMOUNT, 1)
+                    .setValue(JacarandaLeavesPileBlock.ROTATION, rotation), 3);
+            return true;
+        } else if (pileState.getBlock() instanceof JacarandaLeavesPileBlock) {
             int currentAmount = pileState.getValue(JacarandaLeavesPileBlock.AMOUNT);
             if (currentAmount < 4) {
                 level.setBlock(pilePos, pileState.setValue(JacarandaLeavesPileBlock.AMOUNT, currentAmount + 1), 3);
                 return true;
             }
             return false;
-        }
-
-        if (pileState.isAir() || pileState.canBeReplaced()) {
-            int rotation = level.getRandom().nextInt(4);
-            level.setBlock(pilePos, ModBlocks.JACARANDA_PILA_HOJAS.get().defaultBlockState()
-                    .setValue(JacarandaLeavesPileBlock.AMOUNT, 1)
-                    .setValue(JacarandaLeavesPileBlock.ROTATION, rotation), 3);
-            return true;
         }
 
         return false;

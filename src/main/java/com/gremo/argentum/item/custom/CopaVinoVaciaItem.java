@@ -22,7 +22,7 @@ public class CopaVinoVaciaItem extends Item {
 
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 5;
+        return 5; // casi instantáneo
     }
 
     @Override
@@ -31,37 +31,37 @@ public class CopaVinoVaciaItem extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         InteractionHand otherHand = hand == InteractionHand.MAIN_HAND
                 ? InteractionHand.OFF_HAND
                 : InteractionHand.MAIN_HAND;
 
         ItemStack bottleStack = player.getItemInHand(otherHand);
 
-        boolean hasBottle =
-                !bottleStack.isEmpty() &&
-                        bottleStack.is(ModItems.BOTELLA_VINO_TINTO_LLENA.get());
+        // Verificar si la otra mano tiene una botella llena de algún tipo
+        boolean hasBottle = !bottleStack.isEmpty() &&
+                (bottleStack.is(ModItems.BOTELLA_VINO_TINTO_LLENA.get()) ||
+                        bottleStack.is(ModItems.BOTELLA_VINO_BLANCO_LLENA.get()) ||
+                        bottleStack.is(ModItems.BOTELLA_VINO_ROSADO_LLENA.get()));
 
         if (!hasBottle) {
-
-            if (!world.isClientSide) {
+            if (!level.isClientSide) {
                 player.displayClientMessage(
-                        Component.translatable("message.argentum.need_bottle"),
+                        Component.translatable("message.argentum.need_bottle")
+                                .withStyle(ChatFormatting.RED),
                         true
                 );
             }
-
             return InteractionResultHolder.fail(player.getItemInHand(hand));
         }
 
+        // Iniciar el "uso" (llenado)
         player.startUsingItem(hand);
         return InteractionResultHolder.consume(player.getItemInHand(hand));
     }
 
     @Override
-    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity entity) {
-
+    public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         if (!(entity instanceof Player player)) {
             return stack;
         }
@@ -73,48 +73,45 @@ public class CopaVinoVaciaItem extends Item {
 
         ItemStack bottleStack = player.getItemInHand(otherHand);
 
-        if (!world.isClientSide) {
-
-            // La copa vacía pasa a ser copa con vino
-            ItemStack copaLlena = new ItemStack(ModItems.COPA_VINO_TINTO.get());
-
-            if (stack.getCount() == 1) {
-
-                player.setItemInHand(usedHand, copaLlena);
-
-            } else {
-
-                stack.shrink(1);
-
-                if (!player.getInventory().add(copaLlena)) {
-                    player.drop(copaLlena, false);
-                }
+        if (!level.isClientSide) {
+            // Determinar qué copa llena devolver según el tipo de botella
+            ItemStack copaLlena = ItemStack.EMPTY;
+            if (bottleStack.is(ModItems.BOTELLA_VINO_TINTO_LLENA.get())) {
+                copaLlena = new ItemStack(ModItems.COPA_VINO_TINTO.get());
+            } else if (bottleStack.is(ModItems.BOTELLA_VINO_BLANCO_LLENA.get())) {
+                copaLlena = new ItemStack(ModItems.COPA_VINO_BLANCO.get());
+            } else if (bottleStack.is(ModItems.BOTELLA_VINO_ROSADO_LLENA.get())) {
+                copaLlena = new ItemStack(ModItems.COPA_VINO_ROSADO.get());
             }
 
-            // Consumir un uso de la botella
-            int bottleDamage = bottleStack.getDamageValue() + 1;
-            bottleStack.setDamageValue(bottleDamage);
+            if (!copaLlena.isEmpty()) {
+                // Reemplazar la copa vacía con la copa llena
+                if (stack.getCount() == 1) {
+                    player.setItemInHand(usedHand, copaLlena);
+                } else {
+                    stack.shrink(1);
+                    if (!player.getInventory().add(copaLlena)) {
+                        player.drop(copaLlena, false);
+                    }
+                }
 
-            // Si se terminó el vino, devolver botella vacía
-            if (bottleDamage >= bottleStack.getMaxDamage()) {
+                // Consumir un uso de la botella (durabilidad)
+                int bottleDamage = bottleStack.getDamageValue() + 1;
+                bottleStack.setDamageValue(bottleDamage);
 
-                player.setItemInHand(
-                        otherHand,
-                        new ItemStack(ModItems.BOTELLA_VINO_VACIA.get())
-                );
+                // Si la botella se gastó, devolver botella vacía
+                if (bottleDamage >= bottleStack.getMaxDamage()) {
+                    player.setItemInHand(
+                            otherHand,
+                            new ItemStack(ModItems.BOTELLA_VINO_VACIA.get())
+                    );
+                }
             }
         }
 
-        world.playSound(
-                null,
-                entity.getX(),
-                entity.getY(),
-                entity.getZ(),
-                SoundEvents.BOTTLE_FILL,
-                SoundSource.PLAYERS,
-                1.0F,
-                1.0F
-        );
+        // Sonido de llenado
+        level.playSound(null, entity.getX(), entity.getY(), entity.getZ(),
+                SoundEvents.BOTTLE_FILL, SoundSource.PLAYERS, 1.0F, 1.0F);
 
         return player.getItemInHand(usedHand);
     }

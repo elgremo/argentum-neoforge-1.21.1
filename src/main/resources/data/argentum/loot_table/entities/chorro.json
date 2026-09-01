@@ -13,7 +13,12 @@
               "chance": 0.10
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
         {
           "type": "minecraft:item",
           "name": "argentum:recortada",
@@ -23,7 +28,12 @@
               "chance": 0.05
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
         {
           "type": "minecraft:item",
           "name": "argentum:fal",

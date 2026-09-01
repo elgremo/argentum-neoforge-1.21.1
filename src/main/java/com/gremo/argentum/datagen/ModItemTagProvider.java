@@ -49,5 +49,36 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.SWORDS)
                 .add(ModItems.CUCHILLO.get());
+
+
+        // 🌱 Semillas (para que los aldeanos y mods las reconozcan como semillas)
+        tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+                .add(ModItems.YERBA_SEMILLA.get())
+                .add(ModItems.TE_SEMILLA.get())
+                .add(ModItems.UVA_SEMILLA.get())
+                .add(ModItems.UVA_BLANCA_SEMILLA.get())
+                .add(ModItems.MEMBRILLO_SEMILLA.get());
+
+
+// 🥩 Carnes (para recetas de comida y compatibilidad)
+        tag(ItemTags.MEAT)
+                .add(ModItems.BIFE_CRUDO.get())
+                .add(ModItems.BIFE_ASADO.get())
+                .add(ModItems.CHINCHULIN_CRUDO.get())
+                .add(ModItems.CHINCHULIN_ASADO.get())
+                .add(ModItems.COSTILLA_CRUDA.get())
+                .add(ModItems.COSTILLA_ASADA.get())
+                .add(ModItems.ENTRANA_CRUDA.get())
+                .add(ModItems.ENTRANA_ASADA.get())
+                .add(ModItems.LOMO_CRUDO.get())
+                .add(ModItems.LOMO_ASADO.get())
+                .add(ModItems.MATAMBRE_CRUDO.get())
+                .add(ModItems.MATAMBRE_ASADO.get())
+                .add(ModItems.MOLLEJA_CRUDA.get())
+                .add(ModItems.MOLLEJA_ASADA.get())
+                .add(ModItems.CHORIZO_PARRILLERO_CRUDO.get())
+                .add(ModItems.CHORIZO_PARRILLERO_COCIDO.get())
+                .add(ModItems.CARNE_CORTADA_CRUDA.get())
+                .add(ModItems.CARNE_CORTADA_COCIDA.get());
     }
 }

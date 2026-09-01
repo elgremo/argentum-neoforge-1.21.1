@@ -2,6 +2,7 @@ package com.gremo.argentum.item;
 
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.block.ModBlocks;
+import com.gremo.argentum.block.custom.CopaMundoBlock;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.item.custom.*;
 import com.gremo.argentum.sound.ModSounds;
@@ -388,11 +389,9 @@ public class ModItems {
         public static final DeferredItem<Item> LA_CUARTA_DISCO_MUSICA = ITEMS.register("la_cuarta_disco_musica",
                 () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.LA_CUARTA_KEY).stacksTo(1)));
 
-
-    /*public static final DeferredItem<Item> COPA_MUNDO = ITEMS.register("copa_mundo",
-            () -> new CopaMundoItem(
-                    new Item.Properties().rarity(Rarity.EPIC)
-            ));*/
+    // ⭐ Copa del Mundo - BlockItem personalizado
+    public static final DeferredItem<Item> COPA_MUNDO_ITEM = ITEMS.register("copa_mundo",
+            () -> new CopaMundoItem(new Item.Properties().rarity(Rarity.EPIC)));
 
 
         public static final DeferredItem<Item> DULCE_BATATA = ITEMS.register("dulce_batata",
@@ -993,6 +992,41 @@ public class ModItems {
                     .durability(3)
                     .stacksTo(1)));
 
+    // ===================== COPA DE VINO =====================
+
+    public static final DeferredItem<Item> COPA_VINO_VACIA = ITEMS.register("copa_vino_vacia",
+            () -> new CopaVinoVaciaItem(new Item.Properties().stacksTo(64)));
+
+    public static final DeferredItem<Item> COPA_VINO_TINTO = ITEMS.register("copa_vino_tinto",
+            () -> new CopaVinoLlenaItem(new Item.Properties()
+                    .stacksTo(1)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .alwaysEdible()
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> COPA_VINO_BLANCO = ITEMS.register("copa_vino_blanco",
+            () -> new CopaVinoLlenaItem(new Item.Properties()
+                    .stacksTo(1)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .alwaysEdible()
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> COPA_VINO_ROSADO = ITEMS.register("copa_vino_rosado",
+            () -> new CopaVinoLlenaItem(new Item.Properties()
+                    .stacksTo(1)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .alwaysEdible()
+                            .build())
+            ));
+
 
 
         public static final DeferredItem<Item> TE = ITEMS.register("te",
@@ -1074,22 +1108,6 @@ public class ModItems {
                                 .durability(12)
                                 .stacksTo(1)
                 ));
-        /*- OJO ACA */public static final DeferredItem<Item> COPA_VINO_TINTO =
-                ITEMS.register(
-                        "copa_vino",
-                        () -> new CopaVinoItem(
-                                new Item.Properties()
-                                        .stacksTo(1)
-                                        .food(new FoodProperties.Builder()
-                                                .nutrition(8)
-                                                .saturationModifier(0.8f)
-                                                .alwaysEdible()
-                                                .build())
-                        )
-                );
-        public static final DeferredItem<Item> COPA_VINO_VACIA = ITEMS.register("copa_vino_vacia",
-                () -> new CopaVinoVaciaItem(new Item.Properties()));
-
 
         public static final DeferredItem<Item> PAVA = ITEMS.register("pava",
                 () -> new PavaItem(new Item.Properties()));

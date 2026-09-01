@@ -2,19 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " B",
-    "BV",
+    " B",
     " B"
   ],
   "key": {
     "B": {
       "item": "minecraft:glass_bottle"
-    },
-    "V": {
-      "item": "minecraft:green_dye"
     }
   },
   "result": {
     "id": "argentum:botella_vino_vacia",
-    "count": 1
+    "count": 3
   }
 }

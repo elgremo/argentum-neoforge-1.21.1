@@ -54,12 +54,13 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(1f).sound(SoundType.AMETHYST)));
 
-    public static final DeferredBlock<Block> COPA_MUNDO = registerBlock("copa_mundo",
+
+    // ⭐ Copa del Mundo (sin BlockItem automático)
+    public static final DeferredBlock<Block> COPA_MUNDO = BLOCKS.register("copa_mundo",
             () -> new CopaMundoBlock(BlockBehaviour.Properties.of()
                     .strength(1f)
                     .noOcclusion()
-                    .sound(SoundType.AMETHYST)),
-            Rarity.EPIC
+                    .sound(SoundType.AMETHYST))
     );
 
     public static final DeferredBlock<Block> COPA_AMERICA = registerBlock("copa_america",
@@ -176,7 +177,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PRENSA_MOSTO =
             registerBlock("prensa_mosto",
                     () -> new PrensaMostoBlock(BlockBehaviour.Properties.of()
-                            .strength(2.0f)
+                            .strength(1.0f)
                             .noOcclusion()
                     ));
 
@@ -184,7 +185,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PRENSA_MOSTO_LISTA_TINTO =
             BLOCKS.register("prensa_mosto_lista_tinto",
                     () -> new PrensaMostoListaBlock(BlockBehaviour.Properties.of()
-                            .strength(2.0f)
+                            .strength(1.0f)
                             .noOcclusion()
                             .lightLevel(state -> 14)));
 
@@ -192,7 +193,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PRENSA_MOSTO_LISTA_BLANCO =
             BLOCKS.register("prensa_mosto_lista_blanco",
                     () -> new PrensaMostoListaBlock(BlockBehaviour.Properties.of()
-                            .strength(2.0f)
+                            .strength(1.0f)
                             .noOcclusion()
                             .lightLevel(state -> 14)));
 
@@ -200,7 +201,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PRENSA_MOSTO_LISTA_ROSADO =
             BLOCKS.register("prensa_mosto_lista_rosado",
                     () -> new PrensaMostoListaBlock(BlockBehaviour.Properties.of()
-                            .strength(2.0f)
+                            .strength(1.0f)
                             .noOcclusion()
                             .lightLevel(state -> 14)));
 
@@ -208,7 +209,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> PRENSA_MOSTO_LISTA_TURBIO =
             BLOCKS.register("prensa_mosto_lista_turbio",
                     () -> new PrensaMostoListaBlock(BlockBehaviour.Properties.of()
-                            .strength(2.0f)
+                            .strength(1.0f)
                             .noOcclusion()
                             .lightLevel(state -> 14)));
 

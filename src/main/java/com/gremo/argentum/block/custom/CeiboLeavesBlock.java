@@ -41,6 +41,7 @@ public class CeiboLeavesBlock extends LeavesBlock {
         BlockPos.MutableBlockPos checkPos = pos.mutable();
         BlockPos groundPos = null;
 
+        // Buscar el primer bloque sólido debajo
         while (checkPos.getY() > level.getMinBuildHeight()) {
             checkPos.move(Direction.DOWN);
             if (level.getBlockState(checkPos).isSolid()) {
@@ -56,21 +57,20 @@ public class CeiboLeavesBlock extends LeavesBlock {
         BlockPos pilePos = groundPos.above();
         BlockState pileState = level.getBlockState(pilePos);
 
-        if (pileState.getBlock() instanceof CeiboLeavesPileBlock) {
+        // ⭐ VERIFICAR QUE NO SEA LÍQUIDO
+        if (pileState.isAir() || (pileState.canBeReplaced() && pileState.getFluidState().isEmpty())) {
+            int rotation = level.getRandom().nextInt(4);
+            level.setBlock(pilePos, ModBlocks.CEIBO_PILA_HOJAS.get().defaultBlockState()
+                    .setValue(CeiboLeavesPileBlock.AMOUNT, 1)
+                    .setValue(CeiboLeavesPileBlock.ROTATION, rotation), 3);
+            return true;
+        } else if (pileState.getBlock() instanceof CeiboLeavesPileBlock) {
             int currentAmount = pileState.getValue(CeiboLeavesPileBlock.AMOUNT);
             if (currentAmount < 4) {
                 level.setBlock(pilePos, pileState.setValue(CeiboLeavesPileBlock.AMOUNT, currentAmount + 1), 3);
                 return true;
             }
             return false;
-        }
-
-        if (pileState.isAir() || pileState.canBeReplaced()) {
-            int rotation = level.getRandom().nextInt(4);
-            level.setBlock(pilePos, ModBlocks.CEIBO_PILA_HOJAS.get().defaultBlockState()
-                    .setValue(CeiboLeavesPileBlock.AMOUNT, 1)
-                    .setValue(CeiboLeavesPileBlock.ROTATION, rotation), 3);
-            return true;
         }
 
         return false;

@@ -88,6 +88,14 @@ public class ModBlockEntities {
                     ).build(null)
             );
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<CopaMundoBlockEntity>> COPA_MUNDO_BE =
+            BLOCK_ENTITIES.register("copa_mundo_be",
+                    () -> BlockEntityType.Builder.of(
+                            CopaMundoBlockEntity::new,
+                            ModBlocks.COPA_MUNDO.get()
+                    ).build(null)
+            );
+
     // ✅ CORREGIDO: Ahora es Supplier
     public static final Supplier<BlockEntityType<NidoBlockEntity>> NIDO_BE =
             BLOCK_ENTITIES.register("nido_be", () -> BlockEntityType.Builder.of(NidoBlockEntity::new, ModBlocks.NIDO.get()).build(null));
