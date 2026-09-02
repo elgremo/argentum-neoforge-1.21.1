@@ -1,0 +1,20 @@
+{
+  "values": [
+    "argentum:jacaranda_hojas",
+    "argentum:jacaranda_pila_hojas",
+    "argentum:ceibo_hojas",
+    "argentum:ceibo_pila_hojas",
+    "argentum:yerba_planta",
+    "argentum:vid",
+    "argentum:vid_blanca",
+    "argentum:te_planta",
+    "argentum:membrillo_planta",
+    "argentum:batata_planta",
+    "argentum:yerba_silvestre",
+    "argentum:te_silvestre",
+    "argentum:membrillo_silvestre",
+    "argentum:batata_silvestre",
+    "argentum:vid_silvestre",
+    "argentum:vid_blanca_silvestre"
+  ]
+}

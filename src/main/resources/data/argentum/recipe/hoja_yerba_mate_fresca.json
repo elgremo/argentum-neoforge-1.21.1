@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "ingredient": {
+    "item": "argentum:hoja_yerba_mate_fresca"
+  },
+  "result": {
+    "id": "argentum:yerba_mate_seca"
+  },
+  "experience": 0.2,
+  "cookingtime": 100
+}

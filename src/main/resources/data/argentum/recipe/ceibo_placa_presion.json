@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "argentum:ceibo_madera"
+    }
+  },
+  "result": {
+    "id": "argentum:ceibo_placa_presion"
+  }
+}

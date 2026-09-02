@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "YYY",
+    "YPY",
+    "YYY"
+  ],
+  "key": {
+    "Y": {
+      "item": "argentum:yerba_mate_seca"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "id": "argentum:paquete_yerba_mate",
+    "count": 1
+  }
+}

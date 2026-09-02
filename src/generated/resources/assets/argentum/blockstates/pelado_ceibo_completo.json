@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "argentum:block/pelado_ceibo_completo_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "argentum:block/pelado_ceibo_completo"
+    },
+    "axis=z": {
+      "model": "argentum:block/pelado_ceibo_completo_horizontal",
+      "x": 90
+    }
+  }
+}

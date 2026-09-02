@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:river",
+    "minecraft:forest",
+    "minecraft:flower_forest",
+    "minecraft:sparse_jungle"
+  ],
+  "features": "argentum:ceibo",
+  "step": "vegetal_decoration"
+}

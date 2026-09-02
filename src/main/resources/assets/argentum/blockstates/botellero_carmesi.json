@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=north,half=lower": { "model": "argentum:block/botellero_bot_carmesi" },
+    "facing=east,half=lower": { "model": "argentum:block/botellero_bot_carmesi", "y": 90 },
+    "facing=south,half=lower": { "model": "argentum:block/botellero_bot_carmesi", "y": 180 },
+    "facing=west,half=lower": { "model": "argentum:block/botellero_bot_carmesi", "y": 270 },
+
+    "facing=north,half=upper": { "model": "argentum:block/botellero_top_carmesi" },
+    "facing=east,half=upper": { "model": "argentum:block/botellero_top_carmesi", "y": 90 },
+    "facing=south,half=upper": { "model": "argentum:block/botellero_top_carmesi", "y": 180 },
+    "facing=west,half=upper": { "model": "argentum:block/botellero_top_carmesi", "y": 270 }
+  }
+}

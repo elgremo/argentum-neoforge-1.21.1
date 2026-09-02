@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HMH",
+    "HBH",
+    "HMH"
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "minecraft:barrel"
+    },
+    "M": {
+      "item": "minecraft:warped_planks"
+    }
+  },
+  "result": {
+    "id": "argentum:botellero_distorcionado",
+    "count": 1
+  }
+}

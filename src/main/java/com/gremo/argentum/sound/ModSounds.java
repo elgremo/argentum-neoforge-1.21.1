@@ -30,12 +30,30 @@ public class ModSounds {
             ModSounds.ALDEANO_BREAK, ModSounds.ALDEANO_STEP, ModSounds.ALDEANO_PLACE,
             ModSounds.ALDEANO_HIT, ModSounds.ALDEANO_FALL);
 
+    public static final Supplier<SoundEvent> CHUNGO_SHOOT =
+            registerSoundEvent("chungo_shoot");
 
+    public static final Supplier<SoundEvent> TERO_RUIDO = registerSoundEvent("tero_ruido");
+
+    public static final Supplier<SoundEvent> IDLE_HORNERO = registerSoundEvent("idle_hornero");
+
+    public static final Supplier<SoundEvent> ATAQUE_ZORRO = registerSoundEvent("ataque_zorro");
+    public static final Supplier<SoundEvent> DEATH_ZORRO = registerSoundEvent("death_zorro");
+    public static final Supplier<SoundEvent> HURT_ZORRO = registerSoundEvent("hurt_zorro");
+    public static final Supplier<SoundEvent> IDLE_ZORRO = registerSoundEvent("idle_zorro");
 
     public static final Supplier<SoundEvent> MUCHACHOS = registerSoundEvent("muchachos");
     public static final ResourceKey<JukeboxSong> MUCHACHOS_KEY = createSong("muchachos");
     public static final Supplier<SoundEvent> LA_CUARTA = registerSoundEvent("la_cuarta");
     public static final ResourceKey<JukeboxSong> LA_CUARTA_KEY = createSong("la_cuarta");
+
+    public static final Supplier<SoundEvent> CHORRO_AMBIENT = registerSoundEvent("chorro_ambient");
+    public static final Supplier<SoundEvent> CHORRO_HURT = registerSoundEvent("chorro_hurt");
+    public static final Supplier<SoundEvent> CHORRO_DEATH = registerSoundEvent("chorro_death");
+    public static final Supplier<SoundEvent> CHORRO_DETECT = registerSoundEvent("chorro_detect");
+    public static final Supplier<SoundEvent> CHORRO_SHOOT = registerSoundEvent("chorro_shoot");
+
+    public static final Supplier<SoundEvent> DADO = registerSoundEvent("dado");
 
     private static ResourceKey<JukeboxSong> createSong(String name) {
          return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, name));

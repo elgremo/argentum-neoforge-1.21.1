@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "argentum:block/jacaranda_leaves_pile_1"
+  }
+}

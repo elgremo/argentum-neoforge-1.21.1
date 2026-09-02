@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "argentum:block/arco_catorce" },
+    "facing=east": { "model": "argentum:block/arco_catorce", "y": 90 },
+    "facing=south": { "model": "argentum:block/arco_catorce", "y": 180 },
+    "facing=west": { "model": "argentum:block/arco_catorce", "y": 270 }
+  }
+}

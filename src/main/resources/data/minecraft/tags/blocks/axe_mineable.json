@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "argentum:jacaranda_tronco",
+    "argentum:jacaranda_completo",
+    "argentum:pelado_jacaranda_tronco",
+    "argentum:pelado_jacaranda_completo",
+    "argentum:jacaranda_madera",
+    "argentum:jacaranda_escaleras",
+    "argentum:jacaranda_losa",
+    "argentum:jacaranda_valla",
+    "argentum:jacaranda_porton",
+    "argentum:jacaranda_boton",
+    "argentum:jacaranda_placa_presion",
+    "argentum:jacaranda_puerta",
+    "argentum:jacaranda_trampilla"
+  ]
+}

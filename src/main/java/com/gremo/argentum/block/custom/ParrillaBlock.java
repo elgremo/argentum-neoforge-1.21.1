@@ -131,7 +131,8 @@ public class ParrillaBlock extends BaseEntityBlock {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         return createTickerHelper(type, com.gremo.argentum.block.entity.ModBlockEntities.PARRILLA_BE.get(),
-                (lvl, pos, st, be) -> com.gremo.argentum.block.entity.ParrillaBlockEntity.tick(lvl, pos, st, (ParrillaBlockEntity) be));
+                (lvl, pos, st, be)
+                        -> com.gremo.argentum.block.entity.ParrillaBlockEntity.tick(lvl, pos, st, (ParrillaBlockEntity) be));
     }
 
     @Override

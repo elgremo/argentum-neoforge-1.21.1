@@ -1,10 +1,52 @@
 {
   "variants": {
-    "age=0": { "model": "argentum:block/yerba_planta_stage0" },
-    "age=1": { "model": "argentum:block/yerba_planta_stage1" },
-    "age=2": { "model": "argentum:block/yerba_planta_stage2" },
-    "age=3": { "model": "argentum:block/yerba_planta_stage3" },
-    "age=4": { "model": "argentum:block/yerba_planta_stage4" },
-    "age=5": { "model": "argentum:block/yerba_planta_stage5" }
+    "half=lower,age=0": {
+      "model": "argentum:block/yerba_planta_lower_stage_0"
+    },
+    "half=lower,age=1": {
+      "model": "argentum:block/yerba_planta_lower_stage_1"
+    },
+    "half=lower,age=2": {
+      "model": "argentum:block/yerba_planta_lower_stage_2"
+    },
+    "half=lower,age=3": {
+      "model": "argentum:block/yerba_planta_lower_stage_3"
+    },
+    "half=lower,age=4": {
+      "model": "argentum:block/yerba_planta_lower_stage_4"
+    },
+    "half=lower,age=5": {
+      "model": "argentum:block/yerba_planta_lower_stage_5"
+    },
+    "half=lower,age=6": {
+      "model": "argentum:block/yerba_planta_lower_stage_6"
+    },
+    "half=lower,age=7": {
+      "model": "argentum:block/yerba_planta_lower_stage_7"
+    },
+    "half=upper,age=0": {
+      "model": "argentum:block/yerba_planta_upper_stage_4"
+    },
+    "half=upper,age=1": {
+      "model": "argentum:block/yerba_planta_upper_stage_4"
+    },
+    "half=upper,age=2": {
+      "model": "argentum:block/yerba_planta_upper_stage_4"
+    },
+    "half=upper,age=3": {
+      "model": "argentum:block/yerba_planta_upper_stage_4"
+    },
+    "half=upper,age=4": {
+      "model": "argentum:block/yerba_planta_upper_stage_4"
+    },
+    "half=upper,age=5": {
+      "model": "argentum:block/yerba_planta_upper_stage_5"
+    },
+    "half=upper,age=6": {
+      "model": "argentum:block/yerba_planta_upper_stage_6"
+    },
+    "half=upper,age=7": {
+      "model": "argentum:block/yerba_planta_upper_stage_7"
+    }
   }
 }

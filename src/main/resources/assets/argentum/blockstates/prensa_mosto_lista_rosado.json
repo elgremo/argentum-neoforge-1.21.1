@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "argentum:block/prensa_mosto_lista_rosado" },
+    "facing=east":  { "model": "argentum:block/prensa_mosto_lista_rosado", "y": 90 },
+    "facing=south": { "model": "argentum:block/prensa_mosto_lista_rosado", "y": 180 },
+    "facing=west":  { "model": "argentum:block/prensa_mosto_lista_rosado", "y": 270 }
+  }
+}

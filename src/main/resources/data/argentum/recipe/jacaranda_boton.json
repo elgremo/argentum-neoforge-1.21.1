@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "argentum:jacaranda_madera"
+    }
+  ],
+  "result": {
+    "id": "argentum:jacaranda_boton"
+  }
+}

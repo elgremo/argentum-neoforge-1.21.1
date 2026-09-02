@@ -1,100 +1,72 @@
 package com.gremo.argentum.item.custom;
 
 import com.gremo.argentum.Argentum;
-import com.gremo.argentum.item.ModItems;
-import net.minecraft.Util;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.EnumMap;
 import java.util.List;
-import java.util.function.Supplier;
 
 public class ModArmorMaterials {
-    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA = register("camiseta_argentina",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
+    // ⭐ DeferredRegister para ARMOR_MATERIAL (DEBE SER PUBLICO)
+    public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS =
+            DeferredRegister.create(Registries.ARMOR_MATERIAL, Argentum.MOD_ID);
 
-    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA_ALTERNATIVA = register("camiseta_argentina_alternativa",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
+    // ⭐ MÉTODO AUXILIAR para crear materiales con valores fijos
+    private static DeferredHolder<ArmorMaterial, ArmorMaterial> registerRemeraMaterial(String name) {
+        return ARMOR_MATERIALS.register(name, () -> {
+            // Valores fijos para todas las camisetas
+            EnumMap<ArmorItem.Type, Integer> protection = new EnumMap<>(ArmorItem.Type.class);
+            protection.put(ArmorItem.Type.CHESTPLATE, 1);
+            protection.put(ArmorItem.Type.BODY, 1);
 
-    public static final Holder<ArmorMaterial> CAMISETA_RIVER = register("camiseta_river",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
+            int enchantability = 16;
+            float toughness = 0f;
+            float knockbackResistance = 0f;
 
-    public static final Holder<ArmorMaterial> CAMISETA_BOCA = register("camiseta_boca",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
+            List<ArmorMaterial.Layer> layers = List.of(
+                    new ArmorMaterial.Layer(
+                            ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, name)
+                    )
+            );
 
-    public static final Holder<ArmorMaterial> CAMISETA_INDEPENDIENTE = register("camiseta_independiente",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
-
-    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA_94 = register("camiseta_argentina_94",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
-
-    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA_78 = register("camiseta_argentina_78",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
-
-    public static final Holder<ArmorMaterial> CAMISETA_RACING = register("camiseta_racing",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
-
-    public static final Holder<ArmorMaterial> CAMISETA_ARGENTINA_2022 = register("camiseta_argentina_2022",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
-
-    public static final Holder<ArmorMaterial> CAMISETA_DIEGO = register("camiseta_diego",
-            Util.make(new EnumMap<>(ArmorItem.Type.class), attribute -> {
-                attribute.put(ArmorItem.Type.CHESTPLATE, 9);
-                attribute.put(ArmorItem.Type.BODY, 11);}), 16, 2f, 0.1f, () -> ModItems.MATE.get());
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
-                                                  int enchantability, float toughness, float knockbackResistance,
-                                                  Supplier<Item> ingredientItem) {
-        ResourceLocation location = ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, name);
-        Holder<SoundEvent> equipSound = SoundEvents.ARMOR_EQUIP_NETHERITE;
-        Supplier<Ingredient> ingredient = () -> Ingredient.of(ingredientItem.get());
-        List<ArmorMaterial.Layer> layers = List.of(new ArmorMaterial.Layer(location));
-
-        EnumMap<ArmorItem.Type, Integer> typeMap = new EnumMap<>(ArmorItem.Type.class);
-        for (ArmorItem.Type type : ArmorItem.Type.values()) {
-            typeMap.put(type, typeProtection.get(type));
-        }
-
-        return Registry.registerForHolder(BuiltInRegistries.ARMOR_MATERIAL, location,
-                new ArmorMaterial(typeProtection, enchantability, equipSound, ingredient, layers, toughness, knockbackResistance));
+            return new ArmorMaterial(
+                    protection,
+                    enchantability,
+                    SoundEvents.ARMOR_EQUIP_GOLD,
+                    () -> Ingredient.of(Items.LEATHER), // reparación
+                    layers,
+                    toughness,
+                    knockbackResistance
+            );
+        });
     }
+
+    // ⭐ TODOS LOS MATERIALES (una línea cada uno)
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ARGENTINA = registerRemeraMaterial("camiseta_argentina");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ARGENTINA_ALTERNATIVA = registerRemeraMaterial("camiseta_argentina_alternativa");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_DIEGO = registerRemeraMaterial("camiseta_diego");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_RIVER = registerRemeraMaterial("camiseta_river");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_BOCA = registerRemeraMaterial("camiseta_boca");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_INDEPENDIENTE = registerRemeraMaterial("camiseta_independiente");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ARGENTINA_94 = registerRemeraMaterial("camiseta_argentina_94");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ARGENTINA_78 = registerRemeraMaterial("camiseta_argentina_78");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_RACING = registerRemeraMaterial("camiseta_racing");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ARGENTINA_2022 = registerRemeraMaterial("camiseta_argentina_2022");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ARGENTINOS_JR = registerRemeraMaterial("camiseta_argentinos_jr");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ESTUDIANTES_PLATA = registerRemeraMaterial("camiseta_estudiantes_plata");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_PLATENSE = registerRemeraMaterial("camiseta_platense");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_SPREEN = registerRemeraMaterial("camiseta_spreen");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_TALLERES_CORDOBA = registerRemeraMaterial("camiseta_talleres_cordoba");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_TIGRE = registerRemeraMaterial("camiseta_tigre");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_VELEZ = registerRemeraMaterial("camiseta_velez");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_CENTRAL = registerRemeraMaterial("camiseta_central");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_TEST = registerRemeraMaterial("camiseta_test");
 }

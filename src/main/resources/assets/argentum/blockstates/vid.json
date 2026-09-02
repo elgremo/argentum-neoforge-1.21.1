@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "half=lower,age=0": { "model": "argentum:block/vid_bottom_0" },
+    "half=lower,age=1": { "model": "argentum:block/vid_bottom_1" },
+    "half=lower,age=2": { "model": "argentum:block/vid_bottom_2" },
+    "half=lower,age=3": { "model": "argentum:block/vid_bottom_3" },
+    "half=lower,age=4": { "model": "argentum:block/vid_bottom_4" },
+    "half=lower,age=5": { "model": "argentum:block/vid_bottom_5" },
+    "half=lower,age=6": { "model": "argentum:block/vid_bottom_6" },
+    "half=lower,age=7": { "model": "argentum:block/vid_bottom_7" },
+
+    "half=upper,age=0": { "model": "argentum:block/vid_top_0" },
+    "half=upper,age=1": { "model": "argentum:block/vid_top_1" },
+    "half=upper,age=2": { "model": "argentum:block/vid_top_2" },
+    "half=upper,age=3": { "model": "argentum:block/vid_top_3" },
+    "half=upper,age=4": { "model": "argentum:block/vid_top_4" },
+    "half=upper,age=5": { "model": "argentum:block/vid_top_5" },
+    "half=upper,age=6": { "model": "argentum:block/vid_top_6" },
+    "half=upper,age=7": { "model": "argentum:block/vid_top_7" }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=north,half=lower": { "model": "argentum:block/botellero_bot_manglar" },
+    "facing=east,half=lower": { "model": "argentum:block/botellero_bot_manglar", "y": 90 },
+    "facing=south,half=lower": { "model": "argentum:block/botellero_bot_manglar", "y": 180 },
+    "facing=west,half=lower": { "model": "argentum:block/botellero_bot_manglar", "y": 270 },
+
+    "facing=north,half=upper": { "model": "argentum:block/botellero_top_manglar" },
+    "facing=east,half=upper": { "model": "argentum:block/botellero_top_manglar", "y": 90 },
+    "facing=south,half=upper": { "model": "argentum:block/botellero_top_manglar", "y": 180 },
+    "facing=west,half=upper": { "model": "argentum:block/botellero_top_manglar", "y": 270 }
+  }
+}

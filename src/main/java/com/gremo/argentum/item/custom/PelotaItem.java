@@ -26,13 +26,9 @@ public class PelotaItem extends Item {
             double pz = player.getZ() + player.getLookAngle().z * 1.0;
 
             PelotaEntity pelota = new PelotaEntity(ModEntities.PELOTA.get(), level);
+
             pelota.setPos(px, py, pz);
-            level.addFreshEntity(pelota);
-
-            // Guardamos una copia del ItemStack para que la entidad lo muestre (opcional)
-            pelota.setDisplay(new ItemStack(ModItems.PELOTA.get()));
-
-            // velocidad inicial hacia donde mira el jugador (pequeño impulso)
+            pelota.setDisplay(stack.copy());
             pelota.setDeltaMovement(player.getLookAngle().scale(0.6).add(0, 0.2, 0));
 
             level.addFreshEntity(pelota);

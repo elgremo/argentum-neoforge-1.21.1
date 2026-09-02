@@ -6,6 +6,7 @@ import com.gremo.argentum.item.ModItems;
 import com.gremo.argentum.villager.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
@@ -48,7 +49,6 @@ public class ModEvents {
                     new ItemStack(ModItems.MATE_LISTO_AMARILLO.get(), 1), 2, 8, 0.05f));
         }
 
-
         // TRADES para Kevin (lo que queda)
         if (event.getType() == ModVillagers.VENDEDOR.value()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
@@ -63,7 +63,7 @@ public class ModEvents {
 
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 32),
-                    new ItemStack(ModItems.PISTOLA.get(), 1), 2, 8, 0.05f));
+                    new ItemStack(ModItems.CHUNGO.get(), 1), 2, 8, 0.05f));
 
             trades.get(2).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 5),
@@ -80,7 +80,7 @@ public class ModEvents {
                     new ItemStack(ModItems.FERNET.get(), 1), 6, 20, 0.05f));
             trades.get(4).add((entity, randomSource) -> new MerchantOffer(
                     new ItemCost(Items.EMERALD, 2),
-                    new ItemStack(ModItems.COPA_MUNDO.get(), 1), 3, 20, 0.05f));
+                    new ItemStack(ModBlocks.COPA_MUNDO.get(), 1), 3, 20, 0.05f));
         }
     }
 }

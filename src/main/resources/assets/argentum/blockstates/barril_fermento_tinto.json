@@ -1,0 +1,53 @@
+{
+  "variants": {
+    "etapa=0,facing=north": { "model": "argentum:block/barril_fermento_0" },
+    "etapa=0,facing=east":  { "model": "argentum:block/barril_fermento_0", "y": 90 },
+    "etapa=0,facing=south": { "model": "argentum:block/barril_fermento_0", "y": 180 },
+    "etapa=0,facing=west":  { "model": "argentum:block/barril_fermento_0", "y": 270 },
+
+    "etapa=1,facing=north": { "model": "argentum:block/barril_fermento_1" },
+    "etapa=1,facing=east":  { "model": "argentum:block/barril_fermento_1", "y": 90 },
+    "etapa=1,facing=south": { "model": "argentum:block/barril_fermento_1", "y": 180 },
+    "etapa=1,facing=west":  { "model": "argentum:block/barril_fermento_1", "y": 270 },
+
+    "etapa=2,facing=north": { "model": "argentum:block/barril_fermento_2" },
+    "etapa=2,facing=east":  { "model": "argentum:block/barril_fermento_2", "y": 90 },
+    "etapa=2,facing=south": { "model": "argentum:block/barril_fermento_2", "y": 180 },
+    "etapa=2,facing=west":  { "model": "argentum:block/barril_fermento_2", "y": 270 },
+
+    "etapa=3,facing=north": { "model": "argentum:block/barril_fermento_3" },
+    "etapa=3,facing=east":  { "model": "argentum:block/barril_fermento_3", "y": 90 },
+    "etapa=3,facing=south": { "model": "argentum:block/barril_fermento_3", "y": 180 },
+    "etapa=3,facing=west":  { "model": "argentum:block/barril_fermento_3", "y": 270 },
+
+    "etapa=4,facing=north": { "model": "argentum:block/barril_fermento_4" },
+    "etapa=4,facing=east":  { "model": "argentum:block/barril_fermento_4", "y": 90 },
+    "etapa=4,facing=south": { "model": "argentum:block/barril_fermento_4", "y": 180 },
+    "etapa=4,facing=west":  { "model": "argentum:block/barril_fermento_4", "y": 270 },
+
+    "etapa=5,facing=north": { "model": "argentum:block/barril_fermento_5" },
+    "etapa=5,facing=east":  { "model": "argentum:block/barril_fermento_5", "y": 90 },
+    "etapa=5,facing=south": { "model": "argentum:block/barril_fermento_5", "y": 180 },
+    "etapa=5,facing=west":  { "model": "argentum:block/barril_fermento_5", "y": 270 },
+
+    "etapa=6,facing=north": { "model": "argentum:block/barril_fermento_6" },
+    "etapa=6,facing=east":  { "model": "argentum:block/barril_fermento_6", "y": 90 },
+    "etapa=6,facing=south": { "model": "argentum:block/barril_fermento_6", "y": 180 },
+    "etapa=6,facing=west":  { "model": "argentum:block/barril_fermento_6", "y": 270 },
+
+    "etapa=7,facing=north": { "model": "argentum:block/barril_fermento_7" },
+    "etapa=7,facing=east":  { "model": "argentum:block/barril_fermento_7", "y": 90 },
+    "etapa=7,facing=south": { "model": "argentum:block/barril_fermento_7", "y": 180 },
+    "etapa=7,facing=west":  { "model": "argentum:block/barril_fermento_7", "y": 270 },
+
+    "etapa=8,facing=north": { "model": "argentum:block/barril_fermento_espera" },
+    "etapa=8,facing=east":  { "model": "argentum:block/barril_fermento_espera", "y": 90 },
+    "etapa=8,facing=south": { "model": "argentum:block/barril_fermento_espera", "y": 180 },
+    "etapa=8,facing=west":  { "model": "argentum:block/barril_fermento_espera", "y": 270 },
+
+    "etapa=9,facing=north": { "model": "argentum:block/barril_fermento_listo" },
+    "etapa=9,facing=east":  { "model": "argentum:block/barril_fermento_listo", "y": 90 },
+    "etapa=9,facing=south": { "model": "argentum:block/barril_fermento_listo", "y": 180 },
+    "etapa=9,facing=west":  { "model": "argentum:block/barril_fermento_listo", "y": 270 }
+  }
+}

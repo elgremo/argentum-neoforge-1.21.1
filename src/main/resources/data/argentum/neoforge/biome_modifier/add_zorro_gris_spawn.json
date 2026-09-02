@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "#argentum:has_zorro_gris",
+  "spawners": {
+    "type": "argentum:zorro_gris",
+    "weight": 30,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}
