@@ -6,6 +6,7 @@ import com.gremo.argentum.item.ModItems;
 import com.gremo.argentum.villager.ModVillagers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
@@ -47,7 +48,6 @@ public class ModEvents {
                     new ItemCost(Items.EMERALD, 4),
                     new ItemStack(ModItems.MATE_LISTO_AMARILLO.get(), 1), 2, 8, 0.05f));
         }
-
 
         // TRADES para Kevin (lo que queda)
         if (event.getType() == ModVillagers.VENDEDOR.value()) {
