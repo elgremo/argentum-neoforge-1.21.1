@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:fulbo/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:copa_libertadores"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "La obsesión de todo club sudamericano.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:copa_libertadores"
+    },
+    "title": "La Gloria Eterna"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

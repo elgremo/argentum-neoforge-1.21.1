@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:comida/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:empanada_frita"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Fritá tu primera empanada.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:empanada_frita"
+    },
+    "title": "Una Empanada No Alcanza"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -4,6 +4,7 @@ import com.gremo.argentum.Argentum;
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.block.entity.ModBlockEntities;
 import com.gremo.argentum.block.renderer.*;
+import com.gremo.argentum.client.renderer.PelotaBasquetRenderer;
 import com.gremo.argentum.client.renderer.PelotaRenderer;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.entity.client.BalaRenderer;
@@ -55,6 +56,7 @@ public class ModClientEvents {
             BlockEntityRenderers.register(ModBlockEntities.MOSTO_BE.get(), PrensaMostoBlockEntityRenderer::new);
 
             EntityRenderers.register(ModEntities.PELOTA.get(), PelotaRenderer::new);
+            EntityRenderers.register(ModEntities.PELOTA_BASQUET.get(), PelotaBasquetRenderer::new);
 
             EntityRenderers.register(ModEntities.BALA.get(), BalaRenderer::new);
 
@@ -69,12 +71,9 @@ public class ModClientEvents {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.CEIBO_PILA_HOJAS.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.JACARANDA_PILA_HOJAS.get(), RenderType.cutout());
 
-            BlockEntityRenderers.register(
-                    ModBlockEntities.NIDO_BE.get(),
-                    NidoBlockEntityRenderer::new);
+            BlockEntityRenderers.register(ModBlockEntities.NIDO_BE.get(), NidoBlockEntityRenderer::new);
 
         });
-
     }
 
     @SubscribeEvent

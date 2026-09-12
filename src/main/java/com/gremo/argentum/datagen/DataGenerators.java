@@ -47,5 +47,7 @@ public class DataGenerators {
                         existingFileHelper
                 )
         );
+
+        generator.addProvider(true, new ModAdvancements(output, lookupProvider));
     }
 }

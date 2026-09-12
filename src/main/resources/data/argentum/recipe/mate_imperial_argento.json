@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ALB",
+    "CMC",
+    "BLA"
+  ],
+  "key": {
+    "L": {
+      "item": "minecraft:iron_nugget"
+    },
+    "C": {
+      "item": "minecraft:leather"
+    },
+    "M": {
+      "item": "argentum:mate"
+    },
+    "A": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "B": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "argentum:mate_imperial_argento"
+  }
+}

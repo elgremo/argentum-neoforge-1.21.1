@@ -30,6 +30,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.TERO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.HORNERO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.ZORRO_GRIS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
-
+        withExistingParent("ceibo_muro", mcLoc("block/wall_inventory"))
+                .texture("wall", modLoc("block/ceibo_madera"));
+        withExistingParent("jacaranda_muro", mcLoc("block/wall_inventory"))
+                .texture("wall", modLoc("block/jacaranda_madera"));
     }
 }

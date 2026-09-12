@@ -50,6 +50,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.SWORDS)
                 .add(ModItems.CUCHILLO.get());
 
+        copy(BlockTags.WALLS, ItemTags.WALLS);
+
 
         // 🌱 Semillas (para que los aldeanos y mods las reconozcan como semillas)
         tag(ItemTags.VILLAGER_PLANTABLE_SEEDS)

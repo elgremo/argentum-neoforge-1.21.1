@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:fauna/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:nido"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "1.000 pe.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:nido"
+    },
+    "title": "Hornero"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

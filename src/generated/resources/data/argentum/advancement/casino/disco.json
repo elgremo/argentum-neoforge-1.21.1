@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:casino/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:muchachos_disco_musica"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Poné un disco y que suene fuerte.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:muchachos_disco_musica"
+    },
+    "title": "Rock Nacional"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

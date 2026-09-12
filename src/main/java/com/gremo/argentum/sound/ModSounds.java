@@ -1,7 +1,6 @@
 package com.gremo.argentum.sound;
 
 import com.gremo.argentum.Argentum;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -35,6 +34,8 @@ public class ModSounds {
 
     public static final Supplier<SoundEvent> TERO_RUIDO = registerSoundEvent("tero_ruido");
 
+    public static final Supplier<SoundEvent> BASQUET = registerSoundEvent("basquet");
+
     public static final Supplier<SoundEvent> IDLE_HORNERO = registerSoundEvent("idle_hornero");
 
     public static final Supplier<SoundEvent> ATAQUE_ZORRO = registerSoundEvent("ataque_zorro");
@@ -46,6 +47,8 @@ public class ModSounds {
     public static final ResourceKey<JukeboxSong> MUCHACHOS_KEY = createSong("muchachos");
     public static final Supplier<SoundEvent> LA_CUARTA = registerSoundEvent("la_cuarta");
     public static final ResourceKey<JukeboxSong> LA_CUARTA_KEY = createSong("la_cuarta");
+    public static final Supplier<SoundEvent> ROSAROSA = registerSoundEvent("rosarosa");
+    public static final ResourceKey<JukeboxSong> ROSAROSA_KEY = createSong("rosarosa");
 
     public static final Supplier<SoundEvent> CHORRO_AMBIENT = registerSoundEvent("chorro_ambient");
     public static final Supplier<SoundEvent> CHORRO_HURT = registerSoundEvent("chorro_hurt");

@@ -3,20 +3,11 @@ package com.gremo.argentum.datagen;
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.block.ModBlocks;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.minecraft.world.level.block.ButtonBlock;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.FenceGateBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.TrapDoorBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -241,6 +232,17 @@ public class ModBlockStateProvider extends BlockStateProvider {
             );
 
             blockItem(ModBlocks.CEIBO_TRAMPILLA, "_bottom");
+
+        wallBlock(
+                (WallBlock) ModBlocks.CEIBO_MURO.get(),
+                blockTexture(ModBlocks.CEIBO_MADERA.get()) // Usa la textura de tu madera de ceibo
+        );
+        blockItem(ModBlocks.CEIBO_MURO, "_inventory"); // El modelo de inventario que genera wallBlock
+        wallBlock(
+                (WallBlock) ModBlocks.JACARANDA_MURO.get(),
+                blockTexture(ModBlocks.JACARANDA_MADERA.get())
+        );
+        blockItem(ModBlocks.JACARANDA_MURO, "_inventory");
 
     }
 

@@ -40,12 +40,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.JACARANDA_ESCALERAS);
                         output.accept(ModBlocks.JACARANDA_LOSA);
                         output.accept(ModBlocks.JACARANDA_VALLA);
+                        output.accept(ModBlocks.JACARANDA_MURO);
                         output.accept(ModBlocks.JACARANDA_PORTON);
                         output.accept(ModBlocks.JACARANDA_PUERTA);
                         output.accept(ModBlocks.JACARANDA_TRAMPILLA);
                         output.accept(ModBlocks.JACARANDA_BOTON);
                         output.accept(ModBlocks.JACARANDA_PLACA_PRESION);
-                        //output.accept(ModItems.JACARANDA_BOTE);
 
 // ======================================================
 // 🌺 CEIBO
@@ -66,6 +66,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.CEIBO_ESCALERAS);
                         output.accept(ModBlocks.CEIBO_LOSA);
                         output.accept(ModBlocks.CEIBO_VALLA);
+                        output.accept(ModBlocks.CEIBO_MURO);
                         output.accept(ModBlocks.CEIBO_PORTON);
                         output.accept(ModBlocks.CEIBO_PUERTA);
                         output.accept(ModBlocks.CEIBO_TRAMPILLA);
@@ -94,8 +95,25 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BOMBILLA);
                         output.accept(ModItems.CALABAZA_MATE);
 
-                        output.accept(ModItems.MATE_VACIO);
                         output.accept(ModItems.MATE);
+                        output.accept(ModItems.MATE_VACIO);
+                        output.accept(ModItems.MATE_IMPERIAL);
+                        output.accept(ModItems.MATE_IMPERIAL_VACIO);
+                        output.accept(ModItems.MATE_IMPERIAL_ARGENTO);
+                        output.accept(ModItems.MATE_IMPERIAL_ARGENTO_VACIO);
+                        output.accept(ModItems.MATE_IMPERIAL_BLANCO);
+                        output.accept(ModItems.MATE_IMPERIAL_BLANCO_VACIO);
+                        output.accept(ModItems.MATE_IMPERIAL_NEGRO);
+                        output.accept(ModItems.MATE_IMPERIAL_NEGRO_VACIO);
+
+                        output.accept(ModItems.PAVA);
+                        output.accept(ModItems.PAVA_CALIENTE);
+
+                        output.accept(ModItems.TERMO);
+                        output.accept(ModItems.TERMO_VACIO);
+
+                        output.accept(ModItems.TERMO_ARGENTO);
+                        output.accept(ModItems.TERMO_ARGENTO_VACIO);
 
                         output.accept(ModItems.MATE_LISTO_AMARILLO);
                         output.accept(ModItems.MATE_LISTO_ARGENTO);
@@ -114,16 +132,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.MATE_LISTO_VERDE1);
                         output.accept(ModItems.MATE_LISTO_VERDE2);
                         output.accept(ModItems.MATE_LISTO_VIOLETA);
-
-                        output.accept(ModItems.PAVA);
-                        output.accept(ModItems.PAVA_CALIENTE);
-
-                        output.accept(ModItems.TERMO);
-                        output.accept(ModItems.TERMO_VACIO);
-
-                        output.accept(ModItems.TERMO_ARGENTO);
-                        output.accept(ModItems.TERMO_ARGENTO_VACIO);
-
 
 // ======================================================
 // 🌱 CULTIVOS
@@ -166,6 +174,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BOTELLA_VINO_TINTO_LLENA);
                         output.accept(ModItems.BOTELLA_VINO_BLANCO_LLENA);
                         output.accept(ModItems.BOTELLA_VINO_ROSADO_LLENA);
+                        output.accept(ModItems.VINO_CAJA);
 
                         output.accept(ModItems.COPA_VINO_VACIA.get());
                         output.accept(ModItems.COPA_VINO_TINTO.get());
@@ -194,11 +203,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.HARINA);
                         output.accept(ModItems.ACEITE);
                         output.accept(ModItems.MANTECA);
-
                         output.accept(ModItems.LECHE);
-
                         output.accept(ModItems.PAN_RALLADO);
-
                         output.accept(ModItems.GRASA);
                         output.accept(ModItems.TRIPIN_CERDO);
 
@@ -214,9 +220,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENTRANA_CRUDA);
                         output.accept(ModItems.MOLLEJA_CRUDA);
                         output.accept(ModItems.CHINCHULIN_CRUDO);
-
                         output.accept(ModItems.CHORIZO_PARRILLERO_CRUDO);
-
                         output.accept(ModItems.CARNE_CORTADA_CRUDA);
 
 
@@ -231,9 +235,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ENTRANA_ASADA);
                         output.accept(ModItems.MOLLEJA_ASADA);
                         output.accept(ModItems.CHINCHULIN_ASADO);
-
                         output.accept(ModItems.CHORIZO_PARRILLERO_COCIDO);
-
                         output.accept(ModItems.CARNE_CORTADA_COCIDA);
 
 
@@ -305,7 +307,7 @@ public class ModCreativeModeTabs {
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "mate_argento_tab"))
                     .title(Component.translatable("creativetab.argentum.casino"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        //output.accept(ModItems.CHORRO_SPAWN_EGG);
+
 // ======================================================
 // 🎲 DADOS
 // ======================================================
@@ -345,6 +347,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.MUCHACHOS_DISCO_MUSICA);
                         output.accept(ModItems.LA_CUARTA_DISCO_MUSICA);
+                        output.accept(ModItems.ROSAROSA_DISCO_MUSICA);
 
 
 // ======================================================
@@ -452,6 +455,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.COPA_MUNDO_ITEM.get());
                         output.accept(ModBlocks.COPA_AMERICA);
+                        output.accept(ModBlocks.COPA_LIBERTADORES);
 
 
 // ======================================================
@@ -461,9 +465,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.PELOTA);
                         output.accept(ModItems.PELOTA_TELSTAR);
                         output.accept(ModItems.PELOTA_AZTECA);
+                        output.accept(ModItems.PELOTA_TEAMGEIST);
                         output.accept(ModItems.PELOTA_JABULANI);
                         output.accept(ModItems.PELOTA_AL_RIHLA);
                         output.accept(ModBlocks.ARCO_FULBO);
+                        output.accept(ModItems.PELOTA_BASQUET);
+
 
 
 // ======================================================
@@ -472,6 +479,9 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.CAMISETA);
 
+
+                        output.accept(ModItems.GORRO_FANGIO);
+
                         output.accept(ModItems.CAMISETA_ARGENTINA_78);
                         output.accept(ModItems.CAMISETA_ARGENTINA_94);
                         output.accept(ModItems.CAMISETA_DIEGO);
@@ -479,6 +489,9 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.CAMISETA_ARGENTINA);
                         output.accept(ModItems.CAMISETA_ARGENTINA_ALTERNATIVA);
+
+                        output.accept(ModItems.CAMISETA_LEONAS);
+                        output.accept(ModItems.CAMISETA_BASQUET_2004);
 
                         output.accept(ModItems.CAMISETA_RIVER);
                         output.accept(ModItems.CAMISETA_BOCA);
@@ -494,6 +507,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CAMISETA_VELEZ);
                         output.accept(ModItems.CAMISETA_CENTRAL);
 
+                        output.accept(ModItems.CAMISETA_9Z_2018);
+                        output.accept(ModItems.CAMISETA_9Z_2026);
 
                     }).build());
 

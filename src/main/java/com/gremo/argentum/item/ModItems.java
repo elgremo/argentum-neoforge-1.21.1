@@ -2,7 +2,6 @@ package com.gremo.argentum.item;
 
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.block.ModBlocks;
-import com.gremo.argentum.block.custom.CopaMundoBlock;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.item.custom.*;
 import com.gremo.argentum.sound.ModSounds;
@@ -32,342 +31,496 @@ public class ModItems {
                         new Item.Properties()
                                 .durability(ArmorItem.Type.CHESTPLATE.getDurability(19))
                                 .rarity(Rarity.EPIC),  // 👈 Esto hace que el nombre sea morado
-                        textureName
-                )
-        );
-    }
+                        textureName));}
+    private static DeferredItem<GorroItem> registerGorro(String name, Holder<ArmorMaterial> material, String textureName) {
+        return ITEMS.register(name,
+                () -> new GorroItem(
+                        material,
+                        ArmorItem.Type.HELMET,
+                        new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(19)),
+                        textureName));}
 
 
         public static final DeferredItem<Item> ACEITE = ITEMS.register("aceite",
                 () -> new Item(new Item.Properties()));
 
-
-        public static final DeferredItem<Item> ALFAJOR = ITEMS.register("alfajor",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(6)      // puntos de hambre que restaura
-                                .saturationModifier(0.5f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> CHORIZO_PARRILLERO_CRUDO = ITEMS.register("chorizo_parrillero_crudo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(1)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-        public static final DeferredItem<Item> CHORIZO_PARRILLERO_COCIDO = ITEMS.register("chorizo_parrillero_cocido",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(6)      // puntos de hambre que restaura
-                                .saturationModifier(0.5f)
-                                .build()
-                        )
-                ));
-        public static final DeferredItem<Item> CHORIPAN = ITEMS.register("choripan",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(10)      // puntos de hambre que restaura
-                                .saturationModifier(0.7f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> SAL = ITEMS.register("sal",
-                () -> new Item(new Item.Properties()));
-
-
-        public static final DeferredItem<Item> BARAJA_SELLADA = ITEMS.register("baraja_sellada",
-                () -> new BarajaSelladaItem(new Item.Properties()));
-
-        public static final DeferredItem<Item> BATATA = ITEMS.register("batata",
-                () -> new ItemNameBlockItem(ModBlocks.BATATA_PLANTA.get(), new Item.Properties()));
-
-        public static final DeferredItem<Item> BIFE_ASADO = ITEMS.register("bife_asado",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                ));
-
-        public static final DeferredItem<Item> BIFE_CRUDO = ITEMS.register("bife_crudo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> BOMBILLA = ITEMS.register("bombilla",
-                () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> CALABAZA_MATE = ITEMS.register("calabaza_mate",
-                () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> CARNE_CORTADA_CRUDA = ITEMS.register("carne_cortada_cruda",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> CARNE_CORTADA_COCIDA = ITEMS.register("carne_cortada_cocida",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> CARTA_COMODIN = ITEMS.register("carta_comodin",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_1 = ITEMS.register("carta_copa_1",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_10 = ITEMS.register("carta_copa_10",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_11 = ITEMS.register("carta_copa_11",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_12 = ITEMS.register("carta_copa_12",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_2 = ITEMS.register("carta_copa_2",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_3 = ITEMS.register("carta_copa_3",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_4 = ITEMS.register("carta_copa_4",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_5 = ITEMS.register("carta_copa_5",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_6 = ITEMS.register("carta_copa_6",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_7 = ITEMS.register("carta_copa_7",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_8 = ITEMS.register("carta_copa_8",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_COPA_9 = ITEMS.register("carta_copa_9",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_1 = ITEMS.register("carta_espada_1",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_10 = ITEMS.register("carta_espada_10",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_11 = ITEMS.register("carta_espada_11",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_12 = ITEMS.register("carta_espada_12",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_2 = ITEMS.register("carta_espada_2",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_3 = ITEMS.register("carta_espada_3",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_4 = ITEMS.register("carta_espada_4",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_5 = ITEMS.register("carta_espada_5",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_6 = ITEMS.register("carta_espada_6",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_7 = ITEMS.register("carta_espada_7",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_8 = ITEMS.register("carta_espada_8",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ESPADA_9 = ITEMS.register("carta_espada_9",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_1 = ITEMS.register("carta_oro_1",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_10 = ITEMS.register("carta_oro_10",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_11 = ITEMS.register("carta_oro_11",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_12 = ITEMS.register("carta_oro_12",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_2 = ITEMS.register("carta_oro_2",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_3 = ITEMS.register("carta_oro_3",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_4 = ITEMS.register("carta_oro_4",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_5 = ITEMS.register("carta_oro_5",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_6 = ITEMS.register("carta_oro_6",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_7 = ITEMS.register("carta_oro_7",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_8 = ITEMS.register("carta_oro_8",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_ORO_9 = ITEMS.register("carta_oro_9",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_1 = ITEMS.register("carta_palo_1",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_10 = ITEMS.register("carta_palo_10",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_11 = ITEMS.register("carta_palo_11",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_12 = ITEMS.register("carta_palo_12",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_2 = ITEMS.register("carta_palo_2",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_3 = ITEMS.register("carta_palo_3",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_4 = ITEMS.register("carta_palo_4",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_5 = ITEMS.register("carta_palo_5",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_6 = ITEMS.register("carta_palo_6",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_7 = ITEMS.register("carta_palo_7",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_8 = ITEMS.register("carta_palo_8",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CARTA_PALO_9 = ITEMS.register("carta_palo_9",
-                () -> new Item(new Item.Properties().stacksTo(1)));
-
-        public static final DeferredItem<Item> CHINCHULIN_ASADO = ITEMS.register("chinchulin_asado",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)         // Igual que un Cooked Beef
-                                .saturationModifier(0.8f)  // Buena saturación
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> CHINCHULIN_CRUDO = ITEMS.register("chinchulin_crudo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> CHORRO_SPAWN_EGG = ITEMS.register("chorro_spawn_egg",
-                () -> new DeferredSpawnEggItem(ModEntities.CHORRO, 0xFFFFFF, 0x000000,
-                        new Item.Properties()));
-        public static final DeferredItem<Item> TERO_SPAWN_EGG = ITEMS.register("tero_spawn_egg",
-                () -> new DeferredSpawnEggItem(ModEntities.TERO, 0x808080, 0x000000,
-                        new Item.Properties()));
-
-        public static final DeferredItem<Item> HORNERO_SPAWN_EGG = ITEMS.register("hornero_spawn_egg",
-                () -> new DeferredSpawnEggItem(ModEntities.HORNERO, 0x8B6B4A, 0xD4A574,
-                        new Item.Properties()));
-
-        public static final DeferredItem<Item> ZORRO_GRIS_SPAWN_EGG = ITEMS.register("zorro_gris_spawn_egg",
-                () -> new DeferredSpawnEggItem(ModEntities.ZORRO_GRIS, 0x808080, 0x8B4513,
-                        new Item.Properties()));
-
-
-        public static final DeferredItem<Item> CHURRO_CRUDO = ITEMS.register("churro_crudo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> CHURRO_FRITO = ITEMS.register("churro_frito",
-                () -> new FritoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                ));
-
-        public static final DeferredItem<Item> CHURRO_FRITO_DULCE = ITEMS.register("churro_frito_dulce",
-                () -> new FritoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(9)
-                                .saturationModifier(0.9f)
-                                .build())
-                ));
-
-        public static final DeferredItem<Item> COSTILLA_ASADA = ITEMS.register("costilla_asada",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)         // Igual que un Cooked Beef
-                                .saturationModifier(0.8f)  // Buena saturación
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> COSTILLA_CRUDA = ITEMS.register("costilla_cruda",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> CUADRO_ARGENTO = ITEMS.register("cuadro_argento",
-                () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> BOMBILLA = ITEMS.register("bombilla",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> CALABAZA_MATE = ITEMS.register("calabaza_mate",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> BARAJA_SELLADA = ITEMS.register("baraja_sellada",
+            () -> new BarajaSelladaItem(new Item.Properties()));
+
+    public static final DeferredItem<Item> BATATA = ITEMS.register("batata",
+            () -> new ItemNameBlockItem(ModBlocks.BATATA_PLANTA.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> SAL = ITEMS.register("sal",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> CHORRO_SPAWN_EGG = ITEMS.register("chorro_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.CHORRO, 0xFFFFFF, 0x000000,
+                    new Item.Properties()));
+    public static final DeferredItem<Item> TERO_SPAWN_EGG = ITEMS.register("tero_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.TERO, 0x808080, 0x000000,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> HORNERO_SPAWN_EGG = ITEMS.register("hornero_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.HORNERO, 0x8B6B4A, 0xD4A574,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> ZORRO_GRIS_SPAWN_EGG = ITEMS.register("zorro_gris_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.ZORRO_GRIS, 0x808080, 0x8B4513,
+                    new Item.Properties()));
+
+    public static final DeferredItem<Item> DULCE_BATATA = ITEMS.register("dulce_batata",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> DULCE_LECHE = ITEMS.register("dulce_leche",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> DULCE_MEMBRILLO = ITEMS.register("dulce_membrillo",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MANTECA = ITEMS.register("manteca",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MEMBRILLO = ITEMS.register("membrillo",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> MEMBRILLO_SEMILLA = ITEMS.register("membrillo_semilla",
+            () -> new ItemNameBlockItem(ModBlocks.MEMBRILLO_PLANTA.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> CARTA_COMODIN = ITEMS.register("carta_comodin",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_1 = ITEMS.register("carta_copa_1",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_10 = ITEMS.register("carta_copa_10",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_11 = ITEMS.register("carta_copa_11",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_12 = ITEMS.register("carta_copa_12",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_2 = ITEMS.register("carta_copa_2",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_3 = ITEMS.register("carta_copa_3",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_4 = ITEMS.register("carta_copa_4",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_5 = ITEMS.register("carta_copa_5",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_6 = ITEMS.register("carta_copa_6",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_7 = ITEMS.register("carta_copa_7",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_8 = ITEMS.register("carta_copa_8",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COPA_9 = ITEMS.register("carta_copa_9",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_1 = ITEMS.register("carta_espada_1",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_10 = ITEMS.register("carta_espada_10",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_11 = ITEMS.register("carta_espada_11",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_12 = ITEMS.register("carta_espada_12",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_2 = ITEMS.register("carta_espada_2",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_3 = ITEMS.register("carta_espada_3",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_4 = ITEMS.register("carta_espada_4",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_5 = ITEMS.register("carta_espada_5",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_6 = ITEMS.register("carta_espada_6",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_7 = ITEMS.register("carta_espada_7",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_8 = ITEMS.register("carta_espada_8",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ESPADA_9 = ITEMS.register("carta_espada_9",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_1 = ITEMS.register("carta_oro_1",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_10 = ITEMS.register("carta_oro_10",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_11 = ITEMS.register("carta_oro_11",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_12 = ITEMS.register("carta_oro_12",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_2 = ITEMS.register("carta_oro_2",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_3 = ITEMS.register("carta_oro_3",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_4 = ITEMS.register("carta_oro_4",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_5 = ITEMS.register("carta_oro_5",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_6 = ITEMS.register("carta_oro_6",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_7 = ITEMS.register("carta_oro_7",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_8 = ITEMS.register("carta_oro_8",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_ORO_9 = ITEMS.register("carta_oro_9",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_1 = ITEMS.register("carta_palo_1",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_10 = ITEMS.register("carta_palo_10",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_11 = ITEMS.register("carta_palo_11",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_12 = ITEMS.register("carta_palo_12",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_2 = ITEMS.register("carta_palo_2",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_3 = ITEMS.register("carta_palo_3",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_4 = ITEMS.register("carta_palo_4",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_5 = ITEMS.register("carta_palo_5",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_6 = ITEMS.register("carta_palo_6",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_7 = ITEMS.register("carta_palo_7",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_8 = ITEMS.register("carta_palo_8",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_PALO_9 = ITEMS.register("carta_palo_9",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+
+    public static final DeferredItem<Item> ALFAJOR = ITEMS.register("alfajor",
+            () -> new DulceItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(6)
+                            .saturationModifier(0.5f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CHORIZO_PARRILLERO_CRUDO = ITEMS.register("chorizo_parrillero_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(1)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CHORIZO_PARRILLERO_COCIDO = ITEMS.register("chorizo_parrillero_cocido",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(6)
+                            .saturationModifier(0.5f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CHORIPAN = ITEMS.register("choripan",
+            () -> new ChoripanItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(10)
+                            .saturationModifier(0.7f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> BIFE_ASADO = ITEMS.register("bife_asado",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> BIFE_CRUDO = ITEMS.register("bife_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CARNE_CORTADA_CRUDA = ITEMS.register("carne_cortada_cruda",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CARNE_CORTADA_COCIDA = ITEMS.register("carne_cortada_cocida",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CHINCHULIN_ASADO = ITEMS.register("chinchulin_asado",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CHINCHULIN_CRUDO = ITEMS.register("chinchulin_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CHURRO_CRUDO = ITEMS.register("churro_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CHURRO_FRITO = ITEMS.register("churro_frito",
+            () -> new FritoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> CHURRO_FRITO_DULCE = ITEMS.register("churro_frito_dulce",
+            () -> new DulceItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(9)
+                            .saturationModifier(0.9f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> COSTILLA_ASADA = ITEMS.register("costilla_asada",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> COSTILLA_CRUDA = ITEMS.register("costilla_cruda",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> EMPANADA_CRUDA = ITEMS.register("empanada_cruda",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> EMPANADA_FRITA = ITEMS.register("empanada_frita",
+            () -> new FritoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> ENTRANA_ASADA = ITEMS.register("entrana_asada",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> ENTRANA_CRUDA = ITEMS.register("entrana_cruda",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> LOMO_ASADO = ITEMS.register("lomo_asado",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> LOMO_CRUDO = ITEMS.register("lomo_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> MATAMBRE_ASADO = ITEMS.register("matambre_asado",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> MATAMBRE_CRUDO = ITEMS.register("matambre_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> FERNET = ITEMS.register("fernet",
+            () -> new FernetItem(new Item.Properties()
+                    .stacksTo(1)
+                    .durability(3)
+            ));
+
+    public static final DeferredItem<Item> PASTELITO_BATATA_CRUDO = ITEMS.register("pastelito_batata_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> PASTELITO_BATATA_FRITO = ITEMS.register("pastelito_batata_frito",
+            () -> new DulceItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> PASTELITO_MEMBRILLO_CRUDO = ITEMS.register("pastelito_membrillo_crudo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> PASTELITO_MEMBRILLO_FRITO = ITEMS.register("pastelito_membrillo_frito",
+            () -> new DulceItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> TORTAFRITA = ITEMS.register("tortafrita",
+            () -> new DulceItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> TORTAFRITA_CRUDA = ITEMS.register("tortafrita_cruda",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> TRIPIN_CERDO = ITEMS.register("tripin_cerdo",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(1)
+                            .saturationModifier(0.1f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> MEDIALUNA_COCINADA = ITEMS.register("medialuna_cocinada",
+            () -> new DulceItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> MEDIALUNA_CRUDA = ITEMS.register("medialuna_cruda",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> MILANESA_CRUDA = ITEMS.register("milanesa_cruda",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> MILANESA_FRITA = ITEMS.register("milanesa_frita",
+            () -> new FritoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> MOLLEJA_ASADA = ITEMS.register("molleja_asada",
+            () -> new AsadoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(8)
+                            .saturationModifier(0.8f)
+                            .build())
+            ));
+
+    public static final DeferredItem<Item> MOLLEJA_CRUDA = ITEMS.register("molleja_cruda",
+            () -> new CrudoItem(new Item.Properties()
+                    .stacksTo(64)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .build())
+            ));
 
 
         public static final DeferredItem<CuchilloItem> CUCHILLO =
@@ -379,75 +532,20 @@ public class ModItems {
                                         .attributes(SwordItem.createAttributes(
                                                 Tiers.IRON,
                                                 3,
-                                                -2.4F
-                                        ))
-                        ));
+                                                -2.4F))));
 
 
         public static final DeferredItem<Item> MUCHACHOS_DISCO_MUSICA = ITEMS.register("muchachos_disco_musica",
                 () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.MUCHACHOS_KEY).stacksTo(1)));
         public static final DeferredItem<Item> LA_CUARTA_DISCO_MUSICA = ITEMS.register("la_cuarta_disco_musica",
                 () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.LA_CUARTA_KEY).stacksTo(1)));
+    public static final DeferredItem<Item> ROSAROSA_DISCO_MUSICA = ITEMS.register("rosarosa_disco_musica",
+            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.ROSAROSA_KEY).stacksTo(1)));
 
     // ⭐ Copa del Mundo - BlockItem personalizado
     public static final DeferredItem<Item> COPA_MUNDO_ITEM = ITEMS.register("copa_mundo",
             () -> new CopaMundoItem(new Item.Properties().rarity(Rarity.EPIC)));
 
-
-        public static final DeferredItem<Item> DULCE_BATATA = ITEMS.register("dulce_batata",
-                () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> DULCE_LECHE = ITEMS.register("dulce_leche",
-                () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> DULCE_MEMBRILLO = ITEMS.register("dulce_membrillo",
-                () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> EMPANADA_CRUDA = ITEMS.register("empanada_cruda",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> EMPANADA_FRITA = ITEMS.register("empanada_frita",
-                () -> new FritoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                ));
-
-        public static final DeferredItem<Item> ENTRANA_ASADA = ITEMS.register("entrana_asada",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)         // Igual que un Cooked Beef
-                                .saturationModifier(0.8f)  // Buena saturación
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> ENTRANA_CRUDA = ITEMS.register("entrana_cruda",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> FERNET = ITEMS.register("fernet",
-                () -> new FernetItem(new Item.Properties()
-                        .stacksTo(1)
-                        .durability(3)
-                )
-        );
 
 
     public static final DeferredItem<Item> FICHA_CASINO_2 = ITEMS.register("ficha_casino_2",
@@ -482,62 +580,64 @@ public class ModItems {
         public static final DeferredItem<Item> LECHE = ITEMS.register("leche",
                 () -> new Item(new Item.Properties()));
 
-        public static final DeferredItem<Item> LOMO_ASADO = ITEMS.register("lomo_asado",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)         // Igual que un Cooked Beef
-                                .saturationModifier(0.8f)  // Buena saturación
-                                .build()
-                        )
-                ));
 
-        public static final DeferredItem<Item> LOMO_CRUDO = ITEMS.register("lomo_crudo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
+    public static final DeferredItem<Item> MATE = ITEMS.register("mate",
+            () -> new MateItem(
+                    new Item.Properties().stacksTo(1).durability(10),
+                    () -> ModItems.MATE_VACIO.get(),
+                    "message.argentum.mate_washed"
+            ));
 
-        public static final DeferredItem<Item> MANTECA = ITEMS.register("manteca",
-                () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MATE_VACIO = ITEMS.register("mate_vacio",
+            () -> new Item(new Item.Properties()));
 
-        public static final DeferredItem<Item> MATAMBRE_ASADO = ITEMS.register("matambre_asado",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)         // Igual que un Cooked Beef
-                                .saturationModifier(0.8f)  // Buena saturación
-                                .build()
-                        )
-                ));
+    // ========== MATE IMPERIAL ==========
+    public static final DeferredItem<Item> MATE_IMPERIAL = ITEMS.register("mate_imperial",
+            () -> new MateItem(
+                    new Item.Properties().stacksTo(1).durability(15),
+                    () -> ModItems.MATE_IMPERIAL_VACIO.get(),
+                    "message.argentum.mate_imperial_washed",
+                    10, 1.0f
+            ));
 
-        public static final DeferredItem<Item> MATAMBRE_CRUDO = ITEMS.register("matambre_crudo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
+    public static final DeferredItem<Item> MATE_IMPERIAL_VACIO = ITEMS.register("mate_imperial_vacio",
+            () -> new Item(new Item.Properties()));
 
-        public static final DeferredItem<Item> MATE = ITEMS.register("mate",
-                () -> new MateItem(new Item.Properties()
-                        .stacksTo(1)
-                        .durability(5)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                )
-        );
+    // ========== MATE IMPERIAL ARGENTO ==========
+    public static final DeferredItem<Item> MATE_IMPERIAL_ARGENTO = ITEMS.register("mate_imperial_argento",
+            () -> new MateItem(
+                    new Item.Properties().stacksTo(1).durability(20),
+                    () -> ModItems.MATE_IMPERIAL_ARGENTO_VACIO.get(),
+                    "message.argentum.mate_argento_washed",
+                    12, 1.2f
+            ));
 
-        public static final DeferredItem<Item> MATE_VACIO = ITEMS.register("mate_vacio",
-                () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MATE_IMPERIAL_ARGENTO_VACIO = ITEMS.register("mate_imperial_argento_vacio",
+            () -> new Item(new Item.Properties()));
+
+    // ========== MATE IMPERIAL BLANCO ==========
+    public static final DeferredItem<Item> MATE_IMPERIAL_BLANCO = ITEMS.register("mate_imperial_blanco",
+            () -> new MateItem(
+                    new Item.Properties().stacksTo(1).durability(12),
+                    () -> ModItems.MATE_IMPERIAL_BLANCO_VACIO.get(),
+                    "message.argentum.mate_blanco_washed",
+                    9, 0.9f
+            ));
+
+    public static final DeferredItem<Item> MATE_IMPERIAL_BLANCO_VACIO = ITEMS.register("mate_imperial_blanco_vacio",
+            () -> new Item(new Item.Properties()));
+
+    // ========== MATE IMPERIAL NEGRO ==========
+    public static final DeferredItem<Item> MATE_IMPERIAL_NEGRO = ITEMS.register("mate_imperial_negro",
+            () -> new MateItem(
+                    new Item.Properties().stacksTo(1).durability(12),
+                    () -> ModItems.MATE_IMPERIAL_NEGRO_VACIO.get(),
+                    "message.argentum.mate_negro_washed",
+                    9, 0.9f
+            ));
+
+    public static final DeferredItem<Item> MATE_IMPERIAL_NEGRO_VACIO = ITEMS.register("mate_imperial_negro_vacio",
+            () -> new Item(new Item.Properties()));
 
 
         public static final DeferredItem<Item> MATE_LISTO_AMARILLO = ITEMS.register("mate_listo_amarillo",
@@ -744,119 +844,9 @@ public class ModItems {
                 )
         );
 
-        //public static final DeferredItem<Item> MAZO = ITEMS.register("mazo",
-        //        () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> MEDIALUNA_COCINADA = ITEMS.register("medialuna_cocinada",
-                () -> new Item(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                ));
-
-        public static final DeferredItem<Item> MEDIALUNA_CRUDA = ITEMS.register("medialuna_cruda",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> MEMBRILLO = ITEMS.register("membrillo",
-                () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> MEMBRILLO_SEMILLA = ITEMS.register("membrillo_semilla",
-                () -> new ItemNameBlockItem(ModBlocks.MEMBRILLO_PLANTA.get(), new Item.Properties()));
-
-        public static final DeferredItem<Item> MILANESA_CRUDA = ITEMS.register("milanesa_cruda",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> MILANESA_FRITA = ITEMS.register("milanesa_frita",
-                () -> new FritoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                ));
-
-        public static final DeferredItem<Item> MOLLEJA_ASADA = ITEMS.register("molleja_asada",
-                () -> new CocidoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)         // Igual que un Cooked Beef
-                                .saturationModifier(0.8f)  // Buena saturación
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> MOLLEJA_CRUDA = ITEMS.register("molleja_cruda",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        //public static final DeferredItem<Item> OLLA = ITEMS.register("olla",
-        //        () -> new Item(new Item.Properties()));
-
         public static final DeferredItem<Item> PAN_RALLADO = ITEMS.register("pan_rallado",
                 () -> new Item(new Item.Properties()));
 
-        //public static final DeferredItem<Item> PARRILLA = ITEMS.register("parrilla",
-        //        () -> new Item(new Item.Properties()));
-
-        public static final DeferredItem<Item> PASTELITO_BATATA_CRUDO = ITEMS.register("pastelito_batata_crudo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> PASTELITO_BATATA_FRITO = ITEMS.register("pastelito_batata_frito",
-                () -> new FritoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                ));
-
-        public static final DeferredItem<Item> PASTELITO_MEMBRILLO_CRUDO = ITEMS.register("pastelito_membrillo_crudo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> PASTELITO_MEMBRILLO_FRITO = ITEMS.register("pastelito_membrillo_frito",
-                () -> new FritoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                ));
 
         public static final DeferredItem<Item> PELOTA = ITEMS.register("pelota",
                 () -> new PelotaItem(new Item.Properties().stacksTo(1))
@@ -870,9 +860,16 @@ public class ModItems {
         public static final DeferredItem<Item> PELOTA_JABULANI = ITEMS.register("pelota_jabulani",
                 () -> new PelotaItem(new Item.Properties().stacksTo(1))
         );
+    public static final DeferredItem<Item> PELOTA_TEAMGEIST = ITEMS.register("pelota_teamgeist",
+            () -> new PelotaItem(new Item.Properties().stacksTo(1))
+    );
         public static final DeferredItem<Item> PELOTA_AL_RIHLA = ITEMS.register("pelota_al_rihla",
                 () -> new PelotaItem(new Item.Properties().stacksTo(1))
         );
+
+    public static final DeferredItem<Item> PELOTA_BASQUET = ITEMS.register("pelota_basquet",
+            () -> new PelotaBasquetItem(new Item.Properties().stacksTo(1))
+    );
 
         public static final DeferredItem<Item> BALA = ITEMS.register("bala",
                 () -> new Item(new Item.Properties()));
@@ -970,7 +967,7 @@ public class ModItems {
     public static final DeferredItem<Item> BALDE_MOSTO_ROSADO = ITEMS.register("balde_mosto_rosado",
             () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> BALDE_MOSTO_TURBIO = ITEMS.register("balde_mosto_turbio",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new BaldeMostoTurbioItem(new Item.Properties().stacksTo(1)));
 
 
         public static final DeferredItem<Item> BOTELLA_VINO_VACIA = ITEMS.register("botella_vino_vacia",
@@ -1027,7 +1024,15 @@ public class ModItems {
                             .build())
             ));
 
-
+    public static final DeferredItem<Item> VINO_CAJA = ITEMS.register("vino_caja",
+            () -> new VinoCajaItem(new Item.Properties()
+                    .stacksTo(1)
+                    .durability(3)
+                    .food(new FoodProperties.Builder()
+                            .nutrition(3)             // 3 muslitos de hambre
+                            .saturationModifier(0.5f) // saturación final = 3
+                            .build())
+            ));
 
         public static final DeferredItem<Item> TE = ITEMS.register("te",
                 () -> new Item(new Item.Properties()));
@@ -1059,35 +1064,6 @@ public class ModItems {
                         .stacksTo(1)
                 )
         );
-
-
-        public static final DeferredItem<Item> TORTAFRITA = ITEMS.register("tortafrita",
-                () -> new FritoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(8)
-                                .saturationModifier(0.8f)
-                                .build())
-                ));
-
-        public static final DeferredItem<Item> TORTAFRITA_CRUDA = ITEMS.register("tortafrita_cruda",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64) // o 64 según prefieras
-                        .food(new net.minecraft.world.food.FoodProperties.Builder()
-                                .nutrition(4)      // puntos de hambre que restaura
-                                .saturationModifier(0.3f)
-                                .build()
-                        )
-                ));
-
-        public static final DeferredItem<Item> TRIPIN_CERDO = ITEMS.register("tripin_cerdo",
-                () -> new CrudoItem(new Item.Properties()
-                        .stacksTo(64)
-                        .food(new FoodProperties.Builder()
-                                .nutrition(1)
-                                .saturationModifier(0.1f)
-                                .build())
-                ));
 
 
         public static final DeferredItem<Item> YERBA_SEMILLA = ITEMS.register("yerba_semilla",
@@ -1138,6 +1114,11 @@ public class ModItems {
     public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA_94 =
             registerRemeraEpica("camiseta_argentina_94", ModArmorMaterials.CAMISETA_ARGENTINA_94, "argentina_94");
 
+    public static final DeferredItem<RemeraItem> CAMISETA_LEONAS =
+            registerRemeraEpica("camiseta_leonas", ModArmorMaterials.CAMISETA_LEONAS, "leonas");
+    public static final DeferredItem<RemeraItem> CAMISETA_BASQUET_2004 =
+            registerRemeraEpica("camiseta_basquet_2004", ModArmorMaterials.CAMISETA_BASQUET_2004, "basquet_2004");
+
     public static final DeferredItem<RemeraItem> CAMISETA_ARGENTINA_78 =
             registerRemeraEpica("camiseta_argentina_78", ModArmorMaterials.CAMISETA_ARGENTINA_78, "argentina_78");
 
@@ -1174,6 +1155,15 @@ public class ModItems {
     public static final DeferredItem<RemeraItem> CAMISETA_TEST =
             registerRemera("camiseta_test", ModArmorMaterials.CAMISETA_TEST, "test");
 
+    public static final DeferredItem<RemeraItem> CAMISETA_9Z_2018 =
+            registerRemera("camiseta_9z_2018", ModArmorMaterials.CAMISETA_9Z_2018, "9z_2018");
+    public static final DeferredItem<RemeraItem> CAMISETA_9Z_2026 =
+            registerRemera("camiseta_9z_2026", ModArmorMaterials.CAMISETA_9Z_2026, "9z_2026");
+
+    public static final DeferredItem<GorroItem> GORRO_FANGIO =
+            registerGorro("gorro_fangio", ModArmorMaterials.GORRO_FANGIO, "gorro_fangio");
+
+
         public static final DeferredItem<Item> CAMISETA = ITEMS.register("camiseta",
                 () -> new Item(new Item.Properties()));
 
@@ -1191,6 +1181,12 @@ public class ModItems {
     public static final DeferredItem<Item> DADO = ITEMS.register("dado",
             () -> new DadoItem(new Item.Properties().stacksTo(16))
     );
+
+    public static final DeferredItem<BlockItem> CEIBO_MURO = ITEMS.registerSimpleBlockItem(
+            ModBlocks.CEIBO_MURO
+    );
+
+    public static final DeferredItem<BlockItem> JACARANDA_MURO = ITEMS.registerSimpleBlockItem(ModBlocks.JACARANDA_MURO);
 
         public static void register(IEventBus eventBus) {
             ITEMS.register(eventBus);

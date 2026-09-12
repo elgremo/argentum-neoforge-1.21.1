@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -69,6 +70,14 @@ public class ModBlocks {
                     .noOcclusion()
                     .sound(SoundType.AMETHYST)),
             Rarity.RARE
+    );
+
+    public static final DeferredBlock<Block> COPA_LIBERTADORES = registerBlock("copa_libertadores",
+            () -> new CopaLibertadoresBlock(BlockBehaviour.Properties.of()
+                    .strength(1f)
+                    .noOcclusion()
+                    .sound(SoundType.AMETHYST)),
+            Rarity.UNCOMMON
     );
 
 
@@ -366,6 +375,14 @@ public class ModBlocks {
                 () -> new TrapDoorBlock(BlockSetType.OAK,
                         BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR).noOcclusion()));
 
+    public static final DeferredBlock<WallBlock> JACARANDA_MURO = BLOCKS.register("jacaranda_muro",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .sound(SoundType.WOOD)
+                    .strength(2.0F, 3.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
 
         public static final DeferredBlock<Block> CEIBO_TRONCO = registerBlock("ceibo_tronco",
                 () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
@@ -444,6 +461,14 @@ public class ModBlocks {
         public static final DeferredBlock<Block> CEIBO_TRAMPILLA = registerBlock("ceibo_trampilla",
                 () -> new TrapDoorBlock(BlockSetType.OAK,
                         BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_TRAPDOOR).noOcclusion()));
+
+    public static final DeferredBlock<WallBlock> CEIBO_MURO = BLOCKS.register("ceibo_muro",
+            () -> new WallBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .sound(SoundType.WOOD)
+                    .strength(2.0F, 3.0F)
+                    .requiresCorrectToolForDrops()
+            ));
 
 
         public static final DeferredBlock<ArcoBlock> ARCO_UNO = registerBlockNoItem("arco_uno",

@@ -49,6 +49,34 @@ public class ModArmorMaterials {
         });
     }
 
+    private static DeferredHolder<ArmorMaterial, ArmorMaterial> registerGorroMaterial(String name) {
+        return ARMOR_MATERIALS.register(name, () -> {
+            EnumMap<ArmorItem.Type, Integer> protection = new EnumMap<>(ArmorItem.Type.class);
+            protection.put(ArmorItem.Type.HELMET, 1); // Solo cabeza
+            // Opcional: podrías añadir CHESTPLATE con 0 si quieres
+
+            int enchantability = 16;
+            float toughness = 0f;
+            float knockbackResistance = 0f;
+
+            List<ArmorMaterial.Layer> layers = List.of(
+                    new ArmorMaterial.Layer(
+                            ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, name)
+                    )
+            );
+
+            return new ArmorMaterial(
+                    protection,
+                    enchantability,
+                    SoundEvents.ARMOR_EQUIP_LEATHER, // Sonido de cuero, suena bien para gorros
+                    () -> Ingredient.of(Items.LEATHER),
+                    layers,
+                    toughness,
+                    knockbackResistance
+            );
+        });
+    }
+
     // ⭐ TODOS LOS MATERIALES (una línea cada uno)
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ARGENTINA = registerRemeraMaterial("camiseta_argentina");
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_ARGENTINA_ALTERNATIVA = registerRemeraMaterial("camiseta_argentina_alternativa");
@@ -69,4 +97,12 @@ public class ModArmorMaterials {
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_VELEZ = registerRemeraMaterial("camiseta_velez");
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_CENTRAL = registerRemeraMaterial("camiseta_central");
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_TEST = registerRemeraMaterial("camiseta_test");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_9Z_2018 = registerRemeraMaterial("camiseta_9z_2018");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_9Z_2026 = registerRemeraMaterial("camiseta_9z_2026");
+
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> GORRO_FANGIO = registerGorroMaterial("gorro_fangio");
+
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_BASQUET_2004 = registerRemeraMaterial("camiseta_basquet_2004");
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> CAMISETA_LEONAS = registerRemeraMaterial("camiseta_leonas");
+
 }

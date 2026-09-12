@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:casino/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:dado"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Confiá en la suerte, nomás.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:dado"
+    },
+    "title": "Los Dados Están Echados"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

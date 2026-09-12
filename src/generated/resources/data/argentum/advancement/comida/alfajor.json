@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:comida/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:alfajor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Más argentino imposible.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:alfajor"
+    },
+    "title": "El Postre"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

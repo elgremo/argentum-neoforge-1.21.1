@@ -34,6 +34,7 @@
   "block.argentum.jacaranda_escaleras": "Escaleras de Jacarandá",
   "block.argentum.jacaranda_losa": "Losa de Jacarandá",
   "block.argentum.jacaranda_valla": "Valla de Jacarandá",
+  "block.argentum.jacaranda_muro": "Muro de Jacarandá",
   "block.argentum.jacaranda_porton": "Portón de Jacarandá",
   "block.argentum.jacaranda_boton": "Botón de Jacarandá",
   "block.argentum.jacaranda_placa_presion": "Placa de Presión de Jacarandá",
@@ -51,6 +52,7 @@
   "block.argentum.ceibo_escaleras": "Escaleras de Ceibo",
   "block.argentum.ceibo_losa": "Losa de Ceibo",
   "block.argentum.ceibo_valla": "Valla de Ceibo",
+  "block.argentum.ceibo_muro": "Muro de Ceibo",
   "block.argentum.ceibo_porton": "Portón de Ceibo",
   "block.argentum.ceibo_boton": "Botón de Ceibo",
   "block.argentum.ceibo_placa_presion": "Placa de Presión de Ceibo",
@@ -81,6 +83,8 @@
   "tooltip.argentum.copa_mundo_effect": "Al sostenerla, te otorga absorción (2 corazones extra)",
   "block.argentum.copa_america": "Copa América",
   "tooltip.argentum.copa_america": "",
+  "block.argentum.copa_libertadores": "Copa Libertadores",
+  "tooltip.argentum.copa_libertadores": "",
 
   "item.argentum.costilla_asada": "Costilla Asada",
   "item.argentum.costilla_cruda": "Costilla Cruda",
@@ -179,6 +183,19 @@
   "item.argentum.mate": "Mate",
   "item.argentum.mate_vacio": "Mate sin Yerba",
 
+  "item.argentum.mate_imperial": "Mate Imperial",
+  "item.argentum.mate_imperial_vacio": "Mate Imperial sin Yerba",
+
+  "item.argentum.mate_imperial_argento": "Mate Imperial Argento",
+  "item.argentum.mate_imperial_argento_vacio": "Mate Imperial Argento sin Yerba",
+
+  "item.argentum.mate_imperial_blanco": "Mate Imperial Blanco",
+  "item.argentum.mate_imperial_blanco_vacio": "Mate Imperial Blanco sin Yerba",
+
+  "item.argentum.mate_imperial_negro": "Mate Imperial Negro",
+  "item.argentum.mate_imperial_negro_vacio": "Mate Imperial Negro sin Yerba",
+
+
   "item.argentum.pava": "Pava",
   "item.argentum.pava_caliente": "Pava Caliente",
   "block.argentum.pava_fogata_vacia": "Pava en Fogata Vacia",
@@ -207,6 +224,8 @@
   "item.argentum.uva_semilla": "Semillas de Uva",
   "item.argentum.uva_blanca": "Racimo de Uvas Blancas",
   "item.argentum.uva_blanca_semilla": "Semillas de Uva Blanca",
+
+  "item.argentum.vino_caja": "Vino en Caja",
 
   "block.argentum.prensa_mosto": "Prensa para Mosto",
   "block.argentum.prensa_mosto_lista": "Prensa de Mosto Lista",
@@ -292,6 +311,9 @@
   "item.argentum.camiseta_argentina_alternativa": "Camiseta Alternativa de Argentina",
   "item.argentum.camiseta_diego": "Camiseta de Diego vs. los Piratas",
 
+  "item.argentum.camiseta_leonas": "Camiseta de las Leonas (2026)",
+  "item.argentum.camiseta_basquet_2004": "Camiseta de Argentina Básquet (2004)",
+
   "item.argentum.camiseta_independiente": "Camiseta de Independiente",
   "item.argentum.camiseta_racing": "Camiseta de Racing",
   "item.argentum.camiseta_river": "Camiseta de River",
@@ -305,33 +327,57 @@
   "item.argentum.camiseta_tigre": "Camiseta de Tigre",
   "item.argentum.camiseta_velez": "Camiseta de Vélez Sarsfield",
   "item.argentum.camiseta_central": "Camiseta de Rosario Central",
+  "item.argentum.camiseta_9z_2018": "Camiseta de 9z Team (2018)",
+  "item.argentum.camiseta_9z_2026": "Camiseta de 9z Team (2026)",
 
-  "item.argentum.la_cuarta.disco_musica_desc": "La Cuarta Estrella - Argentinos",
+  "item.argentum.gorro_fangio": "Gorro de Fangio",
+
   "item.argentum.la_cuarta_disco_musica": "Disco de Música: La Cuarta Estrella",
+  "item.argentum.muchachos_disco_musica": "Disco de Música: Muchachos",
+  "item.argentum.rosarosa_disco_musica": "Disco de Música: Rosa Rosa",
+
+  "item.argentum.muchachos_disco_musica.desc": "Muchachos - La Mosca",
+  "item.argentum.la_cuarta_disco_musica.desc": "La Cuarta - Los Piojos",
+  "item.argentum.rosarosa_disco_musica.desc": "Rosa Rosa - Comandante",
+
+  "item.argentum.muchachos_disco_musica_desc": "Muchachos - La Mosca",
+  "item.argentum.la_cuarta_disco_musica_desc": "La Cuarta - Los Piojos",
+  "item.argentum.rosarosa_disco_musica_desc": "Rosa Rosa - Comandante",
 
   "item.argentum.muchachos.disco_musica_desc": "Muchachos - La Mosca",
-  "item.argentum.muchachos_disco_musica": "Disco de Música: Muchachos",
+  "item.argentum.la_cuarta.disco_musica_desc": "La Cuarta - Los Piojos",
+  "item.argentum.rosarosa.disco_musica_desc": "Rosa Rosa - Comandante",
+
 
   "entity.minecraft.villager.argentum.vendedor": "Kevin",
   "entity.minecraft.villager.argentum.vendedorb": "Joni",
+  "entity.minecraft.villager.argentum.vendedorc": "ElTucxon",
 
-  "message.argentum.mate_washed": "La yerba se lavó.",
+  "message.argentum.mate_washed": "La mate se lavó.",
   "message.argentum.need_termo": "Necesitás tener un Termo en la otra mano para tomar Mate.",
   "message.argentum.pava_empty": "La Pava se quedó sin agua.",
-  "message.argentum.termo_argento_empty": "El Termo Argento se quedó sin agua.",
+  "message.argentum.termo_argento_empty": "El Termo se quedó sin agua.",
   "message.argentum.termo_empty": "El Termo se quedó sin agua.",
+  "message.argentum.mate_imperial_washed": "¡El mate se lavó!",
+  "message.argentum.mate_argento_washed": "¡El mate se lavó!",
+  "message.argentum.mate_blanco_washed": "¡El mate se lavó!",
+  "message.argentum.mate_negro_washed": "¡El mate se lavó!",
 
   "painting.argentum.iguazu.author": "Gremo",
   "painting.argentum.iguazu.title": "Iguazú",
-
   "painting.argentum.islas_malvinas.author": "Gremo",
   "painting.argentum.islas_malvinas.title": "Las Islas Malvinas",
-
   "painting.argentum.obelisco.author": "Gremo",
   "painting.argentum.obelisco.title": "Obelisco",
-
   "painting.argentum.tres_estrellas.author": "Gremo",
   "painting.argentum.tres_estrellas.title": "Las Tres Estrellas",
+  "painting.argentum.argentum.author": "Gremo",
+  "painting.argentum.argentum.title": "Argentum",
+  "painting.argentum.bandera.author": "Gremo",
+  "painting.argentum.bandera.title": "Bandera Argentina",
+  "painting.argentum.messi.author": "Gremo",
+  "painting.argentum.messi.title": "Lionel Andrés Messi Cuccittini",
+
 
   "tool.argentum.olla.tooltip": "Usala para freír comida o convertir a un Aldeano.",
   "tool.argentum.parrilla.tooltip": "Usala para asar carnes o convertir a un Aldeano.",
@@ -343,7 +389,9 @@
   "item.argentum.pelota_telstar": "Pelota Telstar Durlast 1978",
   "item.argentum.pelota_azteca": "Pelota Azteca 1986",
   "item.argentum.pelota_jabulani": "Pelota Jabulani 2010",
+  "item.argentum.pelota_teamgeist": "Pelota Teamgeist 2006",
   "item.argentum.pelota_al_rihla": "Pelota Al Rihla 2022",
+  "item.argentum.pelota_basquet": "Pelota de Basquet",
 
   "block.argentum.arco_uno": "Arco de Fulbo",
   "block.argentum.arco_dos": "Arco de Fulbo",

@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "argentum:obelisco",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 123456789,
+    "spacing": 64,
+    "separation": 24,
+    "exclusion_zone": {
+      "chunk_count": 5,
+      "other_set": "minecraft:villages"
+    }
+  }
+}

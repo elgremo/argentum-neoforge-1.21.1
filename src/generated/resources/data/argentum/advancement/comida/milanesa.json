@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:comida/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:milanesa_frita"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Dorada, crocante, con limón.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:milanesa_frita"
+    },
+    "title": "La Milanesa Perfecta"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

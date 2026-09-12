@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:root",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:hoja_yerba_mate_fresca"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Conseguí yerba mate recién cosechada.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:hoja_yerba_mate_fresca"
+    },
+    "title": "La Yerba Sagrada"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

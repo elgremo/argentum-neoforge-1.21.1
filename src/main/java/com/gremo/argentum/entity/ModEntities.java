@@ -24,6 +24,12 @@ public class ModEntities {
                             .sized(2.0f, 2.0f)
                             .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "pelota").toString())
             );
+    public static final DeferredHolder<EntityType<?>, EntityType<PelotaBasquetEntity>> PELOTA_BASQUET =
+            ENTITIES.register("pelota_basquet",
+                    () -> EntityType.Builder.<PelotaBasquetEntity>of(PelotaBasquetEntity::new, MobCategory.MISC)
+                            .sized(2.0f, 2.0f)
+                            .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "pelota_basquet").toString())
+            );
 
     public static final DeferredHolder<EntityType<?>, EntityType<ChorroEntity>> CHORRO =
             ENTITIES.register("chorro",

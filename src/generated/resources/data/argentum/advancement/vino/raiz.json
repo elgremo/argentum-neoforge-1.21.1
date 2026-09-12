@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:root",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:uva"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Cosechá tu primera uva.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:uva"
+    },
+    "title": "Vendimia"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

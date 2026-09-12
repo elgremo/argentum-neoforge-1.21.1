@@ -10,6 +10,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 
 @EventBusSubscriber(modid = Argentum.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
@@ -48,5 +49,12 @@ public class ModEventBusEvents {
         event.put(ModEntities.TERO.get(), TeroEntity.createAttributes().build());
         event.put(ModEntities.HORNERO.get(), TeroEntity.createAttributes().build());
         event.put(ModEntities.ZORRO_GRIS.get(), ZorroGrisEntity.createAttributes().build());
+    }
+
+    public class ModEvents {
+        @SubscribeEvent
+        public static void onCraft(PlayerEvent.ItemCraftedEvent event) {
+            CraftingEvents.onCraft(event);
+        }
     }
 }

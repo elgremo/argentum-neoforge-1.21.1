@@ -224,5 +224,21 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.SMALL_FLOWERS)
                 .add(ModBlocks.JACARANDA_BROTE.get())
                 .add(ModBlocks.CEIBO_BROTE.get());
+
+        // --- Hacha (ya tienes el tag abierto, solo agrega la línea) ---
+        tag(BlockTags.MINEABLE_WITH_AXE)
+                // ... tus bloques actuales ...
+                .add(ModBlocks.CEIBO_MURO.get());
+
+// --- Muros (tag nuevo, es la clave para que conecte) ---
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.CEIBO_MURO.get());
+        tag(BlockTags.MINEABLE_WITH_AXE)
+                // ... todo lo que ya tenías ...
+                .add(ModBlocks.JACARANDA_MURO.get())
+                .add(ModBlocks.CEIBO_MURO.get());  // el que ya agregaste
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.JACARANDA_MURO.get())
+                .add(ModBlocks.CEIBO_MURO.get());
     }
 }

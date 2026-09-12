@@ -2,7 +2,6 @@ package com.gremo.argentum.item.custom;
 
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.entity.custom.PelotaEntity;
-import com.gremo.argentum.item.ModItems;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;

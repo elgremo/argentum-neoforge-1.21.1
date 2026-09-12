@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "argentum:block/copa_libertadores" },
+    "facing=east":  { "model": "argentum:block/copa_libertadores", "y": 90 },
+    "facing=south": { "model": "argentum:block/copa_libertadores", "y": 180 },
+    "facing=west":  { "model": "argentum:block/copa_libertadores", "y": 270 }
+  }
+}

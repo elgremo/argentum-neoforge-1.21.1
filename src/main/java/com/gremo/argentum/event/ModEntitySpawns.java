@@ -2,6 +2,7 @@ package com.gremo.argentum.event;
 
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.entity.ModEntities;
+import net.minecraft.data.advancements.AdvancementSubProvider;
 import net.minecraft.world.entity.SpawnPlacementTypes;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;

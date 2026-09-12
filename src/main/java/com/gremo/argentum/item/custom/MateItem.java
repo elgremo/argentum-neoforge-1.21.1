@@ -14,10 +14,33 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
+import java.util.function.Supplier;
+
 public class MateItem extends Item {
 
-    public MateItem(Properties properties) {
+    private final Supplier<Item> emptyMateSupplier;
+    private final String emptyMessageKey;
+    private final int foodAmount;
+    private final float foodSaturation;
+
+    // Constructor completo (para todos los mates)
+    public MateItem(Properties properties,
+                    Supplier<Item> emptyMateSupplier,
+                    String emptyMessageKey,
+                    int foodAmount,
+                    float foodSaturation) {
         super(properties);
+        this.emptyMateSupplier = emptyMateSupplier;
+        this.emptyMessageKey = emptyMessageKey;
+        this.foodAmount = foodAmount;
+        this.foodSaturation = foodSaturation;
+    }
+
+    // Constructor simplificado (para el mate normal, con valores por defecto)
+    public MateItem(Properties properties,
+                    Supplier<Item> emptyMateSupplier,
+                    String emptyMessageKey) {
+        this(properties, emptyMateSupplier, emptyMessageKey, 8, 0.8f);
     }
 
     @Override
@@ -32,7 +55,6 @@ public class MateItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand hand) {
-
         InteractionHand otherHand = hand == InteractionHand.MAIN_HAND
                 ? InteractionHand.OFF_HAND
                 : InteractionHand.MAIN_HAND;
@@ -41,14 +63,11 @@ public class MateItem extends Item {
 
         boolean hasValidWater =
                 !waterStack.isEmpty() &&
-                        (
-                                waterStack.is(ModItems.PAVA_CALIENTE.get()) ||
-                                        waterStack.is(ModItems.TERMO.get()) ||
-                                        waterStack.is(ModItems.TERMO_ARGENTO.get())
-                        );
+                        (waterStack.is(ModItems.PAVA_CALIENTE.get()) ||
+                                waterStack.is(ModItems.TERMO.get()) ||
+                                waterStack.is(ModItems.TERMO_ARGENTO.get()));
 
         if (!hasValidWater) {
-
             if (!world.isClientSide) {
                 player.displayClientMessage(
                         Component.translatable("message.argentum.need_termo")
@@ -56,7 +75,6 @@ public class MateItem extends Item {
                         true
                 );
             }
-
             return InteractionResultHolder.fail(player.getItemInHand(hand));
         }
 
@@ -66,15 +84,13 @@ public class MateItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity entity) {
-
         if (!(entity instanceof Player player)) {
             return stack;
         }
 
         if (!world.isClientSide) {
-
-            // Alimentar jugador
-            player.getFoodData().eat(8, 0.8f);
+            // Alimentar con valores personalizados
+            player.getFoodData().eat(foodAmount, foodSaturation);
 
             InteractionHand usedHand = player.getUsedItemHand();
             InteractionHand otherHand = usedHand == InteractionHand.MAIN_HAND
@@ -83,37 +99,25 @@ public class MateItem extends Item {
 
             ItemStack waterStack = player.getItemInHand(otherHand);
 
-            // Consumir un uso del agua
+            // Consumir agua
             int waterDamage = waterStack.getDamageValue() + 1;
             waterStack.setDamageValue(waterDamage);
 
             if (waterDamage >= waterStack.getMaxDamage()) {
-
                 if (waterStack.is(ModItems.PAVA_CALIENTE.get())) {
-
-                    player.setItemInHand(otherHand,
-                            new ItemStack(ModItems.PAVA.get()));
-
+                    player.setItemInHand(otherHand, new ItemStack(ModItems.PAVA.get()));
                     player.displayClientMessage(
                             Component.translatable("message.argentum.pava_empty"),
                             true
                     );
-
                 } else if (waterStack.is(ModItems.TERMO.get())) {
-
-                    player.setItemInHand(otherHand,
-                            new ItemStack(ModItems.TERMO_VACIO.get()));
-
+                    player.setItemInHand(otherHand, new ItemStack(ModItems.TERMO_VACIO.get()));
                     player.displayClientMessage(
                             Component.translatable("message.argentum.termo_empty"),
                             true
                     );
-
                 } else if (waterStack.is(ModItems.TERMO_ARGENTO.get())) {
-
-                    player.setItemInHand(otherHand,
-                            new ItemStack(ModItems.TERMO_ARGENTO_VACIO.get()));
-
+                    player.setItemInHand(otherHand, new ItemStack(ModItems.TERMO_ARGENTO_VACIO.get()));
                     player.displayClientMessage(
                             Component.translatable("message.argentum.termo_argento_empty"),
                             true
@@ -126,14 +130,13 @@ public class MateItem extends Item {
         int mateDamage = stack.getDamageValue() + 1;
 
         if (mateDamage >= stack.getMaxDamage()) {
-
-            stack = new ItemStack(ModItems.MATE_VACIO.get());
-
+            // Reemplazar por el item vacío correspondiente
+            ItemStack emptyStack = new ItemStack(emptyMateSupplier.get());
             player.displayClientMessage(
-                    Component.translatable("message.argentum.mate_washed"),
+                    Component.translatable(emptyMessageKey),
                     true
             );
-
+            return emptyStack;
         } else {
             stack.setDamageValue(mateDamage);
         }
@@ -156,10 +159,12 @@ public class MateItem extends Item {
     public boolean isBarVisible(ItemStack stack) {
         return stack.getDamageValue() > 0;
     }
+
     @Override
     public int getBarWidth(ItemStack stack) {
         return Math.round(13.0F - (float) stack.getDamageValue() * 13.0F / (float) stack.getMaxDamage());
     }
+
     @Override
     public int getBarColor(ItemStack stack) {
         return 0x3BA7FF;

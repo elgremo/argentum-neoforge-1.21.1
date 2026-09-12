@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:root",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:tero_spawn_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Descubrí los bichos autóctonos.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:tero_spawn_egg"
+    },
+    "title": "Fauna Argentina"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:mate/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:mate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Cebate el primer mate del día.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:mate"
+    },
+    "title": "Primer Mate"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

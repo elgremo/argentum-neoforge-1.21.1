@@ -45,12 +45,18 @@
       }
     ]
   },
+  "rosarosa": {
+    "sounds": [
+      {
+        "name": "argentum:rosarosa",
+        "stream": true
+      }]},
+
   "chorro_ambient": {
     "sounds": [
       "argentum:chorro/chorro_ambient_01",
       "argentum:chorro/chorro_ambient_02"
-    ]
-  },
+    ]},
   "chorro_hurt": {
     "sounds": [
       "argentum:chorro/chorro_hurt_01",
@@ -119,6 +125,15 @@
       "argentum:dado/dado_4",
       "argentum:dado/dado_5",
       "argentum:dado/dado_6"
+    ]
+  },
+  "basquet": {
+    "sounds": [
+      "argentum:basquet/basquet_1",
+      "argentum:basquet/basquet_2",
+      "argentum:basquet/basquet_3",
+      "argentum:basquet/basquet_4",
+      "argentum:basquet/basquet_5"
     ]
   }
 }
