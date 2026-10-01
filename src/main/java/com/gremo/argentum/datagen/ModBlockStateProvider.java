@@ -8,6 +8,7 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import com.gremo.argentum.block.custom.MesaTrucoBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -243,6 +244,43 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(ModBlocks.JACARANDA_MADERA.get())
         );
         blockItem(ModBlocks.JACARANDA_MURO, "_inventory");
+        registerMesasTruco();
+
+    }
+
+    // =========================
+// MESAS DE TRUCO
+// =========================
+
+    private void mesaTrucoBlock(DeferredBlock<MesaTrucoBlock> block) {
+        String name = block.getId().getPath();
+
+        ModelFile model = new ModelFile.UncheckedModelFile(
+                modLoc("block/" + name)
+        );
+
+        horizontalBlock(block.get(), model);
+    }
+
+    private void registerMesasTruco() {
+
+        // ROJA
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_ROJA);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_ROJA_2);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_ROJA_3);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_ROJA_4);
+
+        // VERDE
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_VERDE);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_VERDE_2);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_VERDE_3);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_VERDE_4);
+
+        // AZUL
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_AZUL);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_AZUL_2);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_AZUL_3);
+        mesaTrucoBlock(ModBlocks.MESA_TRUCO_AZUL_4);
 
     }
 

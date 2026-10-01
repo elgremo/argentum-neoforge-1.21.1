@@ -9,7 +9,11 @@ import net.minecraft.world.item.Item;
 public class ModTags {
     public static class Items {
         public static final TagKey<Item> HUEVOS = create("huevos");
-        public static final TagKey<Item> MATES = create("mates");  // <-- AHORA USA create()
+        public static final TagKey<Item> MATES = create("mates");
+
+        public static final TagKey<Item> CARTAS = create("cartas");   // <-- NUEVO
+        public static final TagKey<Item> CARTAS_TRUCO = create("cartas_truco");   // <-- NUEVO
+        public static final TagKey<Item> FICHAS = create("fichas");   // <-- NUEVO
 
         private static TagKey<Item> create(String path) {
             return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, path));

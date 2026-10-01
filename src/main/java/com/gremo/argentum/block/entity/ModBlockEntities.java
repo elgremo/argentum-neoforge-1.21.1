@@ -96,6 +96,16 @@ public class ModBlockEntities {
                     ).build(null)
             );
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MesaTrucoBlockEntity>> MESA_TRUCO_BE =
+            BLOCK_ENTITIES.register("mesa_truco_be",
+                    () -> BlockEntityType.Builder.of(
+                            MesaTrucoBlockEntity::new,
+                            ModBlocks.MESA_TRUCO_ROJA.get(),
+                            ModBlocks.MESA_TRUCO_VERDE.get(),
+                            ModBlocks.MESA_TRUCO_AZUL.get()
+                            // solo los masters, las piezas _2/_3/_4 NO
+                    ).build(null));
+
     // ✅ CORREGIDO: Ahora es Supplier
     public static final Supplier<BlockEntityType<NidoBlockEntity>> NIDO_BE =
             BLOCK_ENTITIES.register("nido_be", () -> BlockEntityType.Builder.of(NidoBlockEntity::new, ModBlocks.NIDO.get()).build(null));

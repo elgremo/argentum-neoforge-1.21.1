@@ -8,7 +8,6 @@
     "half=lower,age=5": { "model": "argentum:block/vid_bottom_5" },
     "half=lower,age=6": { "model": "argentum:block/vid_bottom_6" },
     "half=lower,age=7": { "model": "argentum:block/vid_bottom_7" },
-
     "half=upper,age=0": { "model": "argentum:block/vid_top_0" },
     "half=upper,age=1": { "model": "argentum:block/vid_top_1" },
     "half=upper,age=2": { "model": "argentum:block/vid_top_2" },
