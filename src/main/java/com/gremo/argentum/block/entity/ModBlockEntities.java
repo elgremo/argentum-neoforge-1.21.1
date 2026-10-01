@@ -3,6 +3,7 @@ package com.gremo.argentum.block.entity;
 import com.gremo.argentum.Argentum;
 import com.gremo.argentum.block.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -100,10 +101,9 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("mesa_truco_be",
                     () -> BlockEntityType.Builder.of(
                             MesaTrucoBlockEntity::new,
-                            ModBlocks.MESA_TRUCO_ROJA.get(),
-                            ModBlocks.MESA_TRUCO_VERDE.get(),
-                            ModBlocks.MESA_TRUCO_AZUL.get()
-                            // solo los masters, las piezas _2/_3/_4 NO
+                            ModBlocks.FAMILIAS_MESA.values().stream()
+                                    .map(fam -> fam[0].get())
+                                    .toArray(Block[]::new)
                     ).build(null));
 
     // ✅ CORREGIDO: Ahora es Supplier

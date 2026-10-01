@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CMC",
+    "CQC",
+    "QQQ"
+  ],
+  "key": {
+    "C": { "item": "minecraft:brown_wool" },
+    "M": { "item": "argentum:baraja_sellada" },
+    "Q": { "item": "minecraft:quartz_block" }
+  },
+  "result": {
+    "id": "argentum:mesa_truco_marron",
+    "count": 1
+  }
+}

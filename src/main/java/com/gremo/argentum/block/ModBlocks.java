@@ -22,6 +22,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Supplier;
 
 import static com.gremo.argentum.item.ModItems.ITEMS;
@@ -566,100 +568,45 @@ public class ModBlocks {
                         .noOcclusion()
                         .strength(0.5f)));
 
+    // Array de los 16 tintes
+    public static final String[] TINTES = {
+            "blanco", "naranja", "magenta", "celeste",
+            "amarillo", "lima", "rosa", "gris",
+            "gris_claro", "cyan", "purpura",
+            "marron", "rojo", "verde", "azul", "negro"
+    };
 
+    // Map: "mesa_truco_rojo" → [master, _2, _3, _4]
+    public static final Map<String, DeferredBlock<MesaTrucoBlock>[]> FAMILIAS_MESA = new HashMap<>();
 
-    // ============================================================
-// MESA DE TRUCO - ROJA
-// ============================================================
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_ROJA = registerBlock(
-            "mesa_truco_roja",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
+    static {
+        for (String tinte : TINTES) {
+            String base = "mesa_truco_" + tinte;
+            DeferredBlock<MesaTrucoBlock>[] fam = new DeferredBlock[4];
 
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_ROJA_2 = registerBlockNoItem(
-            "mesa_truco_roja_2",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
+            fam[0] = registerBlock(base,
+                    () -> new MesaTrucoBlock(mesaProps()));
+            fam[1] = registerBlockNoItem(base + "_2",
+                    () -> new MesaTrucoBlock(mesaProps()));
+            fam[2] = registerBlockNoItem(base + "_3",
+                    () -> new MesaTrucoBlock(mesaProps()));
+            fam[3] = registerBlockNoItem(base + "_4",
+                    () -> new MesaTrucoBlock(mesaProps()));
 
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_ROJA_3 = registerBlockNoItem(
-            "mesa_truco_roja_3",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
+            FAMILIAS_MESA.put(base, fam);
+        }
+    }
 
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_ROJA_4 = registerBlockNoItem(
-            "mesa_truco_roja_4",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
+    private static BlockBehaviour.Properties mesaProps() {
+        return BlockBehaviour.Properties.of()
+                .strength(1f)
+                .sound(SoundType.WOOL)
+                .noOcclusion();
+    }
 
-    // ============================================================
-// MESA DE TRUCO - VERDE (idéntico, cambia el nombre)
-// ============================================================
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_VERDE = registerBlock(
-            "mesa_truco_verde",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
-
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_VERDE_2 = registerBlockNoItem(
-            "mesa_truco_verde_2",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
-
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_VERDE_3 = registerBlockNoItem(
-            "mesa_truco_verde_3",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
-
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_VERDE_4 = registerBlockNoItem(
-            "mesa_truco_verde_4",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
-
-    // ============================================================
-// MESA DE TRUCO - AZUL (idéntico)
-// ============================================================
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_AZUL = registerBlock(
-            "mesa_truco_azul",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
-
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_AZUL_2 = registerBlockNoItem(
-            "mesa_truco_azul_2",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
-
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_AZUL_3 = registerBlockNoItem(
-            "mesa_truco_azul_3",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
-
-    public static final DeferredBlock<MesaTrucoBlock> MESA_TRUCO_AZUL_4 = registerBlockNoItem(
-            "mesa_truco_azul_4",
-            () -> new MesaTrucoBlock(BlockBehaviour.Properties.of()
-                    .strength(2f)
-                    .sound(SoundType.WOOD)
-                    .noOcclusion()));
+    public static DeferredBlock<MesaTrucoBlock>[] getFamilia(String base) {
+        return FAMILIAS_MESA.get(base);
+    }
 
         private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
             DeferredBlock<T> toReturn = BLOCKS.register(name, block);

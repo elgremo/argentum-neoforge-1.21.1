@@ -35,31 +35,33 @@ public class MesaTrucoBlockEntityRenderer implements BlockEntityRenderer<MesaTru
                 be.getBlockPos().getZ() + 0.5
         );
 
-        if (dist > 7 * 7) return; // 7 bloques de radio
+        if (dist > 7 * 7) return;
 
-        poseStack.pushPose();
-
-        // Rotar según FACING del master (SOUTH = 0°, es el caso base)
+        // FACING y ángulo
         Direction facing = be.getBlockState().getValue(MesaTrucoBlock.FACING);
-        poseStack.translate(0.5, 0, 0.5);
-        switch (facing) {
-            case SOUTH -> {}
-            case NORTH -> poseStack.mulPose(Axis.YP.rotationDegrees(180));
-            case EAST  -> poseStack.mulPose(Axis.YP.rotationDegrees(90));
-            case WEST  -> poseStack.mulPose(Axis.YP.rotationDegrees(-90));
-        }
-        // Ángulo del facing para deshacer en el texto flotante
         float facingAngle = switch (facing) {
             case SOUTH -> 0f;
             case NORTH -> 180f;
-            case EAST  -> 90f;
-            case WEST  -> -90f;
+            case EAST -> 90f;
+            case WEST -> -90f;
             default -> 0f;
         };
 
+        // ============================================================
+        // 1) ITEMS (con rotación del FACING)
+        // ============================================================
+        poseStack.pushPose();
+
+        poseStack.translate(0.5, 0, 0.5);
+        switch (facing) {
+            case SOUTH -> {
+            }
+            case NORTH -> poseStack.mulPose(Axis.YP.rotationDegrees(180));
+            case EAST -> poseStack.mulPose(Axis.YP.rotationDegrees(90));
+            case WEST -> poseStack.mulPose(Axis.YP.rotationDegrees(-90));
+        }
         poseStack.translate(-0.5, 0, -0.5);
 
-        // Dibujar cada slot
         for (int i = 0; i < MesaTrucoBlockEntity.TOTAL_SLOTS; i++) {
             ItemStack stack = be.getItem(i);
             if (stack.isEmpty()) continue;
@@ -68,11 +70,8 @@ public class MesaTrucoBlockEntityRenderer implements BlockEntityRenderer<MesaTru
 
             poseStack.pushPose();
             poseStack.translate(pos[0], pos[1], pos[2]);
-
-            // Rotación base (acostado)
             poseStack.mulPose(Axis.XP.rotationDegrees(180));
 
-            // Si es fila de arriba (rival), rotar Y 180°
             if (i == MesaTrucoBlockEntity.ARRIBA_IZQ
                     || i == MesaTrucoBlockEntity.ARRIBA_CENTRO
                     || i == MesaTrucoBlockEntity.ARRIBA_DER) {
@@ -93,29 +92,62 @@ public class MesaTrucoBlockEntityRenderer implements BlockEntityRenderer<MesaTru
             );
 
             poseStack.popPose();
-            // === Texto flotante si es ficha ===
-            if (i == MesaTrucoBlockEntity.CENTRO_IZQ
-                    || i == MesaTrucoBlockEntity.CENTRO_DER) {
-
-                int valor = getFichaValue(stack);
-                if (valor > 0) {
-                    renderFloatingText(
-                            poseStack,
-                            buffer,
-                            packedLight,
-                            "x" + valor,
-                            pos[0],
-                            pos[1],
-                            pos[2],
-                            getFichaColor(stack),
-                            facingAngle
-                    );
-                }
-            }
         }
 
         poseStack.popPose();
+
+        // ============================================================
+        // 2) TEXTOS (fijos, rotados según FACING)
+        // ============================================================
+
+        // Ángulo para que el texto mire al JUGADOR (opuesto al FACING)
+        float jugadorAngle = switch (facing) {
+            case SOUTH -> 0f;
+            case NORTH -> 180f;
+            case WEST  -> 90f;
+            case EAST  -> -90f;
+            default -> 0f;
+        };
+
+        // Ángulo para que el texto mire al RIVAL (opuesto al del jugador)
+        float rivalAngle = jugadorAngle + 180f;
+
+        for (int i = 0; i < MesaTrucoBlockEntity.TOTAL_SLOTS; i++) {
+            ItemStack stack = be.getItem(i);
+            if (stack.isEmpty()) continue;
+
+            if (i != MesaTrucoBlockEntity.CENTRO_IZQ
+                    && i != MesaTrucoBlockEntity.CENTRO_DER) continue;
+
+            int valor = getFichaValue(stack);
+            if (valor <= 0) continue;
+
+            float[] pos = getSlotPosition(i);
+
+            // Rotar la posición (x, z) alrededor del centro (0.5, 0.5)
+            double rad = Math.toRadians(facingAngle);
+            double dx = pos[0] - 0.5;
+            double dz = pos[2] - 0.5;
+            double cos = Math.cos(rad);
+            double sin = Math.sin(rad);
+            double rotX = 0.5 + dx * cos + dz * sin;
+            double rotZ = 0.5 - dx * sin + dz * cos;
+
+            int color = getFichaColor(stack);
+            String texto = "x" + valor;
+
+            // Texto 1: mira al jugador
+            renderFloatingText(poseStack, buffer, packedLight, texto,
+                    (float) rotX, pos[1], (float) rotZ, color, jugadorAngle);
+
+            // Texto 2: mira al rival
+            renderFloatingText(poseStack, buffer, packedLight, texto,
+                    (float) rotX, pos[1], (float) rotZ, color, rivalAngle);
+        }
     }
+
+
+
     /** Color según el ítem. */
     private int getFichaColor(ItemStack stack) {
         if (stack.is(ModItems.FICHA_CASINO_2.get()))        return 0x5599FF; // azul
@@ -158,19 +190,17 @@ public class MesaTrucoBlockEntityRenderer implements BlockEntityRenderer<MesaTru
         };
     }
     private void renderFloatingText(PoseStack poseStack, MultiBufferSource buffer, int packedLight,
-                                    String text, float x, float y, float z, int color,
-                                    float facingAngle) {
+                                    String text, float x, float y, float z, int color, float angle) {
         Minecraft mc = Minecraft.getInstance();
         Font font = mc.font;
 
         poseStack.pushPose();
-        poseStack.translate(x, y + 0.4f, z); // 0.4 = 4px arriba del ítem
+        poseStack.translate(x, y + 0.4f + 0.1875f, z);
 
-        // Hacer que el texto mire a la cámara
-        poseStack.mulPose(mc.getEntityRenderDispatcher().cameraOrientation());
+        // Rotación fija según el ángulo recibido (NO sigue a la cámara)
+        poseStack.mulPose(Axis.YP.rotationDegrees(angle));
 
-        // Escala (negativa = texto al derecho)
-        poseStack.scale(-0.02f, -0.02f, 0.02f);
+        poseStack.scale(-0.025f, -0.025f, 0.025f);
 
         Matrix4f matrix = poseStack.last().pose();
         float opacity = mc.options.getBackgroundOpacity(0.25f);

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "argentum:block/mesa_truco_gris_claro",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "argentum:block/mesa_truco_gris_claro"
+    },
+    "facing=south": {
+      "model": "argentum:block/mesa_truco_gris_claro",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "argentum:block/mesa_truco_gris_claro",
+      "y": 270
+    }
+  }
+}

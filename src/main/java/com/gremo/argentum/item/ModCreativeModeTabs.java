@@ -341,6 +341,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BARAJA_SELLADA);
 
 
+                        // ======================================================
+// 🎴 MESAS DE TRUCO
+// ======================================================
+
+                        for (String tinte : ModBlocks.TINTES) {
+                            var fam = ModBlocks.getFamilia("mesa_truco_" + tinte);
+                            if (fam != null) {
+                                output.accept(fam[0].get().asItem());
+                            }
+                        }
+
 // ======================================================
 // 💿 DISCOS
 // ======================================================

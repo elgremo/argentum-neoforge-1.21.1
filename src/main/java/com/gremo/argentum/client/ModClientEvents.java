@@ -73,21 +73,6 @@ public class ModClientEvents {
 
             BlockEntityRenderers.register(ModBlockEntities.NIDO_BE.get(), NidoBlockEntityRenderer::new);
 
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_ROJA.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_ROJA_2.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_ROJA_3.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_ROJA_4.get(), RenderType.cutout());
-
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_VERDE.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_VERDE_2.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_VERDE_3.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_VERDE_4.get(), RenderType.cutout());
-
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_AZUL.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_AZUL_2.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_AZUL_3.get(), RenderType.cutout());
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.MESA_TRUCO_AZUL_4.get(), RenderType.cutout());
-
         });
     }
 

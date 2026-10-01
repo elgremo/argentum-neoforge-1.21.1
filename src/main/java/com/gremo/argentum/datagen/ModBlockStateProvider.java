@@ -263,25 +263,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerMesasTruco() {
+        for (String tinte : ModBlocks.TINTES) {
+            String base = "mesa_truco_" + tinte;
 
-        // ROJA
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_ROJA);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_ROJA_2);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_ROJA_3);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_ROJA_4);
+            DeferredBlock<MesaTrucoBlock>[] fam = ModBlocks.getFamilia(base);
+            if (fam == null) continue;
 
-        // VERDE
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_VERDE);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_VERDE_2);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_VERDE_3);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_VERDE_4);
+            mesaTrucoBlock(fam[0]);
+            mesaTrucoBlock(fam[1]);
+            mesaTrucoBlock(fam[2]);
+            mesaTrucoBlock(fam[3]);
 
-        // AZUL
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_AZUL);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_AZUL_2);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_AZUL_3);
-        mesaTrucoBlock(ModBlocks.MESA_TRUCO_AZUL_4);
-
+            blockItem(fam[0]); // SOLO el master tiene item
+        }
     }
 
     private void blockWithItem(DeferredBlock<? extends Block> block) {

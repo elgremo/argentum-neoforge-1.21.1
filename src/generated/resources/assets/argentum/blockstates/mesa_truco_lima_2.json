@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "argentum:block/mesa_truco_lima_2",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "argentum:block/mesa_truco_lima_2"
+    },
+    "facing=south": {
+      "model": "argentum:block/mesa_truco_lima_2",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "argentum:block/mesa_truco_lima_2",
+      "y": 270
+    }
+  }
+}

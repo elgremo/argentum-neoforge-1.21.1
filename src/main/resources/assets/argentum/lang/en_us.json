@@ -435,6 +435,88 @@
   "entity.argentum.zorro_gris": "Zorro Gris Argentino",
   "entity.argentum.dado": "Dado",
 
+
+  "block.argentum.mesa_truco_blanco": "Mesa de Truco Blanca",
+  "block.argentum.mesa_truco_blanco_2": "Mesa de Truco Blanca (Parte 2)",
+  "block.argentum.mesa_truco_blanco_3": "Mesa de Truco Blanca (Parte 3)",
+  "block.argentum.mesa_truco_blanco_4": "Mesa de Truco Blanca (Parte 4)",
+
+  "block.argentum.mesa_truco_naranja": "Mesa de Truco Naranja",
+  "block.argentum.mesa_truco_naranja_2": "Mesa de Truco Naranja (Parte 2)",
+  "block.argentum.mesa_truco_naranja_3": "Mesa de Truco Naranja (Parte 3)",
+  "block.argentum.mesa_truco_naranja_4": "Mesa de Truco Naranja (Parte 4)",
+
+  "block.argentum.mesa_truco_magenta": "Mesa de Truco Magenta",
+  "block.argentum.mesa_truco_magenta_2": "Mesa de Truco Magenta (Parte 2)",
+  "block.argentum.mesa_truco_magenta_3": "Mesa de Truco Magenta (Parte 3)",
+  "block.argentum.mesa_truco_magenta_4": "Mesa de Truco Magenta (Parte 4)",
+
+  "block.argentum.mesa_truco_celeste": "Mesa de Truco Celeste",
+  "block.argentum.mesa_truco_celeste_2": "Mesa de Truco Celeste (Parte 2)",
+  "block.argentum.mesa_truco_celeste_3": "Mesa de Truco Celeste (Parte 3)",
+  "block.argentum.mesa_truco_celeste_4": "Mesa de Truco Celeste (Parte 4)",
+
+  "block.argentum.mesa_truco_amarillo": "Mesa de Truco Amarilla",
+  "block.argentum.mesa_truco_amarillo_2": "Mesa de Truco Amarilla (Parte 2)",
+  "block.argentum.mesa_truco_amarillo_3": "Mesa de Truco Amarilla (Parte 3)",
+  "block.argentum.mesa_truco_amarillo_4": "Mesa de Truco Amarilla (Parte 4)",
+
+  "block.argentum.mesa_truco_lima": "Mesa de Truco Lima",
+  "block.argentum.mesa_truco_lima_2": "Mesa de Truco Lima (Parte 2)",
+  "block.argentum.mesa_truco_lima_3": "Mesa de Truco Lima (Parte 3)",
+  "block.argentum.mesa_truco_lima_4": "Mesa de Truco Lima (Parte 4)",
+
+  "block.argentum.mesa_truco_rosa": "Mesa de Truco Rosa",
+  "block.argentum.mesa_truco_rosa_2": "Mesa de Truco Rosa (Parte 2)",
+  "block.argentum.mesa_truco_rosa_3": "Mesa de Truco Rosa (Parte 3)",
+  "block.argentum.mesa_truco_rosa_4": "Mesa de Truco Rosa (Parte 4)",
+
+  "block.argentum.mesa_truco_gris": "Mesa de Truco Gris",
+  "block.argentum.mesa_truco_gris_2": "Mesa de Truco Gris (Parte 2)",
+  "block.argentum.mesa_truco_gris_3": "Mesa de Truco Gris (Parte 3)",
+  "block.argentum.mesa_truco_gris_4": "Mesa de Truco Gris (Parte 4)",
+
+  "block.argentum.mesa_truco_gris_claro": "Mesa de Truco Gris Claro",
+  "block.argentum.mesa_truco_gris_claro_2": "Mesa de Truco Gris Claro (Parte 2)",
+  "block.argentum.mesa_truco_gris_claro_3": "Mesa de Truco Gris Claro (Parte 3)",
+  "block.argentum.mesa_truco_gris_claro_4": "Mesa de Truco Gris Claro (Parte 4)",
+
+  "block.argentum.mesa_truco_cyan": "Mesa de Truco Cian",
+  "block.argentum.mesa_truco_cyan_2": "Mesa de Truco Cian (Parte 2)",
+  "block.argentum.mesa_truco_cyan_3": "Mesa de Truco Cian (Parte 3)",
+  "block.argentum.mesa_truco_cyan_4": "Mesa de Truco Cian (Parte 4)",
+
+  "block.argentum.mesa_truco_purpura": "Mesa de Truco Púrpura",
+  "block.argentum.mesa_truco_purpura_2": "Mesa de Truco Púrpura (Parte 2)",
+  "block.argentum.mesa_truco_purpura_3": "Mesa de Truco Púrpura (Parte 3)",
+  "block.argentum.mesa_truco_purpura_4": "Mesa de Truco Púrpura (Parte 4)",
+
+  "block.argentum.mesa_truco_marron": "Mesa de Truco Marrón",
+  "block.argentum.mesa_truco_marron_2": "Mesa de Truco Marrón (Parte 2)",
+  "block.argentum.mesa_truco_marron_3": "Mesa de Truco Marrón (Parte 3)",
+  "block.argentum.mesa_truco_marron_4": "Mesa de Truco Marrón (Parte 4)",
+
+  "block.argentum.mesa_truco_rojo": "Mesa de Truco Roja",
+  "block.argentum.mesa_truco_rojo_2": "Mesa de Truco Roja (Parte 2)",
+  "block.argentum.mesa_truco_rojo_3": "Mesa de Truco Roja (Parte 3)",
+  "block.argentum.mesa_truco_rojo_4": "Mesa de Truco Roja (Parte 4)",
+
+  "block.argentum.mesa_truco_verde": "Mesa de Truco Verde",
+  "block.argentum.mesa_truco_verde_2": "Mesa de Truco Verde (Parte 2)",
+  "block.argentum.mesa_truco_verde_3": "Mesa de Truco Verde (Parte 3)",
+  "block.argentum.mesa_truco_verde_4": "Mesa de Truco Verde (Parte 4)",
+
+  "block.argentum.mesa_truco_azul": "Mesa de Truco Azul",
+  "block.argentum.mesa_truco_azul_2": "Mesa de Truco Azul (Parte 2)",
+  "block.argentum.mesa_truco_azul_3": "Mesa de Truco Azul (Parte 3)",
+  "block.argentum.mesa_truco_azul_4": "Mesa de Truco Azul (Parte 4)",
+
+  "block.argentum.mesa_truco_negro": "Mesa de Truco Negra",
+  "block.argentum.mesa_truco_negro_2": "Mesa de Truco Negra (Parte 2)",
+  "block.argentum.mesa_truco_negro_3": "Mesa de Truco Negra (Parte 3)",
+  "block.argentum.mesa_truco_negro_4": "Mesa de Truco Negra (Parte 4)",
+
+
   "subtitles.argentum.aldeano_use": "Aldeano usa bloque",
   "subtitles.argentum.aldeano_break": "Aldeano rompe bloque",
   "subtitles.argentum.aldeano_fall": "Aldeano cae",

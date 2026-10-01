@@ -26,7 +26,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import org.jetbrains.annotations.Nullable;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 
 public class MesaTrucoBlock extends BaseEntityBlock {
 
@@ -106,8 +109,40 @@ public class MesaTrucoBlock extends BaseEntityBlock {
 
         // ===== Calcular slot =====
         int slot = getSlotFromClick(masterPos, masterState, hit.getLocation());
-
         ItemStack current = mesa.getItem(slot);
+
+        // ===== MAZO (slot CENTRO) =====
+        if (slot == MesaTrucoBlockEntity.CENTRO) {
+
+            // --- Meter carta al mazo ---
+            if (!stack.isEmpty()) {
+                // Solo acepta cartas del truco
+                if (!stack.is(ModTags.Items.CARTAS_TRUCO)) {
+                    return ItemInteractionResult.SUCCESS;
+                }
+
+                // Intenta agregar (devuelve false si está repetida o lleno)
+                if (mesa.addToMazo(stack)) {
+                    if (!player.getAbilities().instabuild) {
+                        stack.shrink(1);
+                        level.playSound(null, pos, SoundEvents.BOOK_PAGE_TURN,
+                                SoundSource.BLOCKS, 0.7f, 1.0f);
+                    }
+                }
+                return ItemInteractionResult.SUCCESS;
+            }
+
+            // --- Sacar carta al azar ---
+            ItemStack drawn = mesa.drawRandomFromMazo();
+            if (!drawn.isEmpty()) {
+                if (!player.addItem(drawn)) {
+                    player.drop(drawn, false);
+                    level.playSound(null, pos, SoundEvents.BOOK_PUT,
+                            SoundSource.BLOCKS, 0.7f, 0.9f);
+                }
+            }
+            return ItemInteractionResult.SUCCESS;
+        }
 
         // ===== PONER ítem =====
         if (!stack.isEmpty()) {
@@ -124,16 +159,39 @@ public class MesaTrucoBlock extends BaseEntityBlock {
             mesa.setItem(slot, stack.copyWithCount(1));
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
+                // Sonido según tipo de slot
+                if (slot == MesaTrucoBlockEntity.CENTRO_IZQ
+                        || slot == MesaTrucoBlockEntity.CENTRO_DER) {
+                    level.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_PLACE,
+                            SoundSource.BLOCKS, 0.6f, 1.3f);
+                } else {
+                    level.playSound(null, pos, SoundEvents.BOOK_PAGE_TURN,
+                            SoundSource.BLOCKS, 0.7f, 1.0f);
+                }
             }
             return ItemInteractionResult.SUCCESS;
         }
 
         // ===== SACAR ítem =====
         if (!current.isEmpty()) {
+
+            boolean eraFicha = slot == MesaTrucoBlockEntity.CENTRO_IZQ
+                    || slot == MesaTrucoBlockEntity.CENTRO_DER;
+
             mesa.setItem(slot, ItemStack.EMPTY);
             if (!player.addItem(current)) {
                 player.drop(current, false);
             }
+
+            // Sonido según tipo
+            if (eraFicha) {
+                level.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_BREAK,
+                        SoundSource.BLOCKS, 0.6f, 1.3f);
+            } else {
+                level.playSound(null, pos, SoundEvents.BOOK_PAGE_TURN,
+                        SoundSource.BLOCKS, 0.7f, 0.9f);
+            }
+
             return ItemInteractionResult.SUCCESS;
         }
 
@@ -187,42 +245,19 @@ public class MesaTrucoBlock extends BaseEntityBlock {
     // FAMILIA
     // ============================================================
     private Block[] family() {
-        if (this == ModBlocks.MESA_TRUCO_ROJA.get()
-                || this == ModBlocks.MESA_TRUCO_ROJA_2.get()
-                || this == ModBlocks.MESA_TRUCO_ROJA_3.get()
-                || this == ModBlocks.MESA_TRUCO_ROJA_4.get()) {
-            return new Block[]{
-                    ModBlocks.MESA_TRUCO_ROJA.get(),
-                    ModBlocks.MESA_TRUCO_ROJA_2.get(),
-                    ModBlocks.MESA_TRUCO_ROJA_3.get(),
-                    ModBlocks.MESA_TRUCO_ROJA_4.get()
-            };
+        for (var entry : ModBlocks.FAMILIAS_MESA.entrySet()) {
+            DeferredBlock<MesaTrucoBlock>[] fam = entry.getValue();
+            for (int i = 0; i < 4; i++) {
+                if (fam[i].get() == this) {
+                    return new Block[]{
+                            fam[0].get(),
+                            fam[1].get(),
+                            fam[2].get(),
+                            fam[3].get()
+                    };
+                }
+            }
         }
-
-        if (this == ModBlocks.MESA_TRUCO_VERDE.get()
-                || this == ModBlocks.MESA_TRUCO_VERDE_2.get()
-                || this == ModBlocks.MESA_TRUCO_VERDE_3.get()
-                || this == ModBlocks.MESA_TRUCO_VERDE_4.get()) {
-            return new Block[]{
-                    ModBlocks.MESA_TRUCO_VERDE.get(),
-                    ModBlocks.MESA_TRUCO_VERDE_2.get(),
-                    ModBlocks.MESA_TRUCO_VERDE_3.get(),
-                    ModBlocks.MESA_TRUCO_VERDE_4.get()
-            };
-        }
-
-        if (this == ModBlocks.MESA_TRUCO_AZUL.get()
-                || this == ModBlocks.MESA_TRUCO_AZUL_2.get()
-                || this == ModBlocks.MESA_TRUCO_AZUL_3.get()
-                || this == ModBlocks.MESA_TRUCO_AZUL_4.get()) {
-            return new Block[]{
-                    ModBlocks.MESA_TRUCO_AZUL.get(),
-                    ModBlocks.MESA_TRUCO_AZUL_2.get(),
-                    ModBlocks.MESA_TRUCO_AZUL_3.get(),
-                    ModBlocks.MESA_TRUCO_AZUL_4.get()
-            };
-        }
-
         return null;
     }
 
@@ -292,6 +327,15 @@ public class MesaTrucoBlock extends BaseEntityBlock {
                 if (masterBe instanceof MesaTrucoBlockEntity mesa) {
                     for (int i = 0; i < MesaTrucoBlockEntity.TOTAL_SLOTS; i++) {
                         ItemStack s = mesa.getItem(i);
+                        if (!s.isEmpty()) {
+                            popResource(level, master, s);
+                        }
+                    }
+                }
+
+                // Dropear las cartas del mazo
+                if (masterBe instanceof MesaTrucoBlockEntity mesa) {
+                    for (ItemStack s : mesa.getMazo()) {
                         if (!s.isEmpty()) {
                             popResource(level, master, s);
                         }
