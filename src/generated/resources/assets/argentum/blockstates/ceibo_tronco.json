@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "argentum:block/ceibo_tronco_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "argentum:block/ceibo_tronco"
+    },
+    "axis=z": {
+      "model": "argentum:block/ceibo_tronco_horizontal",
+      "x": 90
+    }
+  }
+}

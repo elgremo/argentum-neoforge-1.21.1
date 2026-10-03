@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:root",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:ficha_casino_2"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Conseguí tu primera ficha.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:ficha_casino_2"
+    },
+    "title": "Bienvenido al Casino"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

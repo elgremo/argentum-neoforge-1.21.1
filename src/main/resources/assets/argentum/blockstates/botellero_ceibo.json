@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "facing=north,half=lower": { "model": "argentum:block/botellero_bot_ceibo" },
+    "facing=east,half=lower": { "model": "argentum:block/botellero_bot_ceibo", "y": 90 },
+    "facing=south,half=lower": { "model": "argentum:block/botellero_bot_ceibo", "y": 180 },
+    "facing=west,half=lower": { "model": "argentum:block/botellero_bot_ceibo", "y": 270 },
+
+    "facing=north,half=upper": { "model": "argentum:block/botellero_top_ceibo" },
+    "facing=east,half=upper": { "model": "argentum:block/botellero_top_ceibo", "y": 90 },
+    "facing=south,half=upper": { "model": "argentum:block/botellero_top_ceibo", "y": 180 },
+    "facing=west,half=upper": { "model": "argentum:block/botellero_top_ceibo", "y": 270 }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:sunflower_plains",
+    "minecraft:meadow"
+  ],
+  "features": [
+    "argentum:batata_patch"
+  ],
+  "step": "vegetal_decoration"
+}

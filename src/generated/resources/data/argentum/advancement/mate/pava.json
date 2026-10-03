@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:mate/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:pava_caliente"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Agua caliente lista.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:pava_caliente"
+    },
+    "title": "Esta el Agua!!"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

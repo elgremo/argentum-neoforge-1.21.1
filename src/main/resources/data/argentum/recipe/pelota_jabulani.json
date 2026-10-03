@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GGG",
+    "GPG",
+    "GGG"
+  ],
+  "key": {
+    "P": {
+      "item": "argentum:pelota"
+    },
+    "G": {
+      "item": "minecraft:green_dye"
+    }
+  },
+  "result": {
+    "id": "argentum:pelota_jabulani",
+    "count": 1
+  }
+}

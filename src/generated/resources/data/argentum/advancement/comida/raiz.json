@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:root",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:cuchillo"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Conseguí un cuchillo criollo.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:cuchillo"
+    },
+    "title": "A Cocinar"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

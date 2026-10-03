@@ -6,7 +6,7 @@
     { "item": "minecraft:egg" }
   ],
   "result": {
-    "item": "argentum:empanada_cruda",
+    "id": "argentum:empanada_cruda",
     "count": 2
   }
 }

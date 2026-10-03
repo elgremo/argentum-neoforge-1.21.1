@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "#S#"
+  ],
+  "key": {
+    "#": {
+      "item": "argentum:ceibo_madera"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "argentum:ceibo_valla",
+    "count": 3
+  }
+}

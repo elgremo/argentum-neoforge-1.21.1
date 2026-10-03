@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:vino/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:balde_mosto"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Prensaste la uva. Ahora empieza la magia.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:balde_mosto"
+    },
+    "title": "El Mosto"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MCM",
+    "MTM",
+    "TTT"
+  ],
+  "key": {
+    "M": { "item": "minecraft:birch_planks" },
+    "C": { "item": "argentum:baraja_sellada" },
+    "T": { "item": "minecraft:birch_log" }
+  },
+  "result": {
+    "id": "argentum:mesa_truco_abedul",
+    "count": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:fulbo/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:copa_mundo"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "La tercera estrella. Muchachos...",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "argentum:copa_mundo"
+    },
+    "title": "Campeones del Mundo"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

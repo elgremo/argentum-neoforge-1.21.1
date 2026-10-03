@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:mate/primer_mate",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:mate_imperial"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Un mate imperial. Ahora sí, con clase.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:mate_imperial"
+    },
+    "title": "Categoría Premium"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

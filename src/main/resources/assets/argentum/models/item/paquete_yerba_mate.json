@@ -1,0 +1,54 @@
+{
+	"textures": {
+		"0": "argentum:item/paquete_yerba_mate",
+		"particle": "argentum:item/paquete_yerba_mate"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 6],
+			"to": [10, 8, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 16], "texture": "#0"},
+				"east": {"uv": [8, 0, 13, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 8, 16], "texture": "#0"},
+				"west": {"uv": [8, 0, 13, 16], "texture": "#0"},
+				"up": {"uv": [13, 0, 16, 5], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [13, 11, 16, 16], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [69, 90, 0],
+			"translation": [0.25, 1.5, 3.75],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [69, 90, 0],
+			"translation": [0.25, 1.5, 3.75],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"firstperson_righthand": {
+			"rotation": [-16, 0, 0],
+			"translation": [0, 5.25, -2.75]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-16, 0, 0],
+			"translation": [0, 5.25, -2.75]
+		},
+		"ground": {
+			"translation": [0, 4, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"gui": {
+			"rotation": [26, 35, 0],
+			"translation": [0, 5.25, 0],
+			"scale": [1.5, 1.5, 1.5]
+		},
+		"fixed": {
+			"translation": [0, 8.25, 0],
+			"scale": [2, 2, 2]
+		}
+	}
+}

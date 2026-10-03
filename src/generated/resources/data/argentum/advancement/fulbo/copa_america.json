@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:fulbo/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:copa_america"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Levantamos la Copa. Otra vez.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:copa_america"
+    },
+    "title": "Copa América"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -17,10 +17,8 @@ import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 
 import java.lang.reflect.Method;
 
-@EventBusSubscriber(modid = Argentum.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class CuchilloDrops {
 
-    @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {
 
         Entity attacker = event.getSource().getEntity();

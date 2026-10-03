@@ -1,0 +1,84 @@
+{
+	"textures": {
+		"0": "argentum:block/vid_blanca",
+		"particle": "argentum:block/vid_blanca"
+	},
+	"elements": [
+		{
+			"from": [7.5, 0, 7.5],
+			"to": [8.5, 4, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"east": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"south": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"west": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"up": {"uv": [2, 14, 4, 16], "texture": "#0"},
+				"down": {"uv": [2, 14, 4, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.5, 4, 7.5],
+			"to": [8.5, 8, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 8]},
+			"faces": {
+				"north": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"east": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"south": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"west": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"up": {"uv": [2, 14, 4, 16], "texture": "#0"},
+				"down": {"uv": [2, 14, 4, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.5, 8, 7.5],
+			"to": [8.5, 12, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"east": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"south": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"west": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"up": {"uv": [2, 14, 4, 16], "texture": "#0"},
+				"down": {"uv": [2, 14, 4, 16], "texture": "#0"}
+			}
+		},
+		{
+			"from": [7.5, 12, 7.5],
+			"to": [8.5, 16, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 12, 8]},
+			"faces": {
+				"north": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"east": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"south": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"west": {"uv": [0, 8, 2, 16], "texture": "#0"},
+				"up": {"uv": [2, 14, 4, 16], "texture": "#0"},
+				"down": {"uv": [2, 14, 4, 16], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "top",
+			"origin": [8, 8, 8],
+			"scope": 0,
+			"color": 0,
+			"children": [
+				{
+					"name": "tutortop",
+					"origin": [8, 8, 8],
+					"scope": 0,
+					"color": 0,
+					"children": [0, 1, 2, 3]
+				},
+				{
+					"name": "1",
+					"origin": [8, 8, 8],
+					"scope": 0,
+					"color": 0,
+					"children": []
+				}
+			]
+		}
+	]
+}

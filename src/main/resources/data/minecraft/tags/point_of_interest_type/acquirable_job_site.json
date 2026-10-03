@@ -8,6 +8,10 @@
     {
       "id": "argentum:joni_poi",
       "required": false
+    },
+    {
+      "id":"argentum:ricardo_poi",
+      "required": false
     }
   ]
 }

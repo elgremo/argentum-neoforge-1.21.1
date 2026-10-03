@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "argentum:block/arco_dos" },
+    "facing=east": { "model": "argentum:block/arco_dos", "y": 90 },
+    "facing=south": { "model": "argentum:block/arco_dos", "y": 180 },
+    "facing=west": { "model": "argentum:block/arco_dos", "y": 270 }
+  }
+}

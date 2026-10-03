@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EL"
+  ],
+  "key": {
+    "E": { "item": "argentum:ceibo_escaleras" },
+    "L": { "item": "minecraft:white_wool" }
+  },
+  "result": {
+    "id": "argentum:silla_ceibo",
+    "count": 1
+  }
+}

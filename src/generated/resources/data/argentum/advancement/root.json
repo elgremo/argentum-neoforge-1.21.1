@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "argentum:textures/gui/advancements/backgrounds/fondo.png",
+    "description": "La tradición argentina en Minecraft.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:mate"
+    },
+    "show_toast": false,
+    "title": "Argentum"
+  },
+  "requirements": [
+    [
+      "tick"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

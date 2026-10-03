@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "argentum:block/jacaranda_placa_presion"
+    },
+    "powered=true": {
+      "model": "argentum:block/jacaranda_placa_presion_down"
+    }
+  }
+}

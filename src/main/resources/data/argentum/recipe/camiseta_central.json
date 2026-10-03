@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": { "item": "argentum:camiseta" },
+    "A": { "item": "minecraft:blue_dye" },
+    "Y": { "item": "minecraft:yellow_dye" }
+  },
+  "pattern": [
+    "ASA",
+    "AYA",
+    "AYA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:camiseta_central"
+  }
+}

@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "argentum:termo"
+      "item": "argentum:termo_vacio"
     },
     {
       "item": "minecraft:light_blue_dye"
@@ -15,7 +15,7 @@
     }
   ],
   "result": {
-    "id": "argentum:termo_argento",
+    "id": "argentum:termo_argento_vacio",
     "count": 1
   }
 }

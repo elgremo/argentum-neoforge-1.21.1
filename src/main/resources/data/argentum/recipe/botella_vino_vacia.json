@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B",
+    " B",
+    " B"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "id": "argentum:botella_vino_vacia",
+    "count": 3
+  }
+}

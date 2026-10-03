@@ -1,0 +1,51 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 32],
+	"textures": {
+		"0": "argentum:item/dado",
+		"particle": "argentum:item/dado"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [4, 8, 8, 16], "texture": "#0"},
+				"east": {"uv": [0, 8, 4, 16], "texture": "#0"},
+				"south": {"uv": [12, 8, 16, 16], "texture": "#0"},
+				"west": {"uv": [8, 8, 12, 16], "texture": "#0"},
+				"up": {"uv": [8, 8, 4, 0], "texture": "#0"},
+				"down": {"uv": [12, 0, 8, 8], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.1, 0.1, 0.1]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.1, 0.1, 0.1]
+		},
+		"firstperson_righthand": {
+			"scale": [0.1, 0.1, 0.1]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.1, 0.1, 0.1]
+		},
+		"ground": {
+			"translation": [0, 2, 0],
+			"scale": [0.2, 0.2, 0.2]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"head": {
+			"scale": [0.82, 0.82, 0.82]
+		},
+		"fixed": {
+			"scale": [0.3, 0.3, 0.3]
+		}
+	}
+}

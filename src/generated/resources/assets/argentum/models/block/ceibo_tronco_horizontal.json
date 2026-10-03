@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "argentum:block/ceibo_tronco_top",
+    "side": "argentum:block/ceibo_tronco_side"
+  }
+}

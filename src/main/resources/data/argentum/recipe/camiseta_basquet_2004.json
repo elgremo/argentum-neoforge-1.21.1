@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "argentum:camiseta"
+    },
+    "L": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "A": {
+      "item": "minecraft:blue_dye"
+    },
+    "B": {
+      "item": "minecraft:white_dye"
+    }
+  },
+  "pattern": [
+    "CL ",
+    "ABA",
+    "ALA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:camiseta_basquet_2004"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:vino/mosto",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:botella_vino_tinto_llena"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Paciencia, que el vino se hace solo.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:botella_vino_tinto_llena"
+    },
+    "title": "Fermentación"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

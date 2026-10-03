@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:vino/botella",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:copa_vino_tinto"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Un brindis como la gente.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:copa_vino_tinto"
+    },
+    "title": "¡Salud!"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -13,6 +13,7 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.resources.ResourceLocation;
 
+
 public class PelotaRenderer extends EntityRenderer<PelotaEntity> {
     private final ItemRenderer itemRenderer;
 
@@ -29,7 +30,7 @@ public class PelotaRenderer extends EntityRenderer<PelotaEntity> {
         if (stack == null || stack.isEmpty()) {
             stack = new ItemStack(ModItems.PELOTA.get());
         }
-
+        matrix.scale(1.5F, 1.5F, 1.5F);
         // Renderizamos el ItemStack en el mundo (GROUND funciona bien para objetos sobre el suelo)
         itemRenderer.renderStatic(
                 /* livingEntity */ null,
@@ -47,6 +48,7 @@ public class PelotaRenderer extends EntityRenderer<PelotaEntity> {
         matrix.popPose();
         super.render(entity, yaw, partialTicks, matrix, buffer, packedLight);
     }
+
 
 
     @Override

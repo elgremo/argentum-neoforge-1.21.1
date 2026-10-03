@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "argentum:jacaranda_completo"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "argentum:jacaranda_madera"
+  }
+}

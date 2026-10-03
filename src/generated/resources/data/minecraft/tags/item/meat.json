@@ -1,0 +1,22 @@
+{
+  "values": [
+    "argentum:bife_crudo",
+    "argentum:bife_asado",
+    "argentum:chinchulin_crudo",
+    "argentum:chinchulin_asado",
+    "argentum:costilla_cruda",
+    "argentum:costilla_asada",
+    "argentum:entrana_cruda",
+    "argentum:entrana_asada",
+    "argentum:lomo_crudo",
+    "argentum:lomo_asado",
+    "argentum:matambre_crudo",
+    "argentum:matambre_asado",
+    "argentum:molleja_cruda",
+    "argentum:molleja_asada",
+    "argentum:chorizo_parrillero_crudo",
+    "argentum:chorizo_parrillero_cocido",
+    "argentum:carne_cortada_cruda",
+    "argentum:carne_cortada_cocida"
+  ]
+}
