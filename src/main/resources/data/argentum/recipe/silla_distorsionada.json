@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EL"
+  ],
+  "key": {
+    "E": { "item": "minecraft:warped_stairs" },
+    "L": { "item": "minecraft:white_wool" }
+  },
+  "result": {
+    "id": "argentum:silla_distorsionada",
+    "count": 1
+  }
+}

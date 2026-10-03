@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EL"
+  ],
+  "key": {
+    "E": { "item": "minecraft:spruce_stairs" },
+    "L": { "item": "minecraft:white_wool" }
+  },
+  "result": {
+    "id": "argentum:silla_abeto",
+    "count": 1
+  }
+}

@@ -8,6 +8,7 @@ import com.gremo.argentum.client.renderer.PelotaBasquetRenderer;
 import com.gremo.argentum.client.renderer.PelotaRenderer;
 import com.gremo.argentum.entity.ModEntities;
 import com.gremo.argentum.entity.client.BalaRenderer;
+import com.gremo.argentum.entity.client.ChairRenderer;
 import com.gremo.argentum.entity.client.DadoModel;
 import com.gremo.argentum.entity.client.DadoRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -73,6 +74,7 @@ public class ModClientEvents {
 
             BlockEntityRenderers.register(ModBlockEntities.NIDO_BE.get(), NidoBlockEntityRenderer::new);
 
+            EntityRenderers.register(ModEntities.CHAIR_ENTITY.get(), ChairRenderer::new);
         });
     }
 

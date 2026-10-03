@@ -1,0 +1,14 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EL"
+  ],
+  "key": {
+    "E": { "item": "minecraft:cherry_stairs" },
+    "L": { "item": "minecraft:white_wool" }
+  },
+  "result": {
+    "id": "argentum:silla_cerezo",
+    "count": 1
+  }
+}

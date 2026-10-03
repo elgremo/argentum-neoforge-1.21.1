@@ -9,6 +9,7 @@ import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import com.gremo.argentum.block.custom.MesaTrucoBlock;
+import com.gremo.argentum.block.custom.SillaBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -50,8 +51,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.JACARANDA_MADERA);
 
         // =========================
-// JACARANDA MADERA
-// =========================
+        // JACARANDA MADERA
+        // =========================
 
         stairsBlock(
                 (StairBlock) ModBlocks.JACARANDA_ESCALERAS.get(),
@@ -129,143 +130,142 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockItem(ModBlocks.JACARANDA_TRAMPILLA, "_bottom");
 
-            axisBlock(
-                    (RotatedPillarBlock) ModBlocks.CEIBO_TRONCO.get(),
-                    modLoc("block/ceibo_tronco_side"),
-                    modLoc("block/ceibo_tronco_top")
-            );
+        axisBlock(
+                (RotatedPillarBlock) ModBlocks.CEIBO_TRONCO.get(),
+                modLoc("block/ceibo_tronco_side"),
+                modLoc("block/ceibo_tronco_top")
+        );
 
-            axisBlock(
-                    (RotatedPillarBlock) ModBlocks.CEIBO_COMPLETO.get(),
-                    modLoc("block/ceibo_tronco_side"),
-                    modLoc("block/ceibo_tronco_side")
-            );
+        axisBlock(
+                (RotatedPillarBlock) ModBlocks.CEIBO_COMPLETO.get(),
+                modLoc("block/ceibo_tronco_side"),
+                modLoc("block/ceibo_tronco_side")
+        );
 
-            axisBlock(
-                    (RotatedPillarBlock) ModBlocks.PELADO_CEIBO_TRONCO.get(),
-                    modLoc("block/pelado_ceibo_tronco_side"),
-                    modLoc("block/pelado_ceibo_tronco_top")
-            );
+        axisBlock(
+                (RotatedPillarBlock) ModBlocks.PELADO_CEIBO_TRONCO.get(),
+                modLoc("block/pelado_ceibo_tronco_side"),
+                modLoc("block/pelado_ceibo_tronco_top")
+        );
 
-            axisBlock(
-                    (RotatedPillarBlock) ModBlocks.PELADO_CEIBO_COMPLETO.get(),
-                    modLoc("block/pelado_ceibo_tronco_side"),
-                    modLoc("block/pelado_ceibo_tronco_side")
-            );
+        axisBlock(
+                (RotatedPillarBlock) ModBlocks.PELADO_CEIBO_COMPLETO.get(),
+                modLoc("block/pelado_ceibo_tronco_side"),
+                modLoc("block/pelado_ceibo_tronco_side")
+        );
 
-            blockItem(ModBlocks.CEIBO_TRONCO);
-            blockItem(ModBlocks.CEIBO_COMPLETO);
-            blockItem(ModBlocks.PELADO_CEIBO_TRONCO);
-            blockItem(ModBlocks.PELADO_CEIBO_COMPLETO);
-            blockWithItem(ModBlocks.CEIBO_MADERA);
+        blockItem(ModBlocks.CEIBO_TRONCO);
+        blockItem(ModBlocks.CEIBO_COMPLETO);
+        blockItem(ModBlocks.PELADO_CEIBO_TRONCO);
+        blockItem(ModBlocks.PELADO_CEIBO_COMPLETO);
+        blockWithItem(ModBlocks.CEIBO_MADERA);
 
-            // =========================
-            // CEIBO MADERA
-            // =========================
+        // =========================
+        // CEIBO MADERA
+        // =========================
 
-            stairsBlock(
-                    (StairBlock) ModBlocks.CEIBO_ESCALERAS.get(),
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
-            blockItem(ModBlocks.CEIBO_ESCALERAS);
+        stairsBlock(
+                (StairBlock) ModBlocks.CEIBO_ESCALERAS.get(),
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
+        blockItem(ModBlocks.CEIBO_ESCALERAS);
 
-            slabBlock(
-                    (SlabBlock) ModBlocks.CEIBO_LOSA.get(),
-                    blockTexture(ModBlocks.CEIBO_MADERA.get()),
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
-            blockItem(ModBlocks.CEIBO_LOSA);
+        slabBlock(
+                (SlabBlock) ModBlocks.CEIBO_LOSA.get(),
+                blockTexture(ModBlocks.CEIBO_MADERA.get()),
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
+        blockItem(ModBlocks.CEIBO_LOSA);
 
-            models().fencePost(
-                    "ceibo_valla_post",
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
+        models().fencePost(
+                "ceibo_valla_post",
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
 
-            models().fenceSide(
-                    "ceibo_valla_side",
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
+        models().fenceSide(
+                "ceibo_valla_side",
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
 
-            models().fenceInventory(
-                    "ceibo_valla_inventory",
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
+        models().fenceInventory(
+                "ceibo_valla_inventory",
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
 
-            fenceBlock(
-                    (FenceBlock) ModBlocks.CEIBO_VALLA.get(),
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
+        fenceBlock(
+                (FenceBlock) ModBlocks.CEIBO_VALLA.get(),
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
 
-            fenceGateBlock(
-                    (FenceGateBlock) ModBlocks.CEIBO_PORTON.get(),
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
-            blockItem(ModBlocks.CEIBO_PORTON);
+        fenceGateBlock(
+                (FenceGateBlock) ModBlocks.CEIBO_PORTON.get(),
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
+        blockItem(ModBlocks.CEIBO_PORTON);
 
-            buttonBlock(
-                    (ButtonBlock) ModBlocks.CEIBO_BOTON.get(),
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
+        buttonBlock(
+                (ButtonBlock) ModBlocks.CEIBO_BOTON.get(),
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
 
-            simpleBlockItem(
-                    ModBlocks.CEIBO_BOTON.get(),
-                    new ModelFile.UncheckedModelFile(modLoc("block/ceibo_boton_inventory"))
-            );
+        simpleBlockItem(
+                ModBlocks.CEIBO_BOTON.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/ceibo_boton_inventory"))
+        );
 
-            pressurePlateBlock(
-                    (PressurePlateBlock) ModBlocks.CEIBO_PLACA_PRESION.get(),
-                    blockTexture(ModBlocks.CEIBO_MADERA.get())
-            );
-            blockItem(ModBlocks.CEIBO_PLACA_PRESION);
+        pressurePlateBlock(
+                (PressurePlateBlock) ModBlocks.CEIBO_PLACA_PRESION.get(),
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
+        );
+        blockItem(ModBlocks.CEIBO_PLACA_PRESION);
 
-            doorBlockWithRenderType(
-                    (DoorBlock) ModBlocks.CEIBO_PUERTA.get(),
-                    modLoc("block/ceibo_puerta_abajo"),
-                    modLoc("block/ceibo_puerta_arriba"),
-                    "cutout"
-            );
+        doorBlockWithRenderType(
+                (DoorBlock) ModBlocks.CEIBO_PUERTA.get(),
+                modLoc("block/ceibo_puerta_abajo"),
+                modLoc("block/ceibo_puerta_arriba"),
+                "cutout"
+        );
 
-            trapdoorBlockWithRenderType(
-                    (TrapDoorBlock) ModBlocks.CEIBO_TRAMPILLA.get(),
-                    modLoc("block/ceibo_trampilla"),
-                    true,
-                    "cutout"
-            );
+        trapdoorBlockWithRenderType(
+                (TrapDoorBlock) ModBlocks.CEIBO_TRAMPILLA.get(),
+                modLoc("block/ceibo_trampilla"),
+                true,
+                "cutout"
+        );
 
-            blockItem(ModBlocks.CEIBO_TRAMPILLA, "_bottom");
+        blockItem(ModBlocks.CEIBO_TRAMPILLA, "_bottom");
 
         wallBlock(
                 (WallBlock) ModBlocks.CEIBO_MURO.get(),
-                blockTexture(ModBlocks.CEIBO_MADERA.get()) // Usa la textura de tu madera de ceibo
+                blockTexture(ModBlocks.CEIBO_MADERA.get())
         );
-        blockItem(ModBlocks.CEIBO_MURO, "_inventory"); // El modelo de inventario que genera wallBlock
+        blockItem(ModBlocks.CEIBO_MURO, "_inventory");
+
         wallBlock(
                 (WallBlock) ModBlocks.JACARANDA_MURO.get(),
                 blockTexture(ModBlocks.JACARANDA_MADERA.get())
         );
         blockItem(ModBlocks.JACARANDA_MURO, "_inventory");
-        registerMesasTruco();
 
+        // ============================================================
+        // MESAS Y SILLAS DE TRUCO
+        // ============================================================
+        registerMesasTruco();
+        registerSillas();
     }
 
-    // =========================
-// MESAS DE TRUCO
-// =========================
-
+    // ============================================================
+    // MESAS DE TRUCO
+    // ============================================================
     private void mesaTrucoBlock(DeferredBlock<MesaTrucoBlock> block) {
         String name = block.getId().getPath();
-
-        ModelFile model = new ModelFile.UncheckedModelFile(
-                modLoc("block/" + name)
-        );
-
+        ModelFile model = new ModelFile.UncheckedModelFile(modLoc("block/" + name));
         horizontalBlock(block.get(), model);
     }
 
     private void registerMesasTruco() {
         for (String tinte : ModBlocks.TINTES) {
             String base = "mesa_truco_" + tinte;
-
             DeferredBlock<MesaTrucoBlock>[] fam = ModBlocks.getFamilia(base);
             if (fam == null) continue;
 
@@ -276,6 +276,30 @@ public class ModBlockStateProvider extends BlockStateProvider {
         }
     }
 
+    // ============================================================
+    // SILLAS
+    // ============================================================
+    private void sillaBlock(DeferredBlock<SillaBlock> block) {
+        String name = block.getId().getPath();
+        ModelFile model = new ModelFile.UncheckedModelFile(modLoc("block/" + name));
+        horizontalBlock(block.get(), model);
+    }
+
+    private void registerSillas() {
+        for (String madera : ModBlocks.TINTES) {
+            String base = "silla_" + madera;
+            DeferredBlock<SillaBlock>[] fam = ModBlocks.getFamiliaSilla(base);
+            if (fam == null) continue;
+
+            sillaBlock(fam[0]);
+            sillaBlock(fam[1]);
+            // NO blockItem: el item model lo tenés vos a mano
+        }
+    }
+
+    // ============================================================
+    // HELPERS
+    // ============================================================
     private void blockWithItem(DeferredBlock<? extends Block> block) {
         simpleBlockWithItem(block.get(), cubeAll(block.get()));
     }

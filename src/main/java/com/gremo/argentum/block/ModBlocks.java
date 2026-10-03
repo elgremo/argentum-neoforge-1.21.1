@@ -616,6 +616,34 @@ public class ModBlocks {
         return FAMILIAS_MESA.get(base);
     }
 
+    // ============================================================
+// SILLAS (temporal: solo roble)
+// ============================================================
+    public static final Map<String, DeferredBlock<SillaBlock>[]> FAMILIAS_SILLA = new HashMap<>();
+
+    static {
+        for (String madera : TINTES) {
+            String base = "silla_" + madera;
+            DeferredBlock<SillaBlock>[] fam = new DeferredBlock[2];
+
+            fam[0] = registerBlock(base, () -> new SillaBlock(sillaProps()));
+            fam[1] = registerBlockNoItem(base + "_2", () -> new SillaBlock(sillaProps()));
+
+            FAMILIAS_SILLA.put(base, fam);
+        }
+    }
+
+    private static BlockBehaviour.Properties sillaProps() {
+        return BlockBehaviour.Properties.of()
+                .strength(2f)
+                .sound(SoundType.WOOD)
+                .noOcclusion();
+    }
+
+    public static DeferredBlock<SillaBlock>[] getFamiliaSilla(String base) {
+        return FAMILIAS_SILLA.get(base);
+    }
+
         private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
             DeferredBlock<T> toReturn = BLOCKS.register(name, block);
             registerBlockItem(name, toReturn);

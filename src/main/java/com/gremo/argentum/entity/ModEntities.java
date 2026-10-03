@@ -79,6 +79,15 @@ public class ModEntities {
                             .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "dado").toString())
             );
 
+    public static final DeferredHolder<EntityType<?>, EntityType<ChairEntity>> CHAIR_ENTITY =
+            ENTITIES.register("chair_entity",
+                    () -> EntityType.Builder.<ChairEntity>of(ChairEntity::new, MobCategory.MISC)
+                            .sized(0.5f, 0.5f)
+                            .clientTrackingRange(10)
+                            .updateInterval(20)
+                            .build(ResourceLocation.fromNamespaceAndPath(Argentum.MOD_ID, "chair_entity").toString())
+            );
+
     // Método para registrar en el bus del mod (lo llamamos desde Argentum.java)
     public static void register(IEventBus modEventBus) {
         ENTITIES.register(modEventBus);

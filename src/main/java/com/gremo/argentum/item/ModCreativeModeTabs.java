@@ -351,6 +351,16 @@ public class ModCreativeModeTabs {
                                 output.accept(fam[0].get().asItem());
                             }
                         }
+                        // ======================================================
+// 🪑 SILLAS DE TRUCO
+// ======================================================
+
+                        for (String madera : ModBlocks.TINTES) {
+                            var fam = ModBlocks.getFamiliaSilla("silla_" + madera);
+                            if (fam != null) {
+                                output.accept(fam[0].get().asItem());
+                            }
+                        }
 
 // ======================================================
 // 💿 DISCOS
