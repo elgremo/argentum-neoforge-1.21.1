@@ -568,12 +568,20 @@ public class ModBlocks {
                         .noOcclusion()
                         .strength(0.5f)));
 
-    // Array de los 16 tintes
+    // Array de los 12 tintes
     public static final String[] TINTES = {
-            "blanco", "naranja", "magenta", "celeste",
-            "amarillo", "lima", "rosa", "gris",
-            "gris_claro", "cyan", "purpura",
-            "marron", "rojo", "verde", "azul", "negro"
+            "jacaranda",
+            "ceibo",
+            "roble",
+            "abeto",
+            "abedul",
+            "jungla",
+            "acacia",
+            "robleoscuro",
+            "manglar",
+            "cerezo",
+            "carmesi",
+            "distorsionada"
     };
 
     // Map: "mesa_truco_rojo" → [master, _2, _3, _4]
@@ -600,7 +608,7 @@ public class ModBlocks {
     private static BlockBehaviour.Properties mesaProps() {
         return BlockBehaviour.Properties.of()
                 .strength(1f)
-                .sound(SoundType.WOOL)
+                .sound(SoundType.WOOD)
                 .noOcclusion();
     }
 

@@ -273,8 +273,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
             mesaTrucoBlock(fam[1]);
             mesaTrucoBlock(fam[2]);
             mesaTrucoBlock(fam[3]);
-
-            blockItem(fam[0]); // SOLO el master tiene item
         }
     }
 

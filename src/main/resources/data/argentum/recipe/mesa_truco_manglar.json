@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MCM",
+    "MTM",
+    "TTT"
+  ],
+  "key": {
+    "M": { "item": "minecraft:mangrove_planks" },
+    "C": { "item": "argentum:baraja_sellada" },
+    "T": { "item": "minecraft:mangrove_log" }
+  },
+  "result": {
+    "id": "argentum:mesa_truco_manglar",
+    "count": 1
+  }
+}
