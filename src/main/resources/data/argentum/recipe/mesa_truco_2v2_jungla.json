@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BPB",
+    "PTP",
+    "TTT"
+  ],
+  "key": {
+    "B": { "item": "argentum:baraja_sellada" },
+    "P": { "item": "minecraft:jungle_planks" },
+    "T": { "item": "minecraft:jungle_log" }
+  },
+  "result": {
+    "id": "argentum:mesa_truco_2v2_jungla",
+    "count": 1
+  }
+}

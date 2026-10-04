@@ -2,10 +2,12 @@ package com.gremo.argentum.block.custom;
 
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.block.entity.MesaTrucoBlockEntity;
+import com.gremo.argentum.item.ModItems;
 import com.gremo.argentum.util.ModTags;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -114,14 +116,27 @@ public class MesaTrucoBlock extends BaseEntityBlock {
         // ===== MAZO (slot CENTRO) =====
         if (slot == MesaTrucoBlockEntity.CENTRO) {
 
-            // --- Meter carta al mazo ---
-            if (!stack.isEmpty()) {
-                // Solo acepta cartas del truco
-                if (!stack.is(ModTags.Items.CARTAS_TRUCO)) {
-                    return ItemInteractionResult.SUCCESS;
+            // === Click con baraja_sellada: llenar con las 40 cartas ===
+            if (!stack.isEmpty() && stack.is(ModItems.BARAJA_SELLADA.get())) {
+                if (mesa.llenarConBaraja()) {
+                    if (!player.getAbilities().instabuild) stack.shrink(1);
+                    level.playSound(null, pos, SoundEvents.BOOK_PAGE_TURN,
+                            SoundSource.BLOCKS, 1.0f, 0.9f);
+                    player.displayClientMessage(
+                            Component.literal("Mazo lleno con las 40 cartas"),
+                            true
+                    );
+                } else {
+                    player.displayClientMessage(
+                            Component.literal("El mazo ya tiene cartas"),
+                            true
+                    );
                 }
+                return ItemInteractionResult.SUCCESS;
+            }
 
-                // Intenta agregar (devuelve false si está repetida o lleno)
+            // === Click con carta del truco: meter 1 ===
+            if (!stack.isEmpty() && stack.is(ModTags.Items.CARTAS_TRUCO)) {
                 if (mesa.addToMazo(stack)) {
                     if (!player.getAbilities().instabuild) {
                         stack.shrink(1);
@@ -132,7 +147,12 @@ public class MesaTrucoBlock extends BaseEntityBlock {
                 return ItemInteractionResult.SUCCESS;
             }
 
-            // --- Sacar carta al azar ---
+            // === Cualquier otro ítem: no hacer nada ===
+            if (!stack.isEmpty()) {
+                return ItemInteractionResult.SUCCESS;
+            }
+
+            // === Mano vacía: sacar 1 al azar ===
             ItemStack drawn = mesa.drawRandomFromMazo();
             if (!drawn.isEmpty()) {
                 if (!player.addItem(drawn)) {

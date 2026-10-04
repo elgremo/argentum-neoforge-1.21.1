@@ -106,6 +106,15 @@ public class ModBlockEntities {
                                     .toArray(Block[]::new)
                     ).build(null));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MesaTrucoCompaBlockEntity>> MESA_TRUCO_2V2_BE =
+            BLOCK_ENTITIES.register("mesa_truco_2v2_be",
+                    () -> BlockEntityType.Builder.of(
+                            MesaTrucoCompaBlockEntity::new,
+                            ModBlocks.FAMILIAS_COMPA.values().stream()
+                                    .map(fam -> fam[0].get())
+                                    .toArray(Block[]::new)
+                    ).build(null));
+
     // ✅ CORREGIDO: Ahora es Supplier
     public static final Supplier<BlockEntityType<NidoBlockEntity>> NIDO_BE =
             BLOCK_ENTITIES.register("nido_be", () -> BlockEntityType.Builder.of(NidoBlockEntity::new, ModBlocks.NIDO.get()).build(null));

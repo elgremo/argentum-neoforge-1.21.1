@@ -340,8 +340,18 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.BARAJA_SELLADA);
 
+// ======================================================
+// 🪑 SILLAS DE TRUCO
+// ======================================================
 
-                        // ======================================================
+                        for (String madera : ModBlocks.TINTES) {
+                            var fam = ModBlocks.getFamiliaSilla("silla_" + madera);
+                            if (fam != null) {
+                                output.accept(fam[0].get().asItem());
+                            }
+                        }
+
+// ======================================================
 // 🎴 MESAS DE TRUCO
 // ======================================================
 
@@ -351,12 +361,13 @@ public class ModCreativeModeTabs {
                                 output.accept(fam[0].get().asItem());
                             }
                         }
-                        // ======================================================
-// 🪑 SILLAS DE TRUCO
+
+// ======================================================
+// 🎴 MESAS DE TRUCO 2v2
 // ======================================================
 
                         for (String madera : ModBlocks.TINTES) {
-                            var fam = ModBlocks.getFamiliaSilla("silla_" + madera);
+                            var fam = ModBlocks.getFamiliaCompa("mesa_truco_2v2_" + madera);
                             if (fam != null) {
                                 output.accept(fam[0].get().asItem());
                             }

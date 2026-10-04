@@ -2,6 +2,7 @@ package com.gremo.argentum.datagen;
 
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.block.custom.MesaTrucoBlock;
+import com.gremo.argentum.block.custom.MesaTrucoCompaBlock;
 import com.gremo.argentum.block.custom.SillaBlock;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -21,9 +22,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        // ============================================================
-        // MESAS DE TRUCO (solo los MASTERS dropean)
-        // ============================================================
+        // MESAS
         for (String tinte : ModBlocks.TINTES) {
             DeferredBlock<MesaTrucoBlock>[] fam =
                     ModBlocks.getFamilia("mesa_truco_" + tinte);
@@ -31,9 +30,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
             dropSelf(fam[0].get());
         }
 
-        // ============================================================
-        // SILLAS (solo los MASTERS dropean)
-        // ============================================================
+        // MESAS 2v2
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<MesaTrucoCompaBlock>[] fam =
+                    ModBlocks.getFamiliaCompa("mesa_truco_2v2_" + madera);
+            if (fam == null) continue;
+            dropSelf(fam[0].get());
+        }
+
+        // SILLAS
         for (String madera : ModBlocks.TINTES) {
             DeferredBlock<SillaBlock>[] fam =
                     ModBlocks.getFamiliaSilla("silla_" + madera);
@@ -50,6 +55,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         for (String tinte : ModBlocks.TINTES) {
             DeferredBlock<MesaTrucoBlock>[] fam =
                     ModBlocks.getFamilia("mesa_truco_" + tinte);
+            if (fam != null) lista.add(fam[0].get());
+        }
+
+        // Mesas 2v2
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<MesaTrucoCompaBlock>[] fam =
+                    ModBlocks.getFamiliaCompa("mesa_truco_2v2_" + madera);
             if (fam != null) lista.add(fam[0].get());
         }
 

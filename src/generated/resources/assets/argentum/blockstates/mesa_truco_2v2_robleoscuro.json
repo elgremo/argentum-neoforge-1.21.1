@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "argentum:block/mesa_truco_2v2_robleoscuro",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "argentum:block/mesa_truco_2v2_robleoscuro"
+    },
+    "facing=south": {
+      "model": "argentum:block/mesa_truco_2v2_robleoscuro",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "argentum:block/mesa_truco_2v2_robleoscuro",
+      "y": 270
+    }
+  }
+}

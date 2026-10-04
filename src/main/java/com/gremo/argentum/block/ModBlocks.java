@@ -644,6 +644,33 @@ public class ModBlocks {
         return FAMILIAS_SILLA.get(base);
     }
 
+    // ============================================================
+// MESAS DE TRUCO 2v2 (compañero)
+// ============================================================
+    public static final Map<String, DeferredBlock<MesaTrucoCompaBlock>[]> FAMILIAS_COMPA = new HashMap<>();
+
+    static {
+        for (String madera : TINTES) {
+            String base = "mesa_truco_2v2_" + madera;
+            DeferredBlock<MesaTrucoCompaBlock>[] fam = new DeferredBlock[4];
+
+            fam[0] = registerBlock(base,
+                    () -> new MesaTrucoCompaBlock(mesaProps()));
+            fam[1] = registerBlockNoItem("mesa_truco_2v2_2_" + madera,
+                    () -> new MesaTrucoCompaBlock(mesaProps()));
+            fam[2] = registerBlockNoItem("mesa_truco_2v2_3_" + madera,
+                    () -> new MesaTrucoCompaBlock(mesaProps()));
+            fam[3] = registerBlockNoItem("mesa_truco_2v2_4_" + madera,
+                    () -> new MesaTrucoCompaBlock(mesaProps()));
+
+            FAMILIAS_COMPA.put(base, fam);
+        }
+    }
+
+    public static DeferredBlock<MesaTrucoCompaBlock>[] getFamiliaCompa(String base) {
+        return FAMILIAS_COMPA.get(base);
+    }
+
         private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
             DeferredBlock<T> toReturn = BLOCKS.register(name, block);
             registerBlockItem(name, toReturn);

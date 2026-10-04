@@ -1,5 +1,6 @@
 package com.gremo.argentum.block.entity;
 
+import com.gremo.argentum.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
@@ -7,10 +8,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class MesaTrucoBlockEntity extends BlockEntity {
 
@@ -170,6 +173,60 @@ public class MesaTrucoBlockEntity extends BlockEntity {
             );
         }
         return stack;
+    }
+
+    /**
+     * Llena el mazo con las 40 cartas del truco (1-7, 10-12 de cada palo).
+     * Solo funciona si el mazo está VACÍO.
+     * Devuelve true si llenó el mazo.
+     */
+    public boolean llenarConBaraja() {
+        if (getMazoCount() > 0) return false;
+
+        int idx = 0;
+
+        DeferredItem<Item>[][] palos = new DeferredItem[][]{
+                // COPA
+                {
+                        ModItems.CARTA_COPA_1, ModItems.CARTA_COPA_2, ModItems.CARTA_COPA_3,
+                        ModItems.CARTA_COPA_4, ModItems.CARTA_COPA_5, ModItems.CARTA_COPA_6,
+                        ModItems.CARTA_COPA_7, ModItems.CARTA_COPA_10, ModItems.CARTA_COPA_11,
+                        ModItems.CARTA_COPA_12
+                },
+                // ESPADA
+                {
+                        ModItems.CARTA_ESPADA_1, ModItems.CARTA_ESPADA_2, ModItems.CARTA_ESPADA_3,
+                        ModItems.CARTA_ESPADA_4, ModItems.CARTA_ESPADA_5, ModItems.CARTA_ESPADA_6,
+                        ModItems.CARTA_ESPADA_7, ModItems.CARTA_ESPADA_10, ModItems.CARTA_ESPADA_11,
+                        ModItems.CARTA_ESPADA_12
+                },
+                // ORO
+                {
+                        ModItems.CARTA_ORO_1, ModItems.CARTA_ORO_2, ModItems.CARTA_ORO_3,
+                        ModItems.CARTA_ORO_4, ModItems.CARTA_ORO_5, ModItems.CARTA_ORO_6,
+                        ModItems.CARTA_ORO_7, ModItems.CARTA_ORO_10, ModItems.CARTA_ORO_11,
+                        ModItems.CARTA_ORO_12
+                },
+                // PALO (basto)
+                {
+                        ModItems.CARTA_PALO_1, ModItems.CARTA_PALO_2, ModItems.CARTA_PALO_3,
+                        ModItems.CARTA_PALO_4, ModItems.CARTA_PALO_5, ModItems.CARTA_PALO_6,
+                        ModItems.CARTA_PALO_7, ModItems.CARTA_PALO_10, ModItems.CARTA_PALO_11,
+                        ModItems.CARTA_PALO_12
+                }
+        };
+
+        for (DeferredItem<Item>[] palo : palos) {
+            for (DeferredItem<Item> item : palo) {
+                mazo.set(idx++, new ItemStack(item.get()));
+            }
+        }
+
+        setChanged();
+        if (level != null) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
+        }
+        return true;
     }
 
     /** Copia de las cartas actuales del mazo (para dropear al romper). */

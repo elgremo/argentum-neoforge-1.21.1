@@ -80,10 +80,16 @@ public class ModClientEvents {
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+
         event.registerEntityRenderer(ModEntities.DADO.get(), DadoRenderer::new);
+
         event.registerBlockEntityRenderer(
                 ModBlockEntities.MESA_TRUCO_BE.get(),
                 MesaTrucoBlockEntityRenderer::new
+        );
+        event.registerBlockEntityRenderer(
+                ModBlockEntities.MESA_TRUCO_2V2_BE.get(),
+                MesaTrucoCompaBlockEntityRenderer::new
         );
     }
 

@@ -521,6 +521,69 @@
   "block.argentum.silla_distorsionada": "Silla Distorsionada",
   "block.argentum.silla_distorsionada_2": "Silla Distorsionada (Parte 2)",
 
+
+  "block.argentum.mesa_truco_2v2_jacaranda": "Mesa de Truco 2v2 de Jacarandá",
+  "block.argentum.mesa_truco_2v2_2_jacaranda": "Mesa de Truco 2v2 de Jacarandá (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_jacaranda": "Mesa de Truco 2v2 de Jacarandá (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_jacaranda": "Mesa de Truco 2v2 de Jacarandá (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_ceibo": "Mesa de Truco 2v2 de Ceibo",
+  "block.argentum.mesa_truco_2v2_2_ceibo": "Mesa de Truco 2v2 de Ceibo (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_ceibo": "Mesa de Truco 2v2 de Ceibo (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_ceibo": "Mesa de Truco 2v2 de Ceibo (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_roble": "Mesa de Truco 2v2 de Roble",
+  "block.argentum.mesa_truco_2v2_2_roble": "Mesa de Truco 2v2 de Roble (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_roble": "Mesa de Truco 2v2 de Roble (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_roble": "Mesa de Truco 2v2 de Roble (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_abeto": "Mesa de Truco 2v2 de Abeto",
+  "block.argentum.mesa_truco_2v2_2_abeto": "Mesa de Truco 2v2 de Abeto (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_abeto": "Mesa de Truco 2v2 de Abeto (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_abeto": "Mesa de Truco 2v2 de Abeto (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_abedul": "Mesa de Truco 2v2 de Abedul",
+  "block.argentum.mesa_truco_2v2_2_abedul": "Mesa de Truco 2v2 de Abedul (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_abedul": "Mesa de Truco 2v2 de Abedul (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_abedul": "Mesa de Truco 2v2 de Abedul (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_jungla": "Mesa de Truco 2v2 de Jungla",
+  "block.argentum.mesa_truco_2v2_2_jungla": "Mesa de Truco 2v2 de Jungla (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_jungla": "Mesa de Truco 2v2 de Jungla (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_jungla": "Mesa de Truco 2v2 de Jungla (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_acacia": "Mesa de Truco 2v2 de Acacia",
+  "block.argentum.mesa_truco_2v2_2_acacia": "Mesa de Truco 2v2 de Acacia (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_acacia": "Mesa de Truco 2v2 de Acacia (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_acacia": "Mesa de Truco 2v2 de Acacia (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_robleoscuro": "Mesa de Truco 2v2 de Roble Oscuro",
+  "block.argentum.mesa_truco_2v2_2_robleoscuro": "Mesa de Truco 2v2 de Roble Oscuro (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_robleoscuro": "Mesa de Truco 2v2 de Roble Oscuro (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_robleoscuro": "Mesa de Truco 2v2 de Roble Oscuro (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_manglar": "Mesa de Truco 2v2 de Manglar",
+  "block.argentum.mesa_truco_2v2_2_manglar": "Mesa de Truco 2v2 de Manglar (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_manglar": "Mesa de Truco 2v2 de Manglar (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_manglar": "Mesa de Truco 2v2 de Manglar (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_cerezo": "Mesa de Truco 2v2 de Cerezo",
+  "block.argentum.mesa_truco_2v2_2_cerezo": "Mesa de Truco 2v2 de Cerezo (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_cerezo": "Mesa de Truco 2v2 de Cerezo (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_cerezo": "Mesa de Truco 2v2 de Cerezo (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_carmesi": "Mesa de Truco 2v2 Carmesí",
+  "block.argentum.mesa_truco_2v2_2_carmesi": "Mesa de Truco 2v2 Carmesí (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_carmesi": "Mesa de Truco 2v2 Carmesí (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_carmesi": "Mesa de Truco 2v2 Carmesí (Parte 4)",
+
+  "block.argentum.mesa_truco_2v2_distorsionada": "Mesa de Truco 2v2 Distorsionada",
+  "block.argentum.mesa_truco_2v2_2_distorsionada": "Mesa de Truco 2v2 Distorsionada (Parte 2)",
+  "block.argentum.mesa_truco_2v2_3_distorsionada": "Mesa de Truco 2v2 Distorsionada (Parte 3)",
+  "block.argentum.mesa_truco_2v2_4_distorsionada": "Mesa de Truco 2v2 Distorsionada (Parte 4)",
+
+
+
   "subtitles.argentum.aldeano_use": "Aldeano usa bloque",
   "subtitles.argentum.aldeano_break": "Aldeano rompe bloque",
   "subtitles.argentum.aldeano_fall": "Aldeano cae",

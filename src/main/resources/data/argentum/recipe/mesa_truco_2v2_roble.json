@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BPB",
+    "PTP",
+    "TTT"
+  ],
+  "key": {
+    "B": { "item": "argentum:baraja_sellada" },
+    "P": { "item": "minecraft:oak_planks" },
+    "T": { "item": "minecraft:oak_log" }
+  },
+  "result": {
+    "id": "argentum:mesa_truco_2v2_roble",
+    "count": 1
+  }
+}

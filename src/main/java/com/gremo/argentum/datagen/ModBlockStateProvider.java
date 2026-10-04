@@ -9,6 +9,7 @@ import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import com.gremo.argentum.block.custom.MesaTrucoBlock;
+import com.gremo.argentum.block.custom.MesaTrucoCompaBlock;
 import com.gremo.argentum.block.custom.SillaBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -248,10 +249,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.JACARANDA_MURO, "_inventory");
 
         // ============================================================
-        // MESAS Y SILLAS DE TRUCO
+        // MESAS, SILLAS Y MESAS 2v2
         // ============================================================
         registerMesasTruco();
         registerSillas();
+        registerMesasTruco2v2();   // ← NUEVO
     }
 
     // ============================================================
@@ -277,6 +279,28 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     // ============================================================
+    // MESAS DE TRUCO 2v2  ← NUEVO
+    // ============================================================
+    private void mesaTruco2v2Block(DeferredBlock<MesaTrucoCompaBlock> block) {
+        String name = block.getId().getPath();
+        ModelFile model = new ModelFile.UncheckedModelFile(modLoc("block/" + name));
+        horizontalBlock(block.get(), model);
+    }
+
+    private void registerMesasTruco2v2() {
+        for (String madera : ModBlocks.TINTES) {
+            String base = "mesa_truco_2v2_" + madera;
+            DeferredBlock<MesaTrucoCompaBlock>[] fam = ModBlocks.getFamiliaCompa(base);
+            if (fam == null) continue;
+
+            mesaTruco2v2Block(fam[0]);
+            mesaTruco2v2Block(fam[1]);
+            mesaTruco2v2Block(fam[2]);
+            mesaTruco2v2Block(fam[3]);
+        }
+    }
+
+    // ============================================================
     // SILLAS
     // ============================================================
     private void sillaBlock(DeferredBlock<SillaBlock> block) {
@@ -293,7 +317,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
             sillaBlock(fam[0]);
             sillaBlock(fam[1]);
-            // NO blockItem: el item model lo tenés vos a mano
         }
     }
 
