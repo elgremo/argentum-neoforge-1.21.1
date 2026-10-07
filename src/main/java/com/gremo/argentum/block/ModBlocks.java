@@ -380,7 +380,6 @@ public class ModBlocks {
                     .mapColor(MapColor.WOOD)
                     .sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)
-                    .requiresCorrectToolForDrops()
             ));
 
 
@@ -467,7 +466,6 @@ public class ModBlocks {
                     .mapColor(MapColor.WOOD)
                     .sound(SoundType.WOOD)
                     .strength(2.0F, 3.0F)
-                    .requiresCorrectToolForDrops()
             ));
 
 
