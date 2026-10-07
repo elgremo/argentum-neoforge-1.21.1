@@ -671,6 +671,33 @@ public class ModBlocks {
         return FAMILIAS_COMPA.get(base);
     }
 
+    // ============================================================
+// MESAS DE CHINCHÓN
+// ============================================================
+    public static final Map<String, DeferredBlock<MesaChinchonBlock>[]> FAMILIAS_CHINCHON = new HashMap<>();
+
+    static {
+        for (String madera : TINTES) {
+            String base = "mesa_chinchon_" + madera;
+            DeferredBlock<MesaChinchonBlock>[] fam = new DeferredBlock[4];
+
+            fam[0] = registerBlock(base,
+                    () -> new MesaChinchonBlock(mesaProps()));
+            fam[1] = registerBlockNoItem("mesa_chinchon_2_" + madera,
+                    () -> new MesaChinchonBlock(mesaProps()));
+            fam[2] = registerBlockNoItem("mesa_chinchon_3_" + madera,
+                    () -> new MesaChinchonBlock(mesaProps()));
+            fam[3] = registerBlockNoItem("mesa_chinchon_4_" + madera,
+                    () -> new MesaChinchonBlock(mesaProps()));
+
+            FAMILIAS_CHINCHON.put(base, fam);
+        }
+    }
+
+    public static DeferredBlock<MesaChinchonBlock>[] getFamiliaChinchon(String base) {
+        return FAMILIAS_CHINCHON.get(base);
+    }
+
         private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
             DeferredBlock<T> toReturn = BLOCKS.register(name, block);
             registerBlockItem(name, toReturn);

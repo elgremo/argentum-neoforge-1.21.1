@@ -3,6 +3,7 @@ package com.gremo.argentum.datagen;
 import com.gremo.argentum.block.ModBlocks;
 import com.gremo.argentum.block.custom.MesaTrucoBlock;
 import com.gremo.argentum.block.custom.MesaTrucoCompaBlock;
+import com.gremo.argentum.block.custom.MesaChinchonBlock;
 import com.gremo.argentum.block.custom.SillaBlock;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
@@ -38,6 +39,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
             dropSelf(fam[0].get());
         }
 
+        // MESAS CHINCHÓN
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<MesaChinchonBlock>[] fam =
+                    ModBlocks.getFamiliaChinchon("mesa_chinchon_" + madera);
+            if (fam == null) continue;
+            dropSelf(fam[0].get());
+        }
+
         // SILLAS
         for (String madera : ModBlocks.TINTES) {
             DeferredBlock<SillaBlock>[] fam =
@@ -62,6 +71,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         for (String madera : ModBlocks.TINTES) {
             DeferredBlock<MesaTrucoCompaBlock>[] fam =
                     ModBlocks.getFamiliaCompa("mesa_truco_2v2_" + madera);
+            if (fam != null) lista.add(fam[0].get());
+        }
+
+        // Mesas Chinchón
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<MesaChinchonBlock>[] fam =
+                    ModBlocks.getFamiliaChinchon("mesa_chinchon_" + madera);
             if (fam != null) lista.add(fam[0].get());
         }
 

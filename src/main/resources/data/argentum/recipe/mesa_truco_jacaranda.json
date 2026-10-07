@@ -1,14 +1,14 @@
 ﻿{
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "MCM",
-    "MTM",
-    "TTT"
+    "PMP",
+    "PLP",
+    "LLL"
   ],
   "key": {
-    "M": { "item": "argentum:jacaranda_madera" },
-    "C": { "item": "argentum:baraja_sellada" },
-    "T": { "item": "argentum:jacaranda_tronco" }
+    "P": { "item": "argentum:jacaranda_madera" },
+    "M": { "item": "argentum:baraja_sellada" },
+    "L": { "item": "argentum:jacaranda_tronco" }
   },
   "result": {
     "id": "argentum:mesa_truco_jacaranda",

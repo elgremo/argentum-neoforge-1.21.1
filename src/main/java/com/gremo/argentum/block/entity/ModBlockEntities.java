@@ -115,6 +115,15 @@ public class ModBlockEntities {
                                     .toArray(Block[]::new)
                     ).build(null));
 
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MesaChinchonBlockEntity>> MESA_CHINCHON_BE =
+            BLOCK_ENTITIES.register("mesa_chinchon_be",
+                    () -> BlockEntityType.Builder.of(
+                            MesaChinchonBlockEntity::new,
+                            ModBlocks.FAMILIAS_CHINCHON.values().stream()
+                                    .map(fam -> fam[0].get())
+                                    .toArray(Block[]::new)
+                    ).build(null));
+
     // ✅ CORREGIDO: Ahora es Supplier
     public static final Supplier<BlockEntityType<NidoBlockEntity>> NIDO_BE =
             BLOCK_ENTITIES.register("nido_be", () -> BlockEntityType.Builder.of(NidoBlockEntity::new, ModBlocks.NIDO.get()).build(null));

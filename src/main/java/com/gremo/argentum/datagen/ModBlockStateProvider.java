@@ -10,6 +10,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import com.gremo.argentum.block.custom.MesaTrucoBlock;
 import com.gremo.argentum.block.custom.MesaTrucoCompaBlock;
+import com.gremo.argentum.block.custom.MesaChinchonBlock;
 import com.gremo.argentum.block.custom.SillaBlock;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -253,7 +254,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // ============================================================
         registerMesasTruco();
         registerSillas();
-        registerMesasTruco2v2();   // ← NUEVO
+        registerMesasTruco2v2();
+        registerMesasChinchon();
     }
 
     // ============================================================
@@ -279,7 +281,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     // ============================================================
-    // MESAS DE TRUCO 2v2  ← NUEVO
+    // MESAS DE TRUCO 2v2
     // ============================================================
     private void mesaTruco2v2Block(DeferredBlock<MesaTrucoCompaBlock> block) {
         String name = block.getId().getPath();
@@ -297,6 +299,28 @@ public class ModBlockStateProvider extends BlockStateProvider {
             mesaTruco2v2Block(fam[1]);
             mesaTruco2v2Block(fam[2]);
             mesaTruco2v2Block(fam[3]);
+        }
+    }
+
+    // ============================================================
+    // MESAS DE CHINCHÓN
+    // ============================================================
+    private void mesaChinchonBlock(DeferredBlock<MesaChinchonBlock> block) {
+        String name = block.getId().getPath();
+        ModelFile model = new ModelFile.UncheckedModelFile(modLoc("block/" + name));
+        horizontalBlock(block.get(), model);
+    }
+
+    private void registerMesasChinchon() {
+        for (String madera : ModBlocks.TINTES) {
+            String base = "mesa_chinchon_" + madera;
+            DeferredBlock<MesaChinchonBlock>[] fam = ModBlocks.getFamiliaChinchon(base);
+            if (fam == null) continue;
+
+            mesaChinchonBlock(fam[0]);
+            mesaChinchonBlock(fam[1]);
+            mesaChinchonBlock(fam[2]);
+            mesaChinchonBlock(fam[3]);
         }
     }
 

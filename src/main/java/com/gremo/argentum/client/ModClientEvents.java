@@ -91,6 +91,10 @@ public class ModClientEvents {
                 ModBlockEntities.MESA_TRUCO_2V2_BE.get(),
                 MesaTrucoCompaBlockEntityRenderer::new
         );
+        event.registerBlockEntityRenderer(
+                ModBlockEntities.MESA_CHINCHON_BE.get(),
+                MesaChinchonBlockEntityRenderer::new
+        );
     }
 
     @SubscribeEvent

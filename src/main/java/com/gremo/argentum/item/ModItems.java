@@ -94,6 +94,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> CARTA_COMODIN = ITEMS.register("carta_comodin",
             () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<Item> CARTA_COMODIN_2 = ITEMS.register("carta_comodin_2",
+            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> CARTA_COPA_1 = ITEMS.register("carta_copa_1",
             () -> new Item(new Item.Properties().stacksTo(1)));
     public static final DeferredItem<Item> CARTA_COPA_10 = ITEMS.register("carta_copa_10",

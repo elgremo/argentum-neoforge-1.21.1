@@ -374,6 +374,17 @@ public class ModCreativeModeTabs {
                         }
 
 // ======================================================
+// 🀄 MESAS DE CHINCHÓN
+// ======================================================
+
+                        for (String madera : ModBlocks.TINTES) {
+                            var fam = ModBlocks.getFamiliaChinchon("mesa_chinchon_" + madera);
+                            if (fam != null) {
+                                output.accept(fam[0].get().asItem());
+                            }
+                        }
+
+// ======================================================
 // 💿 DISCOS
 // ======================================================
 
@@ -387,6 +398,7 @@ public class ModCreativeModeTabs {
 // ======================================================
 
                         output.accept(ModItems.CARTA_COMODIN);
+                        output.accept(ModItems.CARTA_COMODIN_2);
                         output.accept(ModItems.CARTA_COPA_1);
                         output.accept(ModItems.CARTA_COPA_2);
                         output.accept(ModItems.CARTA_COPA_3);
@@ -450,7 +462,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CARTA_PALO_10);
                         output.accept(ModItems.CARTA_PALO_11);
                         output.accept(ModItems.CARTA_PALO_12);
-                        output.accept(ModItems.CARTA_COMODIN);
 
                     }).build());
 

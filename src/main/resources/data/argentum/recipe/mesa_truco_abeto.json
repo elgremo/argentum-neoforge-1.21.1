@@ -1,14 +1,14 @@
 ﻿{
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "MCM",
-    "MTM",
-    "TTT"
+    "PMP",
+    "PLP",
+    "LLL"
   ],
   "key": {
-    "M": { "item": "minecraft:spruce_planks" },
-    "C": { "item": "argentum:baraja_sellada" },
-    "T": { "item": "minecraft:spruce_log" }
+    "P": { "item": "minecraft:spruce_planks" },
+    "M": { "item": "argentum:baraja_sellada" },
+    "L": { "item": "minecraft:spruce_log" }
   },
   "result": {
     "id": "argentum:mesa_truco_abeto",

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "argentum:block/mesa_chinchon_jacaranda",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "argentum:block/mesa_chinchon_jacaranda"
+    },
+    "facing=south": {
+      "model": "argentum:block/mesa_chinchon_jacaranda",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "argentum:block/mesa_chinchon_jacaranda",
+      "y": 270
+    }
+  }
+}

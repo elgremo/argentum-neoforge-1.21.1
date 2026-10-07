@@ -1,14 +1,14 @@
 ﻿{
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "MCM",
-    "MTM",
-    "TTT"
+    "PMP",
+    "PLP",
+    "LLL"
   ],
   "key": {
-    "M": { "item": "minecraft:birch_planks" },
-    "C": { "item": "argentum:baraja_sellada" },
-    "T": { "item": "minecraft:birch_log" }
+    "P": { "item": "minecraft:birch_planks" },
+    "M": { "item": "argentum:baraja_sellada" },
+    "L": { "item": "minecraft:birch_log" }
   },
   "result": {
     "id": "argentum:mesa_truco_abedul",

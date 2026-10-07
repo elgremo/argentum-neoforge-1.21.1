@@ -1,14 +1,14 @@
 ﻿{
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "MCM",
-    "MTM",
-    "TTT"
+    "PMP",
+    "PLP",
+    "LLL"
   ],
   "key": {
-    "M": { "item": "minecraft:oak_planks" },
-    "C": { "item": "argentum:baraja_sellada" },
-    "T": { "item": "minecraft:oak_log" }
+    "P": { "item": "minecraft:oak_planks" },
+    "M": { "item": "argentum:baraja_sellada" },
+    "L": { "item": "minecraft:oak_log" }
   },
   "result": {
     "id": "argentum:mesa_truco_roble",

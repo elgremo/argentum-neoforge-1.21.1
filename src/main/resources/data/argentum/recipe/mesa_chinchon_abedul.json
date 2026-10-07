@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BPB",
+    "PTP",
+    "TTT"
+  ],
+  "key": {
+    "B": { "item": "argentum:baraja_sellada" },
+    "P": { "item": "minecraft:birch_planks" },
+    "T": { "item": "minecraft:birch_log" }
+  },
+  "result": {
+    "id": "argentum:mesa_chinchon_abedul",
+    "count": 1
+  }
+}
