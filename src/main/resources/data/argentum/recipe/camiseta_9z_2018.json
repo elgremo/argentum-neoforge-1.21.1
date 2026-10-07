@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": {
+      "item": "minecraft:black_dye"
+    },
+    "C": {
+      "item": "argentum:camiseta"
+    },
+    "V": {
+      "item": "minecraft:purple_dye"
+    }
+  },
+  "pattern": [
+    "NCN",
+    "NVN",
+    "VVV"
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:camiseta_9z_2018"
+  }
+}

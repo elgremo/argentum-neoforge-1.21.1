@@ -4,5 +4,7 @@
     { "item": "argentum:membrillo" },
     { "item": "minecraft:sugar" }
   ],
-  "result": { "id": "argentum:dulce_membrillo", "count": 1 }
+  "result": {
+    "id": "argentum:dulce_membrillo",
+    "count": 1 }
 }

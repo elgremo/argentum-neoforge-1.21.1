@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PMP",
+    "PLP",
+    "LLL"
+  ],
+  "key": {
+    "P": { "item": "minecraft:warped_planks" },
+    "M": { "item": "argentum:baraja_sellada" },
+    "L": { "item": "minecraft:warped_stem" }
+  },
+  "result": {
+    "id": "argentum:mesa_truco_distorsionada",
+    "count": 1
+  }
+}

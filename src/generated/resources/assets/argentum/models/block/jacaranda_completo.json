@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "argentum:block/jacaranda_tronco_side",
+    "side": "argentum:block/jacaranda_tronco_side"
+  }
+}

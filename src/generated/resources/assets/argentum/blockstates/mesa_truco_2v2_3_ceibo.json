@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "argentum:block/mesa_truco_2v2_3_ceibo",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "argentum:block/mesa_truco_2v2_3_ceibo"
+    },
+    "facing=south": {
+      "model": "argentum:block/mesa_truco_2v2_3_ceibo",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "argentum:block/mesa_truco_2v2_3_ceibo",
+      "y": 270
+    }
+  }
+}

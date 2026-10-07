@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": { "item": "argentum:camiseta" },
+    "N": { "item": "minecraft:black_dye" }
+  },
+  "pattern": [
+    "NSN",
+    "NNN",
+    "NNN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "argentum:camiseta_spreen"
+  }
+}

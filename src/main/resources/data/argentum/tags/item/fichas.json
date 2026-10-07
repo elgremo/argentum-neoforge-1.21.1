@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "argentum:ficha_casino_2",
+    "argentum:ficha_casino_4",
+    "argentum:ficha_casino_8",
+    "argentum:ficha_casino_16",
+    "argentum:ficha_casino_32",
+    "argentum:ficha_casino_64",
+    "argentum:ficha_casino_especial"
+  ]
+}

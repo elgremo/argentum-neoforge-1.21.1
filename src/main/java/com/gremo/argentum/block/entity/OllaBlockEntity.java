@@ -1,5 +1,8 @@
 package com.gremo.argentum.block.entity;
 
+import com.gremo.argentum.block.custom.OllaBlock;
+import com.gremo.argentum.block.custom.OllaFogataBlock;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
@@ -17,7 +20,8 @@ import net.minecraft.world.Containers;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import org.jetbrains.annotations.Nullable;
-
+import com.gremo.argentum.block.ModBlocks;
+import com.gremo.argentum.block.custom.OllaBlock;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +44,6 @@ public class OllaBlockEntity extends BlockEntity {
             }
         }
     };
-
     private int cookProgress = 0;
 
     // Mapas raw -> fried y raw -> tiempo (ticks)
@@ -111,8 +114,14 @@ public class OllaBlockEntity extends BlockEntity {
 
     public static void tick(Level level, BlockPos pos, BlockState state, OllaBlockEntity be) {
         // CLIENT: partículas si está ON
+        // CLIENT: partículas
         if (level.isClientSide()) {
-            if (state.getValue(com.gremo.argentum.block.custom.OllaBlock.ON)) {
+
+            boolean canCook =
+                    state.getBlock() instanceof OllaFogataBlock
+                            || (state.hasProperty(OllaBlock.ON) && state.getValue(OllaBlock.ON));
+
+            if (canCook) {
                 if (level.random.nextInt(8) == 0) {
                     double x = pos.getX() + 0.5 + (level.random.nextDouble() - 0.5) * 0.3;
                     double y = pos.getY() + 1.0;
@@ -120,12 +129,18 @@ public class OllaBlockEntity extends BlockEntity {
                     level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, x, y, z, 0.0, 0.02, 0.0);
                 }
             }
+
             return;
         }
 
         // SERVER: lógica de fritura (single slot)
-        boolean on = state.getValue(com.gremo.argentum.block.custom.OllaBlock.ON);
-        if (!on) return;
+        boolean canCook =
+                state.getBlock() instanceof OllaFogataBlock ||
+                        state.getValue(OllaBlock.ON);
+
+        if (!canCook) {
+            return;
+        }
 
         ItemStack slot = be.inventory.getStackInSlot(0);
         if (slot.isEmpty()) {

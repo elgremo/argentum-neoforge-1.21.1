@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "argentum:ceibo_madera"
+    }
+  },
+  "result": {
+    "id": "argentum:ceibo_trampilla",
+    "count": 2
+  }
+}

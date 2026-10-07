@@ -1,0 +1,12 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "minecraft:jungle",
+    "minecraft:sparse_jungle",
+    "minecraft:forest"
+  ],
+  "features": [
+    "argentum:yerba_patch"
+  ],
+  "step": "vegetal_decoration"
+}

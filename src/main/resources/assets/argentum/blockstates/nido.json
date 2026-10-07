@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "huevos=0": { "model": "argentum:block/nido" },
+    "huevos=1": { "model": "argentum:block/nido" },
+    "huevos=2": { "model": "argentum:block/nido" },
+    "huevos=3": { "model": "argentum:block/nido" },
+    "huevos=4": { "model": "argentum:block/nido" }
+  }
+}

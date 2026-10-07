@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PMP",
+    "PLP",
+    "LLL"
+  ],
+  "key": {
+    "P": { "item": "minecraft:crimson_planks" },
+    "M": { "item": "argentum:baraja_sellada" },
+    "L": { "item": "minecraft:crimson_stem" }
+  },
+  "result": {
+    "id": "argentum:mesa_truco_carmesi",
+    "count": 1
+  }
+}

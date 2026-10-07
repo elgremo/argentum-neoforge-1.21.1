@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "argentum:block/mesa_truco_distorsionada",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "argentum:block/mesa_truco_distorsionada"
+    },
+    "facing=south": {
+      "model": "argentum:block/mesa_truco_distorsionada",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "argentum:block/mesa_truco_distorsionada",
+      "y": 270
+    }
+  }
+}

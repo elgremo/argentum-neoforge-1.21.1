@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "argentum:block/mesa_chinchon_2_roble",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "argentum:block/mesa_chinchon_2_roble"
+    },
+    "facing=south": {
+      "model": "argentum:block/mesa_chinchon_2_roble",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "argentum:block/mesa_chinchon_2_roble",
+      "y": 270
+    }
+  }
+}

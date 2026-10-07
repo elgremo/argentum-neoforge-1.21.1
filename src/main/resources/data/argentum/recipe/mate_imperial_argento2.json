@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "argentum:mate_imperial_argento_vacio"
+    },
+    {
+      "item": "argentum:paquete_yerba_mate"
+    }
+  ],
+  "result": {
+    "id": "argentum:mate_imperial_argento",
+    "count": 1
+  }
+}

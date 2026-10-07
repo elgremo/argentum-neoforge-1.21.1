@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BPB",
+    "PTP",
+    "TTT"
+  ],
+  "key": {
+    "B": { "item": "argentum:baraja_sellada" },
+    "P": { "item": "argentum:jacaranda_madera" },
+    "T": { "item": "argentum:jacaranda_tronco" }
+  },
+  "result": {
+    "id": "argentum:mesa_chinchon_jacaranda",
+    "count": 1
+  }
+}

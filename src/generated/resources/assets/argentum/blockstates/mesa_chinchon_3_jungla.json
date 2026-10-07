@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "argentum:block/mesa_chinchon_3_jungla",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "argentum:block/mesa_chinchon_3_jungla"
+    },
+    "facing=south": {
+      "model": "argentum:block/mesa_chinchon_3_jungla",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "argentum:block/mesa_chinchon_3_jungla",
+      "y": 270
+    }
+  }
+}

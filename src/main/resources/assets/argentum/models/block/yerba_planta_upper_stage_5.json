@@ -1,0 +1,6 @@
+{ 
+    "parent": "minecraft:block/cross",
+    "textures": { 
+        "cross": "argentum:block/yerba_planta_upper_stage_5"
+    } 
+} 

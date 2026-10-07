@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:fulbo/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:camiseta_argentina"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Portando un legado.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:camiseta_argentina"
+    },
+    "title": "La Camiseta"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

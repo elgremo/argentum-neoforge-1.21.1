@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.argentum.rosarosa_disco_musica.desc"
+  },
+  "length_in_seconds": 200.0,
+  "sound_event": "argentum:rosarosa"
+}

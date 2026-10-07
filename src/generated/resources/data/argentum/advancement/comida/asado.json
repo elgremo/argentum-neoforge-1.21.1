@@ -1,0 +1,30 @@
+{
+  "parent": "argentum:comida/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:costilla_asada"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "El asado del domingo es sagrado.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "argentum:costilla_asada"
+    },
+    "title": "Maestro Parrillero"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "argentum:uva"
+    }
+  ],
+  "result": {
+    "id": "argentum:uva_semilla",
+    "count": 2
+  }
+}

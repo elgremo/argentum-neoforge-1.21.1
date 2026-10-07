@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "PPP",
+    "PTP",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "id": "argentum:nido",
+    "count": 1
+  }
+}

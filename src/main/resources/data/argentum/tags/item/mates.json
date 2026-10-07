@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "argentum:mate",
+    "argentum:mate_imperial",
+    "argentum:mate_imperial_negro",
+    "argentum:mate_imperial_blanco",
+    "argentum:mate_imperial_argento"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "HMH",
+    "HBH",
+    "HMH"
+  ],
+  "key": {
+    "H": {
+      "item": "minecraft:iron_ingot"
+    },
+    "B": {
+      "item": "minecraft:barrel"
+    },
+    "M": {
+      "item": "minecraft:jungle_planks"
+    }
+  },
+  "result": {
+    "id": "argentum:botellero_jungla",
+    "count": 1
+  }
+}

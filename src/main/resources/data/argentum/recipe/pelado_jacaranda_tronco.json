@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "argentum:pelado_jacaranda_tronco"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "argentum:jacaranda_madera"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "argentum:block/ceibo_leaves_pile_2"
+  }
+}

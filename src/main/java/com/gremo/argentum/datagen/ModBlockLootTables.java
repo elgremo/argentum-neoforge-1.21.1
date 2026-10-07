@@ -1,0 +1,93 @@
+package com.gremo.argentum.datagen;
+
+import com.gremo.argentum.block.ModBlocks;
+import com.gremo.argentum.block.custom.MesaTrucoBlock;
+import com.gremo.argentum.block.custom.MesaTrucoCompaBlock;
+import com.gremo.argentum.block.custom.MesaChinchonBlock;
+import com.gremo.argentum.block.custom.SillaBlock;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class ModBlockLootTables extends BlockLootSubProvider {
+
+    protected ModBlockLootTables(HolderLookup.Provider registries) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
+    }
+
+    @Override
+    protected void generate() {
+        // MESAS
+        for (String tinte : ModBlocks.TINTES) {
+            DeferredBlock<MesaTrucoBlock>[] fam =
+                    ModBlocks.getFamilia("mesa_truco_" + tinte);
+            if (fam == null) continue;
+            dropSelf(fam[0].get());
+        }
+
+        // MESAS 2v2
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<MesaTrucoCompaBlock>[] fam =
+                    ModBlocks.getFamiliaCompa("mesa_truco_2v2_" + madera);
+            if (fam == null) continue;
+            dropSelf(fam[0].get());
+        }
+
+        // MESAS CHINCHÓN
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<MesaChinchonBlock>[] fam =
+                    ModBlocks.getFamiliaChinchon("mesa_chinchon_" + madera);
+            if (fam == null) continue;
+            dropSelf(fam[0].get());
+        }
+
+        // SILLAS
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<SillaBlock>[] fam =
+                    ModBlocks.getFamiliaSilla("silla_" + madera);
+            if (fam == null) continue;
+            dropSelf(fam[0].get());
+        }
+    }
+
+    @Override
+    protected Iterable<Block> getKnownBlocks() {
+        List<Block> lista = new ArrayList<>();
+
+        // Mesas
+        for (String tinte : ModBlocks.TINTES) {
+            DeferredBlock<MesaTrucoBlock>[] fam =
+                    ModBlocks.getFamilia("mesa_truco_" + tinte);
+            if (fam != null) lista.add(fam[0].get());
+        }
+
+        // Mesas 2v2
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<MesaTrucoCompaBlock>[] fam =
+                    ModBlocks.getFamiliaCompa("mesa_truco_2v2_" + madera);
+            if (fam != null) lista.add(fam[0].get());
+        }
+
+        // Mesas Chinchón
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<MesaChinchonBlock>[] fam =
+                    ModBlocks.getFamiliaChinchon("mesa_chinchon_" + madera);
+            if (fam != null) lista.add(fam[0].get());
+        }
+
+        // Sillas
+        for (String madera : ModBlocks.TINTES) {
+            DeferredBlock<SillaBlock>[] fam =
+                    ModBlocks.getFamiliaSilla("silla_" + madera);
+            if (fam != null) lista.add(fam[0].get());
+        }
+
+        return lista;
+    }
+}

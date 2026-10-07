@@ -1,0 +1,29 @@
+{
+  "parent": "argentum:comida/raiz",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "argentum:choripan"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "La previa perfecta.",
+    "icon": {
+      "count": 1,
+      "id": "argentum:choripan"
+    },
+    "title": "Choripán de Cancha"
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

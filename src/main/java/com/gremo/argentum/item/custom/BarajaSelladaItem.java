@@ -32,7 +32,7 @@ public class BarajaSelladaItem extends net.minecraft.world.item.Item {
 
             // Dropear 2 comodines
             player.drop(new ItemStack(ModItems.CARTA_COMODIN.get()), true);
-            player.drop(new ItemStack(ModItems.CARTA_COMODIN.get()), true);
+            player.drop(new ItemStack(ModItems.CARTA_COMODIN_2.get()), true);
 
             // Arreglos con las cartas por palo (1..12)
             Item[] copas = {

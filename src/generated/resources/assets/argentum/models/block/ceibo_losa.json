@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "argentum:block/ceibo_madera",
+    "side": "argentum:block/ceibo_madera",
+    "top": "argentum:block/ceibo_madera"
+  }
+}
